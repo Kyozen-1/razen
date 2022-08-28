@@ -199,26 +199,26 @@
                                 <div class="menu-1">
                                     <h3 class="widget-title-link-wrap text-white">Solution</h3>
                                     <ul class="link-wrap">
-                                        <li><a href="services.html">Social Media Engagement</a></li>
-                                        <li><a href="services.html">Branding & Design</a></li>
-                                        <li><a href="services.html">Video Production</a></li>
-                                        <li><a href="services.html">Foto Produk</a></li>
-                                        <li><a href="services.html">Digital Campaign</a></li>
-                                        <li><a href="services.html">Social Media Management</a></li>
-                                        <li><a href="services.html">Website Solution</a></li>
-                                        <li><a href="services.html">SEO</a></li>
+                                        <li><a href="{{ route('social-media-engagement') }}">Social Media Engagement</a></li>
+                                        <li><a href="{{ route('visual-branding-design') }}">Branding & Design</a></li>
+                                        <li><a href="{{ route('video-production') }}">Video Production</a></li>
+                                        <li><a href="{{ route('commercial-photography') }}">Foto Produk</a></li>
+                                        <li><a href="{{ route('digital-campaign') }}">Digital Campaign</a></li>
+                                        <li><a href="{{ route('social-media-management') }}">Social Media Management</a></li>
+                                        <li><a href="{{ route('web-development') }}">Website Solution</a></li>
+                                        <li><a href="{{ route('jasa-seo') }}">SEO</a></li>
                                     </ul>
                                 </div>
                                 <div class="menu-2">
                                     <h3 class="widget-title-link-wrap text-white">Company</h3>
                                     <ul class="link-wrap">
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="contact.html">Contact Us</a></li>
-                                        <li><a href="team.html">Razen Studio vs Other</a></li>
-                                        <li><a href="team.html">Partners</a></li>
-                                        <li><a href="team.html">Portofolio</a></li>
-                                        <li><a href="team.html">Our Clients</a></li>
-                                        <li><a href="team.html">Careers</a></li>
+                                        <li><a href="{{ route('about') }}">About Us</a></li>
+                                        <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                                        <li><a href="{{ route('why-razen-studio') }}">Razen Studio vs Other</a></li>
+                                        <li><a href="{{ route('freelancer-agency') }}">Partners</a></li>
+                                        <li><a href="{{ route('portofolio') }}">Portofolio</a></li>
+                                        <li><a href="#">Our Clients</a></li>
+                                        <li><a href="{{ route('freelancer-agency') }}">Careers</a></li>
                                     </ul>
                                 </div>
                                 <div class="menu-3">
