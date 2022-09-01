@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes(['register' => false, 'login' => false]);
+
+Route::get('razen/login','Auth\RazenLoginController@showLoginForm')->name('razen.login');
+Route::post('razen/login', 'Auth\RazenLoginController@login')->name('razen.login.submit');
+Route::get('razen/logout/', 'Auth\RazenLoginController@logout')->name('razen.logout');
+
+Route::get('razen-studio/login','Auth\RazenStudioLoginController@showLoginForm')->name('razen-studio.login');
+Route::post('razen-studio/login', 'Auth\RazenStudioLoginController@login')->name('razen-studio.login.submit');
+Route::get('razen-studio/logout/', 'Auth\RazenStudioLoginController@logout')->name('razen-studio.logout');
+
 // Route::get('/', function () {
 //     return view('landing-page-utama.home.index');
 // });
@@ -75,3 +85,8 @@ Route::get('freelancer-agency', 'LandingPageRazenStudio\HomeController@freelance
 Route::get('contact', 'LandingPageRazenStudio\HomeController@contact')->name('contact');
 
 include('razen-studio.php');
+include('razen.php');
+
+// Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

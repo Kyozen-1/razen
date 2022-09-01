@@ -18,8 +18,22 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect(RouteServiceProvider::HOME);
+        // if (Auth::guard($guard)->check()) {
+        //     return redirect(RouteServiceProvider::HOME);
+        // }
+
+        switch($guard)
+        {
+            case 'razen':
+                if(Auth::guard($guard)->check())
+                {
+                    return redirect()->route('razen.dashboard.index');
+                }
+            case 'razen_studio':
+                if(Auth::guard($guard)->check())
+                {
+                    return redirect()->route('razen-studio.admin.dashboard.index');
+                }
         }
 
         return $next($request);
