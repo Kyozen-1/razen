@@ -34,4 +34,13 @@
 <script src="{{ asset('acorn/acorn-elearning-portal/js/common.js') }}"></script>
 <script src="{{ asset('acorn/acorn-elearning-portal/js/scripts.js') }}"></script>
 <!-- Page Specific Scripts End -->
+<script>
+    var color_layout = 'light-blue';
+    $(document).ready(function(){
+        // $('.option.active').removeClass('active');
+        // $("a[data-value="+color_layout+"] .option ").addClass('active');
+        // var data = $(".option .active a[data-value='light-blue']").attr('data-value');
+        // $("a[data-value="+color_layout+"]").click();
+    });
+</script>
 @yield('js')

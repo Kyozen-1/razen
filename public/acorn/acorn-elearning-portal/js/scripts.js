@@ -6,7 +6,6 @@
  *
  *
  */
-
 class Scripts {
   constructor() {
     this._initSettings();
