@@ -4,15 +4,13 @@
 <script src="{{ asset('acorn/acorn-elearning-portal/js/vendor/OverlayScrollbars.min.js') }}"></script>
 <script src="{{ asset('acorn/acorn-elearning-portal/js/vendor/autoComplete.min.js') }}"></script>
 <script src="{{ asset('acorn/acorn-elearning-portal/js/vendor/clamp.min.js') }}"></script>
+
 <script src="{{ asset('acorn/acorn-elearning-portal/icon/acorn-icons.js') }}"></script>
 <script src="{{ asset('acorn/acorn-elearning-portal/icon/acorn-icons-interface.js') }}"></script>
-<script src="{{ asset('acorn/acorn-elearning-portal/icon/acorn-icons-learning.js') }}"></script>
 
-<script src="{{ asset('acorn/acorn-elearning-portal/js/vendor/glide.min.js') }}"></script>
+<script src="{{ asset('acorn/acorn-elearning-portal/js/vendor/jquery.validate/jquery.validate.min.js') }}"></script>
 
-<script src="{{ asset('acorn/acorn-elearning-portal/js/vendor/Chart.bundle.min.js') }}"></script>
-
-<script src="{{ asset('acorn/acorn-elearning-portal/js/vendor/jquery.barrating.min.js') }}"></script>
+<script src="{{ asset('acorn/acorn-elearning-portal/js/vendor/jquery.validate/additional-methods.min.js') }}"></script>
 
 <!-- Vendor Scripts End -->
 
@@ -25,29 +23,8 @@
 <!-- Template Base Scripts End -->
 <!-- Page Specific Scripts Start -->
 
-<script src="{{ asset('acorn/acorn-elearning-portal/js/cs/glide.custom.js') }}"></script>
-
-<script src="{{ asset('acorn/acorn-elearning-portal/js/cs/charts.extend.js') }}"></script>
-
-<script src="{{ asset('acorn/acorn-elearning-portal/js/pages/dashboard.elearning.js') }}"></script>
+<script src="{{ asset('acorn/acorn-elearning-portal/js/pages/auth.login.js') }}"></script>
 
 <script src="{{ asset('acorn/acorn-elearning-portal/js/common.js') }}"></script>
 <script src="{{ asset('acorn/acorn-elearning-portal/js/scripts.js') }}"></script>
-<!-- Page Specific Scripts End -->
-<script>
-    $('.option').click(function(){
-        $.ajax({
-            url: "{{ route('razen.dashboard.change_color') }}",
-            method: 'POST',
-            data: {
-                "_token": "{{ csrf_token() }}",
-                value:$(this).attr('data-value')
-            },
-            success: function(data)
-            {
-
-            }
-        });
-    });
-</script>
 @yield('js')

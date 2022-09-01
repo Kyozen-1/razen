@@ -1,4 +1,4 @@
-@extends('auth.layouts.app')
+@extends('auth.razen-studio.layouts.app')
 
 @section('content')
     <div class="col-12 col-lg-auto h-100 pb-4 px-4 pt-0 p-lg-0">

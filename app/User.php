@@ -36,9 +36,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function razen()
-    {
-        return $this->belongsTo('App\Models\Razen', 'razen_id');
-    }
 }

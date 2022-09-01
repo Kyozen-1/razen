@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-override='{"attributes": {"color": "light-blue" }}'>
     <head>
-        @include('auth.layouts.head')
+        @include('auth.razen-studio.layouts.head')
     </head>
 
     <body class="h-100">
@@ -40,6 +40,6 @@
                 </div>
             </div>
         </div>
-        @include('auth.layouts.js')
+        @include('auth.razen-studio.layouts.js')
     </body>
 </html>
