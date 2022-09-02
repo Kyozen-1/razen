@@ -42,6 +42,7 @@
             behaviour: "{{Auth::guard('razen')->user()->behaviour?Auth::guard('razen')->user()->behaviour:'pinned'}}",
             layout: "{{Auth::guard('razen')->user()->layout?Auth::guard('razen')->user()->layout:'fluid'}}",
             radius: "{{Auth::guard('razen')->user()->radius?Auth::guard('razen')->user()->radius:'flat'}}",
+            placement: "{{Auth::guard('razen')->user()->placement?Auth::guard('razen')->user()->placement:'vertical'}}",
         }
     });
     $('.option').click(function(){
@@ -54,6 +55,7 @@
         var behaviour = $('#behaviour a.option.active').attr('data-value');
         var layout = $('#layout a.option.active').attr('data-value');
         var radius = $('#radius a.option.active').attr('data-value');
+        var placement = $('#placement a.option.active').attr('data-value');
         $.ajax({
             url: "{{ route('razen.dashboard.change') }}",
             method: 'POST',
@@ -63,7 +65,8 @@
                 nav_color: nav_color,
                 layout: layout,
                 behaviour: behaviour,
-                radius:radius
+                radius:radius,
+                placement:placement
             }
         });
     });

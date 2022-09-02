@@ -15,7 +15,6 @@ class RazenLoginController extends Controller
 
     public function showLoginForm()
     {
-        // dd('here');
         return view('auth.razen.login');
     }
 

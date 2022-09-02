@@ -200,8 +200,8 @@
             </a>
             <ul id="manajemenakun">
                 <li>
-                    <a href="Dashboards.Elearning.html">
-                        <span class="label">Elearning</span>
+                    <a href="{{ route('manajemen-akun.razen-studio.index') }}">
+                        <span class="label">Razen Studio</span>
                     </a>
                 </li>
             </ul>

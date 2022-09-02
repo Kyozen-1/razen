@@ -22,7 +22,7 @@
             </p> --}}
             </div>
             <div>
-            <form id="loginForm" action="{{ route('razen.login.submit') }}" method="POST" class="tooltip-end-bottom" novalidate>
+            <form action="{{ route('razen.login.submit') }}" method="POST" class="tooltip-end-bottom" novalidate>
                 @csrf
                 <div class="mb-3 filled form-group tooltip-end-top">
                 <i data-acorn-icon="email"></i>
@@ -43,7 +43,7 @@
                     @enderror
                 {{-- <a class="text-small position-absolute t-3 e-3" href="Pages.Authentication.ForgotPassword.html">Forgot?</a> --}}
                 </div>
-                <button type="submit" class="btn btn-lg btn-primary">Login</button>
+                <button type="submit" class="btn btn-lg btn-primary" id="btn_login">Login</button>
             </form>
             </div>
         </div>

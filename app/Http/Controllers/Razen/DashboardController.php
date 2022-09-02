@@ -29,6 +29,7 @@ class DashboardController extends Controller
         $user->behaviour = $request->behaviour;
         $user->layout = $request->layout;
         $user->radius = $request->radius;
+        $user->placement = $request->placement;
         $user->save();
     }
 }
