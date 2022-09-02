@@ -2,9 +2,9 @@
     <div class="nav-content d-flex">
     <!-- Logo Start -->
     <div class="logo position-relative">
-        <a href="index.html">
+        <a href="{{ route('razen.dashboard.index') }}">
         <!-- Logo can be added directly -->
-        <!-- <img src="acorn/acorn-elearning-portal/img/logo/logo-white.svg" alt="logo" /> -->
+        {{-- <img src="ass" alt="logo" /> --}}
 
         <!-- Or added via css to provide different ones for different color themes -->
         <div class="img"></div>
@@ -13,14 +13,14 @@
     <!-- Logo End -->
 
     <!-- Language Switch Start -->
-    <div class="language-switch-container">
+    {{-- <div class="language-switch-container">
         <button class="btn btn-empty language-button dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EN</button>
         <div class="dropdown-menu">
         <a href="#" class="dropdown-item">DE</a>
         <a href="#" class="dropdown-item active">EN</a>
         <a href="#" class="dropdown-item">ES</a>
         </div>
-    </div>
+    </div> --}}
     <!-- Language Switch End -->
 
     <!-- User Menu Start -->
@@ -39,15 +39,15 @@
                 <li>
                 <a href="#">User Info</a>
                 </li>
-                <li>
+                {{-- <li>
                 <a href="#">Preferences</a>
                 </li>
                 <li>
                 <a href="#">Calendar</a>
-                </li>
+                </li> --}}
             </ul>
             </div>
-            <div class="col-6 pe-1 ps-1">
+            {{-- <div class="col-6 pe-1 ps-1">
             <ul class="list-unstyled">
                 <li>
                 <a href="#">Security</a>
@@ -56,9 +56,9 @@
                 <a href="#">Billing</a>
                 </li>
             </ul>
-            </div>
+            </div> --}}
         </div>
-        <div class="row mb-1 ms-0 me-0">
+        {{-- <div class="row mb-1 ms-0 me-0">
             <div class="col-12 p-1 mb-2 pt-2">
             <div class="text-extra-small text-primary">APPLICATION</div>
             </div>
@@ -82,13 +82,13 @@
                 </li>
             </ul>
             </div>
-        </div>
+        </div> --}}
         <div class="row mb-1 ms-0 me-0">
             <div class="col-12 p-1 mb-3 pt-3">
             <div class="separator-light"></div>
             </div>
             <div class="col-6 ps-1 pe-1">
-            <ul class="list-unstyled">
+            {{-- <ul class="list-unstyled">
                 <li>
                 <a href="#">
                     <i data-acorn-icon="help" class="me-2" data-acorn-size="17"></i>
@@ -101,16 +101,16 @@
                     <span class="align-middle">Docs</span>
                 </a>
                 </li>
-            </ul>
+            </ul> --}}
             </div>
             <div class="col-6 pe-1 ps-1">
             <ul class="list-unstyled">
-                <li>
+                {{-- <li>
                 <a href="#">
                     <i data-acorn-icon="gear" class="me-2" data-acorn-size="17"></i>
                     <span class="align-middle">Settings</span>
                 </a>
-                </li>
+                </li> --}}
                 <li>
                 <a href="{{ route('razen.logout') }}">
                     <i data-acorn-icon="logout" class="me-2" data-acorn-size="17"></i>
@@ -125,7 +125,7 @@
     <!-- User Menu End -->
 
     <!-- Icons Menu Start -->
-    <ul class="list-unstyled list-inline text-center menu-icons">
+    {{-- <ul class="list-unstyled list-inline text-center menu-icons">
         <li class="list-inline-item">
         <a href="#" data-bs-toggle="modal" data-bs-target="#searchPagesModal">
             <i data-acorn-icon="search" data-acorn-size="18"></i>
@@ -181,133 +181,29 @@
             </div>
         </div>
         </li>
-    </ul>
+    </ul> --}}
     <!-- Icons Menu End -->
 
     <!-- Menu Start -->
     <div class="menu-container flex-grow-1">
         <ul id="menu" class="menu">
+            <li>
+                <a href="{{ route('razen.dashboard.index') }}">
+                    <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
+                    <span class="label">Dashboard</span>
+                </a>
+            </li>
         <li>
-            <a href="#dashboards">
-            <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
-            <span class="label">Dashboards</span>
+            <a href="#manajemenakun">
+                <i data-acorn-icon="user" class="icon" data-acorn-size="18"></i>
+                <span class="label">Manajemen Akun</span>
             </a>
-            <ul id="dashboards">
-            <li>
-                <a href="Dashboards.Elearning.html">
-                <span class="label">Elearning</span>
-                </a>
-            </li>
-            <li>
-                <a href="Dashboards.School.html">
-                <span class="label">School</span>
-                </a>
-            </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#courses">
-            <i data-acorn-icon="online-class" class="icon" data-acorn-size="18"></i>
-            <span class="label">Courses</span>
-            </a>
-            <ul id="courses">
-            <li>
-                <a href="Course.Explore.html">
-                <span class="label">Explore</span>
-                </a>
-            </li>
-            <li>
-                <a href="Course.List.html">
-                <span class="label">List</span>
-                </a>
-            </li>
-            <li>
-                <a href="Course.Detail.html">
-                <span class="label">Detail</span>
-                </a>
-            </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#quiz">
-            <i data-acorn-icon="quiz" class="icon" data-acorn-size="18"></i>
-            <span class="label">Quiz</span>
-            </a>
-            <ul id="quiz">
-            <li>
-                <a href="Quiz.List.html">
-                <span class="label">List</span>
-                </a>
-            </li>
-            <li>
-                <a href="Quiz.Detail.html">
-                <span class="label">Detail</span>
-                </a>
-            </li>
-            <li>
-                <a href="Quiz.Result.html">
-                <span class="label">Result</span>
-                </a>
-            </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#paths">
-            <i data-acorn-icon="destination" class="icon" data-acorn-size="18"></i>
-            <span class="label">Paths</span>
-            </a>
-            <ul id="paths">
-            <li>
-                <a href="Path.List.html">
-                <span class="label">List</span>
-                </a>
-            </li>
-            <li>
-                <a href="Path.Detail.html">
-                <span class="label">Detail</span>
-                </a>
-            </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#instructors">
-            <i data-acorn-icon="lecture" class="icon" data-acorn-size="18"></i>
-            <span class="label">Instructors</span>
-            </a>
-            <ul id="instructors">
-            <li>
-                <a href="Instructor.List.html">
-                <span class="label">List</span>
-                </a>
-            </li>
-            <li>
-                <a href="Instructor.Detail.html">
-                <span class="label">Detail</span>
-                </a>
-            </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#miscellaneous">
-            <i data-acorn-icon="layout-5" class="icon" data-acorn-size="18"></i>
-            <span class="label">Miscellaneous</span>
-            </a>
-            <ul id="miscellaneous">
-            <li>
-                <a href="Misc.Player.html">
-                <span class="label">Player</span>
-                </a>
-            </li>
-            <li>
-                <a href="Misc.Material.html">
-                <span class="label">Material</span>
-                </a>
-            </li>
-            <li>
-                <a href="Misc.Syllabus.html">
-                <span class="label">Syllabus</span>
-                </a>
-            </li>
+            <ul id="manajemenakun">
+                <li>
+                    <a href="Dashboards.Elearning.html">
+                        <span class="label">Elearning</span>
+                    </a>
+                </li>
             </ul>
         </li>
         </ul>

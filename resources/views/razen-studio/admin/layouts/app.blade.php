@@ -359,6 +359,7 @@
         </div>
         <!-- Search Modal End -->
 
+        @include('sweetalert::alert')
         @include('razen-studio.admin.layouts.js')
     </body>
 </html>

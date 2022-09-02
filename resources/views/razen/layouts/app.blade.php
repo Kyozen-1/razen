@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-footer="true" data-override='{"attributes": {"color": "{{Auth::user()->color_layout? Auth::user()->color_layout:'light-blue'}}" }}'>
+<html lang="en" data-footer="true">
     <head>
         @include('razen.layouts.head')
     </head>
@@ -203,6 +203,120 @@
                             </a>
                             </div>
                         </div>
+
+                        <div class="mb-5" id="navcolor">
+                            <label class="mb-3 d-inline-block form-label">Override Nav Palette</label>
+                            <div class="row d-flex g-3 justify-content-between flex-wrap">
+                                <a href="#" class="flex-grow-1 w-33 option col" data-value="default" data-parent="navcolor">
+                                    <div class="card rounded-md p-3 mb-1 no-shadow">
+                                        <div class="figure figure-primary top"></div>
+                                        <div class="figure figure-secondary bottom"></div>
+                                    </div>
+                                    <div class="text-muted text-part">
+                                        <span class="text-extra-small align-middle">DEFAULT</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="flex-grow-1 w-33 option col" data-value="light" data-parent="navcolor">
+                                    <div class="card rounded-md p-3 mb-1 no-shadow">
+                                        <div class="figure figure-secondary figure-light top"></div>
+                                        <div class="figure figure-secondary bottom"></div>
+                                    </div>
+                                    <div class="text-muted text-part">
+                                        <span class="text-extra-small align-middle">LIGHT</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="flex-grow-1 w-33 option col" data-value="dark" data-parent="navcolor">
+                                    <div class="card rounded-md p-3 mb-1 no-shadow">
+                                        <div class="figure figure-muted figure-dark top"></div>
+                                        <div class="figure figure-secondary bottom"></div>
+                                    </div>
+                                    <div class="text-muted text-part">
+                                        <span class="text-extra-small align-middle">DARK</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mb-5" id="behaviour">
+                            <label class="mb-3 d-inline-block form-label">Menu Behaviour</label>
+                            <div class="row d-flex g-3 justify-content-between flex-wrap">
+                                <a href="#" class="flex-grow-1 w-50 option col" data-value="pinned" data-parent="behaviour">
+                                    <div class="card rounded-md p-3 mb-1 no-shadow">
+                                        <div class="figure figure-primary left large"></div>
+                                        <div class="figure figure-secondary right small"></div>
+                                    </div>
+                                    <div class="text-muted text-part">
+                                        <span class="text-extra-small align-middle">PINNED</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="flex-grow-1 w-50 option col" data-value="unpinned" data-parent="behaviour">
+                                    <div class="card rounded-md p-3 mb-1 no-shadow">
+                                        <div class="figure figure-primary left"></div>
+                                        <div class="figure figure-secondary right"></div>
+                                    </div>
+                                    <div class="text-muted text-part">
+                                        <span class="text-extra-small align-middle">UNPINNED</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mb-5" id="layout">
+                            <label class="mb-3 d-inline-block form-label">Layout</label>
+                            <div class="row d-flex g-3 justify-content-between flex-wrap">
+                                <a href="#" class="flex-grow-1 w-50 option col" data-value="fluid" data-parent="layout">
+                                    <div class="card rounded-md p-3 mb-1 no-shadow">
+                                        <div class="figure figure-primary top"></div>
+                                        <div class="figure figure-secondary bottom"></div>
+                                    </div>
+                                    <div class="text-muted text-part">
+                                        <span class="text-extra-small align-middle">FLUID</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="flex-grow-1 w-50 option col" data-value="boxed" data-parent="layout">
+                                    <div class="card rounded-md p-3 mb-1 no-shadow">
+                                        <div class="figure figure-primary top"></div>
+                                        <div class="figure figure-secondary bottom small"></div>
+                                    </div>
+                                    <div class="text-muted text-part">
+                                        <span class="text-extra-small align-middle">BOXED</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mb-5" id="radius">
+                            <label class="mb-3 d-inline-block form-label">Radius</label>
+                            <div class="row d-flex g-3 justify-content-between flex-wrap">
+                                <a href="#" class="flex-grow-1 w-33 option col" data-value="rounded" data-parent="radius">
+                                    <div class="card rounded-md radius-rounded p-3 mb-1 no-shadow">
+                                        <div class="figure figure-primary top"></div>
+                                        <div class="figure figure-secondary bottom"></div>
+                                    </div>
+                                    <div class="text-muted text-part">
+                                        <span class="text-extra-small align-middle">ROUNDED</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="flex-grow-1 w-33 option col" data-value="standard" data-parent="radius">
+                                    <div class="card rounded-md radius-regular p-3 mb-1 no-shadow">
+                                        <div class="figure figure-primary top"></div>
+                                        <div class="figure figure-secondary bottom"></div>
+                                    </div>
+                                    <div class="text-muted text-part">
+                                        <span class="text-extra-small align-middle">STANDARD</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="flex-grow-1 w-33 option col" data-value="flat" data-parent="radius">
+                                    <div class="card rounded-md radius-flat p-3 mb-1 no-shadow">
+                                        <div class="figure figure-primary top"></div>
+                                        <div class="figure figure-secondary bottom"></div>
+                                    </div>
+                                    <div class="text-muted text-part">
+                                        <span class="text-extra-small align-middle">FLAT</span>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 </div>
@@ -244,7 +358,7 @@
             </div>
         </div>
         <!-- Search Modal End -->
-
+        @include('sweetalert::alert')
         @include('razen.layouts.js')
     </body>
 </html>

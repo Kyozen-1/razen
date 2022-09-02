@@ -35,17 +35,35 @@
 <script src="{{ asset('acorn/acorn-elearning-portal/js/scripts.js') }}"></script>
 <!-- Page Specific Scripts End -->
 <script>
+    const settings = new Settings({
+        attributes: {
+            color: "{{Auth::guard('razen')->user()->color_layout?Auth::guard('razen')->user()->color_layout:'light-blue'}}",
+            navcolor: "{{Auth::guard('razen')->user()->nav_color?Auth::guard('razen')->user()->nav_color:'light'}}",
+            behaviour: "{{Auth::guard('razen')->user()->behaviour?Auth::guard('razen')->user()->behaviour:'pinned'}}",
+            layout: "{{Auth::guard('razen')->user()->layout?Auth::guard('razen')->user()->layout:'fluid'}}",
+            radius: "{{Auth::guard('razen')->user()->radius?Auth::guard('razen')->user()->radius:'flat'}}",
+        }
+    });
     $('.option').click(function(){
+        // var color_layout =  $('a[data-parent="color"]').attr('data-value');
+        // var nav_color = $('a[data-parent="navcolor"]').attr('data-value');
+        // var behaviour = $('a[data-parent="behaviour"]').attr('data-value');
+        // var radius = $('a[data-parent="radius"]').attr('data-value');
+        var color_layout =  $('#color a.option.active').attr('data-value');
+        var nav_color = $('#navcolor a.option.active').attr('data-value');
+        var behaviour = $('#behaviour a.option.active').attr('data-value');
+        var layout = $('#layout a.option.active').attr('data-value');
+        var radius = $('#radius a.option.active').attr('data-value');
         $.ajax({
-            url: "{{ route('razen.dashboard.change_color') }}",
+            url: "{{ route('razen.dashboard.change') }}",
             method: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
-                value:$(this).attr('data-value')
-            },
-            success: function(data)
-            {
-
+                color_layout: color_layout,
+                nav_color: nav_color,
+                layout: layout,
+                behaviour: behaviour,
+                radius:radius
             }
         });
     });

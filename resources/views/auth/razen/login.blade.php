@@ -26,11 +26,21 @@
                 @csrf
                 <div class="mb-3 filled form-group tooltip-end-top">
                 <i data-acorn-icon="email"></i>
-                <input class="form-control" placeholder="Email" name="email" />
+                    <input class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="Email" name="email" autocomplete="email" autofocus required/>
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div class="mb-3 filled form-group tooltip-end-top">
                 <i data-acorn-icon="lock-off"></i>
-                <input class="form-control pe-7" name="password" type="password" placeholder="Password" />
+                    <input class="form-control pe-7 @error('password') is-invalid @enderror" name="password" type="password" placeholder="Password" required autocomplete="current-password"/>
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 {{-- <a class="text-small position-absolute t-3 e-3" href="Pages.Authentication.ForgotPassword.html">Forgot?</a> --}}
                 </div>
                 <button type="submit" class="btn btn-lg btn-primary">Login</button>
