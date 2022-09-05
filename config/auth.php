@@ -88,7 +88,7 @@ return [
 
         'razen_studio' => [
             'driver' => 'eloquent',
-            'model' => App\RazenStudioAkun::class,
+            'model' => App\AkunRazenStudio::class,
         ],
 
         // 'users' => [

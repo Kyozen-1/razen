@@ -9,31 +9,7 @@
             @include('razen-studio.admin.layouts.nav')
 
             <main>
-                <div class="container">
-                <!-- Title and Top Buttons Start -->
-                <div class="page-title-container">
-                    <div class="row">
-                    <!-- Title Start -->
-                    <div class="col-12 col-md-7">
-                        <h1 class="mb-0 pb-0 display-4" id="title">@yield('subheader', 'Dashboard')</h1>
-                        {{-- <nav class="breadcrumb-container d-inline-block" aria-label="breadcrumb">
-                            <ul class="breadcrumb pt-0">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item"><a href="Dashboards.Elearning.html">Dashboards</a></li>
-                            </ul>
-                        </nav> --}}
-                    </div>
-                    <!-- Title End -->
-                    </div>
-                </div>
-                <!-- Title and Top Buttons End -->
-
-                <!-- Content Start -->
-
                 @yield('content')
-
-                <!-- Content End -->
-                </div>
             </main>
             @include('razen-studio.admin.layouts.footer')
         </div>
@@ -234,6 +210,30 @@
                             <span class="text-extra-small align-middle">DARK</span>
                             </div>
                         </a>
+                        </div>
+                    </div>
+
+                    <div class="mb-5" id="placement">
+                        <label class="mb-3 d-inline-block form-label">Menu Placement</label>
+                        <div class="row d-flex g-3 justify-content-between flex-wrap">
+                            <a href="#" class="flex-grow-1 w-50 option col" data-value="horizontal" data-parent="placement">
+                                <div class="card rounded-md p-3 mb-1 no-shadow">
+                                    <div class="figure figure-primary top"></div>
+                                    <div class="figure figure-secondary bottom"></div>
+                                </div>
+                                <div class="text-muted text-part">
+                                    <span class="text-extra-small align-middle">HORIZONTAL</span>
+                                </div>
+                            </a>
+                            <a href="#" class="flex-grow-1 w-50 option col" data-value="vertical" data-parent="placement">
+                                <div class="card rounded-md p-3 mb-1 no-shadow">
+                                    <div class="figure figure-primary left"></div>
+                                    <div class="figure figure-secondary right"></div>
+                                </div>
+                                <div class="text-muted text-part">
+                                    <span class="text-extra-small align-middle">VERTICAL</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
 

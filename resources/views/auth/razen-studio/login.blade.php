@@ -22,7 +22,7 @@
             </p> --}}
             </div>
             <div>
-            <form id="loginForm" action="{{ route('razen-studio.login.submit') }}" method="POST" class="tooltip-end-bottom" novalidate>
+            <form action="{{ route('razen-studio.login.submit') }}" method="POST" class="tooltip-end-bottom" novalidate>
                 @csrf
                 <div class="mb-3 filled form-group tooltip-end-top">
                 <i data-acorn-icon="email"></i>

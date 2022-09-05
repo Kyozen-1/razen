@@ -8,21 +8,24 @@
 <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/aos/dist/aos.css">
 <link rel="stylesheet" href="https://gosocial.co.id/assets/css/pages/global.css?v.0908">
 <link rel="stylesheet" href="https://gosocial.co.id/assets/css/theme.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 
 @section('content')
+@php
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioHome;
+
+    $landing_page = LandingpageRazenstudioHome::first();
+    $section1 = json_decode($landing_page->section_1, true);
+    $section2 = json_decode($landing_page->section_2, true);
+    $section3 = json_decode($landing_page->section_3, true);
+    $section4 = json_decode($landing_page->section_4, true);
+    $section5 = json_decode($landing_page->section_5, true);
+    $section6 = json_decode($landing_page->section_6, true);
+@endphp
     <div class="flat-slider container-fuild">
         <div class="row">
-            <div class="widget-social-header">
-                <div class="container-fluid">
-                    <ul class="widget-social-footer-item text-center">
-                        <li><a href="#">Fb.</a></li>
-                        <li><a href="#">Be.</a></li>
-                        <li><a href="#">Tw.</a></li>
-                        <li><a href="#">In.</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="mark-slide">
                 <img src="{{ asset('olux/assets/images/mark-page/mark-icon-slide') }}.png" alt="images">
             </div>
@@ -30,16 +33,16 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide slider-st-1">
                         <div class="content-slider-left text-white">
-                            <h3 class="sub-title-slider section-24px-montserrat text-white">THE FIRST HUB OF</h3>
-                            <h2 class="title-slider section-65px-montserrat text-white">Social Media & Digital Marketing Agency</h2>
-                            <p class="desc-slider">GoSocial merupakan konsultan sekaligus penyedia layanan Jasa Digital Marketing untuk berbagai tahapan bisnis, hasil kolaborasi dari berbagai Agency & Profesional terbaik di Indonesia!</p>
+                            <h3 class="sub-title-slider section-24px-montserrat text-white">{{$section1?$section1['judul']:'' }}</h3>
+                            <h2 class="title-slider section-65px-montserrat text-white">{{$section1?$section1['deskripsi_judul']:'' }}</h2>
+                            <p class="desc-slider">{{$section1?$section1['deskripsi']:'' }}</p>
                             <div class="button-slider">
                             <a href="{{ route('contact') }}" class="button-footer arrow-btn btn-st style-2">Konsultasi Sekarang!</a>
                                 {{-- <a href="#" class="button-footer clound-down btn-st border-white">Download CV</a> --}}
                             </div>
                         </div>
                         <div class="content-slider-right">
-                            <img src="{{ asset('olux/assets/images/image-slider/img-slider.jpg') }}" alt="images">
+                            <img src="{{ asset('images/landingpage_razenstudio/home/'.$landing_page->gambar_section1) }}" alt="images">
                         </div>
                     </div>
                     <div class="swiper-slide slider-st-1">
@@ -82,51 +85,22 @@
     <section class="flat-counter">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="icon-box">
-                            <div class="icon-counter">
-                                <span class="icon-guarantee1"></span>
-                            </div>
-                            <div class="content-icon">
-                                <h3 class="section-20px-montserrat font-weight-600 line-height-35">Strategy Planning & Execution</h3>
-                            </div>
-                        </div>
-                        <div class="number-content section-65px-montserrat">
-                            <img src="{{ asset('images/landing-page-utama-icon/6230656.jpg') }}" class="img-responsive">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="icon-box">
-                            <div class="icon-counter">
-                                <span class="icon-support1"></span>
-                            </div>
-                            <div class="content-icon">
-                                <h3 class="section-20px-montserrat font-weight-600 line-height-35">Digital Platform Handling</h3>
+                @if ($section2 != null)
+                    @foreach ($section2 as $item)
+                        <div class="col-md-4">
+                            <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="icon-box">
+                                    <div class="content-icon">
+                                        <h3 class="section-20px-montserrat font-weight-600 line-height-35">{{$item['judul']}}</h3>
+                                    </div>
+                                </div>
+                                <div class="number-content section-65px-montserrat">
+                                    <img src="{{ asset('images/landingpage_razenstudio/home/'.$item['gambar']) }}" class="img-responsive">
+                                </div>
                             </div>
                         </div>
-                        <div class="number-content section-65px-montserrat">
-                            <img src="{{ asset('images/landing-page-utama-icon/6230656.jpg') }}" class="img-responsive">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="counter-box themesflat-counter1 hover-up wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="icon-box">
-                            <div class="icon-counter">
-                                <span class="icon-guarantee"></span>
-                            </div>
-                            <div class="content-icon">
-                                <h3 class="section-20px-montserrat font-weight-600 line-height-35">Set & Achive Goals Together</h3>
-                            </div>
-                        </div>
-                        <div class="number-content section-65px-montserrat">
-                            <img src="{{ asset('images/landing-page-utama-icon/6230656.jpg') }}" class="img-responsive">
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>
@@ -137,9 +111,9 @@
                 <div class="col-md-6">
                     <div class="about-content-left wow fadeInLeft">
                         <div class="about-post">
-                            <img src="{{ asset('olux/assets/images/image-box/about-post-mystory.jpg') }}" alt="images">
+                            <img src="{{ asset('images/landingpage_razenstudio/home/'.$section3['gambar']) }}" alt="images">
                             <div class="mark-video">
-                                <a href="https://www.youtube.com/embed/xC4ze0p0b5Y" class="lightbox-image">
+                                <a href="{{$section3['link']}}" class="lightbox-image">
                                     <div class="icon"></div>
                                 </a>
                             </div>
@@ -151,34 +125,25 @@
                     <div class="about-content-right wow fadeInUp" data-wow-delay="0ms"
                         data-wow-duration="1500ms">
                         <div class="section-title">
-                            <h4 class="section-subtitle">About Us</h4>
-                            <h2 class="section-45px-montserrat margin-top-15 margin-bottom-20">All-in-one Creative &
-                                Digital Agency Hub</h2>
+                            <h4 class="section-subtitle">{{$section3['sub_judul']}}</h4>
+                            <h2 class="section-45px-montserrat margin-top-15 margin-bottom-20">{{$section3['judul']}}</h2>
                         </div>
                     </div>
                     <div class="about-client-content-box wow fadeInRight">
                         <div class="swiper-container mainslider">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="client-box">
-                                        <h3 class="content-client font-weight-400 margin-bottom-30">Kami menghadirkan layanan terbaik bersama dengan berbagai profesional terbaik dibidangnya! freelancer, digital agency, creative agency, production house, software house, dll.</h3>
-                                        <div class="client-info">
-                                            <div class="client-info-inner link-style-5">
-                                                <h3 class="section-16px-regular font-weight-700">Collaborative Partnership</h3>
+                                @foreach ($section3['konten'] as $item)
+                                    <div class="swiper-slide">
+                                        <div class="client-box">
+                                            <h3 class="content-client font-weight-400 margin-bottom-30">{{$item['deskripsi_konten']}}</h3>
+                                            <div class="client-info">
+                                                <div class="client-info-inner link-style-5">
+                                                    <h3 class="section-16px-regular font-weight-700">{{$item['judul_konten']}}</h3>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="client-box">
-                                        <h3 class="content-client font-weight-400 margin-bottom-30">Tidak hanya menyediakan solusi strategi & layanan, kami terus melakukan riset dan inovasi terhadap perkembangan teknologi serta mengembangkan teknologi sendiri untuk menunjang hal tersebut.</h3>
-                                        <div class="client-info">
-                                            <div class="client-info-inner link-style-5">
-                                                <h3 class="section-16px-regular font-weight-700">Industry-leading Consultant</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                             <div class="team-button">
                                 <button id="button-team-prev"></button>
@@ -198,104 +163,28 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title wow fadeInDown">
-                        <h4 class="section-subtitle">What we do</h4>
-                        <h2 class="section-45px-montserrat margin-top-15">Jasa Digital Marketing</h2>
-                        <p class="text-muted">Layanan terlengkap dan terbaik untuk segala kebutuhan bisnis dalam melakukan Digital Marketing.</p>
+                        <h4 class="section-subtitle">{{$section4['sub_judul']}}</h4>
+                        <h2 class="section-45px-montserrat margin-top-15">{{$section4['judul']}}</h2>
+                        <p class="text-muted">{{$section4['deskripsi']}}</p>
                     </div>
                     <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                         style="height:60px"></div>
                 </div>
-                <div class="col-md-4">
-                    <div class="services-box active">
-                        <div class="wraper-effect active"></div>
-                        <span class="icon-services icon-development1 font-size-icon active"></span>
-                        <div class="services-content">
-                            <a href="service-single.html" class="section-22px-montserrat">Social Media Engagement</a>
-                            <p class="services-desc">Meningkatkan interaksi dan kredibilitas brand secara digital di Social Media, Marketplace, dll.</p>
-                            <a href="service-single.html" class="read-more"></a>
+                @foreach ($section4['konten'] as $item)
+                    <div class="col-md-4">
+                        <div class="services-box active">
+                            <div class="wraper-effect active"></div>
+                            <figure class="font-size-icon">
+                                <img style="height: 5rem; width:5rem; padding: -3rem;" src="{{ asset('images/landingpage_razenstudio/home/'.$item['logo_konten']) }}" alt="SVG">
+                            </figure>
+                            <div class="services-content">
+                                <a href="{{ $item['link_konten'] ? route($item['link_konten']) : '' }}" class="section-22px-montserrat">{{$item['judul_konten']}}</a>
+                                <p class="services-desc">{{$item['deskripsi_konten']}}</p>
+                                <a href="{{ $item['link_konten'] ? route($item['link_konten']) : '' }}" class="read-more"></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="services-box active">
-                        <div class="wraper-effect active"></div>
-                        <span class="icon-services icon-branding1 font-size-icon active"></span>
-                        <div class="services-content">
-                            <a href="service-single.html" class="section-22px-montserrat">Branding Design</a>
-                            <p class="services-desc">Pembuatan desain grafis visual meliputi Logo, Packaging, Stationery hingga konten Social Media, Website dsb.</p>
-                            <a href="service-single.html" class="read-more"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="services-box active">
-                        <div class="wraper-effect active"></div>
-                        <span class="icon-services icon-advertising1 font-size-icon active"></span>
-                        <div class="services-content">
-                            <a href="service-single.html" class="section-22px-montserrat"> Video Production</a>
-                            <p class="services-desc">
-                                Pembuatan video animasi, promosi, company profile hingga konten Social Media (Tiktok, IG Reels & Youtube).</p>
-                            <a href="service-single.html" class="read-more"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="services-box active">
-                        <div class="wraper-effect active"></div>
-                        <span class="icon-services icon-webpage1 font-size-icon active"></span>
-                        <div class="services-content">
-                            <a href="service-single.html" class="section-22px-montserrat">Commercial Photography</a>
-                            <p class="services-desc">Pembuatan foto produk komersial untuk katalog & konten branding secara digital.</p>
-                            <a href="service-single.html" class="read-more"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="services-box active">
-                        <div class="wraper-effect active"></div>
-                        <span class="icon-services icon-development1 font-size-icon active"></span>
-                        <div class="services-content">
-                            <a href="service-single.html" class="section-22px-montserrat">Digital Campaign</a>
-                            <p class="services-desc">Pembuatan dan manajemen strategi iklan digital meliputi Social Media Ads dan Search Engine Marketing (SEM).</p>
-                            <a href="service-single.html" class="read-more"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="services-box active">
-                        <div class="wraper-effect active"></div>
-                        <span class="icon-services icon-advertising1 font-size-icon active"></span>
-                        <div class="services-content">
-                            <a href="service-single.html" class="section-22px-montserrat"> Social Media Management</a>
-                            <p class="services-desc">
-                                Pengelolaan dan manajemen akun Social Media menggunakan data-driven strategy.</p>
-                            <a href="service-single.html" class="read-more"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="services-box active">
-                        <div class="wraper-effect active"></div>
-                        <span class="icon-services icon-web-programming1 font-size-icon active"></span>
-                        <div class="services-content">
-                            <a href="service-single.html" class="section-22px-montserrat">Web Development</a>
-                            <p class="services-desc">Fusce consectetur erat id enim elementum
-                                tincidunt. Vestibulum accumsan elementum leo, et viverra justo ultricies ac.</p>
-                            <a href="service-single.html" class="read-more"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="services-box active">
-                        <div class="wraper-effect active"></div>
-                        <span class="icon-services icon-development1 font-size-icon active"></span>
-                        <div class="services-content">
-                            <a href="service-single.html" class="section-22px-montserrat">Search Engine Optimization</a>
-                            <p class="services-desc">Optimasi website untuk meningkatkan traffic organik di Search Engine.</p>
-                            <a href="service-single.html" class="read-more"></a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -305,8 +194,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title wow fadeInDown">
-                        <h2 class="section-45px-montserrat margin-top-15">Mengapa Harus Razen Studio?</h2>
-                        <p class="text-muted">GoSocial merupakan satu-satunya Konsultan Digital Marketing sekaligus Agency pertama yang berbasis Hub dalam menyediakan layanan.</p>
+                        <h2 class="section-45px-montserrat margin-top-15">{{$section5['judul']}}</h2>
+                        <p class="text-muted">{{$section5['deskripsi']}}</p>
                     </div>
                     <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                         style="height:60px"></div>
@@ -489,8 +378,8 @@
         <div class="container-xl space-2">
             <!-- Title -->
             <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
-                <h2>Portofolio</h2>
-                <p>Beberapa contoh hasil pekerjaan yang telah kami lakukan sebelumnya.</p>
+                <h2>{{$section6['judul']}}</h2>
+                <p>{{$section6['deskripsi']}}</p>
             </div>
         </div>
     </div>
@@ -500,7 +389,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="client-content-box wow fadeInUp">
-                        <h4 class="section-title section-45px-montserrat">Relied On By Brand, Trusted By Personal, And Loved By Small-Medium Enterprise, Everywhere!</h4>
+                        <h4 class="section-title section-45px-montserrat">{{$landing_page->section_7}}</h4>
                         <button class="clone-btn-prev"></button>
                         <button class="clone-btn-next"></button>
                     </div>
@@ -510,9 +399,26 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="client-slider-box">
-                                    <div class="client-user">
+                                    <div class="client-user text-center">
                                         <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
                                             alt="images">
+                                        <ul class="list-inline small mt-3">
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                        </ul>
                                     </div>
                                     <div class="client-content">
                                         <div class="client-user-author">
@@ -526,9 +432,26 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="client-slider-box">
-                                    <div class="client-user">
+                                    <div class="client-user text-center">
                                         <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
                                             alt="images">
+                                            <ul class="list-inline small mt-3">
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                            </ul>
                                     </div>
                                     <div class="client-content">
                                         <div class="client-user-author">
@@ -542,9 +465,26 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="client-slider-box">
-                                    <div class="client-user">
+                                    <div class="client-user text-center">
                                         <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
                                             alt="images">
+                                            <ul class="list-inline small mt-3">
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                            </ul>
                                     </div>
                                     <div class="client-content">
                                         <div class="client-user-author">
@@ -558,9 +498,26 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="client-slider-box">
-                                    <div class="client-user">
+                                    <div class="client-user text-center">
                                         <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
                                             alt="images">
+                                            <ul class="list-inline small mt-3">
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                            </ul>
                                     </div>
                                     <div class="client-content">
                                         <div class="client-user-author">
@@ -574,9 +531,26 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="client-slider-box">
-                                    <div class="client-user">
+                                    <div class="client-user text-center">
                                         <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
                                             alt="images">
+                                            <ul class="list-inline small mt-3">
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star h4 text-warning"></i>
+                                                </li>
+                                            </ul>
                                     </div>
                                     <div class="client-content">
                                         <div class="client-user-author">
@@ -685,4 +659,6 @@
 <script src="https://gosocial.co.id/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script>
 <script src="https://gosocial.co.id/assets/vendor/aos/dist/aos.js"></script>
 <script src="https://gosocial.co.id/assets/js/theme.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/fontawesome.min.js" integrity="sha512-j3gF1rYV2kvAKJ0Jo5CdgLgSYS7QYmBVVUjduXdoeBkc4NFV4aSRTi+Rodkiy9ht7ZYEwF+s09S43Z1Y+ujUkA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @endsection

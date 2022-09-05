@@ -193,19 +193,19 @@
                     <span class="label">Dashboard</span>
                 </a>
             </li>
-        <li>
-            <a href="#manajemenakun">
-                <i data-acorn-icon="user" class="icon" data-acorn-size="18"></i>
-                <span class="label">Manajemen Akun</span>
-            </a>
-            <ul id="manajemenakun">
-                <li>
-                    <a href="{{ route('manajemen-akun.razen-studio.index') }}">
-                        <span class="label">Razen Studio</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
+            <li>
+                <a href="#manajemenakun">
+                    <i data-acorn-icon="user" class="icon" data-acorn-size="18"></i>
+                    <span class="label">Manajemen Akun</span>
+                </a>
+                <ul id="manajemenakun">
+                    <li>
+                        <a href="{{ route('manajemen-akun.razen-studio.index') }}">
+                            <span class="label">Razen Studio</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </div>
     <!-- Menu End -->

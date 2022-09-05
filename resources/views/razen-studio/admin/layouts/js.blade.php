@@ -34,4 +34,41 @@
 <script src="{{ asset('acorn/acorn-elearning-portal/js/common.js') }}"></script>
 <script src="{{ asset('acorn/acorn-elearning-portal/js/scripts.js') }}"></script>
 <!-- Page Specific Scripts End -->
+<script>
+    const settings = new Settings({
+        attributes: {
+            color: "{{Auth::guard('razen_studio')->user()->color_layout?Auth::guard('razen_studio')->user()->color_layout:'light-blue'}}",
+            navcolor: "{{Auth::guard('razen_studio')->user()->nav_color?Auth::guard('razen_studio')->user()->nav_color:'light'}}",
+            behaviour: "{{Auth::guard('razen_studio')->user()->behaviour?Auth::guard('razen_studio')->user()->behaviour:'pinned'}}",
+            layout: "{{Auth::guard('razen_studio')->user()->layout?Auth::guard('razen_studio')->user()->layout:'fluid'}}",
+            radius: "{{Auth::guard('razen_studio')->user()->radius?Auth::guard('razen_studio')->user()->radius:'flat'}}",
+            placement: "{{Auth::guard('razen_studio')->user()->placement?Auth::guard('razen_studio')->user()->placement:'vertical'}}",
+        }
+    });
+    $('.option').click(function(){
+        // var color_layout =  $('a[data-parent="color"]').attr('data-value');
+        // var nav_color = $('a[data-parent="navcolor"]').attr('data-value');
+        // var behaviour = $('a[data-parent="behaviour"]').attr('data-value');
+        // var radius = $('a[data-parent="radius"]').attr('data-value');
+        var color_layout =  $('#color a.option.active').attr('data-value');
+        var nav_color = $('#navcolor a.option.active').attr('data-value');
+        var behaviour = $('#behaviour a.option.active').attr('data-value');
+        var layout = $('#layout a.option.active').attr('data-value');
+        var radius = $('#radius a.option.active').attr('data-value');
+        var placement = $('#placement a.option.active').attr('data-value');
+        $.ajax({
+            url: "{{ route('razen-studio.admin.dashboard.change') }}",
+            method: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                color_layout: color_layout,
+                nav_color: nav_color,
+                layout: layout,
+                behaviour: behaviour,
+                radius:radius,
+                placement:placement
+            }
+        });
+    });
+</script>
 @yield('js')
