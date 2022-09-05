@@ -83,7 +83,9 @@
                 </li> --}}
                 <li>
                     @if (request()->routeIs('razen-studio.admin.home.atur.index') ||
-                    request()->routeIs('razen-studio.admin.landing-page.reviewer.index'))
+                    request()->routeIs('razen-studio.admin.landing-page.reviewer.index') ||
+                    request()->routeIs('razen-studio.admin.landing-page.brand.index') ||
+                    request()->routeIs('razen-studio.admin.landing-page.official-partner.index'))
                     <a href="#landing_page" class="active">
                     @else
                     <a href="#landing_page">
@@ -126,6 +128,46 @@
                                         <a href="{{ route('razen-studio.admin.landing-page.reviewer.index') }}" class="active">
                                     @else
                                         <a href="{{ route('razen-studio.admin.landing-page.reviewer.index') }}">
+                                    @endif
+                                        <span class="label">Atur</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-studio.admin.landing-page.brand.index'))
+                                <a href="#brand" class="active">
+                            @else
+                                <a href="#brand">
+                            @endif
+                                <span class="label">Brand</span>
+                            </a>
+                            <ul id="brand">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.landing-page.brand.index'))
+                                        <a href="{{ route('razen-studio.admin.landing-page.brand.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.landing-page.brand.index') }}">
+                                    @endif
+                                        <span class="label">Atur</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-studio.admin.landing-page.official-partner.index'))
+                                <a href="#official_partner" class="active">
+                            @else
+                                <a href="#official_partner">
+                            @endif
+                                <span class="label">Official Partner</span>
+                            </a>
+                            <ul id="official_partner">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.landing-page.official-partner.index'))
+                                        <a href="{{ route('razen-studio.admin.landing-page.official-partner.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.landing-page.official-partner.index') }}">
                                     @endif
                                         <span class="label">Atur</span>
                                     </a>

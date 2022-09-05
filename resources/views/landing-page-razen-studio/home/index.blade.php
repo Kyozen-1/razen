@@ -15,6 +15,9 @@
 @section('content')
 @php
     use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioHome;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioReview;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioBrand;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioOfficialPartner;
 
     $landing_page = LandingpageRazenstudioHome::first();
     $section1 = json_decode($landing_page->section_1, true);
@@ -23,6 +26,10 @@
     $section4 = json_decode($landing_page->section_4, true);
     $section5 = json_decode($landing_page->section_5, true);
     $section6 = json_decode($landing_page->section_6, true);
+
+    $reviews = LandingpageRazenstudioReview::latest()->get();
+    $brands= LandingpageRazenstudioBrand::all();
+    $partners = LandingpageRazenstudioOfficialPartner::all();
 @endphp
     <div class="flat-slider container-fuild">
         <div class="row">
@@ -397,10 +404,11 @@
                 <div class="col-md-6">
                     <div class="swiper-container sliver-vertical">
                         <div class="swiper-wrapper">
+                            @foreach ($reviews as $review)
                             <div class="swiper-slide">
                                 <div class="client-slider-box">
                                     <div class="client-user text-center">
-                                        <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
+                                        <img src="{{ asset('images/landingpage_razenstudio/reviewer/'.$review->gambar) }}"
                                             alt="images">
                                         <ul class="list-inline small mt-3">
                                             <li class="list-inline-item mx-0">
@@ -422,146 +430,13 @@
                                     </div>
                                     <div class="client-content">
                                         <div class="client-user-author">
-                                            <h4 class="name-author section-20px-montserrat">Brade Hook</h4>
-                                            <p class="margin-top-11">A customer review is a review of a product
-                                                or service made by a customer who has purchased and used, or had
-                                                experience with, the product or service.</p>
+                                            <h4 class="name-author section-20px-montserrat">{{$review->nama}}</h4>
+                                            <p class="margin-top-11">{{$review->ulasan}}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="client-slider-box">
-                                    <div class="client-user text-center">
-                                        <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                            alt="images">
-                                            <ul class="list-inline small mt-3">
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                            </ul>
-                                    </div>
-                                    <div class="client-content">
-                                        <div class="client-user-author">
-                                            <h4 class="name-author section-20px-montserrat">Brade Hook</h4>
-                                            <p class="margin-top-11">A customer review is a review of a product
-                                                or service made by a customer who has purchased and used, or had
-                                                experience with, the product or service.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="client-slider-box">
-                                    <div class="client-user text-center">
-                                        <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                            alt="images">
-                                            <ul class="list-inline small mt-3">
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                            </ul>
-                                    </div>
-                                    <div class="client-content">
-                                        <div class="client-user-author">
-                                            <h4 class="name-author section-20px-montserrat">Brade Hook</h4>
-                                            <p class="margin-top-11">A customer review is a review of a product
-                                                or service made by a customer who has purchased and used, or had
-                                                experience with, the product or service.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="client-slider-box">
-                                    <div class="client-user text-center">
-                                        <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                            alt="images">
-                                            <ul class="list-inline small mt-3">
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                            </ul>
-                                    </div>
-                                    <div class="client-content">
-                                        <div class="client-user-author">
-                                            <h4 class="name-author section-20px-montserrat">Brade Hook</h4>
-                                            <p class="margin-top-11">A customer review is a review of a product
-                                                or service made by a customer who has purchased and used, or had
-                                                experience with, the product or service.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="client-slider-box">
-                                    <div class="client-user text-center">
-                                        <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                            alt="images">
-                                            <ul class="list-inline small mt-3">
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                            </ul>
-                                    </div>
-                                    <div class="client-content">
-                                        <div class="client-user-author">
-                                            <h4 class="name-author section-20px-montserrat">Brade Hook</h4>
-                                            <p class="margin-top-11">A customer review is a review of a product
-                                                or service made by a customer who has purchased and used, or had
-                                                experience with, the product or service.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -575,36 +450,13 @@
                 <div class="col-md-12">
                     <div class="swiper-container carousel-style-3">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="brand-content">
-                                    <img src="{{ asset('olux/assets/images/image-slider/brand-1.png') }}" alt="images">
+                            @foreach ($brands as $brand)
+                                <div class="swiper-slide">
+                                    <div class="brand-content">
+                                        <img src="{{ asset('images/landingpage_razenstudio/brand/'.$brand->gambar) }}" alt="images">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-content">
-                                    <img src="{{ asset('olux/assets/images/image-slider/brand-2.png') }}" alt="images">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-content">
-                                    <img src="{{ asset('olux/assets/images/image-slider/brand-3.png') }}" alt="images">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-content">
-                                    <img src="{{ asset('olux/assets/images/image-slider/brand-4.png') }}" alt="images">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-content">
-                                    <img src="{{ asset('olux/assets/images/image-slider/brand-5.png') }}" alt="images">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-content">
-                                    <img src="{{ asset('olux/assets/images/image-slider/brand-6.png') }}" alt="images">
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -616,32 +468,20 @@
         <div class="container space-1">
             <div class="w-lg-75 mt-3 mx-lg-auto">
                 <div class="text-center mb-4">
-                    <span class="divider divider-text">Official Partners:</span>
+                    <span class="divider divider-text h3">Official Partners:</span>
                 </div>
 
                 <div class="row d-flex justify-content-center text-center">
                     <div class="col-lg-8 col-12">
                         <div class="row d-flex justify-content-center">
-                            <div class="col-lg-3 col-4">
-                                <div class="mx-3 client-image">
-                                    <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC NISP">
-                                    <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC">
+                            @foreach ($partners as $partner)
+                                <div class="col-lg-3 col-4">
+                                    <div class="mx-3 client-image">
+                                        <img class="client-default" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC NISP">
+                                        <img class="client-hover" style="display: none;" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC">
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="col-lg-3 col-4">
-                                <a class="mx-3 client-image" href="https://www.bhinneka.com/toko-gosocial-indonesia" target="_blank">
-                                    <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Parnter Bhinneka.com">
-                                    <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Partner Bhinneka">
-                                </a>
-                            </div>
-
-                            <div class="col-lg-3 col-4">
-                                <div class="mx-3 client-image">
-                                    <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                                    <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
