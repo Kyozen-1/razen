@@ -88,4 +88,23 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
     Route::post('/razen-studio/admin/landing-page/footer/get-in-touch/store/hapus/satu', 'RazenStudio\Admin\LandingPage\FooterController@footer_get_in_touch_hapus_satu')->name('razen-studio.admin.landing-page.footer.get-in-touch.hapus.satu');
     Route::post('/razen-studio/admin/landing-page/footer/get-in-touch/store/tambah', 'RazenStudio\Admin\LandingPage\FooterController@footer_get_in_touch_tambah')->name('razen-studio.admin.landing-page.footer.get-in-touch.tambah');
     //Footer - Get In Touch End
+
+    //Social Media Engagement
+    Route::get('/razen-studio/admin/social-media-engagement/atur', 'RazenStudio\Admin\SocialMediaEngagementAturController@index')->name('razen-studio.admin.social-media-engagement.atur.index');
+
+    //Social Media Engagement - Section 1 Start
+    Route::post('/razen-studio/admin/social-media-engagement/atur/section-1/store', 'RazenStudio\Admin\SocialMediaEngagementAturController@section_1_store')->name('razen-studio.admin.social-media-engagement.atur.section-1.store');
+    //Social Media Engagement - Section 1 End
+
+    //Social Media Engagement - Section 2 Start
+    Route::post('/razen-studio/admin/social-media-engagement/atur/section-2/store', 'RazenStudio\Admin\SocialMediaEngagementAturController@section_2_store')->name('razen-studio.admin.social-media-engagement.atur.section-2.store');
+    //Social Media Engagement - Section 2 End
+
+    //Social Media Engagement - Section 3 Start
+    Route::post('/razen-studio/admin/social-media-engagement/atur/section-3/store', 'RazenStudio\Admin\SocialMediaEngagementAturController@section_3_store')->name('razen-studio.admin.social-media-engagement.atur.section-3.store');
+    //Social Media Engagement - Section 3 End
+
+    //Social Media Engagement - Section 4 Start
+    Route::post('/razen-studio/admin/social-media-engagement/atur/section-4/store', 'RazenStudio\Admin\SocialMediaEngagementAturController@section_4_store')->name('razen-studio.admin.social-media-engagement.atur.section-4.store');
+    //Social Media Engagement - Section 4 End
 });

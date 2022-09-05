@@ -86,7 +86,8 @@
                     request()->routeIs('razen-studio.admin.landing-page.reviewer.index') ||
                     request()->routeIs('razen-studio.admin.landing-page.brand.index') ||
                     request()->routeIs('razen-studio.admin.landing-page.official-partner.index')||
-                    request()->routeIs('razen-studio.admin.landing-page.footer.index'))
+                    request()->routeIs('razen-studio.admin.landing-page.footer.index') ||
+                    request()->routeIs('razen-studio.admin.social-media-engagement.atur.index'))
                     <a href="#landing_page" class="active">
                     @else
                     <a href="#landing_page">
@@ -109,6 +110,26 @@
                                         <a href="{{ route('razen-studio.admin.home.atur.index') }}" class="active">
                                     @else
                                         <a href="{{ route('razen-studio.admin.home.atur.index') }}">
+                                    @endif
+                                        <span class="label">Atur</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-studio.admin.social-media-engagement.atur.index'))
+                                <a href="#social_media_engagement" class="active">
+                            @else
+                                <a href="#social_media_engagement">
+                            @endif
+                                <span class="label">Social Media Engagement</span>
+                            </a>
+                            <ul id="social_media_engagement">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.social-media-engagement.atur.index'))
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.atur.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.atur.index') }}">
                                     @endif
                                         <span class="label">Atur</span>
                                     </a>

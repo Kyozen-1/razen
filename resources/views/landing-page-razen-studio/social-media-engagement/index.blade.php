@@ -2,7 +2,7 @@
 @section('title', 'Razen Studio | Social Media Engagement')
 
 @section('content')
-    <section class="flat-title-page back-ground-style">
+    <section class="flat-title-page back-ground-style h-100">
         <div class="container-fluid">
             <div class="row">
                 <div class="breadcrumbs text-center link-style-5 text-white">
