@@ -85,7 +85,8 @@
                     @if (request()->routeIs('razen-studio.admin.home.atur.index') ||
                     request()->routeIs('razen-studio.admin.landing-page.reviewer.index') ||
                     request()->routeIs('razen-studio.admin.landing-page.brand.index') ||
-                    request()->routeIs('razen-studio.admin.landing-page.official-partner.index'))
+                    request()->routeIs('razen-studio.admin.landing-page.official-partner.index')||
+                    request()->routeIs('razen-studio.admin.landing-page.footer.index'))
                     <a href="#landing_page" class="active">
                     @else
                     <a href="#landing_page">
@@ -168,6 +169,26 @@
                                         <a href="{{ route('razen-studio.admin.landing-page.official-partner.index') }}" class="active">
                                     @else
                                         <a href="{{ route('razen-studio.admin.landing-page.official-partner.index') }}">
+                                    @endif
+                                        <span class="label">Atur</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-studio.admin.landing-page.footer.index'))
+                                <a href="#footer" class="active">
+                            @else
+                                <a href="#footer">
+                            @endif
+                                <span class="label">Footer</span>
+                            </a>
+                            <ul id="footer">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.landing-page.footer.index'))
+                                        <a href="{{ route('razen-studio.admin.landing-page.footer.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.landing-page.footer.index') }}">
                                     @endif
                                         <span class="label">Atur</span>
                                     </a>

@@ -1,3 +1,12 @@
+@php
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioFooter;
+
+    $data = LandingpageRazenstudioFooter::first();
+    $solution = json_decode($data->solution, true);
+    $company = json_decode($data->company, true);
+    $get_in_touch = json_decode($data->get_in_touch, true);
+@endphp
+
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
@@ -192,46 +201,49 @@
                                     <img src="{{ asset('olux/assets/images/logo/logo-footer.png') }}" alt="images">
                                 </a>
                             </div>
-                            <p class="text-white line-height-32 margin-bottom-20">Razen Group merupakan konsultan sekaligus Creative & Digital Agency Hub No.1 di Indonesia yang bertujuan membantu bisnis dalam melakukan Digital Marketing yang sukses di berbagai platform.</p>
+                            <p class="text-white line-height-32 margin-bottom-20">{{$data->deskripsi}}</p>
                         </div>
                         <div class="col-md-9">
                             <div class="footer-widgets-nav-menu text-white">
                                 <div class="menu-1">
                                     <h3 class="widget-title-link-wrap text-white">Solution</h3>
                                     <ul class="link-wrap">
-                                        <li><a href="{{ route('social-media-engagement') }}">Social Media Engagement</a></li>
-                                        <li><a href="{{ route('visual-branding-design') }}">Branding & Design</a></li>
-                                        <li><a href="{{ route('video-production') }}">Video Production</a></li>
-                                        <li><a href="{{ route('commercial-photography') }}">Foto Produk</a></li>
-                                        <li><a href="{{ route('digital-campaign') }}">Digital Campaign</a></li>
-                                        <li><a href="{{ route('social-media-management') }}">Social Media Management</a></li>
-                                        <li><a href="{{ route('web-development') }}">Website Solution</a></li>
-                                        <li><a href="{{ route('jasa-seo') }}">SEO</a></li>
+                                        @foreach ($solution as $item)
+                                            <li><a href="{{ route($item['link']) }}">{{$item['judul']}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                                 <div class="menu-2">
                                     <h3 class="widget-title-link-wrap text-white">Company</h3>
                                     <ul class="link-wrap">
-                                        <li><a href="{{ route('about') }}">About Us</a></li>
-                                        <li><a href="{{ route('contact') }}">Contact Us</a></li>
-                                        <li><a href="{{ route('why-razen-studio') }}">Razen Studio vs Other</a></li>
-                                        <li><a href="{{ route('freelancer-agency') }}">Partners</a></li>
-                                        <li><a href="{{ route('portofolio') }}">Portofolio</a></li>
+                                        @foreach ($company as $item)
+                                            <li><a href="{{ route($item['link']) }}">{{$item['judul']}}</a></li>
+                                        @endforeach
                                         <li><a href="#">Our Clients</a></li>
-                                        <li><a href="{{ route('freelancer-agency') }}">Careers</a></li>
                                     </ul>
                                 </div>
                                 <div class="menu-3">
                                     <h3 class="widget-title-link-wrap text-white">Get In Touch</h3>
                                     <ul class="widget-list-contact text-white link-style-2">
-                                        <li><a href="tel:012345678"
-                                                class="meta-phone section-16px-regular-montserrat">+62 812 3456 6636</a></li>
-                                        <li><a href="mailto:hello@razenstudio.co.id"
-                                                class="meta-mail section-16px-regular-montserrat">hello@razenstudio.co.id</a>
-                                        </li>
-                                        <li>
-                                            <h3 class="meta-address section-16px-regular-montserrat text-white">Kota Madiun Jawa Timur</h3>
-                                        </li>
+                                        @foreach ($get_in_touch as $item)
+                                            @if ($item['tipe_data'] == 'telepon')
+                                                <li>
+                                                    <a href="tel:{{$item['data']}}"
+                                                    class="meta-phone section-16px-regular-montserrat">{{$item['data']}}</a>
+                                                </li>
+                                            @endif
+                                            @if ($item['tipe_data'] == 'email')
+                                                <li>
+                                                    <a href="mailto:{{$item['data']}}"
+                                                    class="meta-mail section-16px-regular-montserrat">{{$item['data']}}</a>
+                                                </li>
+                                            @endif
+                                            @if ($item['tipe_data'] == 'alamat')
+                                                <li>
+                                                    <h3 class="meta-address section-16px-regular-montserrat text-white">{{$item['data']}}</h3>
+                                                </li>
+                                            @endif
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -257,7 +269,7 @@
                 <div id="bottom-bar-inner" class="container">
                     <div class="bottom-bar-inner-wrap">
                         <div class="bottom-bar-content">
-                            <div id="copyright">© 2022 <span class="text"> ThemesFlat, All Rights Reserved.</span>
+                            <div id="copyright">© 2022 <span class="text"> Razen, All Rights Reserved.</span>
                             </div>
                         </div>
                     </div>

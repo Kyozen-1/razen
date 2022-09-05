@@ -66,4 +66,26 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
     Route::get('/razen-studio/admin/landing-page/official-partner/edit/{id}','RazenStudio\Admin\LandingPage\OfficialPartnerController@edit');
     Route::post('/razen-studio/admin/landing-page/official-partner/update','RazenStudio\Admin\LandingPage\OfficialPartnerController@update')->name('razen-studio.admin.landing-page.official-partner.update');
     Route::get('/razen-studio/admin/landing-page/official-partner/destroy/{id}','RazenStudio\Admin\LandingPage\OfficialPartnerController@destroy');
+
+    //Footer
+    Route::get('/razen-studio/admin/landing-page/footer', 'RazenStudio\Admin\LandingPage\FooterController@index')->name('razen-studio.admin.landing-page.footer.index');
+    Route::post('/razen-studio/admin/landing-page/footer/deskripsi', 'RazenStudio\Admin\LandingPage\FooterController@deskripsi')->name('razen-studio.admin.landing-page.footer.deskripsi');
+
+    //Footer - Solution Start
+    Route::post('/razen-studio/admin/landing-page/footer/solution/store', 'RazenStudio\Admin\LandingPage\FooterController@footer_solution_store')->name('razen-studio.admin.landing-page.footer.solution.store');
+    Route::post('/razen-studio/admin/landing-page/footer/solution/store/hapus/satu', 'RazenStudio\Admin\LandingPage\FooterController@footer_solution_hapus_satu')->name('razen-studio.admin.landing-page.footer.solution.hapus.satu');
+    Route::post('/razen-studio/admin/landing-page/footer/solution/store/tambah', 'RazenStudio\Admin\LandingPage\FooterController@footer_solution_tambah')->name('razen-studio.admin.landing-page.footer.solution.tambah');
+    //Footer - Solution End
+
+    //Footer - Company Start
+    Route::post('/razen-studio/admin/landing-page/footer/company/store', 'RazenStudio\Admin\LandingPage\FooterController@footer_company_store')->name('razen-studio.admin.landing-page.footer.company.store');
+    Route::post('/razen-studio/admin/landing-page/footer/company/store/hapus/satu', 'RazenStudio\Admin\LandingPage\FooterController@footer_company_hapus_satu')->name('razen-studio.admin.landing-page.footer.company.hapus.satu');
+    Route::post('/razen-studio/admin/landing-page/footer/company/store/tambah', 'RazenStudio\Admin\LandingPage\FooterController@footer_company_tambah')->name('razen-studio.admin.landing-page.footer.company.tambah');
+    //Footer - Company End
+
+    //Footer - Get In Touch Start
+    Route::post('/razen-studio/admin/landing-page/footer/get-in-touch/store', 'RazenStudio\Admin\LandingPage\FooterController@footer_get_in_touch_store')->name('razen-studio.admin.landing-page.footer.get-in-touch.store');
+    Route::post('/razen-studio/admin/landing-page/footer/get-in-touch/store/hapus/satu', 'RazenStudio\Admin\LandingPage\FooterController@footer_get_in_touch_hapus_satu')->name('razen-studio.admin.landing-page.footer.get-in-touch.hapus.satu');
+    Route::post('/razen-studio/admin/landing-page/footer/get-in-touch/store/tambah', 'RazenStudio\Admin\LandingPage\FooterController@footer_get_in_touch_tambah')->name('razen-studio.admin.landing-page.footer.get-in-touch.tambah');
+    //Footer - Get In Touch End
 });
