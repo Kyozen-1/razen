@@ -65,7 +65,7 @@
                             <nav id="main-nav" class="main-nav">
                                 <ul id="menu-primary-menu" class="menu">
                                     <li class="menu-item current-menu-item">
-                                        <a href="{{ route('home') }}">Home</a>
+                                        <a href="{{ url('/') }}">Home</a>
                                     </li>
                                     <li class="menu-item current-menu-item">
                                         <a href="#">Marketplace</a>

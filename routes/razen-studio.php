@@ -107,4 +107,15 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
     //Social Media Engagement - Section 4 Start
     Route::post('/razen-studio/admin/social-media-engagement/atur/section-4/store', 'RazenStudio\Admin\SocialMediaEngagementAturController@section_4_store')->name('razen-studio.admin.social-media-engagement.atur.section-4.store');
     //Social Media Engagement - Section 4 End
+
+    //Social Media Engagement - Section 5 Start
+    Route::post('/razen-studio/admin/social-media-engagement/atur/section-5/store', 'RazenStudio\Admin\SocialMediaEngagementAturController@section_5_store')->name('razen-studio.admin.social-media-engagement.atur.section-5.store');
+    Route::post('/razen-studio/admin/social-media-engagement/atur/section-5/store/hapus/satu', 'RazenStudio\Admin\SocialMediaEngagementAturController@section_5_hapus_satu')->name('razen-studio.admin.social-media-engagement.atur.section-5.hapus.satu');
+    //Social Media Engagement - Section 5 End
+
+    //Home - Section 3 Start
+    Route::post('/razen-studio/admin/social-media-engagement/atur/section-6/store', 'RazenStudio\Admin\SocialMediaEngagementAturController@section_6_store')->name('razen-studio.admin.social-media-engagement.atur.section-6.store');
+    Route::post('/razen-studio/admin/social-media-engagement/atur/section-6/edit', 'RazenStudio\Admin\SocialMediaEngagementAturController@section_6_edit')->name('razen-studio.admin.social-media-engagement.atur.section-6.edit');
+    Route::post('/razen-studio/admin/social-media-engagement/atur/section-6/store/hapus/satu', 'RazenStudio\Admin\SocialMediaEngagementAturController@section_6_hapus_satu')->name('razen-studio.admin.social-media-engagement.atur.section-6.hapus.satu');
+    //Home - Section 3 End
 });

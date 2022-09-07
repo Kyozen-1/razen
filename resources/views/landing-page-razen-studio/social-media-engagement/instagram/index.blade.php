@@ -14,7 +14,14 @@
 @endsection
 
 @section('content')
-<section class="flat-title-page back-ground-style">
+@php
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioSocialMediaEngagement;
+
+    $landing_page = LandingpageRazenstudioSocialMediaEngagement::first();
+    $section1 = json_decode($landing_page->section_1, true);
+
+@endphp
+<section class="flat-title-page back-ground-style h-100">
     <div class="container-fluid">
         <div class="row">
             <div class="breadcrumbs text-center link-style-5 text-white">
@@ -22,7 +29,7 @@
                 <p class="mb-5">Solusi untuk meningkatkan interaksi pada akun Instagram.</p>
                 <ul class="breadcrumbs-inner list-center display-flex">
                     <li><a class="section-16px-regular font-weight-500" href="{{ route('home') }}">Home</a></li>
-                    <li><a class="section-16px-regular font-weight-500" href="{{ route('social-media-engagement') }}">Social Media Engagement</a></li>
+                    <li><a class="section-16px-regular font-weight-500" href="{{ route('social-media-engagement') }}">{{$section1['judul']}}</a></li>
                     <li>
                         <h4 class="section-16px-regular font-weight-500 text-white">Instagram - SME Services</h4>
                     </li>
@@ -31,7 +38,8 @@
         </div>
     </div>
 </section>
-<div class="position-relative bg-danger overflow-hidden">
+
+<div class="position-relative overflow-hidden" style="background: #c3323a">
     <div class="container position-relative z-index-2 space-lg-2 space-1 mb-lg-5 mb-2">
         <div class="row justify-content-center mb-3">
             <!-- Video Block -->
