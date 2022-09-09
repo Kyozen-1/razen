@@ -113,9 +113,277 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
     Route::post('/razen-studio/admin/social-media-engagement/atur/section-5/store/hapus/satu', 'RazenStudio\Admin\SocialMediaEngagementAturController@section_5_hapus_satu')->name('razen-studio.admin.social-media-engagement.atur.section-5.hapus.satu');
     //Social Media Engagement - Section 5 End
 
-    //Home - Section 3 Start
+    //Home - Section 6 Start
     Route::post('/razen-studio/admin/social-media-engagement/atur/section-6/store', 'RazenStudio\Admin\SocialMediaEngagementAturController@section_6_store')->name('razen-studio.admin.social-media-engagement.atur.section-6.store');
     Route::post('/razen-studio/admin/social-media-engagement/atur/section-6/edit', 'RazenStudio\Admin\SocialMediaEngagementAturController@section_6_edit')->name('razen-studio.admin.social-media-engagement.atur.section-6.edit');
     Route::post('/razen-studio/admin/social-media-engagement/atur/section-6/store/hapus/satu', 'RazenStudio\Admin\SocialMediaEngagementAturController@section_6_hapus_satu')->name('razen-studio.admin.social-media-engagement.atur.section-6.hapus.satu');
-    //Home - Section 3 End
+    //Home - Section 6 End
+
+    //Social Media Engagement - Instagram
+    Route::get('/razen-studio/admin/social-media-engagement/instagram', 'RazenStudio\Admin\SocialMediaEngagement\InstagramController@index')->name('razen-studio.admin.social-media-engagement.instagram.index');
+
+    //Social Media Engagement - Instagram - Section 1 Start
+    Route::post('/razen-studio/admin/social-media-engagement/instagram/section-1/store', 'RazenStudio\Admin\SocialMediaEngagement\InstagramController@section_1_store')->name('razen-studio.admin.social-media-engagement.instagram.section-1.store');
+    //Social Media Engagement - Instagram - Section 1 End
+
+    //Social Media Engagement - Instagram - Section 2 Start
+    Route::post('/razen-studio/admin/social-media-engagement/instagram/section-2/store', 'RazenStudio\Admin\SocialMediaEngagement\InstagramController@section_2_store')->name('razen-studio.admin.social-media-engagement.instagram.section-2.store');
+    //Social Media Engagement - Instagram - Section 2 End
+
+    //Social Media Engagement - Instagram - Section 3 Start
+    Route::post('/razen-studio/admin/social-media-engagement/instagram/section-3/store', 'RazenStudio\Admin\SocialMediaEngagement\InstagramController@section_3_store')->name('razen-studio.admin.social-media-engagement.instagram.section-3.store');
+    //Social Media Engagement - Instagram - Section 3 End
+
+    //Social Media Engagement - Instagram - Section 4 Start
+    Route::post('/razen-studio/admin/social-media-engagement/instagram/section-4/store', 'RazenStudio\Admin\SocialMediaEngagement\InstagramController@section_4_store')->name('razen-studio.admin.social-media-engagement.instagram.section-4.store');
+    //Social Media Engagement - Instagram - Section 4 End
+
+    //Social Media Engagement - Instagram - Section 5 Start
+    Route::post('/razen-studio/admin/social-media-engagement/instagram/section-5/store', 'RazenStudio\Admin\SocialMediaEngagement\InstagramController@section_5_store')->name('razen-studio.admin.social-media-engagement.instagram.section-5.store');
+    //Social Media Engagement - Instagram - Section 5 End
+
+    //Social Media Engagement - Instagram - Section 6 Start
+    Route::post('/razen-studio/admin/social-media-engagement/instagram/section-6/store', 'RazenStudio\Admin\SocialMediaEngagement\InstagramController@section_6_store')->name('razen-studio.admin.social-media-engagement.instagram.section-6.store');
+    Route::post('/razen-studio/admin/social-media-engagement/instagram/section-6/edit', 'RazenStudio\Admin\SocialMediaEngagement\InstagramController@section_6_edit')->name('razen-studio.admin.social-media-engagement.instagram.section-6.edit');
+    Route::post('/razen-studio/admin/social-media-engagement/instagram/section-6/store/hapus/satu', 'RazenStudio\Admin\SocialMediaEngagement\InstagramController@section_6_hapus_satu')->name('razen-studio.admin.social-media-engagement.instagram.section-6.hapus.satu');
+    //Social Media Engagement - Instagram - Section 6 End
+
+    //Social Media Engagement - Instagram - Section 7 Start
+    Route::post('/razen-studio/admin/social-media-engagement/instagram/section-7/store', 'RazenStudio\Admin\SocialMediaEngagement\InstagramController@section_7_store')->name('razen-studio.admin.social-media-engagement.instagram.section-7.store');
+    //Social Media Engagement - Instagram - Section 7 End
+
+    //Social Media Engagement - Instagram - Section 8 Start
+    Route::post('/razen-studio/admin/social-media-engagement/instagram/section-8/store', 'RazenStudio\Admin\SocialMediaEngagement\InstagramController@section_8_store')->name('razen-studio.admin.social-media-engagement.instagram.section-8.store');
+    //Social Media Engagement - Instagram - Section 8 End
+
+    //Social Media Engagement - TikTok
+    Route::get('/razen-studio/admin/social-media-engagement/tik-tok', 'RazenStudio\Admin\SocialMediaEngagement\TikTokController@index')->name('razen-studio.admin.social-media-engagement.tik-tok.index');
+
+    //Social Media Engagement - TikTok - Section 1 Start
+    Route::post('/razen-studio/admin/social-media-engagement/tik-tok/section-1/store', 'RazenStudio\Admin\SocialMediaEngagement\TikTokController@section_1_store')->name('razen-studio.admin.social-media-engagement.tik-tok.section-1.store');
+    //Social Media Engagement - TikTok - Section 1 End
+
+    //Social Media Engagement - TikTok - Section 2 Start
+    Route::post('/razen-studio/admin/social-media-engagement/tik-tok/section-2/store', 'RazenStudio\Admin\SocialMediaEngagement\TikTokController@section_2_store')->name('razen-studio.admin.social-media-engagement.tik-tok.section-2.store');
+    //Social Media Engagement - TikTok - Section 2 End
+
+    //Social Media Engagement - TikTok - Section 3 Start
+    Route::post('/razen-studio/admin/social-media-engagement/tik-tok/section-3/store', 'RazenStudio\Admin\SocialMediaEngagement\TikTokController@section_3_store')->name('razen-studio.admin.social-media-engagement.tik-tok.section-3.store');
+    //Social Media Engagement - TikTok - Section 3 End
+
+    //Social Media Engagement - TikTok - Section 4 Start
+    Route::post('/razen-studio/admin/social-media-engagement/tik-tok/section-4/store', 'RazenStudio\Admin\SocialMediaEngagement\TikTokController@section_4_store')->name('razen-studio.admin.social-media-engagement.tik-tok.section-4.store');
+    //Social Media Engagement - TikTok - Section 4 End
+
+    //Social Media Engagement - TikTok - Section 5 Start
+    Route::post('/razen-studio/admin/social-media-engagement/tik-tok/section-5/store', 'RazenStudio\Admin\SocialMediaEngagement\TikTokController@section_5_store')->name('razen-studio.admin.social-media-engagement.tik-tok.section-5.store');
+    //Social Media Engagement - TikTok - Section 5 End
+
+    //Social Media Engagement - TikTok - Section 6 Start
+    Route::post('/razen-studio/admin/social-media-engagement/tik-tok/section-6/store', 'RazenStudio\Admin\SocialMediaEngagement\TikTokController@section_6_store')->name('razen-studio.admin.social-media-engagement.tik-tok.section-6.store');
+    Route::post('/razen-studio/admin/social-media-engagement/tik-tok/section-6/edit', 'RazenStudio\Admin\SocialMediaEngagement\TikTokController@section_6_edit')->name('razen-studio.admin.social-media-engagement.tik-tok.section-6.edit');
+    Route::post('/razen-studio/admin/social-media-engagement/tik-tok/section-6/store/hapus/satu', 'RazenStudio\Admin\SocialMediaEngagement\TikTokController@section_6_hapus_satu')->name('razen-studio.admin.social-media-engagement.tik-tok.section-6.hapus.satu');
+    //Social Media Engagement - TikTok - Section 6 End
+
+    //Social Media Engagement - TikTok - Section 7 Start
+    Route::post('/razen-studio/admin/social-media-engagement/tik-tok/section-7/store', 'RazenStudio\Admin\SocialMediaEngagement\TikTokController@section_7_store')->name('razen-studio.admin.social-media-engagement.tik-tok.section-7.store');
+    //Social Media Engagement - TikTok - Section 7 End
+
+    //Social Media Engagement - TikTok - Section 8 Start
+    Route::post('/razen-studio/admin/social-media-engagement/tik-tok/section-8/store', 'RazenStudio\Admin\SocialMediaEngagement\TikTokController@section_8_store')->name('razen-studio.admin.social-media-engagement.tik-tok.section-8.store');
+    //Social Media Engagement - TikTok - Section 8 End
+
+    //Social Media Engagement - Youtube
+    Route::get('/razen-studio/admin/social-media-engagement/youtube', 'RazenStudio\Admin\SocialMediaEngagement\YoutubeController@index')->name('razen-studio.admin.social-media-engagement.youtube.index');
+
+    //Social Media Engagement - Youtube - Section 1 Start
+    Route::post('/razen-studio/admin/social-media-engagement/youtube/section-1/store', 'RazenStudio\Admin\SocialMediaEngagement\YoutubeController@section_1_store')->name('razen-studio.admin.social-media-engagement.youtube.section-1.store');
+    //Social Media Engagement - Youtube - Section 1 End
+
+    //Social Media Engagement - Youtube - Section 2 Start
+    Route::post('/razen-studio/admin/social-media-engagement/youtube/section-2/store', 'RazenStudio\Admin\SocialMediaEngagement\YoutubeController@section_2_store')->name('razen-studio.admin.social-media-engagement.youtube.section-2.store');
+    //Social Media Engagement - Youtube - Section 2 End
+
+    //Social Media Engagement - Youtube - Section 3 Start
+    Route::post('/razen-studio/admin/social-media-engagement/youtube/section-3/store', 'RazenStudio\Admin\SocialMediaEngagement\YoutubeController@section_3_store')->name('razen-studio.admin.social-media-engagement.youtube.section-3.store');
+    //Social Media Engagement - Youtube - Section 3 End
+
+    //Social Media Engagement - Youtube - Section 4 Start
+    Route::post('/razen-studio/admin/social-media-engagement/youtube/section-4/store', 'RazenStudio\Admin\SocialMediaEngagement\YoutubeController@section_4_store')->name('razen-studio.admin.social-media-engagement.youtube.section-4.store');
+    //Social Media Engagement - Youtube - Section 4 End
+
+    //Social Media Engagement - Youtube - Section 5 Start
+    Route::post('/razen-studio/admin/social-media-engagement/youtube/section-5/store', 'RazenStudio\Admin\SocialMediaEngagement\YoutubeController@section_5_store')->name('razen-studio.admin.social-media-engagement.youtube.section-5.store');
+    //Social Media Engagement - Youtube - Section 5 End
+
+    //Social Media Engagement - Youtube - Section 6 Start
+    Route::post('/razen-studio/admin/social-media-engagement/youtube/section-6/store', 'RazenStudio\Admin\SocialMediaEngagement\YoutubeController@section_6_store')->name('razen-studio.admin.social-media-engagement.youtube.section-6.store');
+    Route::post('/razen-studio/admin/social-media-engagement/youtube/section-6/edit', 'RazenStudio\Admin\SocialMediaEngagement\YoutubeController@section_6_edit')->name('razen-studio.admin.social-media-engagement.youtube.section-6.edit');
+    Route::post('/razen-studio/admin/social-media-engagement/youtube/section-6/store/hapus/satu', 'RazenStudio\Admin\SocialMediaEngagement\YoutubeController@section_6_hapus_satu')->name('razen-studio.admin.social-media-engagement.youtube.section-6.hapus.satu');
+    //Social Media Engagement - Youtube - Section 6 End
+
+    //Social Media Engagement - Youtube - Section 7 Start
+    Route::post('/razen-studio/admin/social-media-engagement/youtube/section-7/store', 'RazenStudio\Admin\SocialMediaEngagement\YoutubeController@section_7_store')->name('razen-studio.admin.social-media-engagement.youtube.section-7.store');
+    //Social Media Engagement - Youtube - Section 7 End
+
+    //Social Media Engagement - Youtube - Section 8 Start
+    Route::post('/razen-studio/admin/social-media-engagement/youtube/section-8/store', 'RazenStudio\Admin\SocialMediaEngagement\YoutubeController@section_8_store')->name('razen-studio.admin.social-media-engagement.youtube.section-8.store');
+    //Social Media Engagement - Youtube - Section 8 End
+
+    //Social Media Engagement - Twitter
+    Route::get('/razen-studio/admin/social-media-engagement/twitter', 'RazenStudio\Admin\SocialMediaEngagement\TwitterController@index')->name('razen-studio.admin.social-media-engagement.twitter.index');
+
+    //Social Media Engagement - Twitter - Section 1 Start
+    Route::post('/razen-studio/admin/social-media-engagement/twitter/section-1/store', 'RazenStudio\Admin\SocialMediaEngagement\TwitterController@section_1_store')->name('razen-studio.admin.social-media-engagement.twitter.section-1.store');
+    //Social Media Engagement - Twitter - Section 1 End
+
+    //Social Media Engagement - Twitter - Section 2 Start
+    Route::post('/razen-studio/admin/social-media-engagement/twitter/section-2/store', 'RazenStudio\Admin\SocialMediaEngagement\TwitterController@section_2_store')->name('razen-studio.admin.social-media-engagement.twitter.section-2.store');
+    //Social Media Engagement - Twitter - Section 2 End
+
+    //Social Media Engagement - Twitter - Section 3 Start
+    Route::post('/razen-studio/admin/social-media-engagement/twitter/section-3/store', 'RazenStudio\Admin\SocialMediaEngagement\TwitterController@section_3_store')->name('razen-studio.admin.social-media-engagement.twitter.section-3.store');
+    //Social Media Engagement - Twitter - Section 3 End
+
+    //Social Media Engagement - Twitter - Section 4 Start
+    Route::post('/razen-studio/admin/social-media-engagement/twitter/section-4/store', 'RazenStudio\Admin\SocialMediaEngagement\TwitterController@section_4_store')->name('razen-studio.admin.social-media-engagement.twitter.section-4.store');
+    //Social Media Engagement - Twitter - Section 4 End
+
+    //Social Media Engagement - Twitter - Section 5 Start
+    Route::post('/razen-studio/admin/social-media-engagement/twitter/section-5/store', 'RazenStudio\Admin\SocialMediaEngagement\TwitterController@section_5_store')->name('razen-studio.admin.social-media-engagement.twitter.section-5.store');
+    //Social Media Engagement - Twitter - Section 5 End
+
+    //Social Media Engagement - Twitter - Section 6 Start
+    Route::post('/razen-studio/admin/social-media-engagement/twitter/section-6/store', 'RazenStudio\Admin\SocialMediaEngagement\TwitterController@section_6_store')->name('razen-studio.admin.social-media-engagement.twitter.section-6.store');
+    Route::post('/razen-studio/admin/social-media-engagement/twitter/section-6/edit', 'RazenStudio\Admin\SocialMediaEngagement\TwitterController@section_6_edit')->name('razen-studio.admin.social-media-engagement.twitter.section-6.edit');
+    Route::post('/razen-studio/admin/social-media-engagement/twitter/section-6/store/hapus/satu', 'RazenStudio\Admin\SocialMediaEngagement\TwitterController@section_6_hapus_satu')->name('razen-studio.admin.social-media-engagement.twitter.section-6.hapus.satu');
+    //Social Media Engagement - Twitter - Section 6 End
+
+    //Social Media Engagement - Twitter - Section 7 Start
+    Route::post('/razen-studio/admin/social-media-engagement/twitter/section-7/store', 'RazenStudio\Admin\SocialMediaEngagement\TwitterController@section_7_store')->name('razen-studio.admin.social-media-engagement.twitter.section-7.store');
+    //Social Media Engagement - Twitter - Section 7 End
+
+    //Social Media Engagement - Facebook
+    Route::get('/razen-studio/admin/social-media-engagement/facebook', 'RazenStudio\Admin\SocialMediaEngagement\FacebookController@index')->name('razen-studio.admin.social-media-engagement.facebook.index');
+
+    //Social Media Engagement - Facebook - Section 1 Start
+    Route::post('/razen-studio/admin/social-media-engagement/facebook/section-1/store', 'RazenStudio\Admin\SocialMediaEngagement\FacebookController@section_1_store')->name('razen-studio.admin.social-media-engagement.facebook.section-1.store');
+    //Social Media Engagement - Facebook - Section 1 End
+
+    //Social Media Engagement - Facebook - Section 2 Start
+    Route::post('/razen-studio/admin/social-media-engagement/facebook/section-2/store', 'RazenStudio\Admin\SocialMediaEngagement\FacebookController@section_2_store')->name('razen-studio.admin.social-media-engagement.facebook.section-2.store');
+    //Social Media Engagement - Facebook - Section 2 End
+
+    //Social Media Engagement - Facebook - Section 3 Start
+    Route::post('/razen-studio/admin/social-media-engagement/facebook/section-3/store', 'RazenStudio\Admin\SocialMediaEngagement\FacebookController@section_3_store')->name('razen-studio.admin.social-media-engagement.facebook.section-3.store');
+    //Social Media Engagement - Facebook - Section 3 End
+
+    //Social Media Engagement - Facebook - Section 4 Start
+    Route::post('/razen-studio/admin/social-media-engagement/facebook/section-4/store', 'RazenStudio\Admin\SocialMediaEngagement\FacebookController@section_4_store')->name('razen-studio.admin.social-media-engagement.facebook.section-4.store');
+    //Social Media Engagement - Facebook - Section 4 End
+
+    //Social Media Engagement - Facebook - Section 5 Start
+    Route::post('/razen-studio/admin/social-media-engagement/facebook/section-5/store', 'RazenStudio\Admin\SocialMediaEngagement\FacebookController@section_5_store')->name('razen-studio.admin.social-media-engagement.facebook.section-5.store');
+    Route::post('/razen-studio/admin/social-media-engagement/facebook/section-5/edit', 'RazenStudio\Admin\SocialMediaEngagement\FacebookController@section_5_edit')->name('razen-studio.admin.social-media-engagement.facebook.section-5.edit');
+    Route::post('/razen-studio/admin/social-media-engagement/facebook/section-5/store/hapus/satu', 'RazenStudio\Admin\SocialMediaEngagement\FacebookController@section_5_hapus_satu')->name('razen-studio.admin.social-media-engagement.facebook.section-5.hapus.satu');
+    //Social Media Engagement - Facebook - Section 5 End
+
+    //Social Media Engagement - Facebook - Section 6 Start
+    Route::post('/razen-studio/admin/social-media-engagement/facebook/section-6/store', 'RazenStudio\Admin\SocialMediaEngagement\FacebookController@section_6_store')->name('razen-studio.admin.social-media-engagement.facebook.section-6.store');
+    //Social Media Engagement - Facebook - Section 6 End
+
+    //Social Media Engagement - MarketPlace
+    Route::get('/razen-studio/admin/social-media-engagement/marketplace', 'RazenStudio\Admin\SocialMediaEngagement\MarketPlaceController@index')->name('razen-studio.admin.social-media-engagement.marketplace.index');
+
+    //Social Media Engagement - MarketPlace - Section 1 Start
+    Route::post('/razen-studio/admin/social-media-engagement/marketplace/section-1/store', 'RazenStudio\Admin\SocialMediaEngagement\MarketPlaceController@section_1_store')->name('razen-studio.admin.social-media-engagement.marketplace.section-1.store');
+    //Social Media Engagement - MarketPlace - Section 1 End
+
+    //Social Media Engagement - MarketPlace - Section 2 Start
+    Route::post('/razen-studio/admin/social-media-engagement/marketplace/section-2/store', 'RazenStudio\Admin\SocialMediaEngagement\MarketPlaceController@section_2_store')->name('razen-studio.admin.social-media-engagement.marketplace.section-2.store');
+    //Social Media Engagement - MarketPlace - Section 2 End
+
+    //Social Media Engagement - MarketPlace - Section 3 Start
+    Route::post('/razen-studio/admin/social-media-engagement/marketplace/section-3/store', 'RazenStudio\Admin\SocialMediaEngagement\MarketPlaceController@section_3_store')->name('razen-studio.admin.social-media-engagement.marketplace.section-3.store');
+    //Social Media Engagement - MarketPlace - Section 3 End
+
+    //Social Media Engagement - MarketPlace - Section 4 Start
+    Route::post('/razen-studio/admin/social-media-engagement/marketplace/section-4/store', 'RazenStudio\Admin\SocialMediaEngagement\MarketPlaceController@section_4_store')->name('razen-studio.admin.social-media-engagement.marketplace.section-4.store');
+    //Social Media Engagement - MarketPlace - Section 4 End
+
+    //Social Media Engagement - MarketPlace - Section 5 Start
+    Route::post('/razen-studio/admin/social-media-engagement/marketplace/section-5/store', 'RazenStudio\Admin\SocialMediaEngagement\MarketPlaceController@section_5_store')->name('razen-studio.admin.social-media-engagement.marketplace.section-5.store');
+    //Social Media Engagement - MarketPlace - Section 5 End
+
+    //Social Media Engagement - MarketPlace - Section 6 Start
+    Route::post('/razen-studio/admin/social-media-engagement/marketplace/section-6/store', 'RazenStudio\Admin\SocialMediaEngagement\MarketPlaceController@section_6_store')->name('razen-studio.admin.social-media-engagement.marketplace.section-6.store');
+    //Social Media Engagement - MarketPlace - Section 6 End
+
+    //Social Media Engagement - MarketPlace - Section 7 Start
+    Route::post('/razen-studio/admin/social-media-engagement/marketplace/section-7/store', 'RazenStudio\Admin\SocialMediaEngagement\MarketPlaceController@section_7_store')->name('razen-studio.admin.social-media-engagement.marketplace.section-7.store');
+    Route::post('/razen-studio/admin/social-media-engagement/marketplace/section-7/edit', 'RazenStudio\Admin\SocialMediaEngagement\MarketPlaceController@section_7_edit')->name('razen-studio.admin.social-media-engagement.marketplace.section-7.edit');
+    Route::post('/razen-studio/admin/social-media-engagement/marketplace/section-7/store/hapus/satu', 'RazenStudio\Admin\SocialMediaEngagement\MarketPlaceController@section_7_hapus_satu')->name('razen-studio.admin.social-media-engagement.marketplace.section-7.hapus.satu');
+    //Social Media Engagement - MarketPlace - Section 7 End
+
+    //Social Media Engagement - Google My Business
+    Route::get('/razen-studio/admin/social-media-engagement/google-my-business', 'RazenStudio\Admin\SocialMediaEngagement\GoogleMyBusinessController@index')->name('razen-studio.admin.social-media-engagement.google-my-business.index');
+
+    //Social Media Engagement - Google My Business - Section 1 Start
+    Route::post('/razen-studio/admin/social-media-engagement/google-my-business/section-1/store', 'RazenStudio\Admin\SocialMediaEngagement\GoogleMyBusinessController@section_1_store')->name('razen-studio.admin.social-media-engagement.google-my-business.section-1.store');
+    //Social Media Engagement - Google My Business - Section 1 End
+
+    //Social Media Engagement - Google My Business - Section 2 Start
+    Route::post('/razen-studio/admin/social-media-engagement/google-my-business/section-2/store', 'RazenStudio\Admin\SocialMediaEngagement\GoogleMyBusinessController@section_2_store')->name('razen-studio.admin.social-media-engagement.google-my-business.section-2.store');
+    //Social Media Engagement - Google My Business - Section 2 End
+
+    //Social Media Engagement - Google My Business - Section 3 Start
+    Route::post('/razen-studio/admin/social-media-engagement/google-my-business/section-3/store', 'RazenStudio\Admin\SocialMediaEngagement\GoogleMyBusinessController@section_3_store')->name('razen-studio.admin.social-media-engagement.google-my-business.section-3.store');
+    //Social Media Engagement - Google My Business - Section 3 End
+
+    //Social Media Engagement - Google My Business - Section 4 Start
+    Route::post('/razen-studio/admin/social-media-engagement/google-my-business/section-4/store', 'RazenStudio\Admin\SocialMediaEngagement\GoogleMyBusinessController@section_4_store')->name('razen-studio.admin.social-media-engagement.google-my-business.section-4.store');
+    //Social Media Engagement - Google My Business - Section 4 End
+
+    //Social Media Engagement - Google My Business - Section 5 Start
+    Route::post('/razen-studio/admin/social-media-engagement/google-my-business/section-5/store', 'RazenStudio\Admin\SocialMediaEngagement\GoogleMyBusinessController@section_5_store')->name('razen-studio.admin.social-media-engagement.google-my-business.section-5.store');
+    //Social Media Engagement - Google My Business - Section 5 End
+
+    //Social Media Engagement - Google My Business - Section 6 Start
+    Route::post('/razen-studio/admin/social-media-engagement/google-my-business/section-6/store', 'RazenStudio\Admin\SocialMediaEngagement\GoogleMyBusinessController@section_6_store')->name('razen-studio.admin.social-media-engagement.google-my-business.section-6.store');
+    //Social Media Engagement - Google My Business - Section 6 End
+
+    //Social Media Engagement - Google My Business - Section 7 Start
+    Route::post('/razen-studio/admin/social-media-engagement/google-my-business/section-7/store', 'RazenStudio\Admin\SocialMediaEngagement\GoogleMyBusinessController@section_7_store')->name('razen-studio.admin.social-media-engagement.google-my-business.section-7.store');
+    Route::post('/razen-studio/admin/social-media-engagement/google-my-business/section-7/edit', 'RazenStudio\Admin\SocialMediaEngagement\GoogleMyBusinessController@section_7_edit')->name('razen-studio.admin.social-media-engagement.google-my-business.section-7.edit');
+    Route::post('/razen-studio/admin/social-media-engagement/google-my-business/section-7/store/hapus/satu', 'RazenStudio\Admin\SocialMediaEngagement\GoogleMyBusinessController@section_7_hapus_satu')->name('razen-studio.admin.social-media-engagement.google-my-business.section-7.hapus.satu');
+    //Social Media Engagement - Google My Business - Section 7 End
+
+    //Social Media Engagement - Playstore
+    Route::get('/razen-studio/admin/social-media-engagement/playstore', 'RazenStudio\Admin\SocialMediaEngagement\PlaystoreController@index')->name('razen-studio.admin.social-media-engagement.playstore.index');
+
+    //Social Media Engagement - Playstore - Section 1 Start
+    Route::post('/razen-studio/admin/social-media-engagement/playstore/section-1/store', 'RazenStudio\Admin\SocialMediaEngagement\PlaystoreController@section_1_store')->name('razen-studio.admin.social-media-engagement.playstore.section-1.store');
+    //Social Media Engagement - Playstore - Section 1 End
+
+    //Social Media Engagement - Playstore - Section 2 Start
+    Route::post('/razen-studio/admin/social-media-engagement/playstore/section-2/store', 'RazenStudio\Admin\SocialMediaEngagement\PlaystoreController@section_2_store')->name('razen-studio.admin.social-media-engagement.playstore.section-2.store');
+    //Social Media Engagement - Playstore - Section 2 End
+
+    //Social Media Engagement - Playstore - Section 3 Start
+    Route::post('/razen-studio/admin/social-media-engagement/playstore/section-3/store', 'RazenStudio\Admin\SocialMediaEngagement\PlaystoreController@section_3_store')->name('razen-studio.admin.social-media-engagement.playstore.section-3.store');
+    //Social Media Engagement - Playstore - Section 3 End
+
+    //Social Media Engagement - Playstore - Section 4 Start
+    Route::post('/razen-studio/admin/social-media-engagement/playstore/section-4/store', 'RazenStudio\Admin\SocialMediaEngagement\PlaystoreController@section_4_store')->name('razen-studio.admin.social-media-engagement.playstore.section-4.store');
+    //Social Media Engagement - Playstore - Section 4 End
+
+    //Social Media Engagement - Playstore - Section 5 Start
+    Route::post('/razen-studio/admin/social-media-engagement/playstore/section-5/store', 'RazenStudio\Admin\SocialMediaEngagement\PlaystoreController@section_5_store')->name('razen-studio.admin.social-media-engagement.playstore.section-5.store');
+    //Social Media Engagement - Playstore - Section 5 End
+
+    //Social Media Engagement - Playstore - Section 6 Start
+    Route::post('/razen-studio/admin/social-media-engagement/playstore/section-6/store', 'RazenStudio\Admin\SocialMediaEngagement\PlaystoreController@section_6_store')->name('razen-studio.admin.social-media-engagement.playstore.section-6.store');
+    Route::post('/razen-studio/admin/social-media-engagement/playstore/section-6/edit', 'RazenStudio\Admin\SocialMediaEngagement\PlaystoreController@section_6_edit')->name('razen-studio.admin.social-media-engagement.playstore.section-6.edit');
+    Route::post('/razen-studio/admin/social-media-engagement/playstore/section-6/store/hapus/satu', 'RazenStudio\Admin\SocialMediaEngagement\PlaystoreController@section_6_hapus_satu')->name('razen-studio.admin.social-media-engagement.playstore.section-6.hapus.satu');
+    //Social Media Engagement - Playstore - Section 6 End
 });

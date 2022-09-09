@@ -526,6 +526,5 @@ class SocialMediaEngagementAturController extends Controller
         Alert::success('Berhasil', 'Berhasil Merubah Tampilan Section 6');
         return redirect()->route('razen-studio.admin.social-media-engagement.atur.index');
     }
-
     //Section 6 End
 }

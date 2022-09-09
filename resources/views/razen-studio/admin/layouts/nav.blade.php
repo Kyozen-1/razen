@@ -87,7 +87,15 @@
                     request()->routeIs('razen-studio.admin.landing-page.brand.index') ||
                     request()->routeIs('razen-studio.admin.landing-page.official-partner.index')||
                     request()->routeIs('razen-studio.admin.landing-page.footer.index') ||
-                    request()->routeIs('razen-studio.admin.social-media-engagement.atur.index'))
+                    request()->routeIs('razen-studio.admin.social-media-engagement.atur.index') ||
+                    request()->routeIs('razen-studio.admin.social-media-engagement.instagram.index') ||
+                    request()->routeIs('razen-studio.admin.social-media-engagement.tik-tok.index') ||
+                    request()->routeIs('razen-studio.admin.social-media-engagement.youtube.index') ||
+                    request()->routeIs('razen-studio.admin.social-media-engagement.twitter.index') ||
+                    request()->routeIs('razen-studio.admin.social-media-engagement.facebook.index') ||
+                    request()->routeIs('razen-studio.admin.social-media-engagement.marketplace.index') ||
+                    request()->routeIs('razen-studio.admin.social-media-engagement.google-my-business.index') ||
+                    request()->routeIs('razen-studio.admin.social-media-engagement.playstore.index'))
                     <a href="#landing_page" class="active">
                     @else
                     <a href="#landing_page">
@@ -117,7 +125,15 @@
                             </ul>
                         </li>
                         <li>
-                            @if (request()->routeIs('razen-studio.admin.social-media-engagement.atur.index'))
+                            @if (request()->routeIs('razen-studio.admin.social-media-engagement.atur.index') ||
+                            request()->routeIs('razen-studio.admin.social-media-engagement.instagram.index') ||
+                            request()->routeIs('razen-studio.admin.social-media-engagement.tik-tok.index') ||
+                            request()->routeIs('razen-studio.admin.social-media-engagement.youtube.index') ||
+                            request()->routeIs('razen-studio.admin.social-media-engagement.twitter.index') ||
+                            request()->routeIs('razen-studio.admin.social-media-engagement.facebook.index') ||
+                            request()->routeIs('razen-studio.admin.social-media-engagement.marketplace.index') ||
+                            request()->routeIs('razen-studio.admin.social-media-engagement.google-my-business.index') ||
+                            request()->routeIs('razen-studio.admin.social-media-engagement.playstore.index'))
                                 <a href="#social_media_engagement" class="active">
                             @else
                                 <a href="#social_media_engagement">
@@ -132,6 +148,78 @@
                                         <a href="{{ route('razen-studio.admin.social-media-engagement.atur.index') }}">
                                     @endif
                                         <span class="label">Atur</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.social-media-engagement.instagram.index'))
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.instagram.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.instagram.index') }}">
+                                    @endif
+                                        <span class="label">Instagram</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.social-media-engagement.tik-tok.index'))
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.tik-tok.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.tik-tok.index') }}">
+                                    @endif
+                                        <span class="label">TikTok</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.social-media-engagement.youtube.index'))
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.youtube.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.youtube.index') }}">
+                                    @endif
+                                        <span class="label">Youtube</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.social-media-engagement.twitter.index'))
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.twitter.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.twitter.index') }}">
+                                    @endif
+                                        <span class="label">Twitter</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.social-media-engagement.facebook.index'))
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.facebook.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.facebook.index') }}">
+                                    @endif
+                                        <span class="label">Facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.social-media-engagement.marketplace.index'))
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.marketplace.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.marketplace.index') }}">
+                                    @endif
+                                        <span class="label">Marketplace</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.social-media-engagement.google-my-business.index'))
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.google-my-business.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.google-my-business.index') }}">
+                                    @endif
+                                        <span class="label">Google My Business</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.social-media-engagement.playstore.index'))
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.playstore.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.social-media-engagement.playstore.index') }}">
+                                    @endif
+                                        <span class="label">Playstore</span>
                                     </a>
                                 </li>
                             </ul>

@@ -291,7 +291,7 @@
                         <div class="mb-3 position-relative form-group">
                             <div class="row mb-3">
                                 @foreach ($section6['konten'] as $item)
-                                <div class="col-12 col-md-4">
+                                <div class="col-12 col-md-4 mb-3">
                                     <div class="card h-100 border">
                                         <button class="btn border-0 btn-icon btn_hapus_data_section6" type="button" value="{{$item['id']}}"><span class="badge rounded-pill bg-primary me-1 position-absolute e-3 t-n2 z-index-1">Hapus</span></button>
                                         <div class="card-body">
