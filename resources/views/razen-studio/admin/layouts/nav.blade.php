@@ -95,7 +95,11 @@
                     request()->routeIs('razen-studio.admin.social-media-engagement.facebook.index') ||
                     request()->routeIs('razen-studio.admin.social-media-engagement.marketplace.index') ||
                     request()->routeIs('razen-studio.admin.social-media-engagement.google-my-business.index') ||
-                    request()->routeIs('razen-studio.admin.social-media-engagement.playstore.index'))
+                    request()->routeIs('razen-studio.admin.social-media-engagement.playstore.index') ||
+                    request()->routeIs('razen-studio.admin.video-production.atur.index') ||
+                    request()->routeIs('razen-studio.admin.video-production.video-animasi.index') ||
+                    request()->routeIs('razen-studio.admin.video-production.video-konten-sosmed.index')||
+                    request()->routeIs('razen-studio.admin.video-production.video-company-profile.index'))
                     <a href="#landing_page" class="active">
                     @else
                     <a href="#landing_page">
@@ -220,6 +224,56 @@
                                         <a href="{{ route('razen-studio.admin.social-media-engagement.playstore.index') }}">
                                     @endif
                                         <span class="label">Playstore</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-studio.admin.video-production.atur.index') ||
+                            request()->routeIs('razen-studio.admin.video-production.video-animasi.index') ||
+                            request()->routeIs('razen-studio.admin.video-production.video-konten-sosmed.index') ||
+                            request()->routeIs('razen-studio.admin.video-production.video-company-profile.index'))
+                                <a href="#video_production" class="active">
+                            @else
+                                <a href="#video_production">
+                            @endif
+                                <span class="label">Video Production</span>
+                            </a>
+                            <ul id="video_production">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.video-production.atur.index'))
+                                        <a href="{{ route('razen-studio.admin.video-production.atur.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.video-production.atur.index') }}">
+                                    @endif
+                                        <span class="label">Atur</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.video-production.video-animasi.index'))
+                                        <a href="{{ route('razen-studio.admin.video-production.video-animasi.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.video-production.video-animasi.index') }}">
+                                    @endif
+                                        <span class="label">Video Animasi</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.video-production.video-konten-sosmed.index'))
+                                        <a href="{{ route('razen-studio.admin.video-production.video-konten-sosmed.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.video-production.video-konten-sosmed.index') }}">
+                                    @endif
+                                        <span class="label">Video Konten Sosmed</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.video-production.video-company-profile.index'))
+                                        <a href="{{ route('razen-studio.admin.video-production.video-company-profile.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.video-production.video-company-profile.index') }}">
+                                    @endif
+                                        <span class="label">Video Company Profile</span>
                                     </a>
                                 </li>
                             </ul>

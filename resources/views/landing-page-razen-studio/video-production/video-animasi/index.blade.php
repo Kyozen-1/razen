@@ -1,5 +1,33 @@
+@php
+    use App\Models\RazenStudio\LandingPage\VideoProduction\LandingpageRazenstudioVideoProductionVideoAnimasi;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioBrand;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioHome;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioReview;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioOfficialPartner;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioVideoProduction;
+
+    $video_production = LandingpageRazenstudioVideoProduction::first();
+    $video_production_section_1 = json_decode($video_production->section_1, true);
+    $video_production_section_4 = json_decode($video_production->section_4, true);
+
+    $video_animasi = LandingpageRazenstudioVideoProductionVideoAnimasi::first();
+    $home = LandingpageRazenstudioHome::first();
+
+
+    $video_animasi_section_1 = json_decode($video_animasi->section_1, true);
+    $video_animasi_section_2 = json_decode($video_animasi->section_2, true);
+    $video_animasi_section_3 = json_decode($video_animasi->section_3, true);
+    $video_animasi_section_4 = json_decode($video_animasi->section_4, true);
+    $video_animasi_section_5 = json_decode($video_animasi->section_5, true);
+    $video_animasi_section_6 = json_decode($video_animasi->section_6, true);
+    $video_animasi_section_7 = json_decode($video_animasi->section_7, true);
+
+    $brands= LandingpageRazenstudioBrand::all();
+    $reviews = LandingpageRazenstudioReview::latest()->get();
+    $partners = LandingpageRazenstudioOfficialPartner::all();
+@endphp
 @extends('landing-page-razen-studio.layouts.app')
-@section('title', 'Jasa Tambah Followers, Auto Likes, Views #1 di Instagram - Razen Studio')
+@section('title', $video_animasi_section_1['title'])
 
 @section('css')
 <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
@@ -11,26 +39,29 @@
 <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/slick-carousel/slick/slick.css">
 <link rel="stylesheet" href="https://gosocial.co.id/assets/css/pages/sme/instagram.css?v.1808">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 
 @section('content')
-<section class="flat-title-page back-ground-style">
+<section class="flat-title-page back-ground-style h-100">
     <div class="container-fluid">
         <div class="row">
             <div class="breadcrumbs text-center link-style-5 text-white">
-                <h1 class="section-title-page text-white">Jasa Video Animasi</h1>
-                <p class="mb-5">Jasa Pembuatan Video Animasi Explainer (Motion Graphic) 2D & 3D</p>
+                <h1 class="section-title-page text-white">{{$video_animasi_section_1['judul']}}</h1>
+                <p class="mb-5">{{$video_animasi_section_1['deskripsi']}}</p>
                 <ul class="breadcrumbs-inner list-center display-flex">
                     <li><a class="section-16px-regular font-weight-500" href="{{ route('home') }}">Home</a></li>
-                    <li><a class="section-16px-regular font-weight-500" href="{{ route('video-production') }}">Video Production</a></li>
+                    <li><a class="section-16px-regular font-weight-500" href="{{ route('video-production') }}">{{$video_production_section_1['judul']}}</a></li>
                     <li>
-                        <h4 class="section-16px-regular font-weight-500 text-white">Jasa Video Animasi</h4>
+                        <h4 class="section-16px-regular font-weight-500 text-white">{{$video_animasi_section_1['judul']}}</h4>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
+
 <section class="flat-about-2nd">
     <div class="container">
         <div class="row align-items-center">
@@ -38,22 +69,20 @@
                 <div class="about-content-right wow fadeInUp" data-wow-delay="0ms"
                     data-wow-duration="1500ms">
                     <div class="section-title">
-                        <h4 class="section-subtitle">VIDEO ANIMASI</h4>
-                        <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">Pentingnya Video Animasi Sebagai Sarana Komunikasi</h4>
+                        <h4 class="section-subtitle">{{$video_animasi_section_2['sub_judul']}}</h4>
+                        <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">{{$video_animasi_section_2['judul']}}</h4>
                     </div>
                     <p class="section-17px-regular margin-bottom-25">
-                        Video Animasi dapat digunakan untuk sarana menjelaskan fitur atau keunggulan suatu produk, lebih sering disebut sebagai explainer video.
-                        <br><br>
-                        Memiliki explainer video dengan kualitas terbaik merupakan salah satu branding yang penting dalam bisnis. Dengan menggunakan Jasa Video Animasi yang profesional dan terpercaya terbukti efektif untuk membuat sebuah promosi menjadi lebih menarik dan menyenangkan
+                        {!! $video_animasi_section_2['deskripsi'] !!}
                     </p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="about-content-left wow fadeInLeft">
                     <div class="about-post">
-                        <img src="{{ asset('olux/assets/images/image-box/about-post-mystory.jpg') }}" alt="images">
+                        <img src="{{ asset('images/landingpage_razenstudio/video-production/video-animasi/'.$video_animasi_section_2['gambar']) }}" alt="images">
                         <div class="mark-video">
-                            <a href="https://www.youtube.com/embed/xC4ze0p0b5Y" class="lightbox-image">
+                            <a href="{{$video_animasi_section_2['link']}}" class="lightbox-image">
                                 <div class="icon"></div>
                             </a>
                         </div>
@@ -70,72 +99,27 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h2 class="section-45px-montserrat margin-top-15">How We Work?</h2>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$video_animasi_section_3['judul']}}</h2>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
             </div>
         </div>
         <ul class="step step-md step-centered">
-            <li class="step-item">
-                <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-soft-primary">1</span>
-                    <div class="step-content">
-                        <h3>Brainstorming</h3>
-                        <p>Konsultasi kebutuhan dan biaya dengan tim.</p>
+            @php
+                $i = 1;
+            @endphp
+            @foreach ($video_animasi_section_3['konten'] as $item)
+                <li class="step-item">
+                    <div class="step-content-wrapper">
+                        <span class="step-icon step-icon-soft-primary">{{$i++}}</span>
+                        <div class="step-content">
+                            <h3>{{$item['judul_konten']}}</h3>
+                            <p>{{$item['deskripsi_konten']}}</p>
+                        </div>
                     </div>
-                </div>
-            </li>
-
-            <li class="step-item">
-                <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-soft-primary">2</span>
-                    <div class="step-content">
-                        <h3>Script</h3>
-                        <p>Mulai penulisan naskah / alur cerita animasi.</p>
-                    </div>
-                </div>
-            </li>
-
-            <li class="step-item">
-                <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-soft-primary">3</span>
-                    <div class="step-content">
-                        <h3>Storyboard</h3>
-                        <p>Pembuatan storyboard video animasi full color.</p>
-                    </div>
-                </div>
-            </li>
-
-            <li class="step-item">
-                <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-soft-primary">4</span>
-                    <div class="step-content">
-                        <h3>Voice Over</h3>
-                        <p>Perekaman suara pengisi naskah / voice over.</p>
-                    </div>
-                </div>
-            </li>
-
-            <li class="step-item">
-                <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-soft-primary">5</span>
-                    <div class="step-content">
-                        <h3>Animasi</h3>
-                        <p>Tahap animasi, background musik dan sound effect.</p>
-                    </div>
-                </div>
-            </li>
-
-            <li class="step-item">
-                <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-soft-primary">6</span>
-                    <div class="step-content">
-                        <h3>Final</h3>
-                        <p>Rendering hasil produksi & terima hasil dengan puas.</p>
-                    </div>
-                </div>
-            </li>
+                </li>
+            @endforeach
         </ul>
     </div>
 </section>
@@ -145,8 +129,8 @@
         <div class="row mb-5">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h4 class="section-subtitle">Pilihan Paket</h4>
-                    <h2 class="section-main-title section-45px-montserrat">Harga Jasa Video Animasi</h2>
+                    <h4 class="section-subtitle">{{$video_animasi_section_4['sub_judul']}}</h4>
+                    <h2 class="section-main-title section-45px-montserrat">{{$video_animasi_section_4['judul']}}</h2>
                 </div>
             </div>
         </div>
@@ -428,9 +412,9 @@
         <div class="row mb-5">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h4 class="section-subtitle">OUR LATEST WORK</h4>
-                    <h2 class="section-main-title section-45px-montserrat">Portofolio</h2>
-                    <p class="text-muted">Kami telah membantu berbagai bisnis di lebih dari 34 negara dunia membuat video animasi terbaiknya.</p>
+                    <h4 class="section-subtitle">{{$video_animasi_section_5['sub_judul']}}</h4>
+                    <h2 class="section-main-title section-45px-montserrat">{{$video_animasi_section_5['judul']}}</h2>
+                    <p class="text-muted">{{$video_animasi_section_5['deskripsi']}}</p>
                 </div>
             </div>
         </div>
@@ -442,79 +426,25 @@
         <div class="row mb-5">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h4 class="section-subtitle">Weekly Report</h4>
-                    <h2 class="section-main-title section-45px-montserrat">Tidak perlu khawatir! tim kami akan mengirim laporan update pengerjaan video setiap minggunya.</h2>
+                    <h4 class="section-subtitle">{{$video_animasi_section_6['sub_judul']}}</h4>
+                    <h2 class="section-main-title section-45px-montserrat">{{$video_animasi_section_6['judul']}}</h2>
                 </div>
             </div>
         </div>
         <div class="row">
+            @foreach ($video_animasi_section_6['konten'] as $item)
             <div class="col-md-4 mb-5">
                 <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
                     <div class="icon-box">
                         <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
+                            <img style="height: 5rem; width:5rem; padding: -3rem;" src="{{ asset('images/landingpage_razenstudio/video-production/video-animasi/'.$item['icon_konten']) }}" alt="SVG">
                         </div>
                     </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">Weekly Report</h3>
-                    <p>Tidak perlu khawatir! tim kami akan mengirim laporan update pengerjaan video setiap minggunya.</p>
+                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">{{$item['judul_konten']}}</h3>
+                    <p>{{$item['deskripsi_konten']}}</p>
                 </div>
             </div>
-            <div class="col-md-4 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">Professional Voice Over</h3>
-                    <p>Bekerjasama dengan berbagai voice talent terbaik baik untuk bahasa Indonesia, English, dll.</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">Premium Scriptwriting</h3>
-                    <p>Video yang bagus saja tidak cukup, Layanan sudah termasuk pembuatan naskah cerita / alur yang menarik.</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">Full Color Storyboard</h3>
-                    <p>Pembuatan Storyboard full frame, yang disertai ilustrasi berwarna melalui proses Digital Drawing.</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">Premium Licensed Sound & Music</h3>
-                    <p>Sound effect dan background musik yang digunakan berlisensi resmi dan merupakan sound premium.</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">High-end Motion Techniques</h3>
-                    <p>Video dibuat dengan teknik animasi terbaik menggunakan software After Effect profesional.</p>
-                </div>
-            </div>
-
+            @endforeach
         </div>
     </div>
 </section>
@@ -525,49 +455,26 @@
             <div class="col-md-12">
                 <div class="swiper-container carousel-style-3">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="brand-content">
-                                <img src="{{ asset('olux/assets/images/image-slider/brand-1.png') }}" alt="images">
+                        @foreach ($brands as $brand)
+                            <div class="swiper-slide">
+                                <div class="brand-content">
+                                    <img src="{{ asset('images/landingpage_razenstudio/brand/'.$brand->gambar) }}" alt="images">
+                                </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-content">
-                                <img src="{{ asset('olux/assets/images/image-slider/brand-2.png') }}" alt="images">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-content">
-                                <img src="{{ asset('olux/assets/images/image-slider/brand-3.png') }}" alt="images">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-content">
-                                <img src="{{ asset('olux/assets/images/image-slider/brand-4.png') }}" alt="images">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-content">
-                                <img src="{{ asset('olux/assets/images/image-slider/brand-5.png') }}" alt="images">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-content">
-                                <img src="{{ asset('olux/assets/images/image-slider/brand-6.png') }}" alt="images">
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 <section class="flat-client">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="client-content-box wow fadeInUp">
-                    <h4 class="section-subtitle">TESTIMONIAL</h4>
-                    <h2 class="section-title section-45px-montserrat">Apa Kata Mereka?</h2>
+                    <h4 class="section-title section-45px-montserrat">{{$home->section_7}}</h4>
                     <button class="clone-btn-prev"></button>
                     <button class="clone-btn-next"></button>
                 </div>
@@ -575,80 +482,39 @@
             <div class="col-md-6">
                 <div class="swiper-container sliver-vertical">
                     <div class="swiper-wrapper">
+                        @foreach ($reviews as $review)
                         <div class="swiper-slide">
                             <div class="client-slider-box">
-                                <div class="client-user">
-                                    <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
+                                <div class="client-user text-center">
+                                    <img src="{{ asset('images/landingpage_razenstudio/reviewer/'.$review->gambar) }}"
                                         alt="images">
+                                    <ul class="list-inline small mt-3">
+                                        <li class="list-inline-item mx-0">
+                                            <i class="fas fa-star h4 text-warning"></i>
+                                        </li>
+                                        <li class="list-inline-item mx-0">
+                                            <i class="fas fa-star h4 text-warning"></i>
+                                        </li>
+                                        <li class="list-inline-item mx-0">
+                                            <i class="fas fa-star h4 text-warning"></i>
+                                        </li>
+                                        <li class="list-inline-item mx-0">
+                                            <i class="fas fa-star h4 text-warning"></i>
+                                        </li>
+                                        <li class="list-inline-item mx-0">
+                                            <i class="fas fa-star h4 text-warning"></i>
+                                        </li>
+                                    </ul>
                                 </div>
                                 <div class="client-content">
                                     <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">Glenn Ardi</h4>
-                                        <p class="margin-top-11">"Sejauh ini kami sudah bekerjasama membuat 5 project video dan kerjasama yang dijalin sangat profesional sekali, Good Job!"</p>
+                                        <h4 class="name-author section-20px-montserrat">{{$review->nama}}</h4>
+                                        <p class="margin-top-11">{{$review->ulasan}}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="client-slider-box">
-                                <div class="client-user">
-                                    <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                        alt="images">
-                                </div>
-                                <div class="client-content">
-                                    <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">Olivia Willyost</h4>
-                                        <p class="margin-top-11">"Terimakasih buat GoSocial yang sudah membantu kami membuatkan video Titip Jual OLX Indonesia."</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="client-slider-box">
-                                <div class="client-user">
-                                    <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                        alt="images">
-                                </div>
-                                <div class="client-content">
-                                    <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">Angela Sujadi</h4>
-                                        <p class="margin-top-11">"Kerja sama dengan GoSocial itu komunikasinya gampang. Sehingga apa yang kita mau dan konsep itu nyambung, dan hasilnya maksimal."</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="client-slider-box">
-                                <div class="client-user">
-                                    <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                        alt="images">
-                                </div>
-                                <div class="client-content">
-                                    <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">Brade Hook</h4>
-                                        <p class="margin-top-11">A customer review is a review of a product
-                                            or service made by a customer who has purchased and used, or had
-                                            experience with, the product or service.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="client-slider-box">
-                                <div class="client-user">
-                                    <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                        alt="images">
-                                </div>
-                                <div class="client-content">
-                                    <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">Brade Hook</h4>
-                                        <p class="margin-top-11">A customer review is a review of a product
-                                            or service made by a customer who has purchased and used, or had
-                                            experience with, the product or service.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -661,8 +527,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h4 class="section-subtitle">FAQ</h4>
-                    <h2 class="section-45px-montserrat margin-top-15">Frequently Asked Questions</h2>
+                    <h4 class="section-subtitle">{{$video_animasi_section_7['sub_judul']}}</h4>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$video_animasi_section_7['judul']}}</h2>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
@@ -672,10 +538,11 @@
             <div class="col-12">
                 <div id="basicsAccordion-left">
                     <!-- Card -->
+                    @foreach ($video_animasi_section_7['konten'] as $item)
                     <div class="card shadow-none mb-3">
-                        <div class="card-header card-collapse" id="basicsHeadingOne">
-                            <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="false" aria-controls="basicsCollapseOne">
-                                <span class="font-size-2">Bagaimana video animasi dapat membantu bisnis?</span>
+                        <div class="card-header card-collapse" id="heading{{$item['id']}}">
+                            <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#{{$item['id']}}" aria-expanded="false" aria-controls="{{$item['id']}}">
+                                <span class="font-size-2">{{$item['pertanyaan']}}</span>
 
                                 <span class="card-btn-toggle">
                                     <span class="font-size-2 card-btn-toggle-default">+</span>
@@ -683,113 +550,13 @@
                                 </span>
                             </a>
                         </div>
-                        <div id="basicsCollapseOne" class="collapse" aria-labelledby="basicsHeadingOne" data-parent="#basicsAccordion-left" style="">
+                        <div id="{{$item['id']}}" class="collapse" aria-labelledby="heading{{$item['id']}}" data-parent="#basicsAccordion-left" style="">
                             <div class="card-body px-0 m-3">
-                                <p>Video animasi dapat membantu bisnis anda dalam menjelaskan lebih baik mengenai produk / jasa yang anda sediakan melalui video animasi yang komunikatif dan menarik.</p>
+                                <p>{{$item['pertanyaan']}}</p>
                             </div>
                         </div>
                     </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card shadow-none mb-3">
-                        <div class="card-header card-collapse" id="basicsHeadingTwo">
-                            <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
-                                <span class="font-size-2">Apa jenis video animasi yang dapat dibuat oleh GoSocial?</span>
-
-                                <span class="card-btn-toggle">
-                                    <span class="font-size-2 card-btn-toggle-default">+</span>
-                                    <span class="font-size-2 card-btn-toggle-active">−</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div id="basicsCollapseTwo" class="collapse" aria-labelledby="basicsHeadingTwo" data-parent="#basicsAccordion-left" style="">
-                            <div class="card-body px-0 m-3">
-                                <p>Studio kami diisi oleh tim profesional yang akan selalu berusaha untuk menyediakan keberagaman dalam video animasi yang dibutuhkan oleh pasar, kami memiliki strategi khusus untuk menghasilkan banyak jenis video yang dibutuhkan sesuai dengan kebutuhan, dapat dipastikan bahwa kami ahli dalam bidangnya untuk pembuatan video animasi 2D maupun 3D dari motion graphic maupun whiteboard.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card shadow-none mb-3">
-                        <div class="card-header card-collapse" id="basicsHeadingThree">
-                            <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
-                                <span class="font-size-2">Berapa lama proses pembuatan video?</span>
-
-                                <span class="card-btn-toggle">
-                                    <span class="font-size-2 card-btn-toggle-default">+</span>
-                                    <span class="font-size-2 card-btn-toggle-active">−</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div id="basicsCollapseThree" class="collapse" aria-labelledby="basicsHeadingThree" data-parent="#basicsAccordion-left" style="">
-                            <div class="card-body px-0 m-3">
-                                <p>Untuk 30 - 60 detik dapat kami kerjakan selama 3 minggu sampai 1 bulan, dan untuk video yang berdurasi diatas 60 detik dan memerlukan animasi yang lebih kompleks maka kami memerlukan kolaborasi tambahan dengan tim dan memerlukan waktu yang lebih panjang dan dapat disesuaikan dengan kebutuhan anda.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card shadow-none mb-3">
-                        <div class="card-header card-collapse" id="basicsHeadingFour">
-                            <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
-                                <span class="font-size-2">Apakah dapat memilih voice over dalam video?</span>
-
-                                <span class="card-btn-toggle">
-                                    <span class="font-size-2 card-btn-toggle-default">+</span>
-                                    <span class="font-size-2 card-btn-toggle-active">−</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour" data-parent="#basicsAccordion-left" style="">
-                            <div class="card-body px-0 m-3">
-                                <p>Ya, anda dapat memilih voice over Pria atau Wanita sesuai dengan kebutuhan dan produk/jasa yang disediakan.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card shadow-none mb-3">
-                        <div class="card-header card-collapse" id="basicsHeadingFive">
-                            <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseFive" aria-expanded="false" aria-controls="basicsCollapseFive">
-                                <span class="font-size-2">Apakah ada revisi?</span>
-
-                                <span class="card-btn-toggle">
-                                    <span class="font-size-2 card-btn-toggle-default">+</span>
-                                    <span class="font-size-2 card-btn-toggle-active">−</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div id="basicsCollapseFive" class="collapse" aria-labelledby="basicsHeadingFive" data-parent="#basicsAccordion-left" style="">
-                            <div class="card-body px-0 m-3">
-                                <p>Ya kami menyediakan revisi untuk semua paket yang kami sediakan, untuk memastikan bahwa video yang kami produksi sesuai dengan kebutuhan dan berkualitas.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card shadow-none mb-3">
-                        <div class="card-header card-collapse" id="basicsHeadingSix">
-                            <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseSix" aria-expanded="false" aria-controls="basicsCollapseSix">
-                                <span class="font-size-2">Apa saja yang akan didapatkan?</span>
-
-                                <span class="card-btn-toggle">
-                                    <span class="font-size-2 card-btn-toggle-default">+</span>
-                                    <span class="font-size-2 card-btn-toggle-active">−</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div id="basicsCollapseSix" class="collapse" aria-labelledby="basicsHeadingSix" data-parent="#basicsAccordion-left" style="">
-                            <div class="card-body px-0 m-3">
-                                <p>Video akan berdurasi 30-60 detik (atau lebih ) sesuai dengan paket yang anda pilih dan video akan memiliki Full HD Resolution 1920 x 1080 dengan keseluruhan hak milik video sehingga anda dapat menggunakan video di media mana saja yang anda perlukan.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card -->
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -805,104 +572,51 @@
                     <h2 class="section-main-title section-45px-montserrat">Pilihan Jenis Video</h2>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="latest-new-box grow-up-hover wow fadeInUp" data-wow-delay="0ms"
-                    data-wow-duration="1500ms">
-                    <div class="about-post">
-                        <img src="{{ asset('olux/assets/images/image-box/about-post-mystory.jpg') }}" alt="images">
-                        <div class="mark-video">
-                            <a href="https://www.youtube.com/embed/xC4ze0p0b5Y" class="lightbox-image">
-                                <div class="icon"></div>
-                            </a>
-                        </div>
-                        <div class="mark-about-post"></div>
-                    </div>
-                    <div class="latest-content">
-                        <div class="latest-title margin-bottom-20"><a href="{{ route('video-production.video-animasi') }}"
-                                class="section-20px-montserrat">Video Animasi</a>
-                                <p>Pembuatan video animasi explainer 2D (motion graphic) yang dapat digunakan media company profile maupun promosi.</p>
-                        </div>
-                        <div class="latest-readmore"><a href="{{ route('video-production.video-animasi') }}" class="read-more"></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="latest-new-box grow-up-hover wow fadeInUp" data-wow-delay="600ms"
-                    data-wow-duration="1500ms">
-                    <div class="about-post">
-                        <img src="{{ asset('olux/assets/images/image-box/about-post-mystory.jpg') }}" alt="images">
-                        <div class="mark-video">
-                            <a href="https://www.youtube.com/embed/xC4ze0p0b5Y" class="lightbox-image">
-                                <div class="icon"></div>
-                            </a>
-                        </div>
-                        <div class="mark-about-post"></div>
-                    </div>
-                    <div class="latest-content">
-                        <div class="latest-title margin-bottom-20"><a href="{{ route('video-production.video-konten-sosmed') }}"
-                                class="section-20px-montserrat">Video Konten Sosmed</a>
-                                <p>Pembuatan video untuk konten posting maupun promosi di social media seperti Youtube, TikTok, maupun Instagram.</p>
+            @foreach ($video_production_section_4 as $item)
+                <div class="col-md-4">
+                    <div class="latest-new-box grow-up-hover wow fadeInUp" data-wow-delay="0ms"
+                        data-wow-duration="1500ms">
+                        <div class="about-post">
+                            <img src="{{ asset('images/landingpage_razenstudio/video-production/'.$item['gambar']) }}" alt="images">
+                            <div class="mark-video">
+                                <a href="{{$item['link_youtube']}}" class="lightbox-image">
+                                    <div class="icon"></div>
+                                </a>
                             </div>
-                        <div class="latest-readmore"><a href="{{ route('video-production.video-konten-sosmed') }}" class="read-more"></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="latest-new-box grow-up-hover wow fadeInUp" data-wow-delay="600ms"
-                    data-wow-duration="1500ms">
-                    <div class="about-post">
-                        <img src="{{ asset('olux/assets/images/image-box/about-post-mystory.jpg') }}" alt="images">
-                        <div class="mark-video">
-                            <a href="https://www.youtube.com/embed/xC4ze0p0b5Y" class="lightbox-image">
-                                <div class="icon"></div>
-                            </a>
+                            <div class="mark-about-post"></div>
                         </div>
-                        <div class="mark-about-post"></div>
-                    </div>
-                    <div class="latest-content">
-                        <div class="latest-title margin-bottom-20"><a href="{{ route('video-production.video-company-profile') }}"
-                                class="section-20px-montserrat">Video Company Profile</a>
-                                <p>Pembuatan video company profile untuk meningkatkan image perusahaan yang mendukung promosi bisnis.</p>
+                        <div class="latest-content">
+                            <div class="latest-title margin-bottom-20"><a href="{{ route($item['link_page']) }}"
+                                    class="section-20px-montserrat">{{$item['judul']}}</a>
+                                    <p>{{$item['deskripsi']}}</p>
                             </div>
-                        <div class="latest-readmore"><a href="{{ route('video-production.video-company-profile') }}" class="read-more"></a></div>
+                            <div class="latest-readmore"><a href="{{ route($item['link_page']) }}" class="read-more"></a></div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
 
 <section class="flat-services">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title wow fadeInDown">
-                    <p class="text-muted">Official Partners:</p>
-                </div>
-                <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
-                    style="height:60px"></div>
+    <div class="container space-1">
+        <div class="w-lg-75 mt-3 mx-lg-auto">
+            <div class="text-center mb-4">
+                <span class="divider divider-text h3">Official Partners:</span>
             </div>
-            <div class="col-md-12 justify-content-center text-center">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-3 col-4">
-                        <div class="mx-3 client-image">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC NISP">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC">
-                        </div>
-                    </div>
 
-                    <div class="col-lg-3 col-4">
-                        <a class="mx-3 client-image" href="https://www.bhinneka.com/toko-gosocial-indonesia" target="_blank">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Parnter Bhinneka.com" style="">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Partner Bhinneka">
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-4">
-                        <div class="mx-3 client-image">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                        </div>
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-lg-8 col-12">
+                    <div class="row d-flex justify-content-center">
+                        @foreach ($partners as $partner)
+                            <div class="col-lg-3 col-4">
+                                <div class="mx-3 client-image">
+                                    <img class="client-default" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC NISP">
+                                    <img class="client-hover" style="display: none;" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC">
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -926,4 +640,6 @@
 <script src="https://gosocial.co.id/assets/vendor/hs-toggle-switch/dist/hs-toggle-switch.min.js"></script>
 <script src="https://gosocial.co.id/assets/vendor/hs-switch/dist/hs-switch-text.min.js"></script>
 <script src="https://gosocial.co.id/assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/fontawesome.min.js" integrity="sha512-j3gF1rYV2kvAKJ0Jo5CdgLgSYS7QYmBVVUjduXdoeBkc4NFV4aSRTi+Rodkiy9ht7ZYEwF+s09S43Z1Y+ujUkA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @endsection

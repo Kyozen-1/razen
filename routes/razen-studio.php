@@ -386,4 +386,118 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
     Route::post('/razen-studio/admin/social-media-engagement/playstore/section-6/edit', 'RazenStudio\Admin\SocialMediaEngagement\PlaystoreController@section_6_edit')->name('razen-studio.admin.social-media-engagement.playstore.section-6.edit');
     Route::post('/razen-studio/admin/social-media-engagement/playstore/section-6/store/hapus/satu', 'RazenStudio\Admin\SocialMediaEngagement\PlaystoreController@section_6_hapus_satu')->name('razen-studio.admin.social-media-engagement.playstore.section-6.hapus.satu');
     //Social Media Engagement - Playstore - Section 6 End
+
+    //Video Production
+    Route::get('/razen-studio/admin/video-production/atur', 'RazenStudio\Admin\VideoProductionController@index')->name('razen-studio.admin.video-production.atur.index');
+
+    //Video Production - Section 1
+    Route::post('/razen-studio/admin/video-production/atur/section-1', 'RazenStudio\Admin\VideoProductionController@section_1_store')->name('razen-studio.admin.video-production.atur.section_1_store');
+
+    //Video Production - Section 2
+    Route::post('/razen-studio/admin/video-production/atur/section-2', 'RazenStudio\Admin\VideoProductionController@section_2_store')->name('razen-studio.admin.video-production.atur.section_2_store');
+
+    //Video Production - Section 3 Start
+    Route::post('/razen-studio/admin/video-production/atur/section-3/store', 'RazenStudio\Admin\VideoProductionController@section_3_store')->name('razen-studio.admin.video-production.atur.section-3.store');
+    Route::post('/razen-studio/admin/video-production/atur/section-3/edit', 'RazenStudio\Admin\VideoProductionController@section_3_edit')->name('razen-studio.admin.video-production.atur.section-3.edit');
+    Route::post('/razen-studio/admin/video-production/atur/section-3/store/hapus/satu', 'RazenStudio\Admin\VideoProductionController@section_3_hapus_satu')->name('razen-studio.admin.video-production.atur.section-3.hapus.satu');
+
+    //Video Production - Section 4 Start
+    Route::post('/razen-studio/admin/video-production/atur/section-4/store', 'RazenStudio\Admin\VideoProductionController@section_4_store')->name('razen-studio.admin.video-production.atur.section-4.store');
+    Route::post('/razen-studio/admin/video-production/atur/section-4/edit', 'RazenStudio\Admin\VideoProductionController@section_4_edit')->name('razen-studio.admin.video-production.atur.section-4.edit');
+    Route::post('/razen-studio/admin/video-production/atur/section-4/store/hapus/satu', 'RazenStudio\Admin\VideoProductionController@section_4_hapus_satu')->name('razen-studio.admin.video-production.atur.section-4.hapus.satu');
+
+    //Video Production - Video Animasi
+    Route::get('/razen-studio/admin/video-production/video-animasi', 'RazenStudio\Admin\VideoProduction\VideoAnimasiController@index')->name('razen-studio.admin.video-production.video-animasi.index');
+
+    //Video Production - Video Animasi - Section 1
+    Route::post('/razen-studio/admin/video-production/video-animasi/section-1', 'RazenStudio\Admin\VideoProduction\VideoAnimasiController@section_1_store')->name('razen-studio.admin.video-production.video-animasi.section_1_store');
+
+    //Video Production - Video Animasi - Section 2
+    Route::post('/razen-studio/admin/video-production/video-animasi/section-2', 'RazenStudio\Admin\VideoProduction\VideoAnimasiController@section_2_store')->name('razen-studio.admin.video-production.video-animasi.section_2_store');
+
+    //Video Production - Video Animasi - Section 3
+    Route::post('/razen-studio/admin/video-production/video-animasi/section-3/store', 'RazenStudio\Admin\VideoProduction\VideoAnimasiController@section_3_store')->name('razen-studio.admin.video-production.video-animasi.section-3.store');
+    Route::post('/razen-studio/admin/video-production/video-animasi/section-3/edit', 'RazenStudio\Admin\VideoProduction\VideoAnimasiController@section_3_edit')->name('razen-studio.admin.video-production.video-animasi.section-3.edit');
+    Route::post('/razen-studio/admin/video-production/video-animasi/section-3/store/hapus/satu', 'RazenStudio\Admin\VideoProduction\VideoAnimasiController@section_3_hapus_satu')->name('razen-studio.admin.video-production.video-animasi.section-3.hapus.satu');
+
+    //Video Production - Video Animasi - Section 4
+    Route::post('/razen-studio/admin/video-production/video-animasi/section-4', 'RazenStudio\Admin\VideoProduction\VideoAnimasiController@section_4_store')->name('razen-studio.admin.video-production.video-animasi.section_4_store');
+
+    //Video Production - Video Animasi - Section 5
+    Route::post('/razen-studio/admin/video-production/video-animasi/section-5', 'RazenStudio\Admin\VideoProduction\VideoAnimasiController@section_5_store')->name('razen-studio.admin.video-production.video-animasi.section_5_store');
+
+    //Video Production - Video Animasi - Section 6
+    Route::post('/razen-studio/admin/video-production/video-animasi/section-6/store', 'RazenStudio\Admin\VideoProduction\VideoAnimasiController@section_6_store')->name('razen-studio.admin.video-production.video-animasi.section-6.store');
+    Route::post('/razen-studio/admin/video-production/video-animasi/section-6/edit', 'RazenStudio\Admin\VideoProduction\VideoAnimasiController@section_6_edit')->name('razen-studio.admin.video-production.video-animasi.section-6.edit');
+    Route::post('/razen-studio/admin/video-production/video-animasi/section-6/store/hapus/satu', 'RazenStudio\Admin\VideoProduction\VideoAnimasiController@section_6_hapus_satu')->name('razen-studio.admin.video-production.video-animasi.section-6.hapus.satu');
+
+    //Video Production - Video Animasi - Section 7
+    Route::post('/razen-studio/admin/video-production/video-animasi/section-7/store', 'RazenStudio\Admin\VideoProduction\VideoAnimasiController@section_7_store')->name('razen-studio.admin.video-production.video-animasi.section-7.store');
+    Route::post('/razen-studio/admin/video-production/video-animasi/section-7/edit', 'RazenStudio\Admin\VideoProduction\VideoAnimasiController@section_7_edit')->name('razen-studio.admin.video-production.video-animasi.section-7.edit');
+    Route::post('/razen-studio/admin/video-production/video-animasi/section-7/store/hapus/satu', 'RazenStudio\Admin\VideoProduction\VideoAnimasiController@section_7_hapus_satu')->name('razen-studio.admin.video-production.video-animasi.section-7.hapus.satu');
+
+    //Video Production - Video Konten Sosmed
+    Route::get('/razen-studio/admin/video-production/video-konten-sosmed', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@index')->name('razen-studio.admin.video-production.video-konten-sosmed.index');
+
+    //Video Production - Video Konten Sosmed - Section 1
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-1', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_1_store')->name('razen-studio.admin.video-production.video-konten-sosmed.section_1_store');
+
+    //Video Production - Video Konten Sosmed - Section 2
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-2', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_2_store')->name('razen-studio.admin.video-production.video-konten-sosmed.section_2_store');
+
+    //Video Production - Video Konten Sosmed - Section 3
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-3', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_3_store')->name('razen-studio.admin.video-production.video-konten-sosmed.section_3_store');
+
+    //Video Production - Video Konten Sosmed - Section 4
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-4/store', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_4_store')->name('razen-studio.admin.video-production.video-konten-sosmed.section-4.store');
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-4/edit', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_4_edit')->name('razen-studio.admin.video-production.video-konten-sosmed.section-4.edit');
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-4/store/hapus/satu', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_4_hapus_satu')->name('razen-studio.admin.video-production.video-konten-sosmed.section-4.hapus.satu');
+
+    //Video Production - Video Konten Sosmed - Section 5
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-5/store', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_5_store')->name('razen-studio.admin.video-production.video-konten-sosmed.section-5.store');
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-5/item-1/store', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_5_item_1_store')->name('razen-studio.admin.video-production.video-konten-sosmed.section-5.item-1.store');
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-5/item-2/store', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_5_item_2_store')->name('razen-studio.admin.video-production.video-konten-sosmed.section-5.item-2.store');
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-5/item-3/store', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_5_item_3_store')->name('razen-studio.admin.video-production.video-konten-sosmed.section-5.item-3.store');
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-5/item-4/store', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_5_item_4_store')->name('razen-studio.admin.video-production.video-konten-sosmed.section-5.item-4.store');
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-5/item-5/store', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_5_item_5_store')->name('razen-studio.admin.video-production.video-konten-sosmed.section-5.item-5.store');
+
+    //Video Production - Video Konten Sosmed - Section 6
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-6/store', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_6_store')->name('razen-studio.admin.video-production.video-konten-sosmed.section-6.store');
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-6/edit', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_6_edit')->name('razen-studio.admin.video-production.video-konten-sosmed.section-6.edit');
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-6/store/hapus/satu', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_6_hapus_satu')->name('razen-studio.admin.video-production.video-konten-sosmed.section-6.hapus.satu');
+
+    //Video Production - Video Konten Sosmed - Section 7
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-7/store', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_7_store')->name('razen-studio.admin.video-production.video-konten-sosmed.section-7.store');
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-7/edit', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_7_edit')->name('razen-studio.admin.video-production.video-konten-sosmed.section-7.edit');
+    Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-7/store/hapus/satu', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_7_hapus_satu')->name('razen-studio.admin.video-production.video-konten-sosmed.section-7.hapus.satu');
+
+    //Video Production - Video Company Profile
+    Route::get('/razen-studio/admin/video-production/video-company-profile', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@index')->name('razen-studio.admin.video-production.video-company-profile.index');
+
+    //Video Production - Video Company Profile - Section 1
+    Route::post('/razen-studio/admin/video-production/video-company-profile/section-1', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_1_store')->name('razen-studio.admin.video-production.video-company-profile.section_1_store');
+
+    //Video Production - Video Company Profile - Section 2
+    Route::post('/razen-studio/admin/video-production/video-company-profile/section-2', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_2_store')->name('razen-studio.admin.video-production.video-company-profile.section_2_store');
+
+    //Video Production - Video Company Profile - Section 3
+    Route::post('/razen-studio/admin/video-production/video-company-profile/section-3/store', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_3_store')->name('razen-studio.admin.video-production.video-company-profile.section-3.store');
+    Route::post('/razen-studio/admin/video-production/video-company-profile/section-3/edit', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_3_edit')->name('razen-studio.admin.video-production.video-company-profile.section-3.edit');
+    Route::post('/razen-studio/admin/video-production/video-company-profile/section-3/store/hapus/satu', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_3_hapus_satu')->name('razen-studio.admin.video-production.video-company-profile.section-3.hapus.satu');
+
+    //Video Production - Video Company Profile - Section 4
+    Route::post('/razen-studio/admin/video-production/video-company-profile/section-4/store', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_4_store')->name('razen-studio.admin.video-production.video-company-profile.section-4.store');
+    Route::post('/razen-studio/admin/video-production/video-company-profile/section-4/item-1/store', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_4_item_1_store')->name('razen-studio.admin.video-production.video-company-profile.section-4.item-1.store');
+    Route::post('/razen-studio/admin/video-production/video-company-profile/section-4/item-2/store', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_4_item_2_store')->name('razen-studio.admin.video-production.video-company-profile.section-4.item-2.store');
+    Route::post('/razen-studio/admin/video-production/video-company-profile/section-4/item-3/store', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_4_item_3_store')->name('razen-studio.admin.video-production.video-company-profile.section-4.item-3.store');
+    Route::post('/razen-studio/admin/video-production/video-company-profile/section-4/item-4/store', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_4_item_4_store')->name('razen-studio.admin.video-production.video-company-profile.section-4.item-4.store');
+    Route::post('/razen-studio/admin/video-production/video-company-profile/section-4/item-5/store', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_4_item_5_store')->name('razen-studio.admin.video-production.video-company-profile.section-4.item-5.store');
+
+    //Video Production - Video Company Profile - Section 5
+    Route::post('/razen-studio/admin/video-production/video-company-profile/section-5', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_5_store')->name('razen-studio.admin.video-production.video-company-profile.section_5_store');
+
+    //Video Production - Video Company Profile - Section 6
+    Route::post('/razen-studio/admin/video-production/video-company-profile/section-6/store', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_6_store')->name('razen-studio.admin.video-production.video-company-profile.section-6.store');
+    Route::post('/razen-studio/admin/video-production/video-company-profile/section-6/edit', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_6_edit')->name('razen-studio.admin.video-production.video-company-profile.section-6.edit');
+    Route::post('/razen-studio/admin/video-production/video-company-profile/section-6/store/hapus/satu', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_6_hapus_satu')->name('razen-studio.admin.video-production.video-company-profile.section-6.hapus.satu');
 });
