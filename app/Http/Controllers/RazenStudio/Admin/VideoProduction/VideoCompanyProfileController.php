@@ -237,7 +237,7 @@ class VideoCompanyProfileController extends Controller
 
             $data = [
                 'judul' => $request->judul,
-                'deskripsi' => $request->deskripsi,
+                'sub_judul' => $request->sub_judul,
                 'konten' => array_merge($array_lama, $array_baru)
             ];
         } else {
@@ -253,6 +253,7 @@ class VideoCompanyProfileController extends Controller
 
             $data = [
                 'judul' => $request->judul,
+                'sub_judul' => $request->sub_judul,
                 'konten' => $array_lama
             ];
         }

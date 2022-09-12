@@ -500,4 +500,51 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
     Route::post('/razen-studio/admin/video-production/video-company-profile/section-6/store', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_6_store')->name('razen-studio.admin.video-production.video-company-profile.section-6.store');
     Route::post('/razen-studio/admin/video-production/video-company-profile/section-6/edit', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_6_edit')->name('razen-studio.admin.video-production.video-company-profile.section-6.edit');
     Route::post('/razen-studio/admin/video-production/video-company-profile/section-6/store/hapus/satu', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_6_hapus_satu')->name('razen-studio.admin.video-production.video-company-profile.section-6.hapus.satu');
+
+    //Commercial Photography
+    Route::get('/razen-studio/admin/commercial-photography/atur', 'RazenStudio\Admin\CommercialPhotography\AturController@index')->name('razen-studio.admin.commercial-photography.atur.index');
+
+    Route::post('/razen-studio/admin/commercial-photography/section-1/store', 'RazenStudio\Admin\CommercialPhotography\AturController@section_1_store')->name('razen-studio.admin.commercial-photography.atur.section-1.store');
+
+    Route::post('/razen-studio/admin/commercial-photography/section-2/store', 'RazenStudio\Admin\CommercialPhotography\AturController@section_2_store')->name('razen-studio.admin.commercial-photography.atur.section-2.store');
+
+    //Commercial Photography - Section 3 Start
+    Route::post('/razen-studio/admin/commercial-photography/section-3/store', 'RazenStudio\Admin\CommercialPhotography\AturController@section_3_store')->name('razen-studio.admin.commercial-photography.atur.section-3.store');
+    Route::post('/razen-studio/admin/commercial-photography/section-3/edit', 'RazenStudio\Admin\CommercialPhotography\AturController@section_3_edit')->name('razen-studio.admin.commercial-photography.atur.section-3.edit');
+    Route::post('/razen-studio/admin/commercial-photography/section-3/store/hapus/satu', 'RazenStudio\Admin\CommercialPhotography\AturController@section_3_hapus_satu')->name('razen-studio.admin.commercial-photography.atur.section-3.hapus.satu');
+
+    //Commercial Photography - Section 4 Start
+    Route::post('/razen-studio/admin/commercial-photography/section-4/store', 'RazenStudio\Admin\CommercialPhotography\AturController@section_4_store')->name('razen-studio.admin.commercial-photography.atur.section-4.store');
+    Route::post('/razen-studio/admin/commercial-photography/section-4/edit', 'RazenStudio\Admin\CommercialPhotography\AturController@section_4_edit')->name('razen-studio.admin.commercial-photography.atur.section-4.edit');
+    Route::post('/razen-studio/admin/commercial-photography/section-4/store/hapus/satu', 'RazenStudio\Admin\CommercialPhotography\AturController@section_4_hapus_satu')->name('razen-studio.admin.commercial-photography.atur.section-4.hapus.satu');
+
+    Route::post('/razen-studio/admin/commercial-photography/section-5/store', 'RazenStudio\Admin\CommercialPhotography\AturController@section_5_store')->name('razen-studio.admin.commercial-photography.atur.section-5.store');
+
+    //Commercial Photography - Section 6 Start
+    Route::post('/razen-studio/admin/commercial-photography/section-6/store', 'RazenStudio\Admin\CommercialPhotography\AturController@section_6_store')->name('razen-studio.admin.commercial-photography.atur.section-6.store');
+    Route::post('/razen-studio/admin/commercial-photography/section-6/item/store', 'RazenStudio\Admin\CommercialPhotography\AturController@section_6_item_store')->name('razen-studio.admin.commercial-photography.atur.section-6.item.store');
+    Route::post('/razen-studio/admin/commercial-photography/section-6/item/hapus', 'RazenStudio\Admin\CommercialPhotography\AturController@section_6_item_hapus')->name('razen-studio.admin.commercial-photography.atur.section-6.item.hapus');
+
+    //Commercial Photography - Section 7
+    Route::post('/razen-studio/admin/commercial-photography/section-7/store', 'RazenStudio\Admin\CommercialPhotography\AturController@section_7_store')->name('razen-studio.admin.commercial-photography.atur.section-7.store');
+    Route::post('/razen-studio/admin/commercial-photography/section-7/edit', 'RazenStudio\Admin\CommercialPhotography\AturController@section_7_edit')->name('razen-studio.admin.commercial-photography.atur.section-7.edit');
+    Route::post('/razen-studio/admin/commercial-photography/section-7/store/hapus/satu', 'RazenStudio\Admin\CommercialPhotography\AturController@section_7_hapus_satu')->name('razen-studio.admin.commercial-photography.atur.section-7.hapus.satu');
+
+    //Commercial Photography - Section 8
+    Route::post('/razen-studio/admin/commercial-photography/section-8/store', 'RazenStudio\Admin\CommercialPhotography\AturController@section_8_store')->name('razen-studio.admin.commercial-photography.atur.section-8.store');
+    Route::post('/razen-studio/admin/commercial-photography/section-8/edit', 'RazenStudio\Admin\CommercialPhotography\AturController@section_8_edit')->name('razen-studio.admin.commercial-photography.atur.section-8.edit');
+    Route::post('/razen-studio/admin/commercial-photography/section-8/store/hapus/satu', 'RazenStudio\Admin\CommercialPhotography\AturController@section_8_hapus_satu')->name('razen-studio.admin.commercial-photography.atur.section-8.hapus.satu');
+
+    //Commercial Photography - Section 9
+    Route::post('/razen-studio/admin/commercial-photography/section-9/store', 'RazenStudio\Admin\CommercialPhotography\AturController@section_9_store')->name('razen-studio.admin.commercial-photography.atur.section-9.store');
+    Route::post('/razen-studio/admin/commercial-photography/section-9/item-1/store', 'RazenStudio\Admin\CommercialPhotography\AturController@section_9_item_1_store')->name('razen-studio.admin.commercial-photography.atur.section-9.item-1.store');
+    Route::post('/razen-studio/admin/commercial-photography/section-9/item-2/store', 'RazenStudio\Admin\CommercialPhotography\AturController@section_9_item_2_store')->name('razen-studio.admin.commercial-photography.atur.section-9.item-2.store');
+    Route::post('/razen-studio/admin/commercial-photography/section-9/item-3/store', 'RazenStudio\Admin\CommercialPhotography\AturController@section_9_item_3_store')->name('razen-studio.admin.commercial-photography.atur.section-9.item-3.store');
+
+    Route::post('/razen-studio/admin/commercial-photography/section-10/store', 'RazenStudio\Admin\CommercialPhotography\AturController@section_10_store')->name('razen-studio.admin.commercial-photography.atur.section-10.store');
+
+    //Commercial Photography - Section 11
+    Route::post('/razen-studio/admin/commercial-photography/section-11/store', 'RazenStudio\Admin\CommercialPhotography\AturController@section_11_store')->name('razen-studio.admin.commercial-photography.atur.section-11.store');
+    Route::post('/razen-studio/admin/commercial-photography/section-11/edit', 'RazenStudio\Admin\CommercialPhotography\AturController@section_11_edit')->name('razen-studio.admin.commercial-photography.atur.section-11.edit');
+    Route::post('/razen-studio/admin/commercial-photography/section-11/store/hapus/satu', 'RazenStudio\Admin\CommercialPhotography\AturController@section_11_hapus_satu')->name('razen-studio.admin.commercial-photography.atur.section-11.hapus.satu');
 });

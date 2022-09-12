@@ -328,6 +328,7 @@ class VideoProductionController extends Controller
                     'deskripsi' => $value['deskripsi'],
                     'link_page' => $value['link_page'],
                     'link_youtube' => $value['link_youtube'],
+                    'gambar' => $value['gambar']
                 ];
             } else {
                 File::delete(public_path('images/landingpage_razenstudio/video-production/'.$value['gambar']));

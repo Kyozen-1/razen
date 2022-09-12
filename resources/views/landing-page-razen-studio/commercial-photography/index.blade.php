@@ -1,611 +1,65 @@
+@php
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioCommercialPhotography;
+    use App\Models\RazenStudio\LandingPage\CommercialPhotography\LandingpageRazenstudioCommercialPhotographyPaketHarga;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioBrand;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioHome;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioReview;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioOfficialPartner;
+
+    $home = LandingpageRazenstudioHome::first();
+    $commercial_photography = LandingpageRazenstudioCommercialPhotography::first();
+    $commercial_photography_section_1 = json_decode($commercial_photography->section_1, true);
+    $commercial_photography_section_2 = json_decode($commercial_photography->section_2, true);
+    $commercial_photography_section_3 = json_decode($commercial_photography->section_3, true);
+    $commercial_photography_section_4 = json_decode($commercial_photography->section_4, true);
+    $commercial_photography_section_5 = json_decode($commercial_photography->section_5, true);
+    $commercial_photography_section_6 = json_decode($commercial_photography->section_6, true);
+    $commercial_photography_section_7 = json_decode($commercial_photography->section_7, true);
+    $commercial_photography_section_8 = json_decode($commercial_photography->section_8, true);
+    $commercial_photography_section_9 = json_decode($commercial_photography->section_9, true);
+    $commercial_photography_section_10 = json_decode($commercial_photography->section_10, true);
+    $commercial_photography_section_11 = json_decode($commercial_photography->section_11, true);
+
+    $cek_paket_harga = LandingpageRazenstudioCommercialPhotographyPaketHarga::first();
+    $paket_hargas = LandingpageRazenstudioCommercialPhotographyPaketHarga::all();
+@endphp
 @extends('landing-page-razen-studio.layouts.app')
-@section('title', 'Razen Studio | Commercial Photography')
+@section('title', $commercial_photography_section_1['title'])
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/steps.css') }}">
     <link rel="stylesheet" href="https://gosocial.co.id/assets/css/pages/commercial-photo.css?v.2112">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/fontawesome/css/all.min.css">
-    <style>
-        .order-lg-2 {
-            -ms-flex-order: 2;
-            order: 2;
-        }
-        .nav-box .nav-link {
-            color: #1e2022;
-            border-radius: 0.3125rem;
-        }
-        .nav-box .nav-link.active {
-            color: #377dff;
-            background-color: #fff;
-            box-shadow: 0 12px 15px rgba(140, 152, 164, 0.1);
-        }
-        .max-w-6rem {
-            max-width: 2.5rem;
-        }
-        .w-100 {
-            width: 100% !important;
-        }
-        .img-fluid {
-            max-width: 100%;
-            height: auto;
-        }
-        .media {
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-align: start;
-            align-items: flex-start;
-        }
-
-        .media-body {
-            -ms-flex: 1;
-            flex: 1;
-        }
-        .align-items-lg-start {
-            -ms-flex-align: start !important;
-            align-items: flex-start !important;
-        }
-
-        .card-frame {
-            border: 0.0625rem solid rgba(231, 234, 243, 0.7);
-            box-shadow: none;
-            transition: 0.3s;
-        }
-
-        .card-frame-highlighted,
-        .card-frame:hover {
-            border-color: rgba(55, 125, 255, 0.7);
-        }
-
-        .bg-img-hero {
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: top center;
-        }
-
-        .bg-img-hero-bottom {
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: bottom center;
-        }
-
-        .bg-img-hero-center {
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-        }
-
-        .bg-img-hero-fixed {
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-attachment: fixed;
-        }
-
-        .rounded-lg {
-            border-radius: 0.75rem !important;
-        }
-
-        .rounded-lg-pseudo {
-            border-radius: 0.75rem;
-        }
-
-        .rounded-lg-pseudo::after,
-        .rounded-lg-pseudo::before {
-            border-radius: 0.75rem;
-        }
-
-        .mb-md-0,
-        .my-md-0 {
-            margin-bottom: 0 !important;
-        }
-
-        .mr-n2,
-        .mx-n2 {
-            margin-right: -0.5rem !important;
-        }
-
-        .mb-n2,
-        .my-n2 {
-            margin-bottom: -0.5rem !important;
-        }
-
-        .ml-n2,
-        .mx-n2 {
-            margin-left: -0.5rem !important;
-        }
-        .d-md-block {
-            display: block !important;
-        }
-        .d-none {
-            display: none !important;
-        }
-
-        .custom-control-input.is-valid~.custom-control-label,
-        .was-validated .custom-control-input:valid~.custom-control-label {
-            color: #00c9a7;
-        }
-
-        .custom-control-input.is-valid~.custom-control-label::before,
-        .was-validated .custom-control-input:valid~.custom-control-label::before {
-            border-color: #00c9a7;
-        }
-
-        .custom-control-input.is-valid:checked~.custom-control-label::before,
-        .was-validated .custom-control-input:valid:checked~.custom-control-label::before {
-            border-color: #00fcd1;
-            background-color: #00fcd1;
-        }
-
-        .custom-control-input.is-valid:focus~.custom-control-label::before,
-        .was-validated .custom-control-input:valid:focus~.custom-control-label::before {
-            box-shadow: 0 0 0 0.2rem rgba(0, 201, 167, 0.25);
-        }
-
-        .custom-control-input.is-valid:focus:not(:checked)~.custom-control-label::before,
-        .was-validated .custom-control-input:valid:focus:not(:checked)~.custom-control-label::before {
-            border-color: #00c9a7;
-        }
-
-        /* .custom-control {
-            position: relative;
-            z-index: 1;
-            display: block;
-            min-height: 1.6rem;
-            padding-left: 1.5rem;
-            -webkit-print-color-adjust: exact;
-            color-adjust: exact;
-        } */
-
-        .custom-control-inline {
-            display: -ms-inline-flexbox;
-            display: inline-flex;
-            margin-right: 1rem;
-        }
-
-        .custom-control-input {
-            position: absolute;
-            left: 0;
-            z-index: -1;
-            width: 1rem;
-            height: 1.3rem;
-            opacity: 0;
-        }
-
-        .custom-control-input:checked~.custom-control-label::before {
-            color: #fff;
-            border-color: #377dff;
-            background-color: #377dff;
-        }
-
-        .custom-control-input:focus~.custom-control-label::before {
-            box-shadow: 0 0 10px rgba(55, 125, 255, 0.1);
-        }
-
-        .custom-control-input:focus:not(:checked)~.custom-control-label::before {
-            border-color: rgba(55, 125, 255, 0.4);
-        }
-
-        .custom-control-input:not(:disabled):active~.custom-control-label::before {
-            color: #fff;
-            background-color: #eaf1ff;
-            border-color: #eaf1ff;
-        }
-
-        .custom-control-input:disabled~.custom-control-label,
-        .custom-control-input[disabled]~.custom-control-label {
-            color: #8c98a4;
-        }
-
-        .custom-control-input:disabled~.custom-control-label::before,
-        .custom-control-input[disabled]~.custom-control-label::before {
-            background-color: #f8fafd;
-        }
-
-        .custom-control-label {
-            position: relative;
-            margin-bottom: 0;
-            vertical-align: top;
-        }
-
-        .custom-control-label::before {
-            position: absolute;
-            top: 0.3rem;
-            left: -1.5rem;
-            display: block;
-            width: 1rem;
-            height: 1rem;
-            pointer-events: none;
-            content: "";
-            background-color: #fff;
-            border: #d6dbeb solid 0.0625rem;
-        }
-
-        .custom-control-label::after {
-            position: absolute;
-            top: 0.3rem;
-            left: -1.5rem;
-            display: block;
-            width: 1rem;
-            height: 1rem;
-            content: "";
-            background: no-repeat 50%/50% 50%;
-        }
-
-        .custom-checkbox .custom-control-label::before {
-            border-radius: 0.25rem;
-        }
-
-        .custom-checkbox .custom-control-input:checked~.custom-control-label::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e");
-        }
-
-        .custom-checkbox .custom-control-input:indeterminate~.custom-control-label::before {
-            border-color: #377dff;
-            background-color: #377dff;
-        }
-
-        .custom-checkbox .custom-control-input:indeterminate~.custom-control-label::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3e%3cpath stroke='%23fff' d='M0 2h4'/%3e%3c/svg%3e");
-        }
-
-        .custom-checkbox .custom-control-input:disabled:checked~.custom-control-label::before {
-            background-color: rgba(55, 125, 255, 0.5);
-        }
-
-        .custom-checkbox .custom-control-input:disabled:indeterminate~.custom-control-label::before {
-            background-color: rgba(55, 125, 255, 0.5);
-        }
-
-        .custom-radio .custom-control-label::before {
-            border-radius: 50%;
-        }
-
-        .custom-radio .custom-control-input:checked~.custom-control-label::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
-        }
-
-        .custom-radio .custom-control-input:disabled:checked~.custom-control-label::before {
-            background-color: rgba(55, 125, 255, 0.5);
-        }
-
-        .custom-switch {
-            padding-left: 2.25rem;
-        }
-
-        .custom-switch .custom-control-label::before {
-            left: -2.25rem;
-            width: 1.75rem;
-            pointer-events: all;
-            border-radius: 0.5rem;
-        }
-
-        .custom-switch .custom-control-label::after {
-            top: 0.425rem;
-            left: -2.125rem;
-            width: 0.75rem;
-            height: 0.75rem;
-            background-color: #d6dbeb;
-            border-radius: 0.5rem;
-            transition: background-color 0.15s ease-in-out,
-                border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
-                -webkit-transform 0.15s ease-in-out;
-            transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out,
-                border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-            transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out,
-                border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
-                -webkit-transform 0.15s ease-in-out;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .custom-switch .custom-control-label::after {
-                transition: none;
-            }
-        }
-
-        .custom-switch .custom-control-input:checked~.custom-control-label::after {
-            background-color: #fff;
-            -webkit-transform: translateX(0.75rem);
-            transform: translateX(0.75rem);
-        }
-
-        .custom-switch .custom-control-input:disabled:checked~.custom-control-label::before {
-            background-color: rgba(55, 125, 255, 0.5);
-        }
-
-        .custom-checkbox .custom-control-input:disabled:checked~.custom-control-label::before {
-            border-color: rgba(55, 125, 255, 0);
-        }
-
-        .custom-control-label,
-        .custom-select {
-            cursor: pointer;
-        }
-
-        .form-control .custom-control-label {
-            width: 100%;
-        }
-        .custom-control-input:active~.custom-control-label::before,
-        .custom-control-input:checked~.custom-control-label::before,
-        .custom-control-input:focus~.custom-control-label::before {
-            box-shadow: 0 0 0 0 transparent;
-        }
-        .custom-control-label::before,
-        .custom-file-label,
-        .custom-select {
-            transition: background-color 0.15s ease-in-out,
-                border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-
-            .custom-control-label::before,
-            .custom-file-label,
-            .custom-select {
-                transition: none;
-            }
-        }
-        .collapse:not(.show) {
-            display: none;
-        }
-        .card-btn.collapsed .card-btn-toggle-default {
-            display: block;
-        }
-
-        .card-btn.collapsed .card-btn-toggle-active {
-            display: none;
-        }
-        .step-item.collapse:not(.show) {
-            display: none;
-        }
-
-        .card-collapse {
-            padding: 0;
-            transition: 0.3s ease-in-out;
-        }
-
-        .card-collapse:hover {
-            background-color: #f8fafd;
-        }
-
-        .card-collapse .card-body {
-            color: #677788;
-        }
-        .card-btn-toggle {
-            display: inline-block;
-            color: #377dff;
-        }
-
-        .card-btn-toggle-default {
-            display: none;
-        }
-
-        .card-btn-toggle-active {
-            display: block;
-        }
-
-        .card-btn.collapsed .card-btn-toggle-default {
-            display: block;
-        }
-
-        .card-btn.collapsed .card-btn-toggle-active {
-            display: none;
-        }
-
-        .card>.card-header+.list-group,
-        .card>.list-group+.card-footer {
-            border-top: 0;
-        }
-        .card-header {
-            padding: 1.5rem 1.5rem;
-            margin-bottom: 0;
-            background-color: #fff;
-            border-bottom: 0.0625rem solid rgba(231, 234, 243, 0.7);
-        }
-
-        .card-header:first-child {
-            border-radius: 0.75rem 0.75rem 0 0;
-        }
-
-        .card-header-tabs {
-            margin-right: -0.75rem;
-            margin-bottom: -1.5rem;
-            margin-left: -0.75rem;
-            border-bottom: 0;
-        }
-
-        .card-header-pills {
-            margin-right: -0.75rem;
-            margin-left: -0.75rem;
-        }
-
-        .card-group>.card:not(:last-child) .card-header,
-        .card-group>.card:not(:last-child) .card-img-top {
-            border-top-right-radius: 0;
-        }
-
-        .card-group>.card:not(:first-child) .card-header,
-        .card-group>.card:not(:first-child) .card-img-top {
-            border-top-left-radius: 0;
-        }
-
-        .accordion>.card>.card-header {
-            border-radius: 0;
-            margin-bottom: -0.0625rem;
-        }
-
-        .card-header {
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-direction: row;
-            flex-direction: row;
-            -ms-flex-align: center;
-            align-items: center;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-
-        .card-header-title {
-            margin-bottom: 0;
-        }
-
-        .card-no-gutters>.card-body,
-        .card-no-gutters>.card-header {
-            padding-right: 0;
-            padding-left: 0;
-        }
-
-        .card-group-sm-break>.card:first-child .card-header,
-        .card-group-sm-break>.card:first-child .card-img-top {
-            border-top-left-radius: 0.75rem;
-            border-top-right-radius: 0.75rem;
-        }
-
-        .card-group-sm-break>.card:last-child .card-header,
-        .card-group-sm-break>.card:last-child .card-img-top {
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-        }
-
-        .card-group-md-break>.card:first-child .card-header,
-        .card-group-md-break>.card:first-child .card-img-top {
-            border-top-left-radius: 0.75rem;
-            border-top-right-radius: 0.75rem;
-        }
-
-        .card-group-md-break>.card:last-child .card-header,
-        .card-group-md-break>.card:last-child .card-img-top {
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-        }
-
-        .card-group-lg-break>.card:first-child .card-header,
-        .card-group-lg-break>.card:first-child .card-img-top {
-            border-top-left-radius: 0.75rem;
-            border-top-right-radius: 0.75rem;
-        }
-
-        .card-group-lg-break>.card:last-child .card-header,
-        .card-group-lg-break>.card:last-child .card-img-top {
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-        }
-
-        .card-btn {
-            color: #1e2022;
-            text-align: left;
-            white-space: inherit;
-            border-radius: 0.75rem;
-        }
-
-        .card-btn-toggle {
-            display: inline-block;
-            color: #377dff;
-        }
-
-        .card-btn-toggle-default {
-            display: none;
-        }
-
-        .card-btn-toggle-active {
-            display: block;
-        }
-
-        .card-btn.collapsed .card-btn-toggle-default {
-            display: block;
-        }
-
-        .card-btn.collapsed .card-btn-toggle-active {
-            display: none;
-        }
-
-        .btn-link {
-            font-weight: 400;
-            color: #377dff;
-            text-decoration: none;
-        }
-
-        .btn-link:hover {
-            color: #0052ea;
-            text-decoration: none;
-        }
-
-        .btn-link.focus,
-        .btn-link:focus {
-            text-decoration: none;
-        }
-
-        .btn-link.disabled,
-        .btn-link:disabled {
-            color: #8c98a4;
-            pointer-events: none;
-        }
-
-        .btn-link {
-            font-weight: 600;
-        }
-
-        .btn-block {
-            display: block;
-            width: 100%;
-        }
-
-        .btn-block+.btn-block {
-            margin-top: 0.5rem;
-        }
-
-        input[type="button"].btn-block,
-        input[type="reset"].btn-block,
-        input[type="submit"].btn-block {
-            width: 100%;
-        }
-
-        .pr-0,
-        .px-0 {
-            padding-right: 0 !important;
-        }
-
-        .pb-0,
-        .py-0 {
-            padding-bottom: 0 !important;
-        }
-
-        .pl-0,
-        .px-0 {
-            padding-left: 0 !important;
-        }
-        .justify-content-between {
-            -ms-flex-pack: justify !important;
-            justify-content: space-between !important;
-        }
-        .card-body {
-            -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-            min-height: 1px;
-            padding: 1.5rem;
-        }
-    </style>
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/dzsparallaxer/dzsparallaxer.css">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/aos/dist/aos.css">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/css/pages/global.css?v.0908">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/css/theme.min.css">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/css/pages/sme/instagram.css?v.1808">
 @endsection
 
 @section('content')
-<section class="flat-title-page back-ground-style">
+<section class="flat-title-page back-ground-style h-100">
     <div class="container-fluid">
         <div class="row">
-            <div class="breadcrumbs text-center link-style-5 text-white">
-                <h2 class="section-title-page">Jasa Foto Produk</h2>
-                <p class="mb-5">Layanan fotografi produk terlengkap mulai dari katalog foto produk makanan, minuman, baju, dll. Didukungan peralatan, model, dan tim yang profesional.</p>
+            <div class="breadcrumbs text-center link-style-5">
+                <h2 class="section-title-page text-white">{{$commercial_photography_section_1['judul']}}</h2>
+                <p class="mb-5 text-white">{{$commercial_photography_section_1['deskripsi']}}</p>
                 <ul class="breadcrumbs-inner list-center display-flex">
                     <li><a class="section-16px-regular font-weight-500" href="{{ route('home') }}">Home</a></li>
                     <li>
-                        <h4 class="section-16px-regular font-weight-500">Jasa Foto Produk</h4>
+                        <h4 class="section-16px-regular font-weight-500 text-white">{{$commercial_photography_section_1['judul']}}</h4>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
+
 <section class="flat-about-2nd">
     <div class="container">
         <div class="row align-items-center">
@@ -613,17 +67,16 @@
                 <div class="about-content-right wow fadeInUp" data-wow-delay="0ms"
                     data-wow-duration="1500ms">
                     <div class="section-title">
-                        <h4 class="section-subtitle">FOTOGRAFI PRODUK #1 DI INDONESIA</h4>
-                        <h2 class="section-45px-montserrat margin-top-15 margin-bottom-20">Dapatkan foto terbaik produkmu sebagai identitas digital hanya di GoSocial!</h2>
+                        <h4 class="section-subtitle">{{$commercial_photography_section_2['sub_judul']}}</h4>
+                        <h2 class="section-45px-montserrat margin-top-15 margin-bottom-20">{{$commercial_photography_section_2['judul']}}</h2>
                     </div>
-                    <p class="section-17px-regular margin-bottom-25">Sulit membuat pelanggan percaya dengan produkmu? sudah saatnya punya foto produk original sendiri!</p>
-                    <p class="section-17px-regular margin-bottom-25">Memiliki konten orisinil dengan kualitas terbaik meruapakan salah satu faktor yang terpenting dalam bisnis. Dengan memiliki Foto Produk yang profesional calon pelanggan akan lebih percaya terhadap produk dari sebuah merek / brand.</p>
+                    <p class="section-17px-regular margin-bottom-25">{!! $commercial_photography_section_2['deskripsi'] !!}</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="about-content-left wow fadeInLeft">
                     <div class="about-post">
-                        <img src="{{ asset('olux/assets/images/image-box/about-post-mystory.jpg') }}" alt="images">
+                        <img src="{{ asset('images/landingpage_razenstudio/commercial-photography/'.$commercial_photography_section_2['gambar']) }}" alt="images">
                         <div class="mark-about-post"></div>
                     </div>
                 </div>
@@ -637,8 +90,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h2 class="section-45px-montserrat margin-top-15">Jasa Foto Produk Terbaik No.1 di Indonesia</h2>
-                    <p class="text-muted">Tidak perlu keluar banyak biaya & waktu untuk buat studio foto produk sendiri (peralatan, properti, model, fotografer, stylish, dll). Layanan fotografi produk hadir untuk memudahkan pebisnis UMKM.</p>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$commercial_photography_section_3['judul']}}</h2>
+                    <p class="text-muted">{{$commercial_photography_section_3['deskripsi']}}</p>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
@@ -646,21 +99,11 @@
             <div class="col-md-12">
                 <div class="swiper-container swiper-coverflow style-coverflow ">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide style-coverflow">
-                            <img src="{{ asset('olux/assets/images/image-slider/working-project-sl-1.png') }}" alt="images">
-                        </div>
-                        <div class="swiper-slide style-coverflow">
-                            <img src="{{ asset('olux/assets/images/image-slider/working-project-sl-2.png') }}" alt="images">
-                        </div>
-                        <div class="swiper-slide style-coverflow">
-                            <img src="{{ asset('olux/assets/images/image-slider/working-project-sl-3.png') }}" alt="images">
-                        </div>
-                        <div class="swiper-slide style-coverflow">
-                            <img src="{{ asset('olux/assets/images/image-slider/working-project-sl-4.png') }}" alt="images">
-                        </div>
-                        <div class="swiper-slide style-coverflow">
-                            <img src="{{ asset('olux/assets/images/image-slider/working-project-sl-5.png') }}" alt="images">
-                        </div>
+                        @foreach ($commercial_photography_section_3['konten'] as $item)
+                            <div class="swiper-slide style-coverflow">
+                                <img src="{{ asset('images/landingpage_razenstudio/commercial-photography/'.$item['gambar']) }}" alt="images">
+                            </div>
+                        @endforeach
                     </div>
                     <div class="swiper-button-next slider-coverflow-btn"></div>
                     <div class="swiper-button-prev slider-coverflow-btn"></div>
@@ -670,77 +113,34 @@
         </div>
     </div>
 </section>
+
 <section class="flat-services">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h2 class="section-45px-montserrat margin-top-15">LANGKAH PENGERJAAN</h2>
-                    <p class="text-muted">Foto Produk</p>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$commercial_photography_section_4['judul']}}</h2>
+                    <p class="text-muted">{{$commercial_photography_section_4['sub_judul']}}</p>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
             </div>
         </div>
         <ul class="step step-md step-centered">
-            <li class="step-item">
-                <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-soft-primary">1</span>
-                    <div class="step-content">
-                        <h3>Pilih Paket</h3>
-                        <p>Tentukan paket yang sesuai dengan kebutuhan bisnis.</p>
+            @php
+                $i = 1;
+            @endphp
+            @foreach ($commercial_photography_section_4['konten'] as $item)
+                <li class="step-item">
+                    <div class="step-content-wrapper">
+                        <span class="step-icon step-icon-soft-primary">{{$i++}}</span>
+                        <div class="step-content">
+                            <h3>{{$item['judul_konten']}}</h3>
+                            <p>{{$item['deskripsi_konten']}}</p>
+                        </div>
                     </div>
-                </div>
-            </li>
-
-            <li class="step-item">
-                <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-soft-primary">2</span>
-                    <div class="step-content">
-                        <h3>Kirim Brief</h3>
-                        <p>Jelaskan keinginan kepada tim agar hasil maksimal.</p>
-                    </div>
-                </div>
-            </li>
-
-            <li class="step-item">
-                <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-soft-primary">3</span>
-                    <div class="step-content">
-                        <h3>Kirim Produk</h3>
-                        <p>Kirimkan produk ke studio GoSocial yang terdekat.</p>
-                    </div>
-                </div>
-            </li>
-
-            <li class="step-item">
-                <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-soft-primary">4</span>
-                    <div class="step-content">
-                        <h3>Proses Foto</h3>
-                        <p>Kami akan memotret produk dengan profesional.</p>
-                    </div>
-                </div>
-            </li>
-
-            <li class="step-item">
-                <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-soft-primary">5</span>
-                    <div class="step-content">
-                        <h3>Terima Hasil</h3>
-                        <p>Hanya hasil terbaik yang akan dikirimkan.</p>
-                    </div>
-                </div>
-            </li>
-            <li class="step-item">
-                <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-soft-primary">6</span>
-                    <div class="step-content">
-                        <h3>Return</h3>
-                        <p>Hanya setelah puas dengan hasil, produk dikembalikan.</p>
-                    </div>
-                </div>
-            </li>
+                </li>
+            @endforeach
         </ul>
     </div>
 </section>
@@ -751,9 +151,9 @@
             <div class="col-md-6">
                 <div class="about-content-left wow fadeInLeft">
                     <div class="about-post">
-                        <img src="{{ asset('olux/assets/images/image-box/about-post-mystory.jpg') }}" alt="images">
+                        <img src="{{ asset('images/landingpage_razenstudio/commercial-photography/'.$commercial_photography_section_5['gambar']) }}" alt="images">
                         <div class="mark-video">
-                            <a href="https://www.youtube.com/embed/xC4ze0p0b5Y" class="lightbox-image">
+                            <a href="{{$commercial_photography_section_5['link']}}" class="lightbox-image">
                                 <div class="icon"></div>
                             </a>
                         </div>
@@ -765,14 +165,9 @@
                 <div class="about-content-right wow fadeInUp" data-wow-delay="0ms"
                     data-wow-duration="1500ms">
                     <div class="section-title">
-                        <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">Fotografi Produk?</h4>
+                        <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">{{$commercial_photography_section_5['judul']}}</h4>
                     </div>
-                    <p class="section-17px-regular margin-bottom-25">Foto produk merupakan salah satu faktor terpenting dalam memasarkan suatu produk. Menurut survey dari Weebly, 75% pembeli pada ecommerce menganggap foto produk sangat memengaruhi keputusan pembelian.</p>
-                    <ul>
-                        <li><p>1. Merupakan representasi suatu brand/bisnis</p></li>
-                        <li><p>2. Meningkatkan kepercayaan calon pembeli</p></li>
-                        <li><p>3. Meningkatkan nilai jual</p></li>
-                    </ul>
+                    <p class="section-17px-regular margin-bottom-25">{!! $commercial_photography_section_5['deskripsi'] !!}</p>
                 </div>
             </div>
         </div>
@@ -816,21 +211,21 @@
                     <div class="card-body">
                         <div class="row m-3">
                             <div class="col-12">
-                                <h3 class="mb-2 text-dark">Katalog</h3>
-                                <p class="mb-2 h4 text-primary">Rp.25.000,- / Foto</p>
+                                <h1 class="mb-2 text-dark">Katalog</h1>
+                                <p class="mb-2 h3 text-danger">Rp.25.000,- / Foto</p>
                                 <p class="d-block text-body mb-4">Foto produk dengan berbagai pilihan warna background warna polos. Tanpa minimal pembelian</p>
                                 <ul class="list-pointer mb-0">
-                                    <li class="list-pointer-item my-1 h4">1. Gratis Steaming</li>
-                                    <li class="list-pointer-item my-1 h4">2. Gratis penyimpanan file</li>
+                                    <li class="list-pointer-item my-1 h3">1. Gratis Steaming</li>
+                                    <li class="list-pointer-item my-1 h3">2. Gratis penyimpanan file</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer">
+                    {{-- <div class="card-footer">
                         <div class="button-readmore">
                             <a class="read-more text-dark text-decoration-none" href="https://api.whatsapp.com/send?phone=6281234566636&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20memesan%20layanan%20Foto%20Produk%20Katalog" target="_blank" id="pesan_sekarang_katalog">Pesan Sekarang</a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- End Card -->
             </div>
@@ -859,21 +254,21 @@
                     <div class="card-body">
                         <div class="row m-3">
                             <div class="col-12">
-                                <h3 class="mb-2 text-dark">Katalog</h3>
-                                <p class="mb-2 h4 text-primary">Rp.30.000,- / Foto</p>
+                                <h1 class="mb-2 text-dark">Katalog</h1>
+                                <p class="mb-2 h3 text-danger">Rp.30.000,- / Foto</p>
                                 <p class="d-block text-body mb-4">Foto produk dengan berbagai pilihan tema &amp; properti pendukung. Tanpa minimal pembelian</p>
                                 <ul class="list-pointer mb-0">
-                                    <li class="list-pointer-item my-1 h4">1. Gratis Styling &amp; Steaming</li>
-                                    <li class="list-pointer-item my-1 h4">2. Gratis penyimpanan file</li>
+                                    <li class="list-pointer-item my-1 h3">1. Gratis Styling &amp; Steaming</li>
+                                    <li class="list-pointer-item my-1 h3">2. Gratis penyimpanan file</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer">
+                    {{-- <div class="card-footer">
                         <div class="button-readmore">
                             <a class="read-more text-dark text-decoration-none" href="https://api.whatsapp.com/send?phone=6281234566636&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20memesan%20layanan%20Foto%20Produk%20Creative" target="_blank" id="pesan_sekarang_creative">Pesan Sekarang</a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- End Card -->
             </div>
@@ -902,22 +297,22 @@
                     <div class="card-body">
                         <div class="row m-3">
                             <div class="col-12">
-                                <h3 class="mb-2 text-dark">Food and Beverage</h3>
-                                <p class="mb-2 h4 text-primary">Rp.50.000,- / Foto</p>
+                                <h1 class="mb-2 text-dark">Food and Beverage</h1>
+                                <p class="mb-2 h3 text-danger">Rp.50.000,- / Foto</p>
                                 <p class="d-block text-body mb-4">Foto produk khusus untuk makanan dengan treatment khusus. Tanpa minimal pembelian.</p>
                                 <ul class="list-pointer mb-0">
-                                    <li class="list-pointer-item my-1 h4">1. Gratis treatment khusus</li>
-                                    <li class="list-pointer-item my-1 h4">2. Gratis penyimpanan file</li>
+                                    <li class="list-pointer-item my-1 h3">1. Gratis treatment khusus</li>
+                                    <li class="list-pointer-item my-1 h3">2. Gratis penyimpanan file</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card-footer">
+                    {{-- <div class="card-footer">
                         <div class="button-readmore">
                             <a class="read-more text-dark text-decoration-none" href="https://api.whatsapp.com/send?phone=6281234566636&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20memesan%20layanan%20Foto%20Produk%20FnB" target="_blank" id="pesan_sekarang_fnb">Pesan Sekarang</a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- End Card -->
             </div>
@@ -1018,7 +413,9 @@
             <div class="col-md-4">
                 <div class="services-box">
                     <div class="wraper-effect"></div>
-                    <span class="icon-services icon-development1 font-size-icon"></span>
+                    <figure class="font-size-icon">
+                        <img style="height: 5rem; width:5rem; padding: -3rem;" src="{{ asset('images/landingpage_razenstudio/home/6315278e12ff4-220905.png') }}" alt="SVG">
+                    </figure>
                     <div class="services-content">
                         <a href="service-single.html" class="section-22px-montserrat text-dark text-decoration-none">Tim Studio Profesional</a>
                         <p class="services-desc">Didukung oleh tim fotografer, stylish, MUA, editor, dll yang terbaik dan berpengalaman di bidangnya.</p>
@@ -1028,7 +425,9 @@
             <div class="col-md-4">
                 <div class="services-box">
                     <div class="wraper-effect"></div>
-                    <span class="icon-services icon-development1 font-size-icon"></span>
+                    <figure class="font-size-icon">
+                        <img style="height: 5rem; width:5rem; padding: -3rem;" src="{{ asset('images/landingpage_razenstudio/home/6315278e12ff4-220905.png') }}" alt="SVG">
+                    </figure>
                     <div class="services-content">
                         <a href="service-single.html" class="section-22px-montserrat text-dark text-decoration-none">Peralatan Serba Canggih</a>
                         <p class="services-desc">Dengan perlengkapan studio yang canggih & terkini untuk mendapatkan hasil foto yang maksimal.</p>
@@ -1038,7 +437,9 @@
             <div class="col-md-4">
                 <div class="services-box">
                     <div class="wraper-effect"></div>
-                    <span class="icon-services icon-development1 font-size-icon"></span>
+                    <figure class="font-size-icon">
+                        <img style="height: 5rem; width:5rem; padding: -3rem;" src="{{ asset('images/landingpage_razenstudio/home/6315278e12ff4-220905.png') }}" alt="SVG">
+                    </figure>
                     <div class="services-content">
                         <a href="service-single.html" class="section-22px-montserrat text-dark text-decoration-none">1000+ Properti Studio</a>
                         <p class="services-desc">Dengan 1000 lebih set properti dan tema pendukung untuk berbagai jenis produk yang menambah daya tarik.</p>
@@ -1098,11 +499,11 @@
                     <li class="nav-item w-100 mx-0 mb-3">
                         <a class="nav-link p-4 active" id="pills-one-code-features-example2-tab" data-toggle="pill" href="#pills-one-code-features-example2" role="tab" aria-controls="pills-one-code-features-example2" aria-selected="false">
                             <div class="media align-items-center align-items-lg-start">
-                                <figure class="w-100 max-w-6rem mt-2 mr-4">
+                                <figure class="w-100 max-w-15rem mt-2 mr-4">
                                     <img class="img-fluid" src="https://gosocial.co.id/assets/svg/service/foto-produk/foto-produk-makanan.svg" alt="Foto Produk Makanan">
                                 </figure>
                                 <div class="media-body ">
-                                    <h4 class="mb-0">Foto Produk Makanan</h4>
+                                    <h2 class="mb-0">Foto Produk Makanan</h2>
                                     <div class="d-none d-lg-block mt-2">
                                         <p class="text-body mb-0">Jasa fotografi makanan / food photography.</p>
                                     </div>
@@ -1114,11 +515,11 @@
                     <li class="nav-item w-100 mx-0 mb-3">
                         <a class="nav-link p-4" id="pills-two-code-features-example2-tab" data-toggle="pill" href="#pills-two-code-features-example2" role="tab" aria-controls="pills-two-code-features-example2" aria-selected="false">
                             <div class="media align-items-center align-items-lg-start">
-                                <figure class="w-100 max-w-6rem mt-2 mr-4 h-100">
+                                <figure class="w-100 max-w-15rem mt-2 mr-4 h-100">
                                     <img class="img-fluid" src="https://gosocial.co.id/assets/svg/service/foto-produk/foto-produk-minuman.svg" alt="Foto Produk Minuman">
                                 </figure>
                                 <div class="media-body">
-                                    <h4 class="mb-0">Foto Produk Minuman</h4>
+                                    <h2 class="mb-0">Foto Produk Minuman</h2>
                                     <div class="d-none d-lg-block mt-2">
                                         <p class="text-body mb-0">Jasa fotografi minuman dalam kemasan maupun luar
                                             kemasan.</p>
@@ -1131,11 +532,11 @@
                     <li class="nav-item w-100 mx-0">
                         <a class="nav-link p-4" id="pills-three-code-features-example2-tab" data-toggle="pill" href="#pills-three-code-features-example2" role="tab" aria-controls="pills-three-code-features-example2" aria-selected="true">
                             <div class="media align-items-center align-items-lg-start">
-                                <figure class="w-100 max-w-6rem mt-2 mr-4">
+                                <figure class="w-100 max-w-15rem mt-2 mr-4">
                                     <img class="img-fluid" src="https://gosocial.co.id/assets/svg/service/foto-produk/foto-produk-baju.svg" alt="Foto Produk Baju">
                                 </figure>
                                 <div class="media-body">
-                                    <h4 class="mb-0">Foto Produk Baju</h4>
+                                    <h2 class="mb-0">Foto Produk Baju</h2>
                                     <div class="d-none d-lg-block mt-2">
                                         <p class="text-body mb-0">Jasa foto produk pakaian seperti kaos, baju, kemeja,
                                             dsb.</p>
@@ -1165,7 +566,7 @@
                             </div>
 
                             <div class="mt-5 mt-md-9">
-                                <h2>Foto produk makanan untuk bisnis kuliner.</h2>
+                                <h1>Foto produk makanan untuk bisnis kuliner.</h1>
                                 <p>GoSocial dapat membantu bisnis menampilkan foto produk makanan terbaik kepada
                                     konsumen.
                                     Foto tersebut dibuat semenarik mungkin yang menggugah selara konsumen.
@@ -1189,7 +590,7 @@
                             </div>
 
                             <div class="mt-5 mt-md-9">
-                                <h2>Foto produk minuman</h5>
+                                <h1>Foto produk minuman</h5>
                                 <p>Mendukung foto produk untuk minuman panas atau dingin maupun minuman dalam kemasan
                                     agar memasarkan produk bisa lebih mudah dengan tampilan foto produk yang menggugah
                                     selera konsumen.</p>
@@ -1211,7 +612,7 @@
                             </div>
 
                             <div class="mt-5 mt-md-9">
-                                <h2>Foto Produk Baju</h5>
+                                <h1>Foto Produk Baju</h5>
                                 <p>GoSocial dapat membantu membuat foto produk fashion seperti kaos, baju baik untuk
                                     pakaian pria, pakaian wanita hingga pakaian anak-anak.</p>
                             </div>
@@ -1684,4 +1085,18 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://gosocial.co.id/assets/js/pages/commercial-photo.js?v.0601"></script>
 <script src="https://gosocial.co.id/assets/js/pages/commercial-photo-modal.js?v.0601"></script>
+<script src="https://gosocial.co.id/assets/vendor/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-header/dist/hs-header.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/aos/dist/aos.js"></script>
+<script src="https://gosocial.co.id/assets/js/theme.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-quantity-counter/dist/hs-quantity-counter.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/slick-carousel/slick/slick.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-toggle-switch/dist/hs-toggle-switch.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-switch/dist/hs-switch-text.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
 @endsection

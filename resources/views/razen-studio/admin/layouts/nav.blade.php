@@ -99,7 +99,8 @@
                     request()->routeIs('razen-studio.admin.video-production.atur.index') ||
                     request()->routeIs('razen-studio.admin.video-production.video-animasi.index') ||
                     request()->routeIs('razen-studio.admin.video-production.video-konten-sosmed.index')||
-                    request()->routeIs('razen-studio.admin.video-production.video-company-profile.index'))
+                    request()->routeIs('razen-studio.admin.video-production.video-company-profile.index') ||
+                    request()->routeIs('razen-studio.admin.commercial-photography.atur.index'))
                     <a href="#landing_page" class="active">
                     @else
                     <a href="#landing_page">
@@ -274,6 +275,26 @@
                                         <a href="{{ route('razen-studio.admin.video-production.video-company-profile.index') }}">
                                     @endif
                                         <span class="label">Video Company Profile</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-studio.admin.commercial-photography.atur.index'))
+                                <a href="#commercial_photography" class="active">
+                            @else
+                                <a href="#commercial_photography">
+                            @endif
+                                <span class="label">Commercial Photography</span>
+                            </a>
+                            <ul id="commercial_photography">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.commercial-photography.atur.index'))
+                                        <a href="{{ route('razen-studio.admin.commercial-photography.atur.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.commercial-photography.atur.index') }}">
+                                    @endif
+                                        <span class="label">Atur</span>
                                     </a>
                                 </li>
                             </ul>
