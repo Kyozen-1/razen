@@ -367,8 +367,8 @@
                     @foreach ($video_company_profile_section_6 ['konten'] as $item)
                         <!-- Card -->
                         <div class="card shadow-none mb-3">
-                            <div class="card-header card-collapse" id="basicsHeadingOne">
-                                <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="false" aria-controls="basicsCollapseOne">
+                            <div class="card-header card-collapse" id="basicsHeading{{$item['id']}}">
+                                <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapse{{$item['id']}}" aria-expanded="false" aria-controls="basicsCollapse{{$item['id']}}">
                                     <span class="font-size-2">{{$item['pertanyaan']}}</span>
 
                                     <span class="card-btn-toggle">
@@ -377,7 +377,7 @@
                                     </span>
                                 </a>
                             </div>
-                            <div id="basicsCollapseOne" class="collapse" aria-labelledby="basicsHeadingOne" data-parent="#basicsAccordion-left" style="">
+                            <div id="basicsCollapse{{$item['id']}}" class="collapse" aria-labelledby="basicsHeading{{$item['id']}}" data-parent="#basicsAccordion-left" style="">
                                 <div class="card-body px-0 m-3">
                                     <p>{{$item['jawaban']}}</p>
                                 </div>

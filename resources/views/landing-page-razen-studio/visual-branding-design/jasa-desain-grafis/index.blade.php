@@ -1,5 +1,5 @@
 @extends('landing-page-razen-studio.layouts.app')
-@section('title', 'Razen Studio | Visual Branding Design')
+@section('title', 'Razen Studio | Visual Branding Design | Jasa Desain Grafis')
 
 @section('css')
 <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
@@ -14,7 +14,7 @@
 @endsection
 
 @section('content')
-<section class="flat-title-page back-ground-style">
+<section class="flat-title-page back-ground-style h-100">
     <div class="container-fluid">
         <div class="row">
             <div class="breadcrumbs text-center link-style-5 text-white">
@@ -387,7 +387,7 @@
                 <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
                     <div class="icon-box">
                         <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
+                            <img style="height: 5rem; width:5rem; padding: -3rem;" src="https://repo_razen.test/images/landingpage_razenstudio/social-media-engagement/6317d470a1881-220907.png">
                         </div>
                     </div>
                     <h3 class="section-20px-montserrat font-weight-600 line-height-35">Desain Terkini</h3>
@@ -398,7 +398,7 @@
                 <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
                     <div class="icon-box">
                         <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
+                            <img style="height: 5rem; width:5rem; padding: -3rem;" src="https://repo_razen.test/images/landingpage_razenstudio/social-media-engagement/6317d470a1881-220907.png">
                         </div>
                     </div>
                     <h3 class="section-20px-montserrat font-weight-600 line-height-35">Hemat Waktu & Biaya</h3>
@@ -409,7 +409,7 @@
                 <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
                     <div class="icon-box">
                         <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
+                            <img style="height: 5rem; width:5rem; padding: -3rem;" src="https://repo_razen.test/images/landingpage_razenstudio/social-media-engagement/6317d470a1881-220907.png">
                         </div>
                     </div>
                     <h3 class="section-20px-montserrat font-weight-600 line-height-35">Talented Designer</h3>

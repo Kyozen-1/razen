@@ -852,7 +852,7 @@ class AturController extends Controller
             } else {
                 $array_konten[] = [
                     'id' => $value['id'],
-                    'judul_konten' => $value['judul'],
+                    'judul_konten' => $value['judul_konten'],
                     'deskripsi_konten' => $value['deskripsi_konten'],
                     'logo_konten' => $value['logo_konten']
                 ];

@@ -547,4 +547,95 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
     Route::post('/razen-studio/admin/commercial-photography/section-11/store', 'RazenStudio\Admin\CommercialPhotography\AturController@section_11_store')->name('razen-studio.admin.commercial-photography.atur.section-11.store');
     Route::post('/razen-studio/admin/commercial-photography/section-11/edit', 'RazenStudio\Admin\CommercialPhotography\AturController@section_11_edit')->name('razen-studio.admin.commercial-photography.atur.section-11.edit');
     Route::post('/razen-studio/admin/commercial-photography/section-11/store/hapus/satu', 'RazenStudio\Admin\CommercialPhotography\AturController@section_11_hapus_satu')->name('razen-studio.admin.commercial-photography.atur.section-11.hapus.satu');
+
+    //Web Development
+    Route::get('/razen-studio/admin/web-development/atur', 'RazenStudio\Admin\WebDevelopment\AturController@index')->name('razen-studio.admin.web-development.atur.index');
+
+    //Web Development - Section 1
+    Route::post('/razen-studio/admin/web-development/atur/section-1/store', 'RazenStudio\Admin\WebDevelopment\AturController@section_1_store')->name('razen-studio.admin.web-development.atur.section-1.store');
+
+    //Web Development - Section 2
+    Route::post('/razen-studio/admin/web-development/atur/section-2/store', 'RazenStudio\Admin\WebDevelopment\AturController@section_2_store')->name('razen-studio.admin.web-development.atur.section-2.store');
+
+    //Web Development - Section 3
+    Route::post('/razen-studio/admin/web-development/atur/section-3/store', 'RazenStudio\Admin\WebDevelopment\AturController@section_3_store')->name('razen-studio.admin.web-development.atur.section-3.store');
+    Route::post('/razen-studio/admin/web-development/atur/section-3/item-1/store', 'RazenStudio\Admin\WebDevelopment\AturController@section_3_item_1_store')->name('razen-studio.admin.web-development.atur.section-3.item-1.store');
+    Route::post('/razen-studio/admin/web-development/atur/section-3/item-2/store', 'RazenStudio\Admin\WebDevelopment\AturController@section_3_item_2_store')->name('razen-studio.admin.web-development.atur.section-3.item-2.store');
+    Route::post('/razen-studio/admin/web-development/atur/section-3/item-3/store', 'RazenStudio\Admin\WebDevelopment\AturController@section_3_item_3_store')->name('razen-studio.admin.web-development.atur.section-3.item-3.store');
+
+    //Web Development - Section 4
+    Route::post('/razen-studio/admin/web-development/atur/section-4/store', 'RazenStudio\Admin\WebDevelopment\AturController@section_4_store')->name('razen-studio.admin.web-development.atur.section-4.store');
+
+    //Web Development - Section 5
+    Route::post('/razen-studio/admin/web-development/atur/section-5/store', 'RazenStudio\Admin\WebDevelopment\AturController@section_5_store')->name('razen-studio.admin.web-development.atur.section-5.store');
+
+    //Web Development - Section 6
+    Route::post('/razen-studio/admin/web-development/atur/section-6/store', 'RazenStudio\Admin\WebDevelopment\AturController@section_6_store')->name('razen-studio.admin.web-development.atur.section-6.store');
+    Route::post('/razen-studio/admin/web-development/atur/section-6/edit', 'RazenStudio\Admin\WebDevelopment\AturController@section_6_edit')->name('razen-studio.admin.web-development.atur.section-6.edit');
+    Route::post('/razen-studio/admin/web-development/atur/section-6/store/hapus/satu', 'RazenStudio\Admin\WebDevelopment\AturController@section_6_hapus_satu')->name('razen-studio.admin.web-development.atur.section-6.hapus.satu');
+
+    //Web Development - Section 7
+    Route::post('/razen-studio/admin/web-development/atur/section-7/store', 'RazenStudio\Admin\WebDevelopment\AturController@section_7_store')->name('razen-studio.admin.web-development.atur.section-7.store');
+
+    //Web Development - Section 8
+    Route::post('/razen-studio/admin/web-development/atur/section-8/store', 'RazenStudio\Admin\WebDevelopment\AturController@section_8_store')->name('razen-studio.admin.web-development.atur.section-8.store');
+    Route::post('/razen-studio/admin/web-development/atur/section-8/edit', 'RazenStudio\Admin\WebDevelopment\AturController@section_8_edit')->name('razen-studio.admin.web-development.atur.section-8.edit');
+    Route::post('/razen-studio/admin/web-development/atur/section-8/store/hapus/satu', 'RazenStudio\Admin\WebDevelopment\AturController@section_8_hapus_satu')->name('razen-studio.admin.web-development.atur.section-8.hapus.satu');
+
+    //Web Development - Section 9
+    Route::post('/razen-studio/admin/web-development/atur/section-9/store', 'RazenStudio\Admin\WebDevelopment\AturController@section_9_store')->name('razen-studio.admin.web-development.atur.section-9.store');
+    Route::post('/razen-studio/admin/web-development/atur/section-9/edit', 'RazenStudio\Admin\WebDevelopment\AturController@section_9_edit')->name('razen-studio.admin.web-development.atur.section-9.edit');
+    Route::post('/razen-studio/admin/web-development/atur/section-9/store/hapus/satu', 'RazenStudio\Admin\WebDevelopment\AturController@section_9_hapus_satu')->name('razen-studio.admin.web-development.atur.section-9.hapus.satu');
+
+    //Web Development - Section 10
+    Route::post('/razen-studio/admin/web-development/atur/section-10/store', 'RazenStudio\Admin\WebDevelopment\AturController@section_10_store')->name('razen-studio.admin.web-development.atur.section-10.store');
+
+    //Visual Branding Design
+    Route::get('/razen-studio/admin/visual-branding-design/atur', 'RazenStudio\Admin\VisualBrandingDesign\AturController@index')->name('razen-studio.admin.visual-branding-design.atur.index');
+
+    //Visual Branding Design - Section - 1
+    Route::post('/razen-studio/admin/visual-branding-design/atur/section-1/store', 'RazenStudio\Admin\VisualBrandingDesign\AturController@section_1_store')->name('razen-studio.admin.visual-branding-design.atur.section-1.store');
+
+    //Visual Branding Design - Section - 2
+    Route::post('/razen-studio/admin/visual-branding-design/atur/section-2/store', 'RazenStudio\Admin\VisualBrandingDesign\AturController@section_2_store')->name('razen-studio.admin.visual-branding-design.atur.section-2.store');
+
+    //Visual Branding Design - Section - 3
+    Route::post('/razen-studio/admin/visual-branding-design/atur/section-3/store', 'RazenStudio\Admin\VisualBrandingDesign\AturController@section_3_store')->name('razen-studio.admin.visual-branding-design.atur.section-3.store');
+    Route::post('/razen-studio/admin/visual-branding-design/atur/section-3/edit', 'RazenStudio\Admin\VisualBrandingDesign\AturController@section_3_edit')->name('razen-studio.admin.visual-branding-design.atur.section-3.edit');
+    Route::post('/razen-studio/admin/visual-branding-design/atur/section-3/store/hapus/satu', 'RazenStudio\Admin\VisualBrandingDesign\AturController@section_3_hapus_satu')->name('razen-studio.admin.visual-branding-design.atur.section-3.hapus.satu');
+
+    //Visual Branding Design - Section - 4
+    Route::post('/razen-studio/admin/visual-branding-design/atur/section-4/store', 'RazenStudio\Admin\VisualBrandingDesign\AturController@section_4_store')->name('razen-studio.admin.visual-branding-design.atur.section-4.store');
+    Route::post('/razen-studio/admin/visual-branding-design/atur/section-4/item-1/store', 'RazenStudio\Admin\VisualBrandingDesign\AturController@section_4_item_1_store')->name('razen-studio.admin.visual-branding-design.atur.section-4.item-1.store');
+    Route::post('/razen-studio/admin/visual-branding-design/atur/section-4/item-2/store', 'RazenStudio\Admin\VisualBrandingDesign\AturController@section_4_item_2_store')->name('razen-studio.admin.visual-branding-design.atur.section-4.item-2.store');
+    Route::post('/razen-studio/admin/visual-branding-design/atur/section-4/item-3/store', 'RazenStudio\Admin\VisualBrandingDesign\AturController@section_4_item_3_store')->name('razen-studio.admin.visual-branding-design.atur.section-4.item-3.store');
+    Route::post('/razen-studio/admin/visual-branding-design/atur/section-4/item-4/store', 'RazenStudio\Admin\VisualBrandingDesign\AturController@section_4_item_4_store')->name('razen-studio.admin.visual-branding-design.atur.section-4.item-4.store');
+    Route::post('/razen-studio/admin/visual-branding-design/atur/section-4/item-5/store', 'RazenStudio\Admin\VisualBrandingDesign\AturController@section_4_item_5_store')->name('razen-studio.admin.visual-branding-design.atur.section-4.item-5.store');
+
+    //Visual Branding Design - Section - 5
+    Route::post('/razen-studio/admin/visual-branding-design/atur/section-5/store', 'RazenStudio\Admin\VisualBrandingDesign\AturController@section_5_store')->name('razen-studio.admin.visual-branding-design.atur.section-5.store');
+    Route::post('/razen-studio/admin/visual-branding-design/atur/section-5/edit', 'RazenStudio\Admin\VisualBrandingDesign\AturController@section_5_edit')->name('razen-studio.admin.visual-branding-design.atur.section-5.edit');
+    Route::post('/razen-studio/admin/visual-branding-design/atur/section-5/store/hapus/satu', 'RazenStudio\Admin\VisualBrandingDesign\AturController@section_5_hapus_satu')->name('razen-studio.admin.visual-branding-design.atur.section-5.hapus.satu');
+
+    //Visual Branding Design - Jasa Desain Grafis
+    Route::get('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/atur', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@index')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.index');
+
+    //Visual Branding Design - Jasa Desain Grafis - Section 1
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-1/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_1_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-1.store');
+
+    //Visual Branding Design - Jasa Desain Grafis - Section 2
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-2/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_2_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-2.store');
+
+    //Visual Branding Design - Jasa Desain Grafis - Section 3
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-3/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_3_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-3.store');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-3/edit', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_3_edit')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-3.edit');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-3/store/hapus/satu', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_3_hapus_satu')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-3.hapus.satu');
+
+    //Visual Branding Design - Jasa Desain Grafis - Section 4
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-4/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_4_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-4.store');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-4/edit', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_4_edit')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-4.edit');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-4/store/hapus/satu', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_4_hapus_satu')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-4.hapus.satu');
+
+    //Visual Branding Design - Jasa Desain Grafis - Section 5
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-5/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_5_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-5.store');
 });

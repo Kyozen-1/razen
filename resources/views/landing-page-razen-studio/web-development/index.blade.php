@@ -1,25 +1,52 @@
+@php
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioWebDevelopment;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioBrand;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioHome;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioReview;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioOfficialPartner;
+
+    $web_development = LandingpageRazenstudioWebDevelopment::first();
+
+    $web_development_section_1 = json_decode($web_development->section_1, true);
+    $web_development_section_2 = json_decode($web_development->section_2, true);
+    $web_development_section_3 = json_decode($web_development->section_3, true);
+    $web_development_section_4 = json_decode($web_development->section_4, true);
+    $web_development_section_5 = json_decode($web_development->section_5, true);
+    $web_development_section_6 = json_decode($web_development->section_6, true);
+    $web_development_section_7 = json_decode($web_development->section_7, true);
+    $web_development_section_8 = json_decode($web_development->section_8, true);
+    $web_development_section_9 = json_decode($web_development->section_9, true);
+    $web_development_section_10 = json_decode($web_development->section_10, true);
+
+    $home = LandingpageRazenstudioHome::first();
+    $brands= LandingpageRazenstudioBrand::all();
+    $reviews = LandingpageRazenstudioReview::latest()->get();
+    $partners = LandingpageRazenstudioOfficialPartner::all();
+@endphp
 @extends('landing-page-razen-studio.layouts.app')
-@section('title', 'Razen Studio Web Development')
+@section('title', $web_development_section_1['title'])
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/custom_style.css') }}">
-<link rel="stylesheet" href="https://gosocial.co.id/assets/css/pages/commercial-photo.css?v.2112">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/steps.css') }}">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/css/pages/commercial-photo.css?v.2112">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/dzsparallaxer/dzsparallaxer.css">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/aos/dist/aos.css">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/css/pages/global.css?v.0908">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/css/theme.min.css">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="https://gosocial.co.id/assets/css/pages/sme/instagram.css?v.1808">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 
 @section('content')
 <div class="flat-slider container-fuild">
     <div class="row">
-        <div class="widget-social-header">
-            <div class="container-fluid">
-                <ul class="widget-social-footer-item text-center">
-                    <li><a href="#">Fb.</a></li>
-                    <li><a href="#">Be.</a></li>
-                    <li><a href="#">Tw.</a></li>
-                    <li><a href="#">In.</a></li>
-                </ul>
-            </div>
-        </div>
         <div class="mark-slide">
             <img src="{{ asset('olux/assets/images/mark-page/mark-icon-slide.png') }}" alt="images">
         </div>
@@ -28,23 +55,24 @@
                 <div class="swiper-slide slider-st-1">
                     <div class="content-slider-left text-white">
                         <div class="d-flex">
-                            <a class="section-16px-regular font-weight-500 mr-2 text-white text-decoration-none" href="{{ route('home') }}">Home </a>  <h4 class="section-16px-regular font-weight-500 text-white"> > Jasa Pembuatan Website</h4>
+                            <a class="section-16px-regular font-weight-500 mr-2 text-white text-decoration-none" href="{{ route('home') }}">Home </a>  <h4 class="section-16px-regular font-weight-500 text-white"> > {{$web_development_section_1['judul']}}</h4>
                         </div>
-                        <h2 class="title-slider section-65px-montserrat text-white">Jasa Pembuatan Website</h2>
-                        <p class="desc-slider">GoSocial menyediakan layanan pembuatan website secara profesional untuk berbagai kebutuhan bisnis mulai dari toko online hingga perusahaan. Dengan jaminan support & maintenance seterusnya. Penggunaan teknologi terbaru yang lebih aman dan mutakhir. Serta desain website yang ekslusif dan terkini. Sekaligus optimasi SEO.</p>
+                        <h2 class="title-slider section-65px-montserrat text-white">{{$web_development_section_1['judul']}}</h2>
+                        <p class="desc-slider">{{$web_development_section_1['deskripsi']}}</p>
                         <div class="button-slider">
                             <a href="{{ route('contact') }}" class="button-footer arrow-btn btn-st style-2 text-decoration-none">Hubungi Sales</a>
                                 {{-- <a href="#"class="button-footer clound-down btn-st border-white">Download CV</a> --}}
                         </div>
                     </div>
                     <div class="content-slider-right">
-                        <img src="{{ asset('olux/assets/images/image-slider/img-slider.jpg') }}" alt="images">
+                        <img src="{{ asset('images/landingpage_razenstudio/web-development/'.$web_development_section_1['gambar']) }}" alt="images">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <section class="flat-about-2nd">
     <div class="container">
         <div class="row align-items-center">
@@ -52,20 +80,17 @@
                 <div class="about-content-right wow fadeInUp" data-wow-delay="0ms"
                     data-wow-duration="1500ms">
                     <div class="section-title">
-                        <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">Kami Memproduksi Video Promosi / Profil yang Menarik & Informatif!</h4>
+                        <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">{{$web_development_section_2['judul']}}</h4>
                     </div>
-                    <p class="section-17px-regular margin-bottom-25">Video merupakan media yang paling efektif untuk melakukan campaign, awareness, dan edukasi pasar karena memadukan antara visual dengan audio, sehingga pesan yang disampaikan akan dengan mudah ditangkap oleh audience atau calon customer potensial Anda.</p>
-                    <ul>
-                        <li><p>1. Meningkatkan kepercayaan calon konsumen & kredibilitas brand.</p></li>
-                        <li><p>2. Meningkatkan jangkauan post dan visibilitas akun pada algoritma pencarian konten.</p></li>
-                        <li><p>3. Mendorong peningkatan interaksi organik dengan customer.</p></li>
-                    </ul>
+                    <p class="section-17px-regular margin-bottom-25">
+                        {!! $web_development_section_2['deskripsi'] !!}
+                    </p>
                 </div>
                 <div class="about-content-left wow fadeInLeft">
                     <div class="about-post">
-                        <img src="{{ asset('olux/assets/images/image-box/about-post-mystory.jpg') }}" alt="images">
+                        <img src="{{ asset('images/landingpage_razenstudio/web-development/'.$web_development_section_2['gambar_bawah']) }}" alt="images">
                         <div class="mark-video">
-                            <a href="https://www.youtube.com/embed/xC4ze0p0b5Y" class="lightbox-image">
+                            <a href="{{$web_development_section_2['link_youtube']}}" class="lightbox-image">
                                 <div class="icon"></div>
                             </a>
                         </div>
@@ -76,7 +101,7 @@
             <div class="col-md-6">
                 <div class="about-content-left wow fadeInLeft" style="width: 100% !important; height: auto;">
                     <div class="about-post">
-                        <img src="{{ asset('olux/assets/images/image-box/about-post-mystory.jpg') }}" alt="images">
+                        <img src="{{ asset('images/landingpage_razenstudio/web-development/'.$web_development_section_2['gambar_kanan']) }}" alt="images">
                         <div class="mark-about-post"></div>
                     </div>
                 </div>
@@ -84,13 +109,14 @@
         </div>
     </div>
 </section>
+
 <section class="flat-client">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown text-center">
-                    <h4 class="section-subtitle">WEBSITE SEPERTI APA YANG DAPAT DIBUAT?</h4>
-                    <h2 class="section-45px-montserrat margin-top-15">Sudah saatnya bikin website sendiri untuk bisnis!</h2>
+                    <h4 class="section-subtitle">{{$web_development_section_3['sub_judul']}}</h4>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$web_development_section_3['judul']}}</h2>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
@@ -152,19 +178,50 @@
             </div>
 
             <div class="col-lg-8 order-lg-1 align-self-lg-end">
+                @php
+                    $item_1 = [];
+                    $item_2 = [];
+                    $item_3 = [];
+
+                    foreach ($web_development_section_3['item'] as $item) {
+                        if($item['item'] == 'jasa_pembuatan_landing_page')
+                        {
+                            $item_1 = [
+                                'gambar' => $item['gambar'],
+                                'deskripsi' => $item['deskripsi']
+                            ];
+                        }
+
+                        if($item['item'] == 'jasa_pembuatan_website_toko_online')
+                        {
+                            $item_2 = [
+                                'gambar' => $item['gambar'],
+                                'deskripsi' => $item['deskripsi']
+                            ];
+                        }
+
+                        if($item['item'] == 'jasa_pembuatan_website_perusahaan')
+                        {
+                            $item_3 = [
+                                'gambar' => $item['gambar'],
+                                'deskripsi' => $item['deskripsi']
+                            ];
+                        }
+                    }
+                @endphp
                 <!-- Tab Content -->
                 <div class="tab-content pr-lg-4">
                     <div class="tab-pane fade active show" id="pills-one-code-features-example2" role="tabpanel" aria-labelledby="pills-one-code-features-example2-tab">
                         <div class="container">
                             <div class="row mx-n2">
                                 <div class="col-sm-12 col-md-12 px-2 mb-3 mb-md-0">
-                                    <div class="card-frame rounded-lg img-fluid bg-img-hero" style="background-image: url(https://gosocial.co.id/assets/img/service/web/landing-page.webp); min-height: 50rem;">
+                                    <div class="card-frame rounded-lg img-fluid bg-img-hero" style="background-image: url({{asset('images/landingpage_razenstudio/web-development/'.$item_1['gambar'])}}); min-height: 50rem;">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="mt-5 mt-md-9">
-                                <p>Landing page adalah halaman website yang didesain khusus dengan mindset marketing. Halaman ini bertujuan untuk mengkonversi pengunjung yang mengakses website dari hasil digital campaign atau platform lainnya.</p>
+                                <p>{{$item_1['deskripsi']}}</p>
                             </div>
                         </div>
                     </div>
@@ -173,13 +230,13 @@
                         <div class="container">
                             <div class="row mx-n2">
                                 <div class="col-sm-12 col-md-12 px-2 mb-3 mb-md-0">
-                                    <div class="card-frame rounded-lg img-fluid bg-img-hero" style="background-image: url(https://gosocial.co.id/assets/img/service/web/toko-online.webp); min-height: 50rem;">
+                                    <div class="card-frame rounded-lg img-fluid bg-img-hero" style="background-image: url({{asset('images/landingpage_razenstudio/web-development/'.$item_2['gambar'])}}); min-height: 50rem;">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="mt-5 mt-md-9">
-                                <p>Toko online atau ecommerce website merupakan website yang bertujuan untuk menghasilkan profit dan penjualan produk/layanan secara terukur melalui transaksi didalamnya.</p>
+                                <p>{{$item_2['deskripsi']}}</p>
                             </div>
                         </div>
                     </div>
@@ -188,13 +245,13 @@
                         <div class="container">
                             <div class="row mx-n2">
                                 <div class="col-sm-12 col-md-12 px-2 mb-3 mb-md-0">
-                                    <div class="card-frame rounded-lg img-fluid bg-img-hero" style="background-image: url(https://gosocial.co.id/assets/img/service/web/company-profile-new.webp); min-height: 50rem;">
+                                    <div class="card-frame rounded-lg img-fluid bg-img-hero" style="background-image: url({{asset('images/landingpage_razenstudio/web-development/'.$item_3['gambar'])}}); min-height: 50rem;">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="mt-5 mt-md-9">
-                                <p>Dengan memiliki website company profile, orang akan lebih mudah mendapatkan informasi terkait dengan perusahaan, sekaligus untuk membangun kredibilitas bagi berbagai pihak, mulai dari klien, mitra bisnis hingga calon investor.</p>
+                                <p>{{$item_3['deskripsi']}}</p>
                             </div>
                         </div>
                     </div>
@@ -205,13 +262,14 @@
         </div>
     </div>
 </section>
+
 <section class="flat-about-2nd">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown text-center">
-                    <h4 class="section-subtitle">Pilihan Paket</h4>
-                    <h2 class="section-45px-montserrat margin-top-15">Harga Jasa Pembuatan Website</h2>
+                    <h4 class="section-subtitle">{{$web_development_section_4['sub_judul']}}</h4>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$web_development_section_4['judul']}}</h2>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
@@ -435,16 +493,15 @@
             <div class="row justify-content-lg-between align-items-lg-center no-gutters">
                 <div class="col-lg-4">
                     <div class="mb-4 pr-4 pr-lg-0">
-                        <h2>Punya kebutuhan diluar paket diatas?</h2>
-                        <p>Kami memiliki spesialisasi dalam membuat website bisnis, namun kami juga dapat mengerjakan
-                            berbagai permintaan website maupun aplikasi custom.</p>
+                        <h2>{{$web_development_section_5['judul']}}</h2>
+                        <p>{{$web_development_section_5['deskripsi']}}</p>
                     </div>
-                    <a class="btn btn-primary btn-lg transition-3d-hover" href="https://gosocial.co.id/contact">Hubungi Kami</a>
+                    <a class="btn btn-danger btn-lg transition-3d-hover p-3" href="{{ route('contact') }}">Hubungi Kami</a>
                 </div>
 
                 <div class="col-lg-7 space-top-1 space-top-sm-2 ml-auto">
                     <div data-aos="fade-up" class="aos-init aos-animate">
-                        <img class="img-fluid shadow-lg" src="https://gosocial.co.id/assets/img/service/web/website-aplikasi-custom.webp" alt="Image Description">
+                        <img class="img-fluid shadow-lg" src="{{ asset('images/landingpage_razenstudio/web-development/'.$web_development_section_5['gambar']) }}" alt="Image Description">
                     </div>
                 </div>
             </div>
@@ -457,78 +514,25 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h4 class="section-subtitle">MENGAPA HARUS KAMI?</h4>
-                    <h2 class="section-45px-montserrat margin-top-15">Keuntungan buat website bersama GoSocial</h2>
+                    <h4 class="section-subtitle">{{$web_development_section_6['sub_judul']}}</h4>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$web_development_section_6['judul']}}</h2>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
             </div>
-            <div class="col-md-4 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
+            @foreach ($web_development_section_6['konten'] as $item)
+                <div class="col-md-4 mb-5">
+                    <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="icon-box">
+                            <div class="icon-counter">
+                                <img style="height: 5rem; width:5rem; padding: -3rem;" src="{{ asset('images/landingpage_razenstudio/web-development/'.$item['logo_konten']) }}">
+                            </div>
                         </div>
+                        <h3 class="section-20px-montserrat font-weight-600 line-height-35">{{$item['judul_konten']}}</h3>
+                        <p>{{$item['deskripsi_konten']}}</p>
                     </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">Gratis Domain & Hosting</h3>
-                    <p>Seluruh paket sudah termasuk FREE biaya server grade A dan pembuatan domain (TLD) selama 1 tahun.</p>
                 </div>
-            </div>
-            <div class="col-md-4 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">Full Support & Maintenance</h3>
-                    <p>Dukungan teknis dan support untuk memastikan pengelolaan website berjalan dengan lancar setelah dibuat.</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">SEO Friendly</h3>
-                    <p>Website telah dirancang khusus untuk SEO sehingga dapat meningkatkan rangking pada search engine.</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">Mobile Optimized</h3>
-                    <p>Website telah dirancang untuk dapat diakses secara optimal melalui mobile device, dsb.</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">Ide Konten & Copywriting</h3>
-                    <p>Tim kami akan membantu menyusun konten dan copywriting website untuk memaksimalkan konversi.</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">Teknologi & Desain Terkini</h3>
-                    <p>Hasil kami telah up-to-date terhadap perkembangan teknologi yang lebih efisien dan efektif saat ini</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -538,9 +542,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h4 class="section-subtitle">FEATURED WORK</h4>
-                    <h2 class="section-45px-montserrat margin-top-15">Portofolio</h2>
-                    <p>Kami telah membantu berbagai bisnis membuat website baru maupun re-design website lama ke teknologi dan desain yang lebih terkini!</p>
+                    <h4 class="section-subtitle">{{$web_development_section_7['sub_judul']}}</h4>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$web_development_section_7['judul']}}</h2>
+                    <p>{{$web_development_section_7['deskripsi']}}</p>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
@@ -655,8 +659,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="client-content-box wow fadeInUp">
-                    <h4 class="section-subtitle">TESTIMONIAL</h4>
-                    <h2 class="section-title section-45px-montserrat">Apa Kata Mereka?</h2>
+                    <h4 class="section-title section-45px-montserrat">{{$home->section_7}}</h4>
                     <button class="clone-btn-prev"></button>
                     <button class="clone-btn-next"></button>
                 </div>
@@ -664,80 +667,39 @@
             <div class="col-md-6">
                 <div class="swiper-container sliver-vertical">
                     <div class="swiper-wrapper">
+                        @foreach ($reviews as $review)
                         <div class="swiper-slide">
                             <div class="client-slider-box">
-                                <div class="client-user">
-                                    <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
+                                <div class="client-user text-center">
+                                    <img src="{{ asset('images/landingpage_razenstudio/reviewer/'.$review->gambar) }}"
                                         alt="images">
+                                    <ul class="list-inline small mt-3">
+                                        <li class="list-inline-item mx-0">
+                                            <i class="fas fa-star h4 text-warning"></i>
+                                        </li>
+                                        <li class="list-inline-item mx-0">
+                                            <i class="fas fa-star h4 text-warning"></i>
+                                        </li>
+                                        <li class="list-inline-item mx-0">
+                                            <i class="fas fa-star h4 text-warning"></i>
+                                        </li>
+                                        <li class="list-inline-item mx-0">
+                                            <i class="fas fa-star h4 text-warning"></i>
+                                        </li>
+                                        <li class="list-inline-item mx-0">
+                                            <i class="fas fa-star h4 text-warning"></i>
+                                        </li>
+                                    </ul>
                                 </div>
                                 <div class="client-content">
                                     <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">Glenn Ardi</h4>
-                                        <p class="margin-top-11">"Sejauh ini kami sudah bekerjasama membuat 5 project video dan kerjasama yang dijalin sangat profesional sekali, Good Job!"</p>
+                                        <h4 class="name-author section-20px-montserrat">{{$review->nama}}</h4>
+                                        <p class="margin-top-11">{{$review->ulasan}}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="client-slider-box">
-                                <div class="client-user">
-                                    <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                        alt="images">
-                                </div>
-                                <div class="client-content">
-                                    <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">Olivia Willyost</h4>
-                                        <p class="margin-top-11">"Terimakasih buat GoSocial yang sudah membantu kami membuatkan video Titip Jual OLX Indonesia."</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="client-slider-box">
-                                <div class="client-user">
-                                    <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                        alt="images">
-                                </div>
-                                <div class="client-content">
-                                    <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">Angela Sujadi</h4>
-                                        <p class="margin-top-11">"Kerja sama dengan GoSocial itu komunikasinya gampang. Sehingga apa yang kita mau dan konsep itu nyambung, dan hasilnya maksimal."</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="client-slider-box">
-                                <div class="client-user">
-                                    <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                        alt="images">
-                                </div>
-                                <div class="client-content">
-                                    <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">Brade Hook</h4>
-                                        <p class="margin-top-11">A customer review is a review of a product
-                                            or service made by a customer who has purchased and used, or had
-                                            experience with, the product or service.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="client-slider-box">
-                                <div class="client-user">
-                                    <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                        alt="images">
-                                </div>
-                                <div class="client-content">
-                                    <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">Brade Hook</h4>
-                                        <p class="margin-top-11">A customer review is a review of a product
-                                            or service made by a customer who has purchased and used, or had
-                                            experience with, the product or service.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -750,8 +712,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h4 class="section-subtitle">FAQ</h4>
-                    <h2 class="section-45px-montserrat margin-top-15">Frequently Asked Questions</h2>
+                    <h4 class="section-subtitle">{{$web_development_section_8['sub_judul']}}</h4>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$web_development_section_8['judul']}}</h2>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
@@ -760,213 +722,27 @@
         <div class="row">
             <div class="col-12">
                 <div id="basicsAccordion-left">
-                    <!-- Card -->
-                    <div class="card shadow-none mb-3">
-                        <div class="card-header card-collapse" id="basicsHeadingOne">
-                            <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="false" aria-controls="basicsCollapseOne">
-                                <span class="h4">Apa saja yang akan didapatkan dari GoSocial?</span>
+                    @foreach ($web_development_section_8['konten'] as $item)
+                        <!-- Card -->
+                        <div class="card shadow-none mb-3">
+                            <div class="card-header card-collapse" id="basicsHeading{{$item['id']}}">
+                                <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapse{{$item['id']}}" aria-expanded="false" aria-controls="basicsCollapse{{$item['id']}}">
+                                    <span class="font-size-2">{{$item['pertanyaan']}}</span>
 
-                                <span class="card-btn-toggle">
-                                    <span class="h4 card-btn-toggle-default">+</span>
-                                    <span class="h4 card-btn-toggle-active">−</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div id="basicsCollapseOne" class="collapse" aria-labelledby="basicsHeadingOne" data-parent="#basicsAccordion-left" style="">
-                            <div class="card-body px-0 m-3">
-                                <p>Pembuatan website di GoSocial melalui tahapan web development profesional dengan teknologi dan desain yang terkini, klien akan mendapatkan website sesuai dengan paket dan requirement yang disepakati di awal project.
-                                    <br>
-                                    Klien juga akan mendapatkan halaman login admin untuk mengelola website melalui Wordpress, dan juga akses ke akun cPanel hosting apabila dibutuhkan.
-                                    <br>
-                                    Apabila ada fitur maupun hal yang kurang jelas dapat ditanyakan langsung kepada tim kami.</p>
+                                    <span class="card-btn-toggle">
+                                        <span class="font-size-2 card-btn-toggle-default">+</span>
+                                        <span class="font-size-2 card-btn-toggle-active">−</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div id="basicsCollapse{{$item['id']}}" class="collapse" aria-labelledby="basicsHeading{{$item['id']}}" data-parent="#basicsAccordion-left" style="">
+                                <div class="card-body px-0 m-3">
+                                    <p>{{$item['jawaban']}}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card shadow-none mb-3">
-                        <div class="card-header card-collapse" id="basicsHeadingTwo">
-                            <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed text-decoration-none text-left px-0 text-left" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
-                                <span class="h4">Apa saja yang diperlukan dipersiapkan untuk mulai membuat website?</span>
-
-                                <span class="card-btn-toggle">
-                                    <span class="h4 card-btn-toggle-default">+</span>
-                                    <span class="h4 card-btn-toggle-active">−</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div id="basicsCollapseTwo" class="collapse" aria-labelledby="basicsHeadingTwo" data-parent="#basicsAccordion-left">
-                            <div class="card-body px-0 m-3">
-                                <p>Detail Bisnis:</p>
-                                <ul style="list-style-type: circle;">
-                                    <li>
-                                        1. Nama Domain (jika belum punya), contoh www.namaweb.com
-                                    </li>
-                                    <li>
-                                        2. Logo dan identitas branding lainnya.
-                                    </li>
-                                    <li>
-                                        3. Deskripsi bisnis / perusahaan meliputi produk, layanan, sejarah, visi misi, dll.
-                                    </li>
-                                    <li>
-                                        4. Alamat & kontak usaha seperti e-mail maupun nomor telepon.
-                                    </li>
-                                    <li>
-                                        5. Legalitas (untuk pendaftaran domain dengan ekstensi .id)
-                                    </li>
-                                </ul>
-                                <p>Konten untuk ditampilkan di website:</p>
-                                <ul>
-                                    <li>
-                                        1. Konten visual seperti: foto / ilustrasi produk, video company profile, dsb.
-                                    </li>
-                                    <li>
-                                        2. Keunggulan layanan / produk dan manfaatnya.
-                                    </li>
-                                    <li>
-                                        3. Testimoni klien / pelanggan (jika ada).
-                                    </li>
-                                </ul>
-                                <p>Strategi Marketing:</p>
-                                <ul>
-                                    <li>1. Target Market (usia, gender, lokasi).</li>
-                                    <li>2. Tujuan mempunyai website (sarana marketing, transaksi, informasi, dsb).</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card shadow-none mb-3">
-                        <div class="card-header card-collapse" id="basicsHeadingThree">
-                            <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed text-decoration-none text-left px-0" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
-                                <span class="h4">Saya sudah memiliki website sebelumnya, apakah bisa dilanjutkan?</span>
-
-                                <span class="card-btn-toggle">
-                                    <span class="h4 card-btn-toggle-default">+</span>
-                                    <span class="h4 card-btn-toggle-active">−</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div id="basicsCollapseThree" class="collapse" aria-labelledby="basicsHeadingThree" data-parent="#basicsAccordion-left">
-                            <div class="card-body px-0 m-3">
-                                <p>Kami merekomendasikan untuk melakukan rebuild website kembali dengan teknologi yang lebih baik dan aman saat ini, karena struktur dan juga dokumentasi source code tiap developer berbeda - beda.</p>
-                                <p>Namun apabila anda sudah memiliki domain dan server sendiri, kami akan membantu membangun website pada infrastruktur yang sudah ada.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card shadow-none mb-3">
-                        <div class="card-header card-collapse" id="basicsHeadingFour">
-                            <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed text-decoration-none text-left px-0" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
-                                <span class="h4">Bagaimana jika saya nantinya kesulitan mengelola website?</span>
-                                <span class="card-btn-toggle">
-                                    <span class="card-btn-toggle-default h4">+</span>
-                                    <span class="card-btn-toggle-active h4">−</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour" data-parent="#basicsAccordion-left">
-                            <div class="card-body px-0 m-3">
-                                <p>Semua paket pembuatan website di GoSocial sudah termasuk FREE support selama 3 bulan meliputi maintenance bug, update konten, hingga bantuan permasalahan teknis lainnya.
-                                </p>
-                                <p>
-                                    Setelah masa support berakhir, Anda dapat memperpanjang sesuai keinginan dan kebutuhan dari bisnis dengan biaya mulai dari Rp. 100.000,- / bulan.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card shadow-none mb-3">
-                        <div class="card-header card-collapse" id="basicsHeadingFive">
-                            <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed text-decoration-none text-left px-0" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseFive" aria-expanded="false" aria-controls="basicsCollapseFive">
-                                <span class="h4">Apakah ada biaya bulanan atau lainnya di kemudian hari?</span>
-                                <span class="card-btn-toggle">
-                                    <span class="card-btn-toggle-default h4">+</span>
-                                    <span class="card-btn-toggle-active h4">−</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div id="basicsCollapseFive" class="collapse" aria-labelledby="basicsHeadingFive" data-parent="#basicsAccordion-left">
-                            <div class="card-body px-0 m-3">
-                                <p>Mempunyai website ibarat memiliki bangunan yang memerlukan biaya overhead / upkeep lain seperti Air & Listrik. Untuk menjalankan website ada biaya server untuk hosting source code website dan juga domain agar website senantiasa dapat diakses pada jaringan internet.
-                                    <br>
-                                    Namun tidak perlu khawatir! karena paket pembuatan website di GoSocial termasuk biaya server & domain selama 1 tahun!
-                                    <br>
-                                    Setelah berakhir Anda dapat memperpanjang dengan biaya yang cukup terjangkau mulai dari Rp. 500.000,- per tahun.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card -->
-                </div>
-            </div>
-            <div class="col-12">
-                <div id="basicsAccordion-right">
-                    <!-- Card -->
-                    <div class="card shadow-none mb-3">
-                        <div class="card-header card-collapse" id="basicsHeadingSix">
-                            <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed text-decoration-none text-left px-0" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseSix" aria-expanded="false" aria-controls="basicsCollapseSix">
-                                <span class="h4">Apa itu CMS & SEO?</span>
-
-                                <span class="card-btn-toggle">
-                                    <span class="h4 card-btn-toggle-default">+</span>
-                                    <span class="h4 card-btn-toggle-active">−</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div id="basicsCollapseSix" class="collapse" aria-labelledby="basicsHeadingSix" data-parent="#basicsAccordion-right">
-                            <div class="card-body px-0 m-3">
-                                <p>CMS (Content Management System) adalah sebuah sistem yang memudahkan untuk menambahkan dan update isi konten dari suatu website, kami menggunakan CMS berbasis Wordpress untuk mengelola website.
-                                    <br>
-                                    SEO (Search Engine Optimization) adalah sebuah metode mengoptimasi website agar berada di halaman 1 (pertama) pencarian Google. Berada di halaman pertama > semakin banyak yang pengunjung web > semakin banyak pelanggan.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card shadow-none mb-3">
-                        <div class="card-header card-collapse" id="basicsHeadingSeven">
-                            <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed text-decoration-none text-left px-0" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseSeven" aria-expanded="false" aria-controls="basicsCollapseSeven">
-                                <span class="h4">Bagaimana jika saya butuh fitur tambahan atau custom?</span>
-
-                                <span class="card-btn-toggle">
-                                    <span class="card-btn-toggle-default h4">+</span>
-                                    <span class="card-btn-toggle-active h4">−</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div id="basicsCollapseSeven" class="collapse" aria-labelledby="basicsHeadingSeven" data-parent="#basicsAccordion-right">
-                            <div class="card-body px-0 m-3">
-                                <p>Tim kami dapat menambahkan fitur-fitur diluar paket diatas sesuai dengan kebutuhan, semua fitur tersedia di addons layanan seperti:
-                                </p>
-                                <ul>
-                                    <li>
-                                        Fitur Livechat / WhatsApp
-                                    </li>
-                                    <li>
-                                        E-mail bisnis
-                                    </li>
-                                    <li>
-                                        Halaman / section tambahan
-                                    </li>
-                                    <li>
-                                        Dan berbagai fitur lainnya
-                                    </li>
-                                </ul>
-                                <p>
-                                    Jika Anda memiliki kebutuhan website skala enterprise atau dengan berbagai sistem yang kompleks, tim kami akan membuatkan penawaran khusus untuk pembuatan website custom sesuai dengan kebutuhan yang diinginkan.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                        <!-- End Card -->
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -978,65 +754,33 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h2 class="section-45px-montserrat margin-top-15">Lokasi</h2>
-                    <p class="text-muted">Ingin berdiskusi langsung? tim kami juga dapat bertemu secara langsung di beberapa kota berikut:</p>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$web_development_section_9['judul']}}</h2>
+                    <p class="text-muted">{{$web_development_section_9['deskripsi']}}</p>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="row">
-                        <div class="col-6 col-md-4">
-                            <div class="icon-box">
-                                <div class="icon-counter">
-                                    <span class="icon-guarantee1"></span>
+            @foreach ($web_development_section_9['konten'] as $item)
+                <div class="col-md-4">
+                    <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="row">
+                            <div class="col-6 col-md-4">
+                                <div class="icon-box">
+                                    <div class="icon-counter">
+                                        <img style="height: 5rem; width:5rem;" src="{{ asset('images/landingpage_razenstudio/web-development/'.$item['logo_konten']) }}">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-6 col-md-8 justify-content-center align-self-center">
-                            <span class="text-muted">Jasa Pembuatan Website</span>
-                            <h3 class="section-20px-montserrat font-weight-600 line-height-35">Surabaya</h3>
+                            <div class="col-6 col-md-8 justify-content-center align-self-center">
+                                <span class="text-muted">Jasa Pembuatan Website</span>
+                                <h3 class="section-20px-montserrat font-weight-600 line-height-35">{{$item['lokasi_konten']}}</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="row">
-                        <div class="col-6 col-md-4">
-                            <div class="icon-box">
-                                <div class="icon-counter">
-                                    <span class="icon-guarantee1"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-8 justify-content-center align-self-center">
-                            <span class="text-muted">Jasa Pembuatan Website</span>
-                            <h3 class="section-20px-montserrat font-weight-600 line-height-35">Jogja</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="row">
-                        <div class="col-6 col-md-4">
-                            <div class="icon-box">
-                                <div class="icon-counter">
-                                    <span class="icon-guarantee1"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-8 justify-content-center align-self-center">
-                            <span class="text-muted">Jasa Pembuatan Website</span>
-                            <h3 class="section-20px-montserrat font-weight-600 line-height-35">Jakarta</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -1051,7 +795,7 @@
                         <div class="transform-rotate-3">
                             <div class="device device-ipad">
                                 <img class="device-ipad-frame" src="https://gosocial.co.id/assets/svg/components/ipad.svg" alt="Image Description">
-                                <img class="device-ipad-screen" src="https://gosocial.co.id/assets/img/service/web/ray-website.webp" alt="Image Description">
+                                <img class="device-ipad-screen" src="{{ asset('images/landingpage_razenstudio/web-development/'.$web_development_section_10['gambar_kiri']) }}" alt="Image Description">
                             </div>
 
                             <figure class="max-w-19rem w-100 position-absolute bottom-0 right-0 z-index-n1 mr-n8 mb-n5">
@@ -1065,11 +809,8 @@
                 <div class="col-sm-8 col-lg-4">
                     <!-- Title -->
                     <div class="mb-5">
-                        <h2 class="h1">Jasa Pembuatan Website Profesional</h2>
-                        <p>GoSocial merupakan digital agency yang menyediakan layanan jasa pembuatan website
-                            profesional. Situs dibuat dengan teknologi terkini yang memperhatikan SEO serta desain yang
-                            mampu memberi pengalaman terbaik bagi pengguna.
-                        </p>
+                        <h2 class="h1">{{$web_development_section_10['judul']}}</h2>
+                        <p>{{$web_development_section_10['deskripsi']}}</p>
                     </div>
                     <!-- End Title -->
 
@@ -1084,7 +825,7 @@
                         <div class="max-w-33rem w-100 transform-rotate-2 ml-auto">
                             <div class="device device-iphone-x">
                                 <img class="device-iphone-x-frame" src="https://gosocial.co.id/assets/svg/components/iphone-x.svg" alt="Image Description">
-                                <img class="device-iphone-x-screen" src="https://gosocial.co.id/assets/img/service/web/ray-mobile.webp" alt="Image Description">
+                                <img class="device-iphone-x-screen" src="{{ asset('images/landingpage_razenstudio/web-development/'.$web_development_section_10['gambar_kanan']) }}" alt="Image Description">
                             </div>
 
                             <figure class="max-w-19rem w-100 position-absolute top-0 left-0 z-index-n1 mt-n5 ml-n5">
@@ -1102,36 +843,23 @@
 </div>
 
 <section class="flat-services">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title wow fadeInDown">
-                    <p class="text-muted">Official Partners:</p>
-                </div>
-                <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
-                    style="height:60px"></div>
+    <div class="container space-1">
+        <div class="w-lg-75 mt-3 mx-lg-auto">
+            <div class="text-center mb-4">
+                <span class="divider divider-text h3">Official Partners:</span>
             </div>
-            <div class="col-md-12 justify-content-center">
-                <div class="row d-flex justify-content-center text-center">
-                    <div class="col-lg-3 col-4">
-                        <div class="mx-3 client-image">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC NISP">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC">
-                        </div>
-                    </div>
 
-                    <div class="col-lg-3 col-4">
-                        <a class="mx-3 client-image" href="https://www.bhinneka.com/toko-gosocial-indonesia" target="_blank">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Parnter Bhinneka.com" style="">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Partner Bhinneka">
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-4">
-                        <div class="mx-3 client-image">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                        </div>
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-lg-8 col-12">
+                    <div class="row d-flex justify-content-center">
+                        @foreach ($partners as $partner)
+                            <div class="col-lg-3 col-4">
+                                <div class="mx-3 client-image">
+                                    <img class="client-default" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC NISP">
+                                    <img class="client-hover" style="display: none;" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC">
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -1141,7 +869,23 @@
 @endsection
 
 @section('js')
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://gosocial.co.id/assets/js/pages/commercial-photo.js?v.0601"></script>
 <script src="https://gosocial.co.id/assets/js/pages/commercial-photo-modal.js?v.0601"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://gosocial.co.id/assets/vendor/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-header/dist/hs-header.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/aos/dist/aos.js"></script>
+<script src="https://gosocial.co.id/assets/js/theme.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-quantity-counter/dist/hs-quantity-counter.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/slick-carousel/slick/slick.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-toggle-switch/dist/hs-toggle-switch.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-switch/dist/hs-switch-text.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/fontawesome.min.js" integrity="sha512-j3gF1rYV2kvAKJ0Jo5CdgLgSYS7QYmBVVUjduXdoeBkc4NFV4aSRTi+Rodkiy9ht7ZYEwF+s09S43Z1Y+ujUkA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @endsection

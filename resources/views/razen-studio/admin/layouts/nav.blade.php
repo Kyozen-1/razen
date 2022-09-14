@@ -100,7 +100,10 @@
                     request()->routeIs('razen-studio.admin.video-production.video-animasi.index') ||
                     request()->routeIs('razen-studio.admin.video-production.video-konten-sosmed.index')||
                     request()->routeIs('razen-studio.admin.video-production.video-company-profile.index') ||
-                    request()->routeIs('razen-studio.admin.commercial-photography.atur.index'))
+                    request()->routeIs('razen-studio.admin.commercial-photography.atur.index') ||
+                    request()->routeIs('razen-studio.admin.web-development.atur.index') ||
+                    request()->routeIs('razen-studio.admin.visual-branding-design.atur.index') ||
+                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.index'))
                     <a href="#landing_page" class="active">
                     @else
                     <a href="#landing_page">
@@ -296,6 +299,67 @@
                                     @endif
                                         <span class="label">Atur</span>
                                     </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-studio.admin.web-development.atur.index'))
+                                <a href="#web_development" class="active">
+                            @else
+                                <a href="#web_development">
+                            @endif
+                                <span class="label">Web Development</span>
+                            </a>
+                            <ul id="web_development">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.web-development.atur.index'))
+                                        <a href="{{ route('razen-studio.admin.web-development.atur.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.web-development.atur.index') }}">
+                                    @endif
+                                        <span class="label">Atur</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-studio.admin.visual-branding-design.atur.index') ||
+                            request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.index'))
+                                <a href="#visual_branding_design" class="active">
+                            @else
+                                <a href="#visual_branding_design">
+                            @endif
+                                <span class="label">Visual Branding Design</span>
+                            </a>
+                            <ul id="visual_branding_design">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.visual-branding-design.atur.index'))
+                                        <a href="{{ route('razen-studio.admin.visual-branding-design.atur.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.visual-branding-design.atur.index') }}">
+                                    @endif
+                                        <span class="label">Atur</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.index'))
+                                        <a href="#jasa_desain_grafis" class="active">
+                                    @else
+                                        <a href="#jasa_desain_grafis">
+                                    @endif
+                                        <span class="label">Jasa Desain Grafis</span>
+                                    </a>
+                                    <ul id="jasa_desain_grafis">
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.index'))
+                                                <a href="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.index') }}">
+                                            @endif
+                                                <span class="label">Atur</span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
