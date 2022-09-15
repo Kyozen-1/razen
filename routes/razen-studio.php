@@ -638,4 +638,56 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
 
     //Visual Branding Design - Jasa Desain Grafis - Section 5
     Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-5/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_5_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-5.store');
+
+    //Visual Branding Design - Jasa Desain Grafis - Section 6
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-6/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_6_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-6.store');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-6/item-1/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_6_item_1_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-6.item-1.store');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-6/item-2/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_6_item_2_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-6.item-2.store');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-6/item-3/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_6_item_3_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-6.item-3.store');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-6/item-4/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_6_item_4_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-6.item-4.store');
+
+    //Visual Branding Design - Jasa Desain Grafis - Section 7
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-7/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_7_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-7.store');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-7/edit', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_7_edit')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-7.edit');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-7/store/hapus/satu', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_7_hapus_satu')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-7.hapus.satu');
+
+    //Visual Branding Design - Jasa Desain Grafis - Section 8
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-8/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_8_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-8.store');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-8/edit', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_8_edit')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-8.edit');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/section-8/store/hapus/satu', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\AturController@section_8_hapus_satu')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-8.hapus.satu');
+
+    //Visual Branding Design - Jasa Desain Grafis - Desain Logo
+    Route::get('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/desain-logo', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\DesainLogoController@index')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.index');
+
+    //Visual Branding Design - Jasa Desain Grafis - Desain Logo - Section 1
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/desain-logo/section-1/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\DesainLogoController@section_1_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-1.store');
+
+    //Visual Branding Design - Jasa Desain Grafis - Desain Logo - Section 2
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/desain-logo/section-2/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\DesainLogoController@section_2_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-2.store');
+
+    //Visual Branding Design - Jasa Desain Grafis - Desain Logo - Section 3
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/desain-logo/section-3/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\DesainLogoController@section_3_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-3.store');
+
+    //Visual Branding Design - Jasa Desain Grafis - Desain Logo - Section 4
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/desain-logo/section-4/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\DesainLogoController@section_4_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-4.store');
+
+    //Visual Branding Design - Jasa Desain Grafis - Desain Logo - Section 5
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/desain-logo/section-5/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\DesainLogoController@section_5_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-5.store');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/desain-logo/section-5/edit', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\DesainLogoController@section_5_edit')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-5.edit');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/desain-logo/section-5/store/hapus/satu', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\DesainLogoController@section_5_hapus_satu')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-5.hapus.satu');
+
+    //Visual Branding Design - Jasa Desain Grafis - Desain Logo - Section 6
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/desain-logo/section-6/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\DesainLogoController@section_6_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-6.store');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/desain-logo/section-6/item/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\DesainLogoController@section_6_item_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-6.item.store');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/desain-logo/section-6/item/hapus', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\DesainLogoController@section_6_item_hapus')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-6.item.hapus');
+
+    //Visual Branding Design - Jasa Desain Grafis - Desain Logo - Section 7
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/desain-logo/section-7/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\DesainLogoController@section_7_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-7.store');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/desain-logo/section-7/edit', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\DesainLogoController@section_7_edit')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-7.edit');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/desain-logo/section-7/store/hapus/satu', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\DesainLogoController@section_7_hapus_satu')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-7.hapus.satu');
+
+    //Visual Branding Design - Jasa Desain Grafis - Desain Logo - Section 8
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/desain-logo/section-8/store', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\DesainLogoController@section_8_store')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-8.store');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/desain-logo/section-8/edit', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\DesainLogoController@section_8_edit')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-8.edit');
+    Route::post('/razen-studio/admin/visual-branding-design/jasa-desain-grafis/desain-logo/section-8/store/hapus/satu', 'RazenStudio\Admin\VisualBrandingDesign\JasaDesainGrafis\DesainLogoController@section_8_hapus_satu')->name('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-8.hapus.satu');
 });

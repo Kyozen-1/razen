@@ -103,7 +103,8 @@
                     request()->routeIs('razen-studio.admin.commercial-photography.atur.index') ||
                     request()->routeIs('razen-studio.admin.web-development.atur.index') ||
                     request()->routeIs('razen-studio.admin.visual-branding-design.atur.index') ||
-                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.index'))
+                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.index') ||
+                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.index'))
                     <a href="#landing_page" class="active">
                     @else
                     <a href="#landing_page">
@@ -324,7 +325,8 @@
                         </li>
                         <li>
                             @if (request()->routeIs('razen-studio.admin.visual-branding-design.atur.index') ||
-                            request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.index'))
+                            request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.index') ||
+                            request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.index'))
                                 <a href="#visual_branding_design" class="active">
                             @else
                                 <a href="#visual_branding_design">
@@ -342,7 +344,8 @@
                                     </a>
                                 </li>
                                 <li>
-                                    @if (request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.index'))
+                                    @if (request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.index') ||
+                                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.index'))
                                         <a href="#jasa_desain_grafis" class="active">
                                     @else
                                         <a href="#jasa_desain_grafis">
@@ -357,6 +360,15 @@
                                                 <a href="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.index') }}">
                                             @endif
                                                 <span class="label">Atur</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.index'))
+                                                <a href="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.index') }}">
+                                            @endif
+                                                <span class="label">Desain Logo</span>
                                             </a>
                                         </li>
                                     </ul>

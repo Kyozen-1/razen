@@ -330,6 +330,423 @@
         </form>
     </div>
 </div>
+
+<div class="card mb-5">
+    <div class="card-body">
+        <h2 class="small-title">Edit Section 6</h2>
+        <div class="row mb-3">
+            <div class="col-12">
+                <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/section_6.png') }}" alt="" class="img-fluid rounded">
+            </div>
+        </div>
+        <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-6.store') }}" class="mb-3" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="row">
+                <div class="col-12 col-md-7">
+                    <div class="mb-3 position-relative form-group">
+                        <label for="" class="form-label">Sub Judul</label>
+                        <input type="text" class="form-control" name="sub_judul" placeholder="Jasa Video Marketing" value="{{$jasa_branding_design_section_6?$jasa_branding_design_section_6['sub_judul']:'' }}" required>
+                    </div>
+                    <div class="mb-3 position-relative form-group">
+                        <label for="" class="form-label">Judul</label>
+                        <input type="text" class="form-control" name="judul" placeholder="Jasa Video Marketing" value="{{$jasa_branding_design_section_6?$jasa_branding_design_section_6['judul']:'' }}" required>
+                    </div>
+                    <div class="mb-3 position-relative form-group">
+                        <label for="" class="form-label">Deskripsi</label>
+                        <textarea name="deskripsi" rows="5" class="form-control" required>{{$jasa_branding_design_section_6?$jasa_branding_design_section_6['deskripsi']:'' }}</textarea>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5">
+                    <div class="position-relative form-group">
+                        <label for="" class="form-label">Gambar</label>
+                        @if ($jasa_branding_design_section_6)
+                        <input type="file" class="dropify" name="gambar" data-height="300" data-allowed-file-extensions="png jpg jpeg webp" data-default-file="{{ asset('images/landingpage_razenstudio/visual-branding-design/jasa-desain-grafis/'.$jasa_branding_design_section_6['gambar']) }}" data-show-errors="true" required>
+                        @else
+                        <input type="file" class="dropify" name="gambar" data-height="300" data-allowed-file-extensions="png jpg jpeg webp" data-show-errors="true" required>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary mb-0">Submit</button>
+        </form>
+        <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-6.item-1.store') }}" class="mb-3" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/section_6_item_1.png') }}" alt="" class="img-fluid rounded">
+                </div>
+                <div class="col-12 col-md-6">
+                    <input type="hidden" name="item" value="item_1">
+                    @if ($jasa_branding_design_section_6)
+                        @if ($jasa_branding_design_section_6['item'] != null)
+                            @foreach ($jasa_branding_design_section_6['item'] as $item)
+                                @if ($item['item'] == 'item_1')
+                                    <div class="mb-3 positive-relative form-group">
+                                        <label for="" class="form-label">Angka</label>
+                                        <input type="number" name="angka" class="form-control" required value="{{$item['angka']}}">
+                                    </div>
+                                    <div class="mb-3 position-relative form-group">
+                                        <label for="" class="form-label">Deskripsi</label>
+                                        <textarea name="deskripsi" rows="5" class="form-control" required>{{$item['deskripsi']}}</textarea>
+                                    </div>
+                                    <div class="mb-3 position-relative form-group" style="text-align: right">
+                                        <button class="btn btn-primary waves-effect waves-light">Submit</button>
+                                    </div>
+                                @endif
+                            @endforeach
+                        @else
+                            <div class="mb-3 positive-relative form-group">
+                                <label for="" class="form-label">Angka</label>
+                                <input type="number" name="angka" class="form-control" required>
+                            </div>
+                            <div class="mb-3 position-relative form-group">
+                                <label for="" class="form-label">Deskripsi</label>
+                                <textarea name="deskripsi" rows="5" class="form-control" required></textarea>
+                            </div>
+                            <div class="mb-3 position-relative form-group" style="text-align: right">
+                                <button class="btn btn-primary waves-effect waves-light">Submit</button>
+                            </div>
+                        @endif
+                    @else
+                        <div class="mb-3 positive-relative form-group">
+                            <label for="" class="form-label">Angka</label>
+                            <input type="number" name="angka" class="form-control" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Deskripsi</label>
+                            <textarea name="deskripsi" rows="5" class="form-control" required></textarea>
+                        </div>
+                        <div class="mb-3 position-relative form-group" style="text-align: right">
+                            <button class="btn btn-primary waves-effect waves-light">Submit</button>
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </form>
+        <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-6.item-2.store') }}" class="mb-3" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/section_6_item_2.png') }}" alt="" class="img-fluid rounded">
+                </div>
+                <div class="col-12 col-md-6">
+                    <input type="hidden" name="item" value="item_2">
+                    @if ($jasa_branding_design_section_6)
+                        @if ($jasa_branding_design_section_6['item'] != null)
+                            @foreach ($jasa_branding_design_section_6['item'] as $item)
+                                @if ($item['item'] == 'item_2')
+                                    <div class="mb-3 positive-relative form-group">
+                                        <label for="" class="form-label">Angka</label>
+                                        <input type="number" name="angka" class="form-control" required value="{{$item['angka']}}">
+                                    </div>
+                                    <div class="mb-3 position-relative form-group">
+                                        <label for="" class="form-label">Deskripsi</label>
+                                        <textarea name="deskripsi" rows="5" class="form-control" required>{{$item['deskripsi']}}</textarea>
+                                    </div>
+                                    <div class="mb-3 position-relative form-group" style="text-align: right">
+                                        <button class="btn btn-primary waves-effect waves-light">Submit</button>
+                                    </div>
+                                @endif
+                            @endforeach
+                        @else
+                            <div class="mb-3 positive-relative form-group">
+                                <label for="" class="form-label">Angka</label>
+                                <input type="number" name="angka" class="form-control" required>
+                            </div>
+                            <div class="mb-3 position-relative form-group">
+                                <label for="" class="form-label">Deskripsi</label>
+                                <textarea name="deskripsi" rows="5" class="form-control" required></textarea>
+                            </div>
+                            <div class="mb-3 position-relative form-group" style="text-align: right">
+                                <button class="btn btn-primary waves-effect waves-light">Submit</button>
+                            </div>
+                        @endif
+                    @else
+                        <div class="mb-3 positive-relative form-group">
+                            <label for="" class="form-label">Angka</label>
+                            <input type="number" name="angka" class="form-control" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Deskripsi</label>
+                            <textarea name="deskripsi" rows="5" class="form-control" required></textarea>
+                        </div>
+                        <div class="mb-3 position-relative form-group" style="text-align: right">
+                            <button class="btn btn-primary waves-effect waves-light">Submit</button>
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </form>
+        <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-6.item-3.store') }}" class="mb-3" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/section_6_item_3.png') }}" alt="" class="img-fluid rounded">
+                </div>
+                <div class="col-12 col-md-6">
+                    <input type="hidden" name="item" value="item_3">
+                    @if ($jasa_branding_design_section_6)
+                        @if ($jasa_branding_design_section_6['item'] != null)
+                            @foreach ($jasa_branding_design_section_6['item'] as $item)
+                                @if ($item['item'] == 'item_3')
+                                    <div class="mb-3 positive-relative form-group">
+                                        <label for="" class="form-label">Angka</label>
+                                        <input type="number" name="angka" class="form-control" required value="{{$item['angka']}}">
+                                    </div>
+                                    <div class="mb-3 position-relative form-group">
+                                        <label for="" class="form-label">Deskripsi</label>
+                                        <textarea name="deskripsi" rows="5" class="form-control" required>{{$item['deskripsi']}}</textarea>
+                                    </div>
+                                    <div class="mb-3 position-relative form-group" style="text-align: right">
+                                        <button class="btn btn-primary waves-effect waves-light">Submit</button>
+                                    </div>
+                                @endif
+                            @endforeach
+                        @else
+                            <div class="mb-3 positive-relative form-group">
+                                <label for="" class="form-label">Angka</label>
+                                <input type="number" name="angka" class="form-control" required>
+                            </div>
+                            <div class="mb-3 position-relative form-group">
+                                <label for="" class="form-label">Deskripsi</label>
+                                <textarea name="deskripsi" rows="5" class="form-control" required></textarea>
+                            </div>
+                            <div class="mb-3 position-relative form-group" style="text-align: right">
+                                <button class="btn btn-primary waves-effect waves-light">Submit</button>
+                            </div>
+                        @endif
+                    @else
+                        <div class="mb-3 positive-relative form-group">
+                            <label for="" class="form-label">Angka</label>
+                            <input type="number" name="angka" class="form-control" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Deskripsi</label>
+                            <textarea name="deskripsi" rows="5" class="form-control" required></textarea>
+                        </div>
+                        <div class="mb-3 position-relative form-group" style="text-align: right">
+                            <button class="btn btn-primary waves-effect waves-light">Submit</button>
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </form>
+        <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-6.item-4.store') }}" class="mb-3" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/section_6_item_4.png') }}" alt="" class="img-fluid rounded">
+                </div>
+                <div class="col-12 col-md-6">
+                    <input type="hidden" name="item" value="item_4">
+                    @if ($jasa_branding_design_section_6)
+                        @if ($jasa_branding_design_section_6['item'] != null)
+                            @foreach ($jasa_branding_design_section_6['item'] as $item)
+                                @if ($item['item'] == 'item_4')
+                                    <div class="mb-3 positive-relative form-group">
+                                        <label for="" class="form-label">Angka</label>
+                                        <input type="number" name="angka" class="form-control" required value="{{$item['angka']}}">
+                                    </div>
+                                    <div class="mb-3 position-relative form-group">
+                                        <label for="" class="form-label">Deskripsi</label>
+                                        <textarea name="deskripsi" rows="5" class="form-control" required>{{$item['deskripsi']}}</textarea>
+                                    </div>
+                                    <div class="mb-3 position-relative form-group" style="text-align: right">
+                                        <button class="btn btn-primary waves-effect waves-light">Submit</button>
+                                    </div>
+                                @endif
+                            @endforeach
+                        @else
+                            <div class="mb-3 positive-relative form-group">
+                                <label for="" class="form-label">Angka</label>
+                                <input type="number" name="angka" class="form-control" required>
+                            </div>
+                            <div class="mb-3 position-relative form-group">
+                                <label for="" class="form-label">Deskripsi</label>
+                                <textarea name="deskripsi" rows="5" class="form-control" required></textarea>
+                            </div>
+                            <div class="mb-3 position-relative form-group" style="text-align: right">
+                                <button class="btn btn-primary waves-effect waves-light">Submit</button>
+                            </div>
+                        @endif
+                    @else
+                        <div class="mb-3 positive-relative form-group">
+                            <label for="" class="form-label">Angka</label>
+                            <input type="number" name="angka" class="form-control" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Deskripsi</label>
+                            <textarea name="deskripsi" rows="5" class="form-control" required></textarea>
+                        </div>
+                        <div class="mb-3 position-relative form-group" style="text-align: right">
+                            <button class="btn btn-primary waves-effect waves-light">Submit</button>
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card mb-5">
+    <div class="card-body">
+        <h2 class="small-title">Edit Section 7</h2>
+        <div class="row mb-3">
+            <div class="col-12">
+                <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/section_7.png') }}" alt="" class="img-fluid rounded">
+            </div>
+        </div>
+        @if ($jasa_branding_design_section_7 == null)
+            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-7.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Judul</label>
+                            <input type="text" class="form-control" name="judul" placeholder="THE PRODUCTION PROCESS" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="" class="form-label">Tambah Konten Section 7</label>
+                                </div>
+                                <div class="col-6" style="text-align: right">
+                                    <button class="btn btn-icon btn-outline-success waves-effect mr-2 btn_tambah_section7" type="button"><i data-acorn-icon="plus"></i></button>
+                                    <button class="btn btn-icon btn-outline-danger waves-effect mr-2 btn_hapus_section7" type="button"><i data-acorn-icon="minus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_tambah_konten_section7"></div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mb-0">Submit</button>
+            </form>
+        @endif
+        @if ($jasa_branding_design_section_7 != null)
+            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-7.edit') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Judul</label>
+                            <input type="text" class="form-control" name="judul" value="{{$jasa_branding_design_section_7['judul']}}" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <div class="row mb-3">
+                                @foreach ($jasa_branding_design_section_7['konten'] as $item)
+                                <div class="col-12 col-md-4 mb-3">
+                                    <div class="card h-100 border">
+                                        <button class="btn border-0 btn-icon btn_hapus_data_section7" type="button" value="{{$item['id']}}"><span class="badge rounded-pill bg-primary me-1 position-absolute e-3 t-n2 z-index-1">Hapus</span></button>
+                                        <div class="card-body">
+                                            <h5 class="heading mb-3">{{$item['judul_konten']}}</h5>
+                                            <p>{{$item['deskripsi_konten']}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="" class="form-label">Tambah Konten Section 7</label>
+                                </div>
+                                <div class="col-6" style="text-align: right">
+                                    <button class="btn btn-icon btn-outline-success waves-effect mr-2 btn_tambah_section7" type="button"><i data-acorn-icon="plus"></i></button>
+                                    <button class="btn btn-icon btn-outline-danger waves-effect mr-2 btn_hapus_section7" type="button"><i data-acorn-icon="minus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_tambah_konten_section7"></div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mb-0">Submit</button>
+            </form>
+        @endif
+    </div>
+</div>
+
+<div class="card mb-5">
+    <div class="card-body">
+        <h2 class="small-title">Edit Section 8</h2>
+        <div class="row mb-3">
+            <div class="col-12">
+                <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/section_8.png') }}" alt="" class="img-fluid rounded">
+            </div>
+        </div>
+        @if ($jasa_branding_design_section_8 == null)
+            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-8.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Sub Judul</label>
+                            <input type="text" class="form-control" name="sub_judul" placeholder="FAQ" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Judul</label>
+                            <input type="text" class="form-control" name="judul" placeholder="Frequently Asked Questions" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="" class="form-label">Tambah Konten Section 8</label>
+                                </div>
+                                <div class="col-6" style="text-align: right">
+                                    <button class="btn btn-icon btn-outline-success waves-effect mr-2 btn_tambah_section8" type="button"><i data-acorn-icon="plus"></i></button>
+                                    <button class="btn btn-icon btn-outline-danger waves-effect mr-2 btn_hapus_section8" type="button"><i data-acorn-icon="minus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_tambah_konten_section8"></div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mb-0">Submit</button>
+            </form>
+        @endif
+        @if ($jasa_branding_design_section_8 != null)
+            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-8.edit') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Sub Judul</label>
+                            <input type="text" class="form-control" name="sub_judul" value="{{$jasa_branding_design_section_8['sub_judul']}}" placeholder="FAQ" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <label for="" class="form-label">Judul</label>
+                            <input type="text" class="form-control" name="judul" value="{{$jasa_branding_design_section_8['judul']}}" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
+                            <div class="row mb-3">
+                                @foreach ($jasa_branding_design_section_8['konten'] as $item)
+                                <div class="col-12 col-md-4 mb-3">
+                                    <div class="card h-100 border">
+                                        <button class="btn border-0 btn-icon btn_hapus_data_section8" type="button" value="{{$item['id']}}"><span class="badge rounded-pill bg-primary me-1 position-absolute e-3 t-n2 z-index-1">Hapus</span></button>
+                                        <div class="card-body">
+                                            <h5 class="heading mb-3">{{$item['pertanyaan']}}</h5>
+                                            <p>{{$item['jawaban']}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="" class="form-label">Tambah Konten Section 8</label>
+                                </div>
+                                <div class="col-6" style="text-align: right">
+                                    <button class="btn btn-icon btn-outline-success waves-effect mr-2 btn_tambah_section8" type="button"><i data-acorn-icon="plus"></i></button>
+                                    <button class="btn btn-icon btn-outline-danger waves-effect mr-2 btn_hapus_section8" type="button"><i data-acorn-icon="minus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_tambah_konten_section8"></div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mb-0">Submit</button>
+            </form>
+        @endif
+    </div>
+</div>
 @endsection
 
 @section('js')
@@ -351,6 +768,9 @@
 <script>
     var count_section3 = 1;
     var count_section4 = 1;
+    var count_section7 = 1;
+    var count_section8 = 1;
+
     $(document).ready(function(){
         $('.dropify').dropify();
         $('.dropify-wrapper').css('line-height', '3rem');
@@ -535,6 +955,154 @@
             {
                 $.ajax({
                     url: "{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-4.hapus.satu') }}",
+                    method: "POST",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        id:id
+                    },
+                    dataType: "json",
+                    beforeSend: function()
+                    {
+                        return new swal({
+                            title: "Checking...",
+                            text: "Harap Menunggu",
+                            imageUrl: "{{ asset('/images/preloader.gif') }}",
+                            showConfirmButton: false,
+                            allowOutsideClick: false
+                        });
+                    },
+                    success: function(data)
+                    {
+                        window.location.reload();
+                    }
+                });
+            }
+        });
+    });
+
+    dynamic_section7(count_section7);
+    function dynamic_section7(number)
+    {
+        var urut = number - 1;
+        html = '<div class="border-top p-3">';
+        html += '<div class="mb-3 position-relative form-group">';
+        html += '<label for="" class="form-label">Judul Konten</label>';
+        html += '<input name="judul_konten[]" class="form-control" placeholder="Pilih Paket" required>';
+        html += '</div>';
+        html += '<div class="mb-3 position-relative form-group">';
+        html += '<label for="" class="form-label">Deskripsi Konten</label>';
+        html += '<input name="deskripsi_konten[]"" class="form-control" placeholder="Pilih layanan sesuai dengan kebutuhan." required>';
+        html += '</div>';
+        html += '</div>';
+
+        if(number > 1)
+        {
+            $('#div_tambah_konten_section7').after(html);
+        }
+    }
+
+    $(document).on('click', '.btn_tambah_section7',function(){
+        count_section7++;
+        dynamic_section7(count_section7);
+    });
+
+    $(document).on('click','.btn_hapus_section7',function(){
+        var urut = count_section7;
+        $('#div_tambah_konten_section7').next('div').remove();
+        count_section7--;
+        if(count_section7 < 1)
+        {
+            count_section7 = 1;
+        }
+    });
+
+    $('.btn_hapus_data_section7').click(function(){
+        var id = $(this).attr('value');
+        return new swal({
+            title: "Apakah Anda Yakin?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#1976D2",
+            confirmButtonText: "Ya"
+        }).then((result)=>{
+            if(result.value)
+            {
+                $.ajax({
+                    url: "{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-7.hapus.satu') }}",
+                    method: "POST",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        id:id
+                    },
+                    dataType: "json",
+                    beforeSend: function()
+                    {
+                        return new swal({
+                            title: "Checking...",
+                            text: "Harap Menunggu",
+                            imageUrl: "{{ asset('/images/preloader.gif') }}",
+                            showConfirmButton: false,
+                            allowOutsideClick: false
+                        });
+                    },
+                    success: function(data)
+                    {
+                        window.location.reload();
+                    }
+                });
+            }
+        });
+    });
+
+    dynamic_section8(count_section8);
+    function dynamic_section8(number)
+    {
+        var urut = number - 1;
+        html = '<div class="border-top p-3">';
+        html += '<div class="mb-3 position-relative form-group">';
+        html += '<label for="" class="form-label">Pertanyaan</label>';
+        html += '<input name="pertanyaan[]" class="form-control" required>';
+        html += '</div>';
+        html += '<div class="mb-3 position-relative form-group">';
+        html += '<label for="" class="form-label">Jawaban</label>';
+        html += '<textarea name="jawaban[]"" class="form-control" rows="5" required></textarea>';
+        html += '</div>';
+        html += '</div>';
+
+        if(number > 1)
+        {
+            $('#div_tambah_konten_section8').after(html);
+        }
+    }
+
+    $(document).on('click', '.btn_tambah_section8',function(){
+        count_section8++;
+        dynamic_section8(count_section8);
+    });
+
+    $(document).on('click','.btn_hapus_section8',function(){
+        var urut = count_section8;
+        $('#div_tambah_konten_section8').next('div').remove();
+        count_section8--;
+        if(count_section8 < 1)
+        {
+            count_section8 = 1;
+        }
+    });
+
+    $('.btn_hapus_data_section8').click(function(){
+        var id = $(this).attr('value');
+        return new swal({
+            title: "Apakah Anda Yakin?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#1976D2",
+            confirmButtonText: "Ya"
+        }).then((result)=>{
+            if(result.value)
+            {
+                $.ajax({
+                    url: "{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.section-8.hapus.satu') }}",
                     method: "POST",
                     data: {
                         "_token": "{{ csrf_token() }}",

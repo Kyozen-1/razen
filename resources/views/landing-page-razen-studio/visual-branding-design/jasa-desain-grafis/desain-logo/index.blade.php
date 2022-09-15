@@ -1,5 +1,39 @@
+@php
+    use App\Models\RazenStudio\LandingPage\VisualBrandingDesign\LandingpageRazenstudioVisualBrandingDesign;
+    use App\Models\RazenStudio\LandingPage\VisualBrandingDesign\JasaDesainGrafis\LandingpageRazenstudioJasaBrandingDesign;
+    use App\Models\RazenStudio\LandingPage\VisualBrandingDesign\JasaDesainGrafis\LandingpageRazenstudioDesainLogo;
+    use App\Models\RazenStudio\LandingPage\VisualBrandingDesign\JasaDesainGrafis\LandingpageRazenstudioItemDesainLogo;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioBrand;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioHome;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioReview;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioOfficialPartner;
+
+    $landing_page = LandingpageRazenstudioHome::first();
+
+    $visual_branding_design = LandingpageRazenstudioVisualBrandingDesign::first();
+    $visual_branding_design_section_1 = json_decode($visual_branding_design->section_1, true);
+
+    $jasa_branding_design = LandingpageRazenstudioJasaBrandingDesign::first();
+    $jasa_branding_design_section_1 = json_decode($jasa_branding_design->section_1, true);
+
+    $desain_logo = LandingpageRazenstudioDesainLogo::first();
+    $desain_logo_section_1 = json_decode($desain_logo->section_1, true);
+    $desain_logo_section_2 = json_decode($desain_logo->section_2, true);
+    $desain_logo_section_3 = json_decode($desain_logo->section_3, true);
+    $desain_logo_section_4 = json_decode($desain_logo->section_4, true);
+    $desain_logo_section_5 = json_decode($desain_logo->section_5, true);
+    $desain_logo_section_6 = json_decode($desain_logo->section_6, true);
+    $desain_logo_section_7 = json_decode($desain_logo->section_7, true);
+    $desain_logo_section_8 = json_decode($desain_logo->section_8, true);
+
+    $home = LandingpageRazenstudioHome::first();
+    $brands= LandingpageRazenstudioBrand::all();
+    $reviews = LandingpageRazenstudioReview::latest()->get();
+    $partners = LandingpageRazenstudioOfficialPartner::all();
+    $cek_item_desain_logo = LandingpageRazenstudioItemDesainLogo::first();
+@endphp
 @extends('landing-page-razen-studio.layouts.app')
-@section('title', 'Jasa Tambah Followers, Auto Likes, Views #1 di Instagram - Razen Studio')
+@section('title', $desain_logo_section_1['title'])
 
 @section('css')
 <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
@@ -11,21 +45,23 @@
 <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
 <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/slick-carousel/slick/slick.css">
 <link rel="stylesheet" href="https://gosocial.co.id/assets/css/pages/sme/instagram.css?v.1808">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 
 @section('content')
-    <section class="flat-title-page back-ground-style">
+    <section class="flat-title-page back-ground-style h-100">
         <div class="container-fluid">
             <div class="row">
                 <div class="breadcrumbs text-center link-style-5 text-white">
-                    <h1 class="section-title-page text-white">Jasa Desain Logo</h1>
-                    <p class="mb-5">Layanan jasa desain logo berkualitas yang dikerjakan oleh tim desainer profesional.</p>
+                    <h1 class="section-title-page text-white">{{$desain_logo_section_1['judul']}}</h1>
+                    <p class="mb-5">{{$desain_logo_section_1['deskripsi']}}</p>
                     <ul class="breadcrumbs-inner list-center display-flex">
                         <li><a class="section-16px-regular font-weight-500" href="{{ route('home') }}">Home</a></li>
-                        <li><a class="section-16px-regular font-weight-500" href="{{ route('visual-branding-design') }}">Visual Branding & Design</a></li>
-                        <li><a class="section-16px-regular font-weight-500" href="{{ route('visual-branding-design.jasa-desain-grafis.index') }}">Jasa Desain Grafis</a></li>
+                        <li><a class="section-16px-regular font-weight-500" href="{{ route('visual-branding-design') }}">{{$visual_branding_design_section_1['judul']}}</a></li>
+                        <li><a class="section-16px-regular font-weight-500" href="{{ route('visual-branding-design.jasa-desain-grafis.index') }}">{{$jasa_branding_design_section_1['judul']}}</a></li>
                         <li>
-                            <h4 class="section-16px-regular font-weight-500 text-white">Jasa Desain Logo</h4>
+                            <h4 class="section-16px-regular font-weight-500 text-white">{{$desain_logo_section_1['judul']}}</h4>
                         </li>
                     </ul>
                 </div>
@@ -40,22 +76,18 @@
                     <div class="about-content-right wow fadeInUp" data-wow-delay="0ms"
                         data-wow-duration="1500ms">
                         <div class="section-title">
-                            <h4 class="section-subtitle">TINGKATKAN BRANDING BISNISMU</h4>
-                            <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">Desain Logo Online Sekarang!</h4>
+                            <h4 class="section-subtitle">{{$desain_logo_section_2['sub_judul']}}</h4>
+                            <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">{{$desain_logo_section_2['judul']}}</h4>
                         </div>
                         <p class="section-17px-regular margin-bottom-25">
-                            Dengan memiliki logo yang bermakna, perusahaan atau bisnis akan memiliki identitas tersendiri yang memudahkan pelanggan dalam mengenal bisnis Anda.
-                            <br><br>
-                            Kami dapat membantu dalam membuat logo olshop (Online Shop), hingga perusahaan yang membutuhkan jasa desain logo yang akan dikerjakan oleh desainer profesional pilihan.
-                            <br><br>
-                            Mulai branding bisnis anda dengan membuat logo profesional sesuai dengan identitas perusahaan bersama tim berpengalaman di GoSocial.
+                            {!!$desain_logo_section_2['deskripsi']!!}
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="about-content-left wow fadeInLeft">
                         <div class="about-post">
-                            <img src="{{ asset('olux/assets/images/image-box/about-post-mystory.jpg') }}" alt="images">
+                            <img src="{{ asset('images/landingpage_razenstudio/visual-branding-design/jasa-desain-grafis/desain-logo/'.$desain_logo_section_2['gambar']) }}" alt="images">
                             <div class="mark-about-post"></div>
                         </div>
                     </div>
@@ -70,7 +102,7 @@
                 <div class="col-md-6">
                     <div class="about-content-left wow fadeInLeft">
                         <div class="about-post">
-                            <img src="{{ asset('olux/assets/images/image-box/about-post-mystory.jpg') }}" alt="images">
+                            <img src="{{ asset('images/landingpage_razenstudio/visual-branding-design/jasa-desain-grafis/desain-logo/'.$desain_logo_section_3['gambar']) }}" alt="images">
                             <div class="mark-about-post"></div>
                         </div>
                     </div>
@@ -79,14 +111,10 @@
                     <div class="about-content-right wow fadeInUp" data-wow-delay="0ms"
                         data-wow-duration="1500ms">
                         <div class="section-title">
-                            <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">Pentingnya Branding Logo untuk Bisnis!</h4>
+                            <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">{{$desain_logo_section_3['judul']}}</h4>
                         </div>
                         <p class="section-17px-regular margin-bottom-25">
-                            Penting sekali bagi bisnis untuk memiliki logo, karena berdasarkan data lebih dari 80% bisnis gagal mencapai tahun kelimanya.
-                            <br><br>
-                            Salah satu hal yang menyebabkannya adalah branding yang lemah. Banyak perusahaan terlalu tergesa-gesa untuk langsung mengejar penjualan.
-                            <br><br>
-                            Bayangkan saja, tanpa branding, bagaimana pelanggan bisa mengenal bisnis Anda? Setidaknya semua itu bisa dimulai dengan membuat logo bisnis yang profesional bersama GoSocial.
+                            {!! $desain_logo_section_3['deskripsi'] !!}
                         </p>
                     </div>
                 </div>
@@ -100,9 +128,8 @@
                 <div class="card bg-danger text-white overflow-hidden p-5">
                     <div class="row justify-content-md-start align-items-md-center text-center text-md-left">
                         <div class="col-md-6 offset-md-3 mb-3 mb-md-0">
-                            <h3 class="text-white font-size-2 mb-1">Layanan Lain untuk Branding &amp; Design</h3>
-                            <p class="text-white-70 font-size-2 mb-0">Dapatkan layanan berbagai Jasa Visual Branding &amp; Design lainnya hanya
-                                di GoSocial.</p>
+                            <h3 class="text-white font-size-2 mb-1">{{$desain_logo_section_4['judul']}}</h3>
+                            <p class="text-white-70 font-size-2 mb-0">{{$desain_logo_section_4['deskripsi']}}</p>
                         </div>
                         <div class="col-md-3 text-md-right">
                             <a class="btn btn-light transition-3d-hover font-size-2" href="{{ route('visual-branding-design') }}">Lihat
@@ -125,63 +152,28 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title wow fadeInDown">
-                        <h4 class="section-subtitle">THE PRODUCTION PROCESS</h4>
-                        <h2 class="section-45px-montserrat margin-top-15">Desain Logo</h2>
+                        <h4 class="section-subtitle">{{$desain_logo_section_5['sub_judul']}}</h4>
+                        <h2 class="section-45px-montserrat margin-top-15">{{$desain_logo_section_5['judul']}}</h2>
                     </div>
                     <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                         style="height:60px"></div>
                 </div>
             </div>
             <ul class="step step-md step-centered">
-                <li class="step-item">
-                    <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-soft-primary">1</span>
-                        <div class="step-content">
-                            <h3>Design Consultation</h3>
-                            <p>Tentukan paket yang sesuai dengan kebutuhan desain dari bisnis.</p>
+                @php
+                    $i = 1;
+                @endphp
+                @foreach ($desain_logo_section_5['konten'] as $item)
+                    <li class="step-item">
+                        <div class="step-content-wrapper">
+                            <span class="step-icon step-icon-soft-primary">{{$i++}}</span>
+                            <div class="step-content">
+                                <h3>{{$item['judul_konten']}}</h3>
+                                <p>{{$item['deskripsi_konten']}}</p>
+                            </div>
                         </div>
-                    </div>
-                </li>
-
-                <li class="step-item">
-                    <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-soft-primary">2</span>
-                        <div class="step-content">
-                            <h3>Filling Creative Brief</h3>
-                            <p>Jelaskan keinginan desain kepada tim melalui brief agar hasil maksimal.</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="step-item">
-                    <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-soft-primary">3</span>
-                        <div class="step-content">
-                            <h3>Concept & Design Creation</h3>
-                            <p>Tim akan mulai membuat konsep visual desain secara profesional.</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="step-item">
-                    <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-soft-primary">4</span>
-                        <div class="step-content">
-                            <h3>Share Your Feedback</h3>
-                            <p>Berikan masukkan, perbaikan/revisi terhadap hasil desain.</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="step-item">
-                    <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-soft-primary">5</span>
-                        <div class="step-content">
-                            <h3>Finalize Your Design</h3>
-                            <p>Dapatkan hasil desain grafis yang terbaik bersama kami.</p>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                @endforeach
             </ul>
         </div>
     </section>
@@ -192,8 +184,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section-title wow fadeInDown">
-                            <h4 class="section-subtitle">PAKET & HARGA</h4>
-                            <h2 class="section-45px-montserrat margin-top-15">Desain logo</h2>
+                            <h4 class="section-subtitle">{{$desain_logo_section_6['sub_judul']}}</h4>
+                            <h2 class="section-45px-montserrat margin-top-15">{{$desain_logo_section_6['judul']}}</h2>
                         </div>
                         <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                             style="height:60px"></div>
@@ -201,420 +193,72 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-6 col-lg-4 mb-5">
-                        <!-- Pricing -->
-                        <div class="card shadow-lg h-100">
-                            <!-- Header -->
-                            <div class="card-header border-0 text-center mt-2">
-                                <span class="d-block h2 mb-0">Starter Plan</span>
+                    @if ($cek_item_desain_logo)
+                        @php
+                            $desian_logos = LandingpageRazenstudioItemDesainLogo::all();
+                        @endphp
+                        @foreach ($desian_logos as $item)
+                            <div class="col-sm-6 col-lg-4 mb-5">
+                                <!-- Pricing -->
+                                <div class="card shadow-lg h-100">
+                                    <!-- Header -->
+                                    <div class="card-header border-0 text-center mt-2">
+                                        <span class="d-block h2 mb-0">{{$item->judul}}</span>
+                                    </div>
+                                    <!-- End Header -->
+
+                                    <div class="border-top"></div>
+                                    <div class="text-center">
+                                        @if ($item->gambar)
+                                        <img src="{{ asset('images/landingpage_razenstudio/visual-branding-design/jasa-desain-grafis/desain-logo/'.$item->gambar) }}" height="150" width="150" alt="Silver Plan">
+                                        @else
+                                            <span class="h3 font-size-3 text-primary">{{$item->harga_custom}}</span>
+                                        @endif
+                                    </div>
+
+                                    <!-- Body -->
+                                    <div class="card-body">
+                                        @if ($item->gambar)
+                                            <div class="mb-3 text-center">
+                                                <span class="h3 font-size-3 text-primary">Rp. <span class="h1 font-size-4 text-primary">{{number_format($item->harga, 2)}}</span></span>
+                                            </div>
+                                        @endif
+                                        @php
+                                            $item_penilaians = json_decode($item->item_penilaian, true);
+                                        @endphp
+                                        @foreach ($item_penilaians as $item_penilaian)
+                                            @if ($item_penilaian['status'] == 'tersedia')
+                                                <div class="media font-size-1 text-body mb-3 mt-5">
+                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
+                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                                    </svg>
+                                                    <div class="media-body font-size-2">
+                                                        {{$item_penilaian['deskripsi']}}
+                                                    </div>
+                                                </div>
+                                            @endif
+                                            @if ($item_penilaian['status'] == 'tidak tersedia')
+                                                <div class="media font-size-1 text-body mb-3">
+                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger mt-1 mb-2">
+                                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                                    </svg>
+                                                    <div class="media-body font-size-2">
+                                                        {{$item_penilaian['deskripsi']}}
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                    <!-- End Body -->
+
+                                    <div class="card-footer border-0">
+                                        <a href="https://api.whatsapp.com/send?phone=6281234566636&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20memesan%20layanan%20Desain%20Logo%20-%20Starter%20Plan%20-%20Rp.275.000" target="_blank" type="button" class="btn btn-soft-primary btn-block transition-3d-hover font-size-2">Order Sekarang</a>
+                                    </div>
+                                </div>
+                                <!-- End Pricing -->
                             </div>
-                            <!-- End Header -->
-
-                            <div class="border-top"></div>
-                            <div class="text-center">
-                                <img src="https://gosocial.co.id/assets/landing/image/branding-design/pricing1.svg" height="150" width="150" alt="Silver Plan">
-                            </div>
-
-                            <!-- Body -->
-                            <div class="card-body">
-                                <div class="mb-3 text-center">
-                                    <span class="h3 font-size-3 text-primary">Rp. <span class="h1 font-size-4 text-primary">275</span>.000</span>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3 mt-5">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        1 Pilihan Logo
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        4 Hari Proses
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        1x Revisi
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Color Guidelines
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Hak Milik Desain
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Master Files (.ai / .psd / .eps)
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger mt-1 mb-2">
-                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Tanpa Filosofi Logo
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger mt-1 mb-2">
-                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Tanpa Bonus Design Stationery
-                                        (Kartu Nama &amp; Kop Surat)
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Free Konsultasi
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Body -->
-
-                            <div class="card-footer border-0">
-                                <a href="https://api.whatsapp.com/send?phone=6281234566636&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20memesan%20layanan%20Desain%20Logo%20-%20Starter%20Plan%20-%20Rp.275.000" target="_blank" type="button" class="btn btn-soft-primary btn-block transition-3d-hover font-size-2">Order Sekarang</a>
-                            </div>
-                        </div>
-                        <!-- End Pricing -->
-                    </div>
-
-                    <div class="col-sm-6 col-lg-4 mb-5">
-                        <!-- Pricing -->
-                        <div class="position-relative">
-                            <div class="card shadow-lg h-100">
-                                <!-- Header -->
-                                <div class="card-header border-0 text-center mt-2">
-                                    <span class="d-block h2 mb-0">Bronze Plan</span>
-                                </div>
-                                <!-- End Header -->
-
-                                <div class="border-top"></div>
-                                <div class="text-center">
-                                    <img src="https://gosocial.co.id/assets/landing/image/branding-design/pricing2.svg" height="150" width="150" alt="Silver Plan">
-                                </div>
-
-                                <!-- Body -->
-                                <div class="card-body">
-                                    <div class="mb-3 text-center">
-                                        <span class="h3 font-size-3 text-primary">Rp. <span class="h1 font-size-4 text-primary">650</span>.000</span>
-                                    </div>
-                                    <div class="media font-size-1 text-body mb-3 mt-5">
-                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                        <div class="media-body font-size-2">
-                                            3 Pilihan Logo
-                                        </div>
-                                    </div>
-                                    <div class="media font-size-1 text-body mb-3">
-                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                        <div class="media-body font-size-2">
-                                            6 Hari Proses
-                                        </div>
-                                    </div>
-                                    <div class="media font-size-1 text-body mb-3">
-                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                        <div class="media-body font-size-2">
-                                            3x Revisi
-                                        </div>
-                                    </div>
-                                    <div class="media font-size-1 text-body mb-3">
-                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                        <div class="media-body font-size-2">
-                                            Color Guidelines
-                                        </div>
-                                    </div>
-                                    <div class="media font-size-1 text-body mb-3">
-                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                        <div class="media-body font-size-2">
-                                            Hak Milik Desain
-                                        </div>
-                                    </div>
-                                    <div class="media font-size-1 text-body mb-3">
-                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                        <div class="media-body font-size-2">
-                                            Master Files (.ai / .psd / .eps)
-                                        </div>
-                                    </div>
-                                    <div class="media font-size-1 text-body mb-3">
-                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                        <div class="media-body font-size-2">
-                                            Filosofi Logo
-                                        </div>
-                                    </div>
-                                    <div class="media font-size-1 text-body mb-3">
-                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger mt-1 mb-2">
-                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                                    </svg>
-                                        <div class="media-body font-size-2">
-                                            Tanpa Bonus Design Stationery
-                                            (Kartu Nama &amp; Kop Surat)
-                                        </div>
-                                    </div>
-                                    <div class="media font-size-1 text-body mb-3">
-                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                        <div class="media-body font-size-2">
-                                            Free Konsultasi
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Body -->
-
-                                <div class="card-footer border-0">
-                                    <a href="https://api.whatsapp.com/send?phone=6281234566636&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20memesan%20layanan%20Desain%20Logo%20-%20Bronze%20Plan%20-%20Rp.650.000" target="_blank" type="button" class="btn btn-soft-primary btn-block transition-3d-hover font-size-2">Order Sekarang</a>
-                                </div>
-                            </div>
-
-                            <!-- SVG Elements -->
-                            <figure class="max-w-15rem w-100 position-absolute top-0 right-0 z-index-n1">
-                                <div class="mt-n7 mr-lg-n7">
-                                    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 260 260" xml:space="preserve">
-                                        <circle fill="#ffc107" cx="130" cy="130" r="130"></circle>
-                                    </svg>
-                                </div>
-                            </figure>
-                            <!-- End SVG Elements -->
-                        </div>
-                        <!-- End Pricing -->
-                    </div>
-
-                    <div class="col-sm-6 col-lg-4 mb-5">
-                        <!-- Pricing -->
-                        <div class="card shadow-lg h-100">
-                            <!-- Header -->
-                            <div class="card-header border-0 text-center mt-2">
-                                <span class="d-block h2 mb-0">Silver Plan</span>
-                            </div>
-                            <!-- End Header -->
-
-                            <div class="border-top"></div>
-                            <div class="text-center">
-                                <img src="https://gosocial.co.id/assets/landing/image/branding-design/pricing3.svg" height="150" width="150" alt="Silver Plan">
-                            </div>
-
-                            <!-- Body -->
-                            <div class="card-body">
-                                <div class="mb-3 text-center">
-                                    <span class="h3 font-size-3 text-primary">Rp. <span class="h1 font-size-4 text-primary">1.100</span>.000</span>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3 mt-5">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        5 Pilihan Logo
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        8 Hari Proses
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        3x Revisi
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Color Guidelines
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Hak Milik Desain
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Master Files (.ai / .psd / .eps)
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Filosofi Logo
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Bonus Design Stationery
-                                        (Kartu Nama &amp; Kop Surat)
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Free Konsultasi
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Body -->
-
-                            <div class="card-footer border-0">
-                                <a href="https://api.whatsapp.com/send?phone=6281234566636&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20memesan%20layanan%20Desain%20Logo%20-%20Silver%20Plan%20-%20Rp.1.100.000" target="_blank" type="button" class="btn btn-soft-primary btn-block transition-3d-hover font-size-2">Order Sekarang</a>
-                            </div>
-                        </div>
-                        <!-- End Pricing -->
-                    </div>
-
-                    <div class="col-sm-6 col-lg-4 mb-5">
-                        <!-- Pricing -->
-                        <div class="card shadow-lg h-100">
-                            <!-- Header -->
-                            <div class="card-header border-0 text-center mt-2">
-                                <span class="d-block h2 mb-0">Custom Plan</span>
-                            </div>
-                            <!-- End Header -->
-
-                            <!-- Body -->
-                            <div class="card-body">
-                                <div class="mb-3 text-center">
-                                    <span class="h4 text-primary"><span class="h1 text-primary">Start From 1 Jt</span></span>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3 mt-5">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Custom Pilihan Logo
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Start from 8 Hari Proses
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Custom Revisi
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Color Guidelines
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Hak Milik Desain
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Master Files (.ai / .psd / .eps)
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Filosofi Logo
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Bonus Design Stationery
-                                        (Kartu Nama &amp; Kop Surat)
-                                    </div>
-                                </div>
-                                <div class="media font-size-1 text-body mb-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mt-1 mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <div class="media-body font-size-2">
-                                        Free Konsultasi
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Body -->
-
-                            <div class="card-footer border-0">
-                                <a href="https://api.whatsapp.com/send?phone=6281234566636&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20memesan%20layanan%20Desain%20Logo%20-%20Custom%20Plan" type="button" target="_blank" class="btn btn-soft-primary btn-block transition-3d-hover font-size-2">Beli Sekarang</a>
-                            </div>
-                        </div>
-                        <!-- End Pricing -->
-                    </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>
@@ -625,78 +269,25 @@
             <div class="row mb-5">
                 <div class="col-md-12">
                     <div class="section-title wow fadeInDown">
-                        <h4 class="section-subtitle">MENGAPA HARUS KAMI??</h4>
-                        <h2 class="section-main-title section-45px-montserrat">Keuntungan Jasa Desain dari GoSocial</h2>
+                        <h4 class="section-subtitle">{{$desain_logo_section_7['sub_judul']}}</h4>
+                        <h2 class="section-main-title section-45px-montserrat">{{$desain_logo_section_7['judul']}}</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 mb-5">
-                    <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="icon-box">
-                            <div class="icon-counter">
-                                <span class="icon-guarantee1"></span>
+                @foreach ($desain_logo_section_7['konten'] as $item)
+                    <div class="col-md-4 mb-5">
+                        <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="icon-box">
+                                <div class="icon-counter">
+                                    <img style="height: 5rem; width:5rem; padding: -3rem;" src="{{ asset('images/landingpage_razenstudio/visual-branding-design/jasa-desain-grafis/desain-logo/'.$item['gambar_konten']) }}">
+                                </div>
                             </div>
+                            <h3 class="section-20px-montserrat font-weight-600 line-height-35">{{$item['judul_konten']}}</h3>
+                            <p>{{$item['deskripsi_konten']}}</p>
                         </div>
-                        <h3 class="section-20px-montserrat font-weight-600 line-height-35">Berbagai Alternatif Pilihan</h3>
-                        <p>Dapatkan berbagai alternatif pilihan desain agar hasil akhir sesuai dengan brand & keinginan Anda.</p>
                     </div>
-                </div>
-                <div class="col-md-4 mb-5">
-                    <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="icon-box">
-                            <div class="icon-counter">
-                                <span class="icon-guarantee1"></span>
-                            </div>
-                        </div>
-                        <h3 class="section-20px-montserrat font-weight-600 line-height-35">Unique Design</h3>
-                        <p>Hasil dijamin original & premium licensed, hak lisensi / copyrights sepenuhnya adalah milik klien.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5">
-                    <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="icon-box">
-                            <div class="icon-counter">
-                                <span class="icon-guarantee1"></span>
-                            </div>
-                        </div>
-                        <h3 class="section-20px-montserrat font-weight-600 line-height-35">Professional Designer</h3>
-                        <p>Dikerjakan oleh desainer pilihan dari GoSocial, tidak perlu pusing mencari freelancer atau rekrut tim sendiri</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5">
-                    <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="icon-box">
-                            <div class="icon-counter">
-                                <span class="icon-guarantee1"></span>
-                            </div>
-                        </div>
-                        <h3 class="section-20px-montserrat font-weight-600 line-height-35">1 Years Cloud Storage</h3>
-                        <p>Takut hasil desain hilang? tenang, layanan kami sudah termasuk gratis penyimpanan file Anda selama 1 tahun.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5">
-                    <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="icon-box">
-                            <div class="icon-counter">
-                                <span class="icon-guarantee1"></span>
-                            </div>
-                        </div>
-                        <h3 class="section-20px-montserrat font-weight-600 line-height-35">Handcrafted Design Process</h3>
-                        <p>Melalui standar proses desain profesional, kami akan mengerjakan desain sesuai identitas brand Anda.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5">
-                    <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="icon-box">
-                            <div class="icon-counter">
-                                <span class="icon-guarantee1"></span>
-                            </div>
-                        </div>
-                        <h3 class="section-20px-montserrat font-weight-600 line-height-35">Master File</h3>
-                        <p>Dapatkan master files berupa .psd .ai .eps maupun font dan tone color yang digunakan dalam desain tersebut.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -707,36 +298,13 @@
                 <div class="col-md-12">
                     <div class="swiper-container carousel-style-3">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="brand-content">
-                                    <img src="{{ asset('olux/assets/images/image-slider/brand-1.png') }}" alt="images">
+                            @foreach ($brands as $brand)
+                                <div class="swiper-slide">
+                                    <div class="brand-content">
+                                        <img src="{{ asset('images/landingpage_razenstudio/brand/'.$brand->gambar) }}" alt="images">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-content">
-                                    <img src="{{ asset('olux/assets/images/image-slider/brand-2.png') }}" alt="images">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-content">
-                                    <img src="{{ asset('olux/assets/images/image-slider/brand-3.png') }}" alt="images">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-content">
-                                    <img src="{{ asset('olux/assets/images/image-slider/brand-4.png') }}" alt="images">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-content">
-                                    <img src="{{ asset('olux/assets/images/image-slider/brand-5.png') }}" alt="images">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-content">
-                                    <img src="{{ asset('olux/assets/images/image-slider/brand-6.png') }}" alt="images">
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -749,8 +317,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="client-content-box wow fadeInUp">
-                        <h4 class="section-subtitle">TESTIMONIAL</h4>
-                        <h2 class="section-title section-45px-montserrat">Apa Kata Mereka?</h2>
+                        <h4 class="section-title section-45px-montserrat">{{$landing_page->section_7}}</h4>
                         <button class="clone-btn-prev"></button>
                         <button class="clone-btn-next"></button>
                     </div>
@@ -758,80 +325,39 @@
                 <div class="col-md-6">
                     <div class="swiper-container sliver-vertical">
                         <div class="swiper-wrapper">
+                            @foreach ($reviews as $review)
                             <div class="swiper-slide">
                                 <div class="client-slider-box">
-                                    <div class="client-user">
-                                        <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
+                                    <div class="client-user text-center">
+                                        <img src="{{ asset('images/landingpage_razenstudio/reviewer/'.$review->gambar) }}"
                                             alt="images">
+                                        <ul class="list-inline small mt-3">
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                        </ul>
                                     </div>
                                     <div class="client-content">
                                         <div class="client-user-author">
-                                            <h4 class="name-author section-20px-montserrat">Glenn Ardi</h4>
-                                            <p class="margin-top-11">"Sejauh ini kami sudah bekerjasama membuat 5 project video dan kerjasama yang dijalin sangat profesional sekali, Good Job!"</p>
+                                            <h4 class="name-author section-20px-montserrat">{{$review->nama}}</h4>
+                                            <p class="margin-top-11">{{$review->ulasan}}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="client-slider-box">
-                                    <div class="client-user">
-                                        <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                            alt="images">
-                                    </div>
-                                    <div class="client-content">
-                                        <div class="client-user-author">
-                                            <h4 class="name-author section-20px-montserrat">Olivia Willyost</h4>
-                                            <p class="margin-top-11">"Terimakasih buat GoSocial yang sudah membantu kami membuatkan video Titip Jual OLX Indonesia."</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="client-slider-box">
-                                    <div class="client-user">
-                                        <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                            alt="images">
-                                    </div>
-                                    <div class="client-content">
-                                        <div class="client-user-author">
-                                            <h4 class="name-author section-20px-montserrat">Angela Sujadi</h4>
-                                            <p class="margin-top-11">"Kerja sama dengan GoSocial itu komunikasinya gampang. Sehingga apa yang kita mau dan konsep itu nyambung, dan hasilnya maksimal."</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="client-slider-box">
-                                    <div class="client-user">
-                                        <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                            alt="images">
-                                    </div>
-                                    <div class="client-content">
-                                        <div class="client-user-author">
-                                            <h4 class="name-author section-20px-montserrat">Brade Hook</h4>
-                                            <p class="margin-top-11">A customer review is a review of a product
-                                                or service made by a customer who has purchased and used, or had
-                                                experience with, the product or service.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="client-slider-box">
-                                    <div class="client-user">
-                                        <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                            alt="images">
-                                    </div>
-                                    <div class="client-content">
-                                        <div class="client-user-author">
-                                            <h4 class="name-author section-20px-montserrat">Brade Hook</h4>
-                                            <p class="margin-top-11">A customer review is a review of a product
-                                                or service made by a customer who has purchased and used, or had
-                                                experience with, the product or service.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -844,8 +370,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title wow fadeInDown">
-                        <h4 class="section-subtitle">FAQ</h4>
-                        <h2 class="section-45px-montserrat margin-top-15">Frequently Asked Questions</h2>
+                        <h4 class="section-subtitle">{{$desain_logo_section_8 ['sub_judul']}}</h4>
+                        <h2 class="section-45px-montserrat margin-top-15">{{$desain_logo_section_8 ['judul']}}</h2>
                     </div>
                     <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                         style="height:60px"></div>
@@ -854,145 +380,27 @@
             <div class="row">
                 <div class="col-12">
                     <div id="basicsAccordion-left">
-                        <!-- Card -->
-                        <div class="card shadow-none mb-3">
-                            <div class="card-header card-collapse" id="basicsHeadingOne">
-                                <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="false" aria-controls="basicsCollapseOne">
-                                    <span class="font-size-2">Apa saja jenis desain yang dapat dikerjakan GoSocial?</span>
+                        @foreach ($desain_logo_section_8 ['konten'] as $item)
+                            <!-- Card -->
+                            <div class="card shadow-none mb-3">
+                                <div class="card-header card-collapse" id="basicsHeading{{$item['id']}}">
+                                    <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapse{{$item['id']}}" aria-expanded="false" aria-controls="basicsCollapse{{$item['id']}}">
+                                        <span class="font-size-2">{{$item['pertanyaan']}}</span>
 
-                                    <span class="card-btn-toggle">
-                                        <span class="font-size-2 card-btn-toggle-default">+</span>
-                                        <span class="font-size-2 card-btn-toggle-active">−</span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div id="basicsCollapseOne" class="collapse" aria-labelledby="basicsHeadingOne" data-parent="#basicsAccordion-left" style="">
-                                <div class="card-body px-0 m-3">
-                                    <p>
-                                        Kami dapat membantu berbagai jenis kebutuhan desain grafis yang akan ditangani oleh tim desain yang profesional mulai dari:
-                                        <br> <br>
-                                        1. Kebutuhan Bisnis seperti pembuatan logo, brosur, logo / flyer / leaflet, dsb.
-                                        <br>
-                                        2. Stationery seperti kartu nama, kop surat, buku menu, dsb
-                                        <br>
-                                        3. Social Media seperti desain post / konten (infografis, peringatan, promo) untuk Instagram, Facebook, Youtube dsb.
-                                    </p>
+                                        <span class="card-btn-toggle">
+                                            <span class="font-size-2 card-btn-toggle-default">+</span>
+                                            <span class="font-size-2 card-btn-toggle-active">−</span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div id="basicsCollapse{{$item['id']}}" class="collapse" aria-labelledby="basicsHeading{{$item['id']}}" data-parent="#basicsAccordion-left" style="">
+                                    <div class="card-body px-0 m-3">
+                                        {!! $item['jawaban'] !!}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- End Card -->
-
-                        <!-- Card -->
-                        <div class="card shadow-none mb-3">
-                            <div class="card-header card-collapse" id="basicsHeadingTwo">
-                                <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
-                                    <span class="font-size-2">Apa yang didapat pada paket bundling</span>
-
-                                    <span class="card-btn-toggle">
-                                        <span class="font-size-2 card-btn-toggle-default">+</span>
-                                        <span class="font-size-2 card-btn-toggle-active">−</span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div id="basicsCollapseTwo" class="collapse" aria-labelledby="basicsHeadingTwo" data-parent="#basicsAccordion-left" style="">
-                                <div class="card-body px-0 m-3">
-                                    <p>
-                                        Paket bundling adalah layanan terlengkap yang cocok untuk semua macam bisnis. Yang akan didapatkan pada paket ini adalah:
-                                        <br> <br>
-                                        1. Desain Logo
-                                        <br>
-                                        2. Desain Bebas = Anda bebas request desain yang dibutuhkan bisnis anda seperti (Brosur, logo, dsb)
-                                        <br>
-                                        3. Desain Sosmed = Pembuatan konten (infografis, perayaan, dsb) / post untuk Instagram & Facebook.
-                                        <br>
-                                        4. Grand Design Sosmed = Pembuatan grand desain konten (master file) yang dapat anda ubah sendiri sesuai kebutuhan.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Card -->
-
-                        <!-- Card -->
-                        <div class="card shadow-none mb-3">
-                            <div class="card-header card-collapse" id="basicsHeadingThree">
-                                <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
-                                    <span class="font-size-2">Berapa lama proses pengerjaan desain?</span>
-
-                                    <span class="card-btn-toggle">
-                                        <span class="font-size-2 card-btn-toggle-default">+</span>
-                                        <span class="font-size-2 card-btn-toggle-active">−</span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div id="basicsCollapseThree" class="collapse" aria-labelledby="basicsHeadingThree" data-parent="#basicsAccordion-left" style="">
-                                <div class="card-body px-0 m-3">
-                                    <p>Lama pengerjaan akan menyesuaikan dengan timeline sesuai dengan paket yang berlaku. Namun apabila Anda membutuhkan waktu desain yang lebih cepat, Anda dapat memesan paket custom yang sesuai dengan kebutuhan Anda.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Card -->
-
-                        <!-- Card -->
-                        <div class="card shadow-none mb-3">
-                            <div class="card-header card-collapse" id="basicsHeadingFour">
-                                <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
-                                    <span class="font-size-2">Apa yang perlu saya sediakan?</span>
-
-                                    <span class="card-btn-toggle">
-                                        <span class="font-size-2 card-btn-toggle-default">+</span>
-                                        <span class="font-size-2 card-btn-toggle-active">−</span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour" data-parent="#basicsAccordion-left" style="">
-                                <div class="card-body px-0 m-3">
-                                    <p>Layanan kami sebenarnya anti ribet, Anda tinggal terima jadi saja. Namun agar hasil yang didapatkan maksimal dan sesuai dengan yang diharapkan, maka kami membutuhkan informasi tentang produk / bisnis Anda maupun referensi desain yang diinginkan *jika ada.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Card -->
-
-                        <!-- Card -->
-                        <div class="card shadow-none mb-3">
-                            <div class="card-header card-collapse" id="basicsHeadingFive">
-                                <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseFive" aria-expanded="false" aria-controls="basicsCollapseFive">
-                                    <span class="font-size-2">Apakah bisa request tambahan revisi?</span>
-
-                                    <span class="card-btn-toggle">
-                                        <span class="font-size-2 card-btn-toggle-default">+</span>
-                                        <span class="font-size-2 card-btn-toggle-active">−</span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div id="basicsCollapseFive" class="collapse" aria-labelledby="basicsHeadingFive" data-parent="#basicsAccordion-left" style="">
-                                <div class="card-body px-0 m-3">
-                                    <p>Desain yang kami buat, telah kami maksimalkan agar sesuai dengan keinginan di awal. Namun apabila anda masih kurang puas / kurang sesuai dengan hasil yang diberikan, addons tersedia untuk membantu Anda.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Card -->
-
-                        <!-- Card -->
-                        <div class="card shadow-none mb-3">
-                            <div class="card-header card-collapse" id="basicsHeadingSix">
-                                <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseSix" aria-expanded="false" aria-controls="basicsCollapseSix">
-                                    <span class="font-size-2">Apa lisensi yang akan saya dapat?</span>
-
-                                    <span class="card-btn-toggle">
-                                        <span class="font-size-2 card-btn-toggle-default">+</span>
-                                        <span class="font-size-2 card-btn-toggle-active">−</span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div id="basicsCollapseSix" class="collapse" aria-labelledby="basicsHeadingSix" data-parent="#basicsAccordion-left" style="">
-                                <div class="card-body px-0 m-3">
-                                    <p>Desain yang kami buat adalah original untuk Anda / jika ada menggunakan elemen yang sudah berlisensi premium, Anda akan mendapatkan copyrights penuh lisensi desain sesuai paket yang dipesan.
-                                        <br> <br>
-                                        Jika anda membutuhkan lisensi yang lebih besar / untuk distribusi yang lebih dari yang di paket. Silahkan hubungi kami untuk upgrade lisensi agar tidak terdapat masalah copyrights.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Card -->
+                            <!-- End Card -->
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -1000,36 +408,23 @@
     </section>
 
     <section class="flat-services">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-title wow fadeInDown">
-                        <p class="text-muted">Official Partners:</p>
-                    </div>
-                    <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
-                        style="height:60px"></div>
+        <div class="container space-1">
+            <div class="w-lg-75 mt-3 mx-lg-auto">
+                <div class="text-center mb-4">
+                    <span class="divider divider-text h3">Official Partners:</span>
                 </div>
-                <div class="col-md-12 justify-content-center text-center">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-lg-3 col-4">
-                            <div class="mx-3 client-image">
-                                <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC NISP">
-                                <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC">
-                            </div>
-                        </div>
 
-                        <div class="col-lg-3 col-4">
-                            <a class="mx-3 client-image" href="https://www.bhinneka.com/toko-gosocial-indonesia" target="_blank">
-                                <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Parnter Bhinneka.com" style="">
-                                <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Partner Bhinneka">
-                            </a>
-                        </div>
-
-                        <div class="col-lg-3 col-4">
-                            <div class="mx-3 client-image">
-                                <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                                <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                            </div>
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-lg-8 col-12">
+                        <div class="row d-flex justify-content-center">
+                            @foreach ($partners as $partner)
+                                <div class="col-lg-3 col-4">
+                                    <div class="mx-3 client-image">
+                                        <img class="client-default" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC NISP">
+                                        <img class="client-hover" style="display: none;" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC">
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -1053,4 +448,6 @@
 <script src="https://gosocial.co.id/assets/vendor/hs-toggle-switch/dist/hs-toggle-switch.min.js"></script>
 <script src="https://gosocial.co.id/assets/vendor/hs-switch/dist/hs-switch-text.min.js"></script>
 <script src="https://gosocial.co.id/assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/fontawesome.min.js" integrity="sha512-j3gF1rYV2kvAKJ0Jo5CdgLgSYS7QYmBVVUjduXdoeBkc4NFV4aSRTi+Rodkiy9ht7ZYEwF+s09S43Z1Y+ujUkA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @endsection
