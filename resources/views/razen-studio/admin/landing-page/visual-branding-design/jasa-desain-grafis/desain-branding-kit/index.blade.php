@@ -1,5 +1,5 @@
 @extends('razen-studio.admin.layouts.app')
-@section('title', 'Admin - Razen Studio | Visual Branding Design | Jasa Desain Grafis | Desain Logo')
+@section('title', 'Admin - Razen Studio | Visual Branding Design | Jasa Desain Grafis | Desain Branding Kit')
 
 @section('css')
 <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -18,34 +18,47 @@
 
 @section('content')
 @php
-    use App\Models\RazenStudio\LandingPage\VisualBrandingDesign\JasaDesainGrafis\LandingpageRazenstudioDesainLogo;
-    use App\Models\RazenStudio\LandingPage\VisualBrandingDesign\JasaDesainGrafis\LandingpageRazenstudioItemDesainLogo;
+use App\Models\RazenStudio\LandingPage\VisualBrandingDesign\JasaDesainGrafis\LandingpageRazenstudioDesainBrandingKit;
+use App\Models\RazenStudio\LandingPage\VisualBrandingDesign\JasaDesainGrafis\LandingpageRazenstudioItemDesainBrandingKit;
 
-    $desain_logo = LandingpageRazenstudioDesainLogo::first();
-    $desain_logo_section_1 = json_decode($desain_logo->section_1, true);
-    $desain_logo_section_2 = json_decode($desain_logo->section_2, true);
-    $desain_logo_section_3 = json_decode($desain_logo->section_3, true);
-    $desain_logo_section_4 = json_decode($desain_logo->section_4, true);
-    $desain_logo_section_5 = json_decode($desain_logo->section_5, true);
-    $desain_logo_section_6 = json_decode($desain_logo->section_6, true);
-    $desain_logo_section_7 = json_decode($desain_logo->section_7, true);
-    $desain_logo_section_8 = json_decode($desain_logo->section_8, true);
+$desain_branding_kit = LandingpageRazenstudioDesainBrandingKit::first();
+if($desain_branding_kit)
+{
+    $desain_branding_kit_section_1 = json_decode($desain_branding_kit->section_1, true);
+$desain_branding_kit_section_2 = json_decode($desain_branding_kit->section_2, true);
+$desain_branding_kit_section_3 = json_decode($desain_branding_kit->section_3, true);
+$desain_branding_kit_section_4 = json_decode($desain_branding_kit->section_4, true);
+$desain_branding_kit_section_5 = json_decode($desain_branding_kit->section_5, true);
+$desain_branding_kit_section_6 = json_decode($desain_branding_kit->section_6, true);
+$desain_branding_kit_section_7 = json_decode($desain_branding_kit->section_7, true);
+$desain_branding_kit_section_8 = json_decode($desain_branding_kit->section_8, true);
+} else {
+    $desain_branding_kit_section_1 = [];
+    $desain_branding_kit_section_2 = [];
+    $desain_branding_kit_section_3 = [];
+    $desain_branding_kit_section_4 = [];
+    $desain_branding_kit_section_5 = [];
+    $desain_branding_kit_section_6 = [];
+    $desain_branding_kit_section_7 = [];
+    $desain_branding_kit_section_8 = [];
+}
 
-    $cek_item_desain_logo = LandingpageRazenstudioItemDesainLogo::first();
+
+$cek_item_desain_branding_kit = LandingpageRazenstudioItemDesainBrandingKit::first();
 @endphp
 
 <div class="page-title-container">
     <div class="row">
         <!-- Title Start -->
         <div class="col-12 col-md-7">
-            <h1 class="mb-0 pb-0 display-4" id="title">Jasa Desain Grafis - Desain Logo</h1>
+            <h1 class="mb-0 pb-0 display-4" id="title">Jasa Desain Grafis - Desain Branding Kit</h1>
             <nav class="breadcrumb-container d-inline-block" aria-label="breadcrumb">
                 <ul class="breadcrumb pt-0">
                     <li class="breadcrumb-item"><a href="{{ route('razen-studio.admin.dashboard.index') }}">Dashboard</a></li>
                     <li class="breadcrumb-item"><a href="#">Landing Page</a></li>
                     <li class="breadcrumb-item"><a href="#">Video Production</a></li>
                     <li class="breadcrumb-item"><a href="#">Jasa Desain Grafis</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.index') }}">Desain Logo</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.index') }}">Desain Branding Kit</a></li>
                 </ul>
             </nav>
         </div>
@@ -53,31 +66,31 @@
     </div>
 </div>
 
-<h2 class="small-title">Desain Logo</h2>
+<h2 class="small-title">Desain Branding Kit</h2>
 
 <div class="card mb-5">
     <div class="card-body">
         <h2 class="small-title">Edit Section 1</h2>
         <div class="row mb-3">
             <div class="col-12">
-                <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/desain-logo/section_1.png') }}" alt="" class="img-fluid rounded">
+                <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/desain-branding-kit/section_1.png') }}" alt="" class="img-fluid rounded">
             </div>
         </div>
-        <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-1.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.section-1.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-12">
                     <div class="mb-3 position-relative form-group">
                         <label for="" class="form-label">Title</label>
-                        <input type="text" class="form-control" name="title" placeholder="Untuk title pada page" value="{{$desain_logo_section_1?$desain_logo_section_1['title']:'' }}" required>
+                        <input type="text" class="form-control" name="title" placeholder="Untuk title pada page" value="{{$desain_branding_kit_section_1?$desain_branding_kit_section_1['title']:'' }}" required>
                     </div>
                     <div class="mb-3 position-relative form-group">
                         <label for="" class="form-label">Judul</label>
-                        <input type="text" class="form-control" name="judul" placeholder="Jasa Desain Logo" value="{{$desain_logo_section_1?$desain_logo_section_1['judul']:'' }}" required>
+                        <input type="text" class="form-control" name="judul" placeholder="Jasa Desain Logo" value="{{$desain_branding_kit_section_1?$desain_branding_kit_section_1['judul']:'' }}" required>
                     </div>
                     <div class="mb-3 position-relative form-group">
                         <label for="" class="form-label">Deskripsi</label>
-                        <textarea name="deskripsi" rows="5" class="form-control" placeholder="Layanan jasa desain logo berkualitas yang dikerjakan oleh tim desainer profesional." required>{{$desain_logo_section_1 ? $desain_logo_section_1['deskripsi']:''}}</textarea>
+                        <textarea name="deskripsi" rows="5" class="form-control" placeholder="Layanan jasa desain logo berkualitas yang dikerjakan oleh tim desainer profesional." required>{{$desain_branding_kit_section_1 ? $desain_branding_kit_section_1['deskripsi']:''}}</textarea>
                     </div>
                 </div>
             </div>
@@ -91,31 +104,31 @@
         <h2 class="small-title">Edit Section 2</h2>
         <div class="row mb-3">
             <div class="col-12">
-                <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/desain-logo/section_2.png') }}" alt="" class="img-fluid rounded">
+                <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/desain-branding-kit/section_2.png') }}" alt="" class="img-fluid rounded">
             </div>
         </div>
-        <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-2.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.section-2.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-12 col-md-8">
                     <div class="mb-3 position-relative form-group">
                         <label for="" class="form-label">Sub Judul</label>
-                        <input type="text" class="form-control" name="sub_judul" placeholder="APA PENTINGNYA" value="{{$desain_logo_section_2?$desain_logo_section_2['sub_judul']:''}}" required>
+                        <input type="text" class="form-control" name="sub_judul" placeholder="APA PENTINGNYA" value="{{$desain_branding_kit_section_2?$desain_branding_kit_section_2['sub_judul']:''}}" required>
                     </div>
                     <div class="mb-3 position-relative form-group">
                         <label for="" class="form-label">Judul</label>
-                        <input type="text" class="form-control" name="judul" placeholder="Desain yang bagus?" value="{{$desain_logo_section_2?$desain_logo_section_2['judul']:'' }}" required>
+                        <input type="text" class="form-control" name="judul" placeholder="Desain yang bagus?" value="{{$desain_branding_kit_section_2?$desain_branding_kit_section_2['judul']:'' }}" required>
                     </div>
                     <div class="mb-3 position-relative form-group">
                         <label for="" class="form-label">Deskripsi</label>
-                        <textarea name="deskripsi" rows="5" class="form-control" id="section_2" required>{{$desain_logo_section_2 ? $desain_logo_section_2['deskripsi']:''}}</textarea>
+                        <textarea name="deskripsi" rows="5" class="form-control" id="section_2" required>{{$desain_branding_kit_section_2 ? $desain_branding_kit_section_2['deskripsi']:''}}</textarea>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="position-relative form-group">
                         <label for="" class="form-label">Gambar</label>
-                        @if ($desain_logo_section_2)
-                        <input type="file" class="dropify" name="gambar" data-height="300" data-allowed-file-extensions="png jpg jpeg webp" data-default-file="{{ asset('images/landingpage_razenstudio/visual-branding-design/jasa-desain-grafis/desain-logo/'.$desain_logo_section_2['gambar']) }}" data-show-errors="true" required>
+                        @if ($desain_branding_kit_section_2)
+                        <input type="file" class="dropify" name="gambar" data-height="300" data-allowed-file-extensions="png jpg jpeg webp" data-default-file="{{ asset('images/landingpage_razenstudio/visual-branding-design/jasa-desain-grafis/desain-branding-kit/'.$desain_branding_kit_section_2['gambar']) }}" data-show-errors="true" required>
                         @else
                         <input type="file" class="dropify" name="gambar" data-height="300" data-allowed-file-extensions="png jpg jpeg webp" data-show-errors="true" required>
                         @endif
@@ -132,27 +145,27 @@
         <h2 class="small-title">Edit Section 3</h2>
         <div class="row mb-3">
             <div class="col-12">
-                <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/desain-logo/section_3.png') }}" alt="" class="img-fluid rounded">
+                <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/desain-branding-kit/section_3.png') }}" alt="" class="img-fluid rounded">
             </div>
         </div>
-        <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-3.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.section-3.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-12 col-md-8">
                     <div class="mb-3 position-relative form-group">
                         <label for="" class="form-label">Judul</label>
-                        <input type="text" class="form-control" name="judul" placeholder="Desain yang bagus?" value="{{$desain_logo_section_3?$desain_logo_section_3['judul']:'' }}" required>
+                        <input type="text" class="form-control" name="judul" placeholder="Desain yang bagus?" value="{{$desain_branding_kit_section_3?$desain_branding_kit_section_3['judul']:'' }}" required>
                     </div>
                     <div class="mb-3 position-relative form-group">
                         <label for="" class="form-label">Deskripsi</label>
-                        <textarea name="deskripsi" rows="5" class="form-control" id="section_3" required>{{$desain_logo_section_3 ? $desain_logo_section_3['deskripsi']:''}}</textarea>
+                        <textarea name="deskripsi" rows="5" class="form-control" id="section_3" required>{{$desain_branding_kit_section_3 ? $desain_branding_kit_section_3['deskripsi']:''}}</textarea>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="position-relative form-group">
                         <label for="" class="form-label">Gambar</label>
-                        @if ($desain_logo_section_3)
-                        <input type="file" class="dropify" name="gambar" data-height="300" data-allowed-file-extensions="png jpg jpeg webp" data-default-file="{{ asset('images/landingpage_razenstudio/visual-branding-design/jasa-desain-grafis/desain-logo/'.$desain_logo_section_3['gambar']) }}" data-show-errors="true" required>
+                        @if ($desain_branding_kit_section_3)
+                        <input type="file" class="dropify" name="gambar" data-height="300" data-allowed-file-extensions="png jpg jpeg webp" data-default-file="{{ asset('images/landingpage_razenstudio/visual-branding-design/jasa-desain-grafis/desain-branding-kit/'.$desain_branding_kit_section_3['gambar']) }}" data-show-errors="true" required>
                         @else
                         <input type="file" class="dropify" name="gambar" data-height="300" data-allowed-file-extensions="png jpg jpeg webp" data-show-errors="true" required>
                         @endif
@@ -169,20 +182,20 @@
         <h2 class="small-title">Edit Section 4</h2>
         <div class="row mb-3">
             <div class="col-12">
-                <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/desain-logo/section_4.png') }}" alt="" class="img-fluid rounded">
+                <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/desain-branding-kit/section_4.png') }}" alt="" class="img-fluid rounded">
             </div>
         </div>
-        <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-4.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.section-4.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-12">
                     <div class="mb-3 position-relative form-group">
                         <label for="" class="form-label">Judul</label>
-                        <input type="text" class="form-control" name="judul" placeholder="Desain yang bagus?" value="{{$desain_logo_section_4?$desain_logo_section_4['judul']:'' }}" required>
+                        <input type="text" class="form-control" name="judul" placeholder="Desain yang bagus?" value="{{$desain_branding_kit_section_4?$desain_branding_kit_section_4['judul']:'' }}" required>
                     </div>
                     <div class="mb-3 position-relative form-group">
                         <label for="" class="form-label">Deskripsi</label>
-                        <textarea name="deskripsi" rows="5" class="form-control" required>{{$desain_logo_section_4 ? $desain_logo_section_4['deskripsi']:''}}</textarea>
+                        <textarea name="deskripsi" rows="5" class="form-control" required>{{$desain_branding_kit_section_4 ? $desain_branding_kit_section_4['deskripsi']:''}}</textarea>
                     </div>
                 </div>
             </div>
@@ -196,11 +209,11 @@
         <h2 class="small-title">Edit Section 5</h2>
         <div class="row mb-3">
             <div class="col-12">
-                <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/desain-logo/section_5.png') }}" alt="" class="img-fluid rounded">
+                <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/desain-branding-kit/section_5.png') }}" alt="" class="img-fluid rounded">
             </div>
         </div>
-        @if ($desain_logo_section_5 == null)
-            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-5.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+        @if ($desain_branding_kit_section_5 == null)
+            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.section-5.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-12">
@@ -229,22 +242,22 @@
                 <button type="submit" class="btn btn-primary mb-0">Submit</button>
             </form>
         @endif
-        @if ($desain_logo_section_5 != null)
-            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-5.edit') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+        @if ($desain_branding_kit_section_5 != null)
+            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.section-5.edit') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="mb-3 position-relative form-group">
                         <label for="" class="form-label">Sub Judul</label>
-                        <input type="text" class="form-control" name="sub_judul" placeholder="THE PRODUCTION PROCESS" value="{{$desain_logo_section_5['sub_judul']}}" required>
+                        <input type="text" class="form-control" name="sub_judul" placeholder="THE PRODUCTION PROCESS" value="{{$desain_branding_kit_section_5['sub_judul']}}" required>
                     </div>
                     <div class="col-12">
                         <div class="mb-3 position-relative form-group">
                             <label for="" class="form-label">Judul</label>
-                            <input type="text" class="form-control" name="judul" value="{{$desain_logo_section_5['judul']}}" required>
+                            <input type="text" class="form-control" name="judul" value="{{$desain_branding_kit_section_5['judul']}}" required>
                         </div>
                         <div class="mb-3 position-relative form-group">
                             <div class="row mb-3">
-                                @foreach ($desain_logo_section_5['konten'] as $item)
+                                @foreach ($desain_branding_kit_section_5['konten'] as $item)
                                 <div class="col-12 col-md-4 mb-3">
                                     <div class="card h-100 border">
                                         <button class="btn border-0 btn-icon btn_hapus_data_section5" type="button" value="{{$item['id']}}"><span class="badge rounded-pill bg-primary me-1 position-absolute e-3 t-n2 z-index-1">Hapus</span></button>
@@ -280,47 +293,42 @@
         <h2 class="small-title">Edit Section 6</h2>
         <div class="row mb-3">
             <div class="col-12 text-center">
-                <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/desain-logo/section_6.png') }}" alt="" class="img-fluid rounded">
+                <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/desain-branding-kit/section_6.png') }}" alt="" class="img-fluid rounded">
             </div>
         </div>
-        <form class="mb-3" action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-6.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+        <form class="mb-3" action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.section-6.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-12">
                     <div class="mb-3 position-relative form-group">
                         <label for="" class="form-label">Sub Judul</label>
-                        <input type="text" class="form-control" name="sub_judul" value="{{$desain_logo_section_6?$desain_logo_section_6['sub_judul']:'' }}" required>
+                        <input type="text" class="form-control" name="sub_judul" value="{{$desain_branding_kit_section_6?$desain_branding_kit_section_6['sub_judul']:'' }}" required>
                     </div>
                     <div class="mb-3 position-relative form-group">
                         <label for="" class="form-label">Judul</label>
-                        <input type="text" class="form-control" name="judul" value="{{$desain_logo_section_6?$desain_logo_section_6['judul']:'' }}" required>
+                        <input type="text" class="form-control" name="judul" value="{{$desain_branding_kit_section_6?$desain_branding_kit_section_6['judul']:'' }}" required>
                     </div>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary mb-0">Submit</button>
         </form>
-        @if ($cek_item_desain_logo)
+        @if ($cek_item_desain_branding_kit)
             <hr>
             @php
-                $desian_logos = LandingpageRazenstudioItemDesainLogo::all();
+                $desian_logos = LandingpageRazenstudioItemDesainBrandingKit::all();
             @endphp
             <div class="row">
                 @foreach ($desian_logos as $item)
                     <div class="col-12 col-md-4 mb-4">
                         <div class="card border">
-                            <div class="row">
-                                <div class="col-12 text-center">
-                                    <img src="{{asset('images/landingpage_razenstudio/visual-branding-design/jasa-desain-grafis/desain-logo/'.$item['gambar'])}}" alt="" style="width: 5rem; height: 5rem;">
-                                </div>
-                            </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12">
                                         <p>Judul: {{$item['judul']}}</p>
-                                        @if ($item['harga_custom'] != null)
-                                            <p>Harga mulai dari: {{$item['harga_custom']}}</p>
-                                        @else
+                                        @if (is_numeric($item['harga']))
                                             <p>Harga: Rp.{{number_format($item['harga'], 2)}}</p>
+                                        @else
+                                            <p>Harga: {{$item['harga']}}</p>
                                         @endif
                                     </div>
                                 </div>
@@ -372,11 +380,11 @@
         <h2 class="small-title">Edit Section 7</h2>
         <div class="row mb-3">
             <div class="col-12">
-                <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/desain-logo/section_7.png') }}" alt="" class="img-fluid rounded">
+                <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/desain-branding-kit/section_7.png') }}" alt="" class="img-fluid rounded">
             </div>
         </div>
-        @if ($desain_logo_section_7 == null)
-            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-7.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+        @if ($desain_branding_kit_section_7 == null)
+            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.section-7.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-12">
@@ -405,26 +413,26 @@
                 <button type="submit" class="btn btn-primary mb-0">Submit</button>
             </form>
         @endif
-        @if ($desain_logo_section_7 != null)
-            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-7.edit') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+        @if ($desain_branding_kit_section_7 != null)
+            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.section-7.edit') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-12">
                         <div class="mb-3 position-relative form-group">
                             <label for="" class="form-label">Sub Judul</label>
-                            <input type="text" class="form-control" name="sub_judul" placeholder="LAYANAN DESAIN TERLENGKAP" value="{{ $desain_logo_section_7['sub_judul'] }}" required>
+                            <input type="text" class="form-control" name="sub_judul" placeholder="LAYANAN DESAIN TERLENGKAP" value="{{ $desain_branding_kit_section_7['sub_judul'] }}" required>
                         </div>
                         <div class="mb-3 position-relative form-group">
                             <label for="" class="form-label">Judul</label>
-                            <input name="judul" class="form-control" placeholder="Pilihan Jasa Branding & Desain Lainnya" value="{{$desain_logo_section_7['judul']}}" required>
+                            <input name="judul" class="form-control" placeholder="Pilihan Jasa Branding & Desain Lainnya" value="{{$desain_branding_kit_section_7['judul']}}" required>
                         </div>
                         <div class="mb-3 position-relative form-group">
                             <div class="row mb-3">
-                                @foreach ($desain_logo_section_7['konten'] as $item)
+                                @foreach ($desain_branding_kit_section_7['konten'] as $item)
                                     <div class="col-12 col-md-4 mb-5">
                                         <div class="card h-100 border">
                                             <button class="btn border-0 btn-icon btn_hapus_gambar_section7" type="button" value="{{$item['id']}}"><span class="badge rounded-pill bg-primary me-1 position-absolute e-3 t-n2 z-index-1">Hapus</span></button>
-                                            <img src="{{ asset('images/landingpage_razenstudio/visual-branding-design/jasa-desain-grafis/desain-logo/'.$item['gambar_konten']) }}" class="card-img-top sh-22" alt="card image">
+                                            <img src="{{ asset('images/landingpage_razenstudio/visual-branding-design/jasa-desain-grafis/desain-branding-kit/'.$item['gambar_konten']) }}" class="card-img-top sh-22" alt="card image">
                                             <div class="card-body">
                                                 <h5 class="heading mb-0">{{$item['judul_konten']}}</h5>
                                             </div>
@@ -461,8 +469,8 @@
                 <img src="{{ asset('images/landingpage_razenstudio_screenshot/visual-branding-design/jasa-desain-grafis/section_8.png') }}" alt="" class="img-fluid rounded">
             </div>
         </div>
-        @if ($desain_logo_section_8  == null)
-            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-8.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+        @if ($desain_branding_kit_section_8  == null)
+            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.section-8.store') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-12">
@@ -491,22 +499,22 @@
                 <button type="submit" class="btn btn-primary mb-0">Submit</button>
             </form>
         @endif
-        @if ($desain_logo_section_8  != null)
-            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-8.edit') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
+        @if ($desain_branding_kit_section_8  != null)
+            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.section-8.edit') }}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-12">
                         <div class="mb-3 position-relative form-group">
                             <label for="" class="form-label">Sub Judul</label>
-                            <input type="text" class="form-control" name="sub_judul" value="{{$desain_logo_section_8 ['sub_judul']}}" placeholder="FAQ" required>
+                            <input type="text" class="form-control" name="sub_judul" value="{{$desain_branding_kit_section_8 ['sub_judul']}}" placeholder="FAQ" required>
                         </div>
                         <div class="mb-3 position-relative form-group">
                             <label for="" class="form-label">Judul</label>
-                            <input type="text" class="form-control" name="judul" value="{{$desain_logo_section_8 ['judul']}}" required>
+                            <input type="text" class="form-control" name="judul" value="{{$desain_branding_kit_section_8 ['judul']}}" required>
                         </div>
                         <div class="mb-3 position-relative form-group">
                             <div class="row mb-3">
-                                @foreach ($desain_logo_section_8 ['konten'] as $item)
+                                @foreach ($desain_branding_kit_section_8 ['konten'] as $item)
                                 <div class="col-12 col-md-4 mb-3">
                                     <div class="card h-100 border">
                                         <button class="btn border-0 btn-icon btn_hapus_data_section8" type="button" value="{{$item['id']}}"><span class="badge rounded-pill bg-primary me-1 position-absolute e-3 t-n2 z-index-1">Hapus</span></button>
@@ -545,23 +553,18 @@
                 <h5 class="modal-title" id="itemSection6LabelDefault">Tambah Item Penilaian Section 6</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-6.item.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.section-6.item.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-12 col-md-7">
+                        <div class="col-12">
                             <div class="mb-3 position-relative form-group">
                                 <label for="" class="form-label">Judul</label>
                                 <input type="text" class="form-control" name="judul" required>
                             </div>
                             <div class="mb-3 position-relative form-group">
                                 <label for="" class="form-label">Harga</label>
-                                <input type="number" class="form-control" name="harga">
-                            </div>
-                            <div class="mb-3 position-relative form-group">
-                                <label for="" class="form-label">Harga Custom</label>
-                                <input type="text" class="form-control" name="harga_custom">
-                                <span class="text-small">*Tidak perlu diisi jika sudah mengisi field harga</span>
+                                <input type="text" class="form-control" name="harga" required>
                             </div>
                             <div class="mb-3 row">
                                 <div class="col-6 justify-content-center align-self-center">
@@ -573,13 +576,6 @@
                                 </div>
                             </div>
                             <div id="div_item_penilaian_section_6"></div>
-                        </div>
-                        <div class="col-12 col-md-5">
-                            <div class="mb-3 position-relative form-group">
-                                <label for="" class="form-label">Gambar</label>
-                                <input type="file" class="dropify gambar-section-6" name="gambar" data-height="300" data-allowed-file-extensions="png jpg jpeg webp" data-show-errors="true">
-                                <span class="text-small text-primary">*optional</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -731,7 +727,7 @@
             if(result.value)
             {
                 $.ajax({
-                    url: "{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-5.hapus.satu') }}",
+                    url: "{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.section-5.hapus.satu') }}",
                     method: "POST",
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -755,11 +751,6 @@
                 });
             }
         });
-    });
-
-    $('#btn_modal_section_6').click(function(){
-        $('.item-penilaian-section-6').remove();
-        count_item_penilaian_section_6 = 1;
     });
 
     dynamic_item_penilaian_section_6(count_item_penilaian_section_6);
@@ -814,7 +805,7 @@
             if(result.value)
             {
                 $.ajax({
-                    url: "{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-6.item.hapus') }}",
+                    url: "{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.section-6.item.hapus') }}",
                     method: "POST",
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -898,7 +889,7 @@
             if(result.value)
             {
                 $.ajax({
-                    url: "{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-7.hapus.satu') }}",
+                    url: "{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.section-7.hapus.satu') }}",
                     method: "POST",
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -972,7 +963,7 @@
             if(result.value)
             {
                 $.ajax({
-                    url: "{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.section-8.hapus.satu') }}",
+                    url: "{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.section-8.hapus.satu') }}",
                     method: "POST",
                     data: {
                         "_token": "{{ csrf_token() }}",

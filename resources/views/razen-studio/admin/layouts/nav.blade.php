@@ -104,7 +104,11 @@
                     request()->routeIs('razen-studio.admin.web-development.atur.index') ||
                     request()->routeIs('razen-studio.admin.visual-branding-design.atur.index') ||
                     request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.index') ||
-                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.index'))
+                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.index') ||
+                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-promosi-digital.index') ||
+                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-feed-instagram.index') ||
+                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.index') ||
+                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-kartu-nama.index'))
                     <a href="#landing_page" class="active">
                     @else
                     <a href="#landing_page">
@@ -326,7 +330,11 @@
                         <li>
                             @if (request()->routeIs('razen-studio.admin.visual-branding-design.atur.index') ||
                             request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.index') ||
-                            request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.index'))
+                            request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.index') ||
+                            request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-promosi-digital.index') ||
+                            request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-feed-instagram.index') ||
+                            request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.index') ||
+                            request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-kartu-nama.index'))
                                 <a href="#visual_branding_design" class="active">
                             @else
                                 <a href="#visual_branding_design">
@@ -345,7 +353,11 @@
                                 </li>
                                 <li>
                                     @if (request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.atur.index') ||
-                                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.index'))
+                                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.index') ||
+                                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-promosi-digital.index') ||
+                                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-feed-instagram.index') ||
+                                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.index') ||
+                                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-kartu-nama.index'))
                                         <a href="#jasa_desain_grafis" class="active">
                                     @else
                                         <a href="#jasa_desain_grafis">
@@ -369,6 +381,42 @@
                                                 <a href="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-logo.index') }}">
                                             @endif
                                                 <span class="label">Desain Logo</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-promosi-digital.index'))
+                                                <a href="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-promosi-digital.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-promosi-digital.index') }}">
+                                            @endif
+                                                <span class="label">Desain Promosi Digital</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-feed-instagram.index'))
+                                                <a href="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-feed-instagram.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-feed-instagram.index') }}">
+                                            @endif
+                                                <span class="label">Desain Feed Instagram</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.index'))
+                                                <a href="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-kit.index') }}">
+                                            @endif
+                                                <span class="label">Desain Branding Kit</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-kartu-nama.index'))
+                                                <a href="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-kartu-nama.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-kartu-nama.index') }}">
+                                            @endif
+                                                <span class="label">Desain Kartu Nama</span>
                                             </a>
                                         </li>
                                     </ul>
