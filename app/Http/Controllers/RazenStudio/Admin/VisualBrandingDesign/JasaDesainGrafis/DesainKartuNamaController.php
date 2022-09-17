@@ -368,13 +368,66 @@ class DesainKartuNamaController extends Controller
         if($cek)
         {
             $landingpage_razenstudio_desain_kartu_nama = LandingpageRazenstudioDesainKartuNama::find($cek->id);
+            $section6 = json_decode($landingpage_razenstudio_desain_kartu_nama->section_6, true);
+            $array_lama = [];
+
+            foreach ($section6['item'] as $value) {
+                if($value['item'] == 'item_1')
+                {
+                    $array_lama[] = [
+                        'item' => $value['item'],
+                        'harga' => $value['harga'],
+                        'deskripsi' => $value['deskripsi'],
+                        'no_wa_konsultasi' => $value['no_wa_konsultasi'],
+                        'mini_text' => $value['mini_text'],
+                    ];
+                }
+                if($value['item'] == 'item_2')
+                {
+                    $array_lama[] = [
+                        'item' => $value['item'],
+                        'judul' => $value['judul'],
+                        'deskripsi' => $value['deskripsi'],
+                        'ikon' => $value['ikon'],
+                    ];
+                }
+                if($value['item'] == 'item_3')
+                {
+                    $array_lama[] = [
+                        'item' => $value['item'],
+                        'judul' => $value['judul'],
+                        'deskripsi' => $value['deskripsi'],
+                        'ikon' => $value['ikon'],
+                    ];
+                }
+                if($value['item'] == 'item_4')
+                {
+                    $array_lama[] = [
+                        'item' => $value['item'],
+                        'judul' => $value['judul'],
+                        'deskripsi' => $value['deskripsi'],
+                        'ikon' => $value['ikon'],
+                    ];
+                }
+                if($value['item'] == 'item_5')
+                {
+                    $array_lama[] = [
+                        'item' => $value['item'],
+                        'judul' => $request->judul,
+                        'deskripsi' => $request->deskripsi,
+                        'ikon' => $value['ikon'],
+                    ];
+                }
+            }
+            $array_data = $array_lama;
         } else {
             $landingpage_razenstudio_desain_kartu_nama = new LandingpageRazenstudioDesainKartuNama;
+            $array_data = [];
         }
         $array = [
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
-            'item' => []
+            'item' => $array_data
         ];
 
         $landingpage_razenstudio_desain_kartu_nama->section_6 = json_encode($array);

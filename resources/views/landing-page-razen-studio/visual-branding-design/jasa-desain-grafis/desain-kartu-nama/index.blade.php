@@ -260,7 +260,7 @@
                     <hr class="my-4">
 
                     <div class="mb-5">
-                        <p>{{$item_1['deskripsi']}}</p>
+                        <p>{!!$item_1['deskripsi']!!}</p>
                     </div>
 
                     <div class="mb-2">
