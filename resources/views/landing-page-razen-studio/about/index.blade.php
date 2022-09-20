@@ -1,21 +1,67 @@
+@php
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioAbout;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioGalleryAbout;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioBrand;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioOfficialPartner;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioReview;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioHome;
+
+    $home = LandingpageRazenstudioHome::first();
+
+    $about = LandingpageRazenstudioAbout::first();
+    if ($about) {
+        $about_section_1 = json_decode($about->section_1, true);
+        $about_section_2 = json_decode($about->section_2, true);
+        $about_section_3 = json_decode($about->section_3, true);
+        $about_section_4 = json_decode($about->section_4, true);
+        $about_section_5 = json_decode($about->section_5, true);
+        $about_section_6 = json_decode($about->section_6, true);
+        $about_section_7 = json_decode($about->section_7, true);
+        $about_section_5 = json_decode($about->section_5, true);
+    } else {
+        $about_section_1 = [];
+        $about_section_2 = [];
+        $about_section_3 = [];
+        $about_section_4 = [];
+        $about_section_5 = [];
+        $about_section_6 = [];
+        $about_section_7 = [];
+        $about_section_5 = [];
+    }
+
+    $reviews = LandingpageRazenstudioReview::latest()->get();
+    $brands= LandingpageRazenstudioBrand::all();
+    $partners = LandingpageRazenstudioOfficialPartner::all();
+    $cek_gallery = LandingpageRazenstudioGalleryAbout::first();
+@endphp
 @extends('landing-page-razen-studio.layouts.app')
-@section('title', 'Razen Studio | About')
+@section('title', $about_section_1['title'])
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/custom_style.css') }}">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/dzsparallaxer/dzsparallaxer.css">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/aos/dist/aos.css">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/css/pages/global.css?v.0908">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/css/theme.min.css">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/css/pages/digital-campaign/digital-campaign.css?v.2812">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 
 @section('content')
-<section class="flat-title-page back-ground-style">
+<section class="flat-title-page back-ground-style h-100">
     <div class="container-fluid">
         <div class="row">
             <div class="breadcrumbs text-center link-style-5 text-white">
-                <h2 class="section-title-page text-white">Tentang GoSocial</h2>
-                <p class="mb-5">GoSocial merupakan Creative & Digital Agency Hub sekaligus Digital Consultant yang <br> membantu bisnis dari berbagai ukuran mulai dari bisnis rumahan, UMKM, bisnis rintisan (startup) hingga Corporate melakukan Digital Marketing.</p>
+                <h2 class="section-title-page text-white">{{$about_section_1['judul']}}</h2>
+                <p class="mb-5">{{$about_section_1['deskripsi']}}</p>
                 <ul class="breadcrumbs-inner list-center display-flex">
-                    <li><a class="section-16px-regular font-weight-500" href="{{ route('home') }}">Home</a></li>
+                    <li><a class="section-16px-regular font-weight-500 text-decoration-none" href="{{ route('home') }}">Home</a></li>
                     <li>
-                        <h4 class="section-16px-regular font-weight-500 text-white">About</h4>
+                        <h4 class="section-16px-regular font-weight-500 text-white">{{$about_section_1['judul']}}</h4>
                     </li>
                 </ul>
             </div>
@@ -26,50 +72,27 @@
 <section class="flat-counter">
     <div class="container">
         <div class="row mx-n2 mb-5">
-            <div class="col-6 col-md px-2 mb-3">
-                <div class="bg-img-hero" style="background-image: url(https://gosocial.co.id/assets/img/about/foto-tim-1.webp); height: 30rem;"></div>
-            </div>
-            <div class="col-md-3 d-none d-md-block px-2 mb-3">
-                <div class="bg-img-hero" style="background-image: url(https://gosocial.co.id/assets/img/about/foto-tim-2.webp); height: 30rem;"></div>
-            </div>
-            <div class="col-6 col-md px-2 mb-3">
-                <div class="bg-img-hero" style="background-image: url(https://gosocial.co.id/assets/img/about/foto-tim-3.webp); height: 30rem;"></div>
-            </div>
-
-            <div class="w-100"></div>
-
-            <div class="col-6 col-md px-2 mb-3 mb-md-0">
-                <div class="bg-img-hero" style="background-image: url(https://gosocial.co.id/assets/img/about/foto-tim-4.webp); height: 30rem;"></div>
-            </div>
-            <div class="col-md-4 d-none d-md-block px-2 mb-3 mb-md-0">
-                <div class="bg-img-hero" style="background-image: url(https://gosocial.co.id/assets/img/about/foto-tim-5.webp); height: 30rem;"></div>
-            </div>
-            <div class="col-6 col-md px-2">
-                <div class="bg-img-hero" style="background-image: url(https://gosocial.co.id/assets/img/about/foto-tim-6.webp); height: 30rem;"></div>
-            </div>
+            @if ($cek_gallery)
+                @php
+                    $gallerys = LandingpageRazenstudioGalleryAbout::latest()->get();
+                @endphp
+                @foreach ($gallerys as $gallery)
+                    <div class="col-6 col-md px-2 mb-3">
+                        <div class="bg-img-hero" style="background-image: url({{asset('images/landingpage_razenstudio/about/'.$gallery->gambar)}}); height: 30rem;"></div>
+                    </div>
+                @endforeach
+            @endif
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <h2 class="number-content section-65px-montserrat"><span class="number"
-                            data-speed="2000" data-to="7" data-inviewport="yes">7</span></h2>
-                    <p>Tahun pengalaman tim dalam industri digital.</p>
+            @foreach ($about_section_2 as $item)
+                <div class="col-md-4">
+                    <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
+                        <h2 class="number-content section-65px-montserrat"><span class="number"
+                                data-speed="2000" data-to="{{$item['judul']}}" data-inviewport="yes">{{$item['judul']}}</span></h2>
+                        <p>{{$item['deskripsi']}}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.4s">
-                    <h2 class="number-content section-65px-montserrat"><span class="number"
-                            data-speed="2000" data-to="1.000" data-inviewport="yes">1.000</span>+</h2>
-                    <p>Lebih dari 1.000 klien telah percaya kepada kami.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="counter-box themesflat-counter1 hover-up wow fadeInUp" data-wow-delay="0.8s">
-                    <h2 class="number-content section-65px-montserrat"><span class="number"
-                            data-speed="2000" data-to="152" data-inviewport="yes">152</span></h2>
-                    <p>Jumlah Social Rangers yang kini ada di GoSocial (per Des 2021).</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -81,18 +104,17 @@
                 <div class="about-content-right wow fadeInUp" data-wow-delay="0ms"
                     data-wow-duration="1500ms">
                     <div class="section-title">
-                        <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">We Want to Grow With You</h4>
+                        <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">{{$about_section_3['judul']}}</h4>
                     </div>
-                    <p class="section-17px-regular margin-bottom-25">GoSocial dimulai dari sebuah kolaborasi-kolaborasi proyek kreatif digital sejak tahun 2015, karena memiliki visi yang sama untuk dapat membantu lebih banyak bisnis di Indonesia akhirnya terwujudlah sebuah Social Media & Digital Marketing Agency yang mengedepankan Data-Driven Strategy.</p>
-                    <p class="section-17px-regular margin-bottom-25">Dibawah PT. Nusa Digital Media, kami menawarkan pengalaman baru dalam melakukan Outsourcing kepada Digital / Creative Agency dimana kami telah mengumpulkan dan menyeleksi berbagai profesional serta agency terbaik di bidangnya untuk bergabung bersama menciptakan layanan yang berkualitas.</p>
+                    <p class="section-17px-regular margin-bottom-25">{!! $about_section_3['deskripsi'] !!}</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="about-content-left wow fadeInLeft">
                     <div class="about-post">
-                        <img src="{{ asset('olux/assets/images/image-box/about-post-mystory.jpg') }}" alt="images">
+                        <img src="{{ asset('images/landingpage_razenstudio/about/'.$about_section_3['gambar']) }}" alt="images">
                         <div class="mark-video">
-                            <a href="https://www.youtube.com/embed/xC4ze0p0b5Y" class="lightbox-image">
+                            <a href="{{ $about_section_3['link'] }}" class="lightbox-image">
                                 <div class="icon"></div>
                             </a>
                         </div>
@@ -111,14 +133,14 @@
                 <div class="about-content-right wow fadeInUp" data-wow-delay="0ms"
                     data-wow-duration="1500ms">
                     <div class="section-title">
-                        <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">Our Mission is being the catalyst between business and digital</h4>
+                        <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">{{$about_section_4['judul']}}</h4>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="about-content-right wow fadeInUp" data-wow-delay="0ms"
                     data-wow-duration="1500ms">
-                    <p class="section-17px-regular margin-bottom-25">Sejak 2020, kami telah membantu berbagai bisnis menghadapi krisis pandemi COVID-19 yang membuat transformasi digital merupakan hal yang harus dilakukan agar bisnis tetap bertahan. Kami percaya bahwa solusi digital seharusnya dibuat tidak hanya berdasarkan pengalaman dan kreatifitas saja, melainkan harus sejalan dengan strategi bisnis yang berdasarkan data dan perkembangan teknologi.</p>
+                    <p class="section-17px-regular margin-bottom-25">{{$about_section_4['deskripsi']}}</p>
                 </div>
             </div>
         </div>
@@ -131,36 +153,13 @@
             <div class="col-md-12">
                 <div class="swiper-container carousel-style-3">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="brand-content">
-                                <img src="{{ asset('olux/assets/images/image-slider/brand-1.png') }}" alt="images">
+                        @foreach ($brands as $brand)
+                            <div class="swiper-slide">
+                                <div class="brand-content">
+                                    <img src="{{ asset('images/landingpage_razenstudio/brand/'.$brand->gambar) }}" alt="images">
+                                </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-content">
-                                <img src="{{ asset('olux/assets/images/image-slider/brand-2.png') }}" alt="images">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-content">
-                                <img src="{{ asset('olux/assets/images/image-slider/brand-3.png') }}" alt="images">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-content">
-                                <img src="{{ asset('olux/assets/images/image-slider/brand-4.png') }}" alt="images">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-content">
-                                <img src="{{ asset('olux/assets/images/image-slider/brand-5.png') }}" alt="images">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-content">
-                                <img src="{{ asset('olux/assets/images/image-slider/brand-6.png') }}" alt="images">
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -173,135 +172,26 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h4 class="section-subtitle">COMPANY VALUES</h4>
-                    <h2 class="section-45px-montserrat margin-top-15">Sejak 2020, kami telah membantu lebih dari 1000 bisnis menjalankan Digital Marketing yang terukur!</h2>
+                    <h4 class="section-subtitle">{{$about_section_5['sub_judul']}}</h4>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$about_section_5['judul']}}</h2>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
             </div>
-            <div class="col-md-4">
-                <div class="services-box">
-                    <div class="wraper-effect"></div>
-                    <span class="icon-services icon-development1 font-size-icon"></span>
-                    <div class="services-content">
-                        <a href="service-single.html" class="section-22px-montserrat text-dark">Value-centric</a>
-                        <p class="services-desc">Kami mengkombinasikan strategi data-driven dan juga growth hack sebagai solusi bisnis mendapatkan value maksimal melalui Digital Marketing.</p>
-                        <a href="service-single.html" class="read-more"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="services-box">
-                    <div class="wraper-effect"></div>
-                    <span class="icon-services icon-advertising1 font-size-icon"></span>
-                    <div class="services-content">
-                        <a href="service-single.html" class="section-22px-montserrat text-dark">Hire & Develop The Best</a>
-                        <p class="services-desc">
-                            Kami memilih tim & mitra dengan sangat hati-hati. Di belakang kami terdapat talenta berbakat yang memiliki ide-ide cemerlang yang siap membantu Anda.</p>
-                        <a href="service-single.html" class="read-more"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="services-box">
-                    <div class="wraper-effect"></div>
-                    <span class="icon-services icon-webpage1 font-size-icon"></span>
-                    <div class="services-content">
-                        <a href="service-single.html" class="section-22px-montserrat text-dark">Tech Savvy</a>
-                        <p class="services-desc">Kami selalu up-to-date terhadap perkembangan algoritma & teknologi terbaru untuk memaksimalkan strategi dan hasil yang diraih.</p>
-                        <a href="service-single.html" class="read-more"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="services-box">
-                    <div class="wraper-effect"></div>
-                    <span class="icon-services icon-development1 font-size-icon"></span>
-                    <div class="services-content">
-                        <a href="service-single.html" class="section-22px-montserrat text-dark">Valuable Investment & Cost Efficiency</a>
-                        <p class="services-desc">Strategi dan eksekusi Digital Marketing yang baik akan membantu mengefisiensikan biaya marketing serta menghasilkan profit yang maksimal bagi bisnis.</p>
-                        <a href="service-single.html" class="read-more"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="services-box">
-                    <div class="wraper-effect"></div>
-                    <span class="icon-services icon-advertising1 font-size-icon"></span>
-                    <div class="services-content">
-                        <a href="service-single.html" class="section-22px-montserrat text-dark">Grow Together</a>
-                        <p class="services-desc">
-                            Kami adalah rumah bagi mitra freelancer profesional, agency, dan industri kreatif di Indonesia yang memiliki visi untuk membantu bisnis memaksimalkan potensi melalui Digital Marketing.</p>
-                        <a href="service-single.html" class="read-more"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="services-box">
-                    <div class="wraper-effect"></div>
-                    <span class="icon-services icon-web-programming1 font-size-icon"></span>
-                    <div class="services-content">
-                        <a href="service-single.html" class="section-22px-montserrat text-dark">High Experience</a>
-                        <p class="services-desc">Kami memiliki pengalaman lebih dari 7 tahun membantu 1.000+ bisnis di Indonesia dan 24 negara lainnya melipatgandakan penjualan, meluaskan jangkauan, dan mengembangkan bisnis.</p>
-                        <a href="service-single.html" class="read-more"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="flat-services">
-    <div class="container">
-        <div class="w-lg-85 mx-lg-auto">
-            <!-- Card -->
-            <div class="card p-5">
-                <div class="row align-items-md-center">
-                    <div class="col-md-9 mb-5 mb-md-0">
-                        <h1>Apa saja yang kami lakukan?</h1>
-                        <p>Mulai dari konsultasi, perencanaan hingga eksekusi!</p>
-
-                        <!-- List -->
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="media font-size-2 text-body mb-2">
-                                    <div class="media-body">
-                                        Digital Marketing Checkup
-                                    </div>
-                                </div>
-                                <div class="media font-size-2 text-body mb-2">
-                                    <div class="media-body">
-                                        Competitive Landscape Analysis
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="media font-size-2 text-body mb-2">
-                                    <div class="media-body">
-                                        Insight &amp; Recommendation
-                                    </div>
-                                </div>
-                                <div class="media font-size-2 text-body mb-2">
-                                    <div class="media-body">
-                                        Digital Platform Handling <span class="badge badge-soft-secondary badge-pill ml-1">All-in-one</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End List -->
-                    </div>
-
-                    <div class="col-md-3 column-divider-md">
-                        <div class="pl-md-2">
-                            <h1>Included</h1>
-                            <p>Sistem untuk mengelola dan tracking project.</p>
-                            <a class="font-size-1 font-weight-bold" href="https://gosocial.co.id/coming-soon">Get Started</a>
+            @foreach ($about_section_5['konten'] as $value)
+                <div class="col-md-4">
+                    <div class="services-box">
+                        <div class="wraper-effect"></div>
+                        <figure class="font-size-icon">
+                            <img style="height: 5rem; width:5rem; padding: -3rem;" src="{{ asset('images/landingpage_razenstudio/about/'.$value['gambar_konten']) }}" alt="SVG">
+                        </figure>
+                        <div class="services-content">
+                            <a href="service-single.html" class="section-22px-montserrat text-dark">{{$value['judul_konten']}}</a>
+                            <p class="services-desc">{{$value['deskripsi_konten']}}</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- End Card -->
+            @endforeach
         </div>
     </div>
 </section>
@@ -312,7 +202,7 @@
             <div class="col-md-6">
                 <div class="about-content-left wow fadeInLeft">
                     <div class="about-post">
-                        <img src="{{ asset('olux/assets/images/image-box/about-post-mystory.jpg') }}" alt="images">
+                        <img src="{{ asset('images/landingpage_razenstudio/about/'.$about_section_6['gambar']) }}" alt="images">
                         <div class="mark-about-post"></div>
                     </div>
                 </div>
@@ -321,12 +211,12 @@
                 <div class="about-content-right wow fadeInUp" data-wow-delay="0ms"
                     data-wow-duration="1500ms">
                     <div class="section-title">
-                        <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">Like having your own digital marketing branch</h4>
+                        <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">{{$about_section_6['judul']}}</h4>
                     </div>
-                    <p class="section-17px-regular margin-bottom-25">Dengan bekerja bersama kami bisnis Anda seperti memiliki sebuah divisi khusus untuk Digital Marketing yang berisikan tim ahli yang sudah berpengalaman, tanpa perlu memikirkan biaya rekrutmen hingga fixed cost serta pusingnya mengelola tim secara in house.</p>
+                    <p class="section-17px-regular margin-bottom-25">{!! $about_section_6['deskripsi'] !!}</p>
                     <div class="button-about margin-top-48 wow fadeInUp" data-wow-delay="600ms"
                         data-wow-duration="1500ms">
-                        <a href="{{ route('blog') }}" class="button-footer arrow-btn btn-st btn-style-1">Work With Us</a>
+                        <a href="{{ route($about_section_6['link']) }}" class="button-footer arrow-btn btn-st btn-style-1">Work With Us</a>
                     </div>
                 </div>
             </div>
@@ -341,19 +231,19 @@
                 <div class="about-content-right wow fadeInUp" data-wow-delay="0ms"
                     data-wow-duration="1500ms">
                     <div class="section-title">
-                        <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">Data-driven & Tech Savvy</h4>
+                        <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">{{$about_section_7['judul']}}</h4>
                     </div>
-                    <p class="section-17px-regular margin-bottom-25">Dengan bekerja bersama GoSocial bisnis tidak perlu memikirkan lagi bagaimana cara melakukan digital marketing dengan strategi menggunakan tools dan teknologi terbaru yang terbaik dengan biaya yang efisien.</p>
+                    <p class="section-17px-regular margin-bottom-25">{!! $about_section_7['deskripsi'] !!}</p>
                     <div class="button-about margin-top-48 wow fadeInUp" data-wow-delay="600ms"
                         data-wow-duration="1500ms">
-                        <a href="{{ route('blog') }}" class="button-footer arrow-btn btn-st btn-style-1">GoSocial vs Solusi Lainnya</a>
+                        <a href="{{ route($about_section_6['link']) }}" class="button-footer arrow-btn btn-st btn-style-1">Work With Us</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="about-content-left wow fadeInLeft">
                     <div class="about-post">
-                        <img src="{{ asset('olux/assets/images/image-box/about-post-mystory.jpg') }}" alt="images">
+                        <img src="{{ asset('images/landingpage_razenstudio/about/'.$about_section_7['gambar']) }}" alt="images">
                         <div class="mark-about-post"></div>
                     </div>
                 </div>
@@ -372,7 +262,7 @@
                         <h2 class="text-white">Cara Kerja</h2>
                         <p class="text-white">Kami akan menjadi konsultan sekaligus partner bisnis dalam menjalankan Digital
                             Marketing.</p>
-                        <a class="btn btn-sm btn-light transition-3d-hover" href="https://gosocial.co.id/how-it-works">Lebih Lanjut</a>
+                        <a class="btn btn-sm btn-light transition-3d-hover" href="#">Lebih Lanjut</a>
                     </div>
                     <div class="position-absolute right-0 bottom-0 w-50 mb-n3 mr-n4">
                         <img class="img-fluid" src="https://gosocial.co.id/assets/img/mockups/img15.webp" alt="Cara Kerja">
@@ -400,36 +290,23 @@
 </section>
 
 <section class="flat-services">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title wow fadeInDown">
-                    <p class="text-muted">Official Partners:</p>
-                </div>
-                <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
-                    style="height:60px"></div>
+    <div class="container space-1">
+        <div class="w-lg-75 mt-3 mx-lg-auto">
+            <div class="text-center mb-4">
+                <span class="divider divider-text h3">Official Partners:</span>
             </div>
-            <div class="col-md-12 justify-content-center">
-                <div class="row d-flex justify-content-center text-center">
-                    <div class="col-lg-3 col-4">
-                        <div class="mx-3 client-image">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC NISP">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC">
-                        </div>
-                    </div>
 
-                    <div class="col-lg-3 col-4">
-                        <a class="mx-3 client-image" href="https://www.bhinneka.com/toko-gosocial-indonesia" target="_blank">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Parnter Bhinneka.com" style="">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Partner Bhinneka">
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-4">
-                        <div class="mx-3 client-image">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                        </div>
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-lg-8 col-12">
+                    <div class="row d-flex justify-content-center">
+                        @foreach ($partners as $partner)
+                            <div class="col-lg-3 col-4">
+                                <div class="mx-3 client-image">
+                                    <img class="client-default" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC NISP">
+                                    <img class="client-hover" style="display: none;" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC">
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -439,5 +316,21 @@
 @endsection
 
 @section('js')
-
+<script src="https://gosocial.co.id/assets/vendor/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-header/dist/hs-header.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/aos/dist/aos.js"></script>
+<script src="https://gosocial.co.id/assets/js/theme.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-quantity-counter/dist/hs-quantity-counter.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/slick-carousel/slick/slick.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-toggle-switch/dist/hs-toggle-switch.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-switch/dist/hs-switch-text.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+<script src="https://gosocial.co.id/assets/js/pages/digital-campaign/instagram.js?v.2906"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/fontawesome.min.js" integrity="sha512-j3gF1rYV2kvAKJ0Jo5CdgLgSYS7QYmBVVUjduXdoeBkc4NFV4aSRTi+Rodkiy9ht7ZYEwF+s09S43Z1Y+ujUkA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @endsection

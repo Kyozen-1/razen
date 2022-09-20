@@ -1,23 +1,58 @@
+@php
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioSearchEngineOptimization;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioItemReviewSearchEngineOptimization;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioBrand;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioOfficialPartner;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioReview;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioHome;
+
+    $home = LandingpageRazenstudioHome::first();
+
+    $search_engine_optimization = LandingpageRazenstudioSearchEngineOptimization::first();
+    if ($search_engine_optimization) {
+        $search_engine_optimization_section_1 = json_decode($search_engine_optimization->section_1, true);
+        $search_engine_optimization_section_2 = json_decode($search_engine_optimization->section_2, true);
+        $search_engine_optimization_section_3 = json_decode($search_engine_optimization->section_3, true);
+        $search_engine_optimization_section_4 = json_decode($search_engine_optimization->section_4, true);
+        $search_engine_optimization_section_5 = json_decode($search_engine_optimization->section_5, true);
+        $search_engine_optimization_section_6 = json_decode($search_engine_optimization->section_6, true);
+        $search_engine_optimization_section_7 = json_decode($search_engine_optimization->section_7, true);
+    } else {
+        $search_engine_optimization_section_1 = [];
+        $search_engine_optimization_section_2 = [];
+        $search_engine_optimization_section_3 = [];
+        $search_engine_optimization_section_4 = [];
+        $search_engine_optimization_section_5 = [];
+        $search_engine_optimization_section_6 = [];
+        $search_engine_optimization_section_7 = [];
+    }
+
+    $cek_item_review = LandingpageRazenstudioItemReviewSearchEngineOptimization::first();
+
+    $reviews = LandingpageRazenstudioReview::latest()->get();
+    $brands= LandingpageRazenstudioBrand::all();
+    $partners = LandingpageRazenstudioOfficialPartner::all();
+@endphp
 @extends('landing-page-razen-studio.layouts.app')
-@section('title', 'Razen Studio | SEO')
+@section('title', $search_engine_optimization_section_1['sub_judul'])
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/custom_style.css') }}">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/dzsparallaxer/dzsparallaxer.css">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/aos/dist/aos.css">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/css/pages/global.css?v.0908">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/css/theme.min.css">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://gosocial.co.id/assets/css/pages/digital-campaign/digital-campaign.css?v.2812">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 
 @section('content')
 <div class="flat-slider container-fuild">
     <div class="row">
-        <div class="widget-social-header">
-            <div class="container-fluid">
-                <ul class="widget-social-footer-item text-center">
-                    <li><a href="#">Fb.</a></li>
-                    <li><a href="#">Be.</a></li>
-                    <li><a href="#">Tw.</a></li>
-                    <li><a href="#">In.</a></li>
-                </ul>
-            </div>
-        </div>
         <div class="mark-slide">
             <img src="{{ asset('olux/assets/images/mark-page/mark-icon-slide.png') }}" alt="images">
         </div>
@@ -26,15 +61,13 @@
                 <div class="swiper-slide slider-st-1">
                     <div class="content-slider-left text-white">
                         <div class="d-flex">
-                            <a class="section-16px-regular font-weight-500 mr-2 text-white text-decoration-none" href="{{ route('home') }}">Home </a>  <h4 class="section-16px-regular font-weight-500 text-white"> > Jasa SEO</h4>
+                            <a class="section-16px-regular font-weight-500 mr-2 text-white text-decoration-none" href="{{ route('home') }}">Home </a>  <h4 class="section-16px-regular font-weight-500 text-white"> > {{$search_engine_optimization_section_1['judul']}}</h4>
                         </div>
-                        <h2 class="title-slider section-65px-montserrat text-white">Jasa SEO</h2>
-                        <p class="desc-slider">SEO (Search Engine Optimization) merupakan teknik mengoptimalkan website yang membuat website mudah ditemukan oleh pelanggan potensial di Search Engine seperti Google, tanpa iklan.
-                            <br>
-                            Halaman website yang berada di halaman pertama Google akan meningkatkan traffic organik dan konversi pada website.</p>
+                        <h2 class="title-slider section-65px-montserrat text-white">{{$search_engine_optimization_section_1['judul']}}</h2>
+                        <p class="desc-slider">{!! $search_engine_optimization_section_1['deskripsi'] !!}.</p>
                     </div>
                     <div class="content-slider-right">
-                        <img src="{{ asset('olux/assets/images/image-slider/img-slider.jpg') }}" alt="images">
+                        <img src="{{ asset('images/landingpage_razenstudio/search-engine-optimization/'.$search_engine_optimization_section_1['gambar']) }}" alt="images">
                     </div>
                 </div>
             </div>
@@ -47,321 +80,228 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h4 class="section-subtitle">JASA SEO #1 DI INDONESIA</h4>
-                    <h2 class="section-45px-montserrat margin-top-15">Apa yang kami lakukan?</h2>
+                    <h4 class="section-subtitle">{{$search_engine_optimization_section_2['sub_judul']}}</h4>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$search_engine_optimization_section_2['judul']}}</h2>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
             </div>
-            <div class="col-md-3 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
+            @foreach ($search_engine_optimization_section_2['konten'] as $value)
+                <div class="col-md-3 mb-5">
+                    <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="icon-box">
+                            <div class="icon-counter">
+                                <img style="height: 5rem; width:5rem; padding: -3rem;" src="{{ asset('images/landingpage_razenstudio/search-engine-optimization/'.$value['logo_konten']) }}">
+                            </div>
                         </div>
+                        <h3 class="section-20px-montserrat font-weight-600 line-height-35">{{$value['judul_konten']}}</h3>
+                        <p>{{$value['deskripsi_konten']}}</p>
                     </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">Competitive Analysis</h3>
-                    <p>Analisa kompetitor dan kata kunci yang berpeluang tinggi untuk menghasilkan strategi yang data-driven.</p>
                 </div>
-            </div>
-            <div class="col-md-3 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">On-Page SEO</h3>
-                    <p>Optimisasi halaman website secara teknis agar lebih mudah di index oleh Search Engine dan diakses pengguna.</p>
-                </div>
-            </div>
-            <div class="col-md-3 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">Off-Page SEO Campaign</h3>
-                    <p>Melakukan campaign untuk meningkatkan kredibilitas website melalui link building, social media shares, dsb.</p>
-                </div>
-            </div>
-            <div class="col-md-3 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">Rank Improvement</h3>
-                    <p>Hasil akan terlihat setelah 3-6 bulan strategi dijalankan, menunggu google melakukan update hasil pencarian.</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
 
-<div class="container space-bottom-2">
-    <!-- Card -->
-    <a class="card shadow-none bg-soft-success text-inherit transition-3d-hover p-4 p-md-7">
-        <div class="row">
-            <div class="col-lg-4 order-lg-2 mb-5 mb-lg-0">
-                <div class="d-flex flex-column h-100">
-                    <div class="mb-3">
-                        <h2 class="h1">Studi Kasus</h2>
-                        <p class="text-body">GoSocial membantu meningkatkan website travel Tiket Resmi untuk
-                            meningkatkan pengunjung web mencapai All-Time-High sejak menggunakan Jasa SEO kami di awal
-                            2021.</p>
-                    </div>
-
-                    <!-- Testimonials -->
-                    <div class="card shadow-none p-4 mt-auto">
-                        <div class="mb-3 text-center">
-                            <img class="mr-auto h-100" src="https://gosocial.co.id/assets/img/service/seo/logo-tiket-resmi.webp" alt="SVG Logo">
-                        </div>
-
-                        <div class="mb-3">
-                            <blockquote class="text-dark font-size-2">"Jasa SEO yang ditawarkan sangat berhasil di website kami
-                                untuk meningkatkan pengunjung! Terimakasih!"
-                            </blockquote>
-                        </div>
-
-                        <div class="media">
-                            <div class="avatar avatar-circle mr-3">
-                                <img class="avatar-img" src="https://gosocial.co.id/assets/img/service/seo/larasati.webp" alt="Image Description">
-                            </div>
-                            <div class="media-body">
-                                <span class="d-block h5 mb-0">Larasati</span>
-                                <small class="d-block text-muted">Marketing Tiket Resmi</small>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Testimonials -->
-                </div>
-            </div>
-
-            <div class="col-lg-8 order-lg-1">
-                <!-- Info -->
-                <div class="mb-5">
-                    <img class="img-fluid rounded-lg" src="https://gosocial.co.id/assets/img/service/seo/case1.webp" alt="Image Description">
-                </div>
-
+@if ($cek_item_review)
+    @php
+        $get_reviews = LandingpageRazenstudioItemReviewSearchEngineOptimization::all();
+    @endphp
+    @foreach ($get_reviews as $review)
+        <div class="container space-bottom-2">
+            <!-- Card -->
+            <a class="card shadow-none text-inherit transition-3d-hover p-4 p-md-7" style="background: {{$review->bg_review}}">
                 <div class="row">
-                    <div class="col-sm-6 mb-3 mb-sm-0">
-                        <h2>Goals</h2>
-                        <p class="text-body">Grow organic traffic, site impression and keywords to website.</p>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <h2>Result</h2>
-                        <p class="text-body">Increase 140% impression compared to previous period before work with
-                            GoSocial.</p>
-                    </div>
-                </div>
-                <!-- End Info -->
-            </div>
-        </div>
-    </a>
-    <!-- End Card -->
-</div>
-
-<div class="container space-bottom-2">
-    <!-- Card -->
-    <a class="card shadow-none bg-soft-primary text-inherit transition-3d-hover p-4 p-md-7">
-        <div class="row">
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                <img class="clients mr-auto mb-2" src="https://gosocial.co.id/assets/img/logos/gosocial-logo.png" alt="SVG Logo">
-                <div class="d-flex flex-column">
-
-                    <h2 class="h2">Bagaimana kami melakukannya untuk GoSocial sendiri?</h2>
-                    <p class="text-body">Kami merupakan Digital Agency atau bisnis yang percaya terhadap peranan penting
-                        Search Engine Optimization (SEO), oleh karena itu kami menawarkan solusi yang telah berhasil
-                        kami terapkan juga.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-lg-8">
-                <!-- Info -->
-                <div class="mb-5">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" class="bg-primary" data-slide-to="0"></li>
-                            <li data-target="#carouselExampleIndicators" class="bg-primary" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" class="bg-primary active" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="https://gosocial.co.id/assets/img/service/seo/case2.webp" alt="First slide">
+                    <div class="col-lg-4 order-lg-2 mb-5 mb-lg-0">
+                        <div class="d-flex flex-column h-100">
+                            <div class="mb-3">
+                                <h2 class="h1">Studi Kasus</h2>
+                                <p class="text-body">{{$review->studi_kasus}}</p>
                             </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="https://gosocial.co.id/assets/img/service/seo/case2a.webp" alt="Second slide">
+                            @php
+                                $r = json_decode($review->review, true);
+                            @endphp
+                            <!-- Testimonials -->
+                            <div class="card shadow-none p-4 mt-auto">
+                                <div class="mb-3 text-center">
+                                    <img class="mr-auto h-100" src="{{ asset('images/landingpage_razenstudio/search-engine-optimization/'.$r['logo_website']) }}" alt="SVG Logo">
+                                </div>
+
+                                <div class="mb-3">
+                                    <blockquote class="text-dark font-size-2">{{$r['review']}}
+                                    </blockquote>
+                                </div>
+
+                                <div class="media">
+                                    <div class="avatar avatar-circle mr-3">
+                                        <img class="avatar-img" src="{{ asset('images/landingpage_razenstudio/search-engine-optimization/'.$r['foto_reviewer']) }}" alt="Image Description">
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="d-block h5 mb-0">{{$r['nama_reviewer']}}</span>
+                                        <small class="d-block text-muted">{{$r['jabatan_reviewer']}}</small>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="https://gosocial.co.id/assets/img/service/seo/case2b.webp" alt="Third slide">
-                            </div>
+                            <!-- End Testimonials -->
                         </div>
                     </div>
-                </div>
-            </div>
-            <!-- End Info -->
-        </div>
-        <div class="row">
-            <div class="col-sm-6 mb-3 mb-sm-0">
-                <h2>Traffic selalu meningkat sejak launching</h2>
-                <p class="text-body">Sejak 2020 data menunjukkan bahwa GoSocial melakukan SEO dengan baik terbukti dari
-                    selalu meningkatnya traffic dari waktu ke waktu.</p>
-            </div>
 
-            <div class="col-sm-6">
-                <h2>Jasa Seo Murah</h2>
-                <p class="text-body">Kami berkomitmen membuat layanan digital marketing terutama jasa seo yang dapat
-                    terjangkau dan sesuai bagi berbagai skala bisnis mulai UMKM hingga corporate.</p>
-            </div>
-        </div>
-    </a>
-    <!-- End Card -->
-</div>
-
-<div class="container space-bottom-2">
-    <a class="card shadow-none bg-soft-warning text-inherit transition-3d-hover p-4 p-md-7">
-        <div class="row">
-            <div class="col-lg-4 order-lg-2 mb-5 mb-lg-0">
-                <div class="d-flex flex-column h-100">
-                    <div class="mb-7">
-                        <h2 class="h1">Kuliner Kota</h2>
-                        <p class="text-body">Merupakan website yang berisi tentang referensi lengkap ragam kuliner
-                            Indonesia, GoSocial membantu SEO pada website tersebut hingga mencapai 200.000
-                            pengunjung setiap bulannya.</p>
-                    </div>
-
-                    <div class="card shadow-none p-4 mt-auto">
-                        <div class="mb-3">
-                            <img class="mr-auto" src="https://gosocial.co.id/assets/svg/service/seo/logo-kulinerkota.svg" alt="SVG Logo">
+                    <div class="col-lg-8 order-lg-1">
+                        <!-- Info -->
+                        <div class="mb-5">
+                            <img class="img-fluid rounded-lg" src="{{ asset('images/landingpage_razenstudio/search-engine-optimization/'.$review->gambar) }}" alt="Image Description">
                         </div>
 
-                        <div class="mb-3">
-                            <blockquote class="text-dark font-size-2">"Jasa SEO dari GoSocial keren banget, website kami bisa langsung page one dalam 3 bulan saja! Thanks a lot buat tim Gosocial"</blockquote>
-                        </div>
-
-                        <div class="media">
-                            <div class="avatar avatar-circle mr-3">
-                                <img class="avatar-img" src="https://gosocial.co.id/assets/img/service/seo/devi.webp" alt="Image Description">
+                        <div class="row">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <h2>Goals</h2>
+                                <p class="text-body">{{$review->goals}}</p>
                             </div>
-                            <div class="media-body">
-                                <span class="d-block h5 mb-0">Devi</span>
-                                <small class="d-block text-muted">Owner KK Group</small>
+
+                            <div class="col-sm-6">
+                                <h2>Result</h2>
+                                <p class="text-body">{{$review->result}}</p>
                             </div>
                         </div>
+                        <!-- End Info -->
                     </div>
                 </div>
-            </div>
-
-            <div class="col-lg-8 order-lg-1">
-
-                <div class="mb-5">
-                    <img class="img-fluid rounded" src="https://gosocial.co.id/assets/img/service/seo/case3.webp" alt="Image Description">
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6 mb-3 mb-sm-0">
-                        <h2>Goals</h2>
-                        <p class="text-body">Meningkatkan visibilitas artikel di Google, melalui strategi link building, riset artikel yang paling banyak dicari, dsb.</p>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <h2>Result</h2>
-                        <p class="text-body">200K++ organic traffic setiap bulan, melihat artikel-artikel dari Kuliner Kota.</p>
-                    </div>
-                </div>
-            </div>
+            </a>
+            <!-- End Card -->
         </div>
-    </a>
-</div>
+    @endforeach
+@endif
 
 <section class="flat-services">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h2 class="section-45px-montserrat margin-top-15">Berapa Biaya Layanan SEO?</h2>
-                    <p class="text-muted">GoSocial menyediakan Jasa SEO Murah dan paling efektif di Indonesia.</p>
+                    <h4 class="section-45px-montserrat margin-top-15">{{$search_engine_optimization_section_3['judul']}}</h4>
+                    <p class="text-muted">{{$search_engine_optimization_section_3['deskripsi']}}</p>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
             </div>
         </div>
         <div class="row align-items-lg-center">
+            @php
+                $item_1 = [];
+                $item_2 = [];
+                $item_3 = [];
+                $item_4 = [];
+                $item_5 = [];
+            @endphp
+            @foreach ($search_engine_optimization_section_3['item'] as $item)
+                @php
+                    if($item['item'] == 'item_1')
+                    {
+                        $item_1 = [
+                            'harga' => $item['harga'],
+                            'deskripsi' => $item['deskripsi'],
+                            'mini_text' => $item['mini_text'],
+                            'no_wa_konsultasi' => $item['no_wa_konsultasi']
+                        ];
+                    }
+
+                    if($item['item'] == 'item_2')
+                    {
+                        $item_2 = [
+                            'ikon' => $item['ikon'],
+                            'judul' => $item['judul'],
+                            'deskripsi' => $item['deskripsi']
+                        ];
+                    }
+
+                    if($item['item'] == 'item_3')
+                    {
+                        $item_3 = [
+                            'ikon' => $item['ikon'],
+                            'judul' => $item['judul'],
+                            'deskripsi' => $item['deskripsi']
+                        ];
+                    }
+
+                    if($item['item'] == 'item_4')
+                    {
+                        $item_4 = [
+                            'ikon' => $item['ikon'],
+                            'judul' => $item['judul'],
+                            'deskripsi' => $item['deskripsi']
+                        ];
+                    }
+
+                    if($item['item'] == 'item_5')
+                    {
+                        $item_5 = [
+                            'ikon' => $item['ikon'],
+                            'judul' => $item['judul'],
+                            'deskripsi' => $item['deskripsi']
+                        ];
+                    }
+                @endphp
+            @endforeach
             <div id="stickyBlockStartPoint" class="col-lg-5 mb-9 mb-lg-0">
                 <!-- Pricing -->
                 <div class="card z-index-2 p-4 p-md-7">
                     <span class="text-dark">
                         <p>Mulai dari</p>
-                        <span class="display-4">3</span>
-                        <span class="font-size-3">Jt</span>
-                        <span class="font-size-2">/bulan</span>
+                        <span class="display-4">{{$item_1['harga']}}</span>
                     </span>
 
                     <hr class="my-4">
 
                     <div class="mb-5">
-                        <p>Mulai tingkatkan ranking website bisnis bersama kami. Konsultasi dengan tim kami terlebih dahulu
-                            untuk analisa potensi SEO bagi website Anda.</p>
+                        <p>{{$item_1['deskripsi']}}</p>
                     </div>
 
                     <div class="mb-2">
-                        <a class="btn btn-primary btn-pill btn-wide transition-3d-hover font-size-2" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20SEO" target="_blank">
+                        <a class="btn btn-primary btn-pill btn-wide transition-3d-hover font-size-2" href="https://api.whatsapp.com/send?phone={{$item_1['no_wa_konsultasi']}}&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20SEO" target="_blank">
                             Konsultasi Sekarang</i>
                         </a>
                     </div>
 
-                    <p class="small">*Durasi kontrak minimal 3 bulan.</p>
+                    <p class="small">{{$item_1['mini_text']}}</p>
                 </div>
                 <!-- End Pricing -->
             </div>
-
             <div class="col-lg-7">
                 <div class="pl-lg-6">
                     <div class="row">
                         <div class="col-sm-6 mb-3">
                             <!-- Icon Blocks -->
                             <figure class="mb-3">
-                                <img style="width: 7rem; height:auto;" src="https://gosocial.co.id/assets/svg/icons/icon-29.svg" alt="SVG">
+                                <img style="width: 7rem; height:auto;" src="{{ asset('images/landingpage_razenstudio/search-engine-optimization/'.$item_2['ikon']) }}" alt="SVG">
                             </figure>
-                            <h3>Secret Strategy</h3>
-                            <p>Kami menggunakan cara khusus yang telah terbukti berhasil menaikkan ranking SEO website.</p>
+                            <h3>{{$item_2['judul']}}</h3>
+                            <p>{{$item_2['deskripsi']}}</p>
                             <!-- End Icon Blocks -->
                         </div>
                         <div class="col-sm-6 mb-3">
                             <!-- Icon Blocks -->
                             <figure class="mb-3">
-                                <img style="width: 7rem; height:auto;" src="https://gosocial.co.id/assets/svg/icons/icon-30.svg" alt="SVG">
+                                <img style="width: 7rem; height:auto;" src="{{ asset('images/landingpage_razenstudio/search-engine-optimization/'.$item_3['ikon']) }}" alt="SVG">
                             </figure>
-                            <h3>White-Hat Technique</h3>
-                            <p>Metode dan cara yang kami lakukan 100% aman untuk website dan telah teruji berhasil
-                                diberbagai klien.</p>
+                            <h3>{{$item_3['judul']}}</h3>
+                            <p>{{$item_3['deskripsi']}}</p>
                             <!-- End Icon Blocks -->
                         </div>
-                    </div>
-
-                    <div class="row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             <!-- Icon Blocks -->
                             <figure class="mb-3">
-                                <img style="width: 7rem; height:auto;" src="https://gosocial.co.id/assets/svg/icons/icon-32.svg" alt="SVG">
+                                <img style="width: 7rem; height:auto;" src="{{ asset('images/landingpage_razenstudio/search-engine-optimization/'.$item_4['ikon']) }}" alt="SVG">
                             </figure>
-                            <h3>Konsultasi Gratis</h3>
-                            <p>Tidak yakin tentang kebutuhan dan keinginan Anda? diskusi dengan tim kami sekarang juga tanpa
-                                biaya!</p>
+                            <h3>{{$item_4['judul']}}</h3>
+                            <p>{{$item_4['deskripsi']}}</p>
                             <!-- End Icon Blocks -->
                         </div>
                         <div class="col-sm-6">
                             <!-- Icon Blocks -->
                             <figure class="mb-3">
-                                <img style="width: 7rem; height:auto;" src="https://gosocial.co.id/assets/svg/icons/icon-31.svg" alt="SVG">
+                                <img style="width: 7rem; height:auto;" src="{{ asset('images/landingpage_razenstudio/search-engine-optimization/'.$item_5['ikon']) }}" alt="SVG">
                             </figure>
-                            <h3>Garansi Uang Kembali</h3>
-                            <p>Kami akan menjamin peningkatan ranking untuk kata kunci yang sebelumnya tidak pernah muncul.
+                            <h3>{{$item_5['judul']}}</h3>
+                            <p>{{$item_5['deskripsi']}}
                             </p>
                             <!-- End Icon Blocks -->
                         </div>
@@ -377,49 +317,32 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h4 class="section-subtitle">LAYANAN PENUNJANG</h4>
-                    <h2 class="section-45px-montserrat margin-top-15">Addons</h2>
+                    <h4 class="section-subtitle">{{$search_engine_optimization_section_4['judul']}}</h4>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$search_engine_optimization_section_4['sub_judul']}}</h2>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
             </div>
         </div>
         <div class=" mx-lg-auto">
-            <!-- Pricing -->
-            <div class="card p-4 mb-3">
-                <div class="row align-items-sm-center">
-                    <div class="col-lg-4 mb-3 mb-lg-0 d-flex flex-row align-items-center">
-                        <img class="mr-3" src="https://gosocial.co.id/assets/img/service/seo/content-writing.webp" alt="Sketch" width="50" height="50">
-                        <h4 class="mb-0">Content Writing</h4>
-                    </div>
-                    <div class="col-lg-5 mb-3 mb-sm-0 d-flex justify-content-center">
-                        <span class="d-block font-size-2">Jasa pembuatan / penulisan artikel khusus untuk keperluan SEO maupun marketing blog</span>
-                    </div>
-                    <div class="col-sm col-lg-3 text-sm-right">
-                        <button type="submit" class="btn btn-lg btn-outline-primary btn-wide transition-3d-hover">Mulai dari
-                            250Rb</button>
-                    </div>
-                </div>
-            </div>
-            <!-- End Pricing -->
-
-            <!-- Pricing -->
-            <div class="card p-4 mb-3">
-                <div class="row align-items-sm-center">
-                    <div class="col-lg-4 mb-3 mb-lg-0 d-flex flex-row align-items-center">
-                        <img class=" mr-3" src="https://gosocial.co.id/assets/img/service/seo/content-placement.webp" alt="Sketch" width="50" height="50">
-                        <h4 class="mb-0">Content Placement (Backlink)</h4>
-                    </div>
-                    <div class="col-lg-5 mb-3 mb-sm-0 d-flex justify-content-center">
-                        <span class="d-block font-size-2">Jasa link building untuk menambah backlink website di berbagai situs jaringan GoSocial mulai dari blog hingga media besar di Indonesia.</span>
-                    </div>
-                    <div class="col-sm col-lg-3 text-sm-right">
-                        <button type="submit" class="btn btn-lg btn-outline-primary btn-wide transition-3d-hover">Mulai dari
-                            250Rb</button>
+            @foreach ($search_engine_optimization_section_4['konten'] as $item)
+                <!-- Pricing -->
+                <div class="card p-4 mb-3">
+                    <div class="row align-items-sm-center">
+                        <div class="col-lg-4 mb-3 mb-lg-0 d-flex flex-row align-items-center">
+                            <img class="mr-3" src="{{ asset('images/landingpage_razenstudio/search-engine-optimization/'.$item['logo_konten']) }}" alt="Sketch" width="50" height="50">
+                            <h4 class="mb-0">{{$item['judul_konten']}}</h4>
+                        </div>
+                        <div class="col-lg-5 mb-3 mb-sm-0 d-flex justify-content-center">
+                            <span class="d-block font-size-2">{{$item['deskripsi_konten']}}</span>
+                        </div>
+                        <div class="col-sm col-lg-3 text-sm-right">
+                            <button type="submit" class="btn btn-lg btn-outline-primary btn-wide transition-3d-hover">{{$item['harga_konten']}}</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- End Pricing -->
+                <!-- End Pricing -->
+            @endforeach
         </div>
     </div>
 </section>
@@ -429,78 +352,25 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h4 class="section-subtitle">MENGAPA HARUS KAMI?</h4>
-                    <h2 class="section-45px-montserrat margin-top-15">Keuntungan Jasa SEO GoSocial</h2>
+                    <h4 class="section-subtitle">{{$search_engine_optimization_section_5['sub_judul']}}</h4>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$search_engine_optimization_section_5['judul']}}</h2>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
             </div>
-            <div class="col-md-4 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
+            @foreach ($search_engine_optimization_section_5['konten'] as $value)
+                <div class="col-md-4 mb-5">
+                    <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="icon-box">
+                            <div class="icon-counter">
+                                <img style="height: 5rem; width:5rem; padding: -3rem;" src="{{ asset('images/landingpage_razenstudio/search-engine-optimization/'.$value['logo_konten']) }}">
+                            </div>
                         </div>
+                        <h3 class="section-20px-montserrat font-weight-600 line-height-35">{{$value['judul_konten']}}</h3>
+                        <p>{{$value['deskripsi_konten']}}</p>
                     </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">1. More Traffic</h3>
-                    <p>Dengan strategi SEO yang tepat, visibilitas website Anda di Google akan meningkat sehingga trafik pun melonjak.</p>
                 </div>
-            </div>
-            <div class="col-md-4 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">2. More Brand Awareness</h3>
-                    <p>Berada di halaman pertama Google akan membuat calon customer potensial semakin mengenal brand bisnis Anda.</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">3. More Trust & Authority</h3>
-                    <p>Setelah brand dikenal luas, maka bisnis akan mendapatkan kepercayaan penuh dari customer.</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">4. More Leads</h3>
-                    <p>Dengan mentarget keyword yang sesuai target market, maka trafik yang masuk dapat dikonversi menjadi customer baru.</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">5. More Revenue</h3>
-                    <p>Bertambahnya leads atau calon customer baru dari website, akan membuat revenue bisnis bertambah.</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-5">
-                <div class="counter-box themesflat-counter hover-up wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box">
-                        <div class="icon-counter">
-                            <span class="icon-guarantee1"></span>
-                        </div>
-                    </div>
-                    <h3 class="section-20px-montserrat font-weight-600 line-height-35">6. More Business Growth</h3>
-                    <p>Pada akhirnya, bisnis akan bertumbuh seiring pertumbuhan ranking di mesin pencari / Google tanpa biaya iklan, dsb.</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -522,20 +392,17 @@
 
             <!-- Blockquote -->
             <div class="w-md-80 mx-md-auto mb-6">
-                <blockquote class="font-size-2 text-dark">"GoSocial telah membantu kami dalam memberikan strategi
-                    digital marketing dengan berbagai cara yang out of the box dan membantu melakukan eksekusinya dengan
-                    baik.
-                    Hasilnya sekarang Triv lebih dikenal luas oleh banyak customer baru, Good Work!"</blockquote>
+                <blockquote class="font-size-2 text-dark">{{$search_engine_optimization_section_6['deskripsi']}}</blockquote>
             </div>
             <!-- End Blockquote -->
 
             <!-- Reviewer -->
             <div class="w-lg-50 mx-lg-auto">
                 <div class="avatar avatar-circle mb-3">
-                    <img class="avatar-img" src="https://gosocial.co.id/assets/img/home/ceo-triv.webp" alt="Image Description">
+                    <img class="avatar-img" src="{{ asset('images/landingpage_razenstudio/search-engine-optimization/'.$search_engine_optimization_section_6['gambar']) }}" alt="Image Description">
                 </div>
-                <h5 class="mb-0">Gabriel Rey</h5>
-                <small>CEO Triv Indonesia</small>
+                <h5 class="mb-0">{{$search_engine_optimization_section_6['nama_reviewer']}}</h5>
+                <small>{{$search_engine_optimization_section_6['jabatan_reviewer']}}</small>
             </div>
             <!-- End Reviewer -->
         </div>
@@ -553,13 +420,12 @@
     </div>
 </div>
 
-<section class="flat-client mt-10">
+<section class="flat-client">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="client-content-box wow fadeInUp">
-                    <h4 class="section-subtitle">TESTIMONIAL</h4>
-                    <h2 class="section-title section-45px-montserrat">Apa Kata Mereka?</h2>
+                    <h4 class="section-title section-45px-montserrat">{{$home->section_7}}</h4>
                     <button class="clone-btn-prev"></button>
                     <button class="clone-btn-next"></button>
                 </div>
@@ -567,80 +433,39 @@
             <div class="col-md-6">
                 <div class="swiper-container sliver-vertical">
                     <div class="swiper-wrapper">
+                        @foreach ($reviews as $review)
                         <div class="swiper-slide">
                             <div class="client-slider-box">
-                                <div class="client-user">
-                                    <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
+                                <div class="client-user text-center">
+                                    <img src="{{ asset('images/landingpage_razenstudio/reviewer/'.$review->gambar) }}"
                                         alt="images">
+                                    <ul class="list-inline small mt-3">
+                                        <li class="list-inline-item mx-0">
+                                            <i class="fas fa-star h4 text-warning"></i>
+                                        </li>
+                                        <li class="list-inline-item mx-0">
+                                            <i class="fas fa-star h4 text-warning"></i>
+                                        </li>
+                                        <li class="list-inline-item mx-0">
+                                            <i class="fas fa-star h4 text-warning"></i>
+                                        </li>
+                                        <li class="list-inline-item mx-0">
+                                            <i class="fas fa-star h4 text-warning"></i>
+                                        </li>
+                                        <li class="list-inline-item mx-0">
+                                            <i class="fas fa-star h4 text-warning"></i>
+                                        </li>
+                                    </ul>
                                 </div>
                                 <div class="client-content">
                                     <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">Glenn Ardi</h4>
-                                        <p class="margin-top-11">"Sejauh ini kami sudah bekerjasama membuat 5 project video dan kerjasama yang dijalin sangat profesional sekali, Good Job!"</p>
+                                        <h4 class="name-author section-20px-montserrat">{{$review->nama}}</h4>
+                                        <p class="margin-top-11">{{$review->ulasan}}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="client-slider-box">
-                                <div class="client-user">
-                                    <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                        alt="images">
-                                </div>
-                                <div class="client-content">
-                                    <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">Olivia Willyost</h4>
-                                        <p class="margin-top-11">"Terimakasih buat GoSocial yang sudah membantu kami membuatkan video Titip Jual OLX Indonesia."</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="client-slider-box">
-                                <div class="client-user">
-                                    <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                        alt="images">
-                                </div>
-                                <div class="client-content">
-                                    <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">Angela Sujadi</h4>
-                                        <p class="margin-top-11">"Kerja sama dengan GoSocial itu komunikasinya gampang. Sehingga apa yang kita mau dan konsep itu nyambung, dan hasilnya maksimal."</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="client-slider-box">
-                                <div class="client-user">
-                                    <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                        alt="images">
-                                </div>
-                                <div class="client-content">
-                                    <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">Brade Hook</h4>
-                                        <p class="margin-top-11">A customer review is a review of a product
-                                            or service made by a customer who has purchased and used, or had
-                                            experience with, the product or service.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="client-slider-box">
-                                <div class="client-user">
-                                    <img src="{{ asset('olux/assets/images/image-slider/client-slider-box.jpg') }}"
-                                        alt="images">
-                                </div>
-                                <div class="client-content">
-                                    <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">Brade Hook</h4>
-                                        <p class="margin-top-11">A customer review is a review of a product
-                                            or service made by a customer who has purchased and used, or had
-                                            experience with, the product or service.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -653,8 +478,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h4 class="section-subtitle">Pertanyaan Umum</h4>
-                    <h2 class="section-45px-montserrat margin-top-15">FAQ</h2>
+                    <h4 class="section-subtitle">{{$search_engine_optimization_section_7['sub_judul']}}</h4>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$search_engine_optimization_section_7['judul']}}</h2>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
@@ -662,80 +487,37 @@
         </div>
         <div class="w-lg-85 mx-lg-auto">
             <div class="row">
-                <div class="col-md-6 mb-3 mb-md-5">
-                    <div class="pr-md-4">
-                        <h2>Bagaimana sistem Jasa SEO di GoSocial?</h2>
-                        <p>GoSocial akan mengoptimasi website sesuai dengan paket yang dipilih. Setelahnya Anda akan
-                            mendapatkan laporan monthly report, dan setiap quarter terkait perkembangan proyek SEO yang
-                            dijalankan.</p>
+                @foreach ($search_engine_optimization_section_7['konten'] as $item)
+                    <div class="col-md-6 mb-3 mb-md-5">
+                        <div class="pr-md-4">
+                            <h2>{{$item['pertanyaan']}}</h2>
+                            <p>{{$item['jawaban']}}</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-6 mb-3 mb-md-5">
-                    <div class="pl-md-4">
-                        <h2>Apa yang perlu disiapkan?</h2>
-                        <p>Anda cukup mengisi formulir pemesanan layanan yang berisikan pertanyaan-pertanyaan keadaan
-                            website pada saat ini dan tujuan SEO, dari sana tim kami akan menyusun strategi yang sesuai.</p>
-                    </div>
-                </div>
-
-                <div class="w-100"></div>
-
-                <div class="col-md-6 mb-3 mb-md-5">
-                    <div class="pr-md-4">
-                        <h2>Berapa lama website muncul di halaman pertama Google?</h2>
-                        <p>Banyak faktor yang mempengaruhi hal tersebut, seperti persaingan keyword, keyword difficulty,
-                            kompetitor, serta kondisi website. Namun umumnya hasil akan terlihat setelah bulan ketiga sampai
-                            keempat.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-3 mb-md-5">
-                    <div class="pl-md-4">
-                        <h2>Apakah ada garansi uang kembali?</h2>
-                        <p>Kami akan menjamin peningkatan dan proses dari waktu ke waktu, namun tidak dapat menjamin akan
-                            menjadi peringkat yang pertama hanya melalui sekali kontrak, karena bisa jadi kondisi persaingan
-                            menjadi faktor utama sehingga budget yang dikeluarkan harus lebih banyak.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
 </section>
 
 <section class="flat-services">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title wow fadeInDown">
-                    <p class="text-muted">Official Partners:</p>
-                </div>
-                <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
-                    style="height:60px"></div>
+    <div class="container space-1">
+        <div class="w-lg-75 mt-3 mx-lg-auto">
+            <div class="text-center mb-4">
+                <span class="divider divider-text h3">Official Partners:</span>
             </div>
-        </div>
-        <div class="row justify-content-top">
-            <div class="col-md-12 justify-content-center">
-                <div class="row d-flex justify-content-center text-center">
-                    <div class="col-lg-3 col-4">
-                        <div class="mx-3 client-image">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC NISP">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC">
-                        </div>
-                    </div>
 
-                    <div class="col-lg-3 col-4">
-                        <a class="mx-3 client-image" href="https://www.bhinneka.com/toko-gosocial-indonesia" target="_blank">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Parnter Bhinneka.com" style="">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Partner Bhinneka">
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-4">
-                        <div class="mx-3 client-image">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                        </div>
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-lg-8 col-12">
+                    <div class="row d-flex justify-content-center">
+                        @foreach ($partners as $partner)
+                            <div class="col-lg-3 col-4">
+                                <div class="mx-3 client-image">
+                                    <img class="client-default" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC NISP">
+                                    <img class="client-hover" style="display: none;" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC">
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -745,5 +527,21 @@
 @endsection
 
 @section('js')
-
+<script src="https://gosocial.co.id/assets/vendor/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-header/dist/hs-header.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/aos/dist/aos.js"></script>
+<script src="https://gosocial.co.id/assets/js/theme.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-quantity-counter/dist/hs-quantity-counter.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/slick-carousel/slick/slick.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-toggle-switch/dist/hs-toggle-switch.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/hs-switch/dist/hs-switch-text.min.js"></script>
+<script src="https://gosocial.co.id/assets/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+<script src="https://gosocial.co.id/assets/js/pages/digital-campaign/instagram.js?v.2906"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/fontawesome.min.js" integrity="sha512-j3gF1rYV2kvAKJ0Jo5CdgLgSYS7QYmBVVUjduXdoeBkc4NFV4aSRTi+Rodkiy9ht7ZYEwF+s09S43Z1Y+ujUkA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @endsection

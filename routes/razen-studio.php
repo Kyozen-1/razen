@@ -1216,4 +1216,357 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
 
     //Digital Campaign
     Route::get('/razen-studio/admin/digital-campaign/atur', 'RazenStudio\Admin\DigitalCampaign\AturController@index')->name('razen-studio.admin.digital-campaign.atur.index');
+
+    //Digital Campaign Section - 1
+    Route::post('/razen-studio/admin/digital-campaign/atur/section-1/store', 'RazenStudio\Admin\DigitalCampaign\AturController@section_1_store')->name('razen-studio.admin.digital-campaign.atur.section-1.store');
+
+    //Digital Campaign Section - 2
+    Route::post('/razen-studio/admin/digital-campaign/atur/section-2/store', 'RazenStudio\Admin\DigitalCampaign\AturController@section_2_store')->name('razen-studio.admin.digital-campaign.atur.section-2.store');
+
+    //Digital Campaign Section - 3
+    Route::post('/razen-studio/admin/digital-campaign/atur/section-3/store', 'RazenStudio\Admin\DigitalCampaign\AturController@section_3_store')->name('razen-studio.admin.digital-campaign.atur.section-3.store');
+    Route::post('/razen-studio/admin/digital-campaign/atur/section-3/edit', 'RazenStudio\Admin\DigitalCampaign\AturController@section_3_edit')->name('razen-studio.admin.digital-campaign.atur.section-3.edit');
+    Route::post('/razen-studio/admin/digital-campaign/atur/section-3/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\AturController@section_3_hapus_satu')->name('razen-studio.admin.digital-campaign.atur.section-3.hapus.satu');
+
+    //Digital Campaign Section - 4
+    Route::post('/razen-studio/admin/digital-campaign/atur/section-4/store', 'RazenStudio\Admin\DigitalCampaign\AturController@section_4_store')->name('razen-studio.admin.digital-campaign.atur.section-4.store');
+    Route::post('/razen-studio/admin/digital-campaign/atur/section-4/edit', 'RazenStudio\Admin\DigitalCampaign\AturController@section_4_edit')->name('razen-studio.admin.digital-campaign.atur.section-4.edit');
+    Route::post('/razen-studio/admin/digital-campaign/atur/section-4/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\AturController@section_4_hapus_satu')->name('razen-studio.admin.digital-campaign.atur.section-4.hapus.satu');
+
+    //Digital Campaign Section - 5
+    Route::post('/razen-studio/admin/digital-campaign/atur/section-5/store', 'RazenStudio\Admin\DigitalCampaign\AturController@section_5_store')->name('razen-studio.admin.digital-campaign.atur.section-5.store');
+    Route::post('/razen-studio/admin/digital-campaign/atur/section-5/edit', 'RazenStudio\Admin\DigitalCampaign\AturController@section_5_edit')->name('razen-studio.admin.digital-campaign.atur.section-5.edit');
+    Route::post('/razen-studio/admin/digital-campaign/atur/section-5/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\AturController@section_5_hapus_satu')->name('razen-studio.admin.digital-campaign.atur.section-5.hapus.satu');
+
+    //Digital Campaign Section - Iklan Instagram
+    Route::get('/razen-studio/admin/digital-campaign/iklan-instagram', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@index')->name('razen-studio.admin.digital-campaign.iklan-instagram.index');
+
+    //Digital Campaign Section - Iklan Instagram - Section 1
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-1/store', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_1_store')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-1.store');
+
+    //Digital Campaign Section - Iklan Instagram - Section 2
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-2/store', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_2_store')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-2.store');
+
+    //Digital Campaign Section - Iklan Instagram - Section 3
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-3/store', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_3_store')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-3.store');
+
+    //Digital Campaign Section - Iklan Instagram - Section 4
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-4/store', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_4_store')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-4.store');
+
+    //Digital Campaign Section - Iklan Instagram - Section 5
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-5/store', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_5_store')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-5.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-5/edit', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_5_edit')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-5.edit');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-5/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_5_hapus_satu')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-5.hapus.satu');
+
+    //Digital Campaign Section - Iklan Instagram - Section 6
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-6/store', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_6_store')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-6.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-6/item-1/store', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_6_item_1_store')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-6.item-1.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-6/item-2/store', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_6_item_2_store')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-6.item-2.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-6/item-3/store', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_6_item_3_store')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-6.item-3.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-6/item-4/store', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_6_item_4_store')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-6.item-4.store');
+
+    //Digital Campaign Section - Iklan Instagram - Section 7
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-7/store', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_7_store')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-7.store');
+
+    //Digital Campaign Section - Iklan Instagram - Section 8
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-8/store', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_8_store')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-8.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-8/edit', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_8_edit')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-8.edit');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-8/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_8_hapus_satu')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-8.hapus.satu');
+
+    //Digital Campaign Section - Iklan Instagram - Section 9
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-9/store', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_9_store')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-9.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-9/edit', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_9_edit')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-9.edit');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-9/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_9_hapus_satu')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-9.hapus.satu');
+
+    //Digital Campaign Section - Iklan Instagram - Section 10
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-10/store', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_10_store')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-10.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-10/edit', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_10_edit')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-10.edit');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-10/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_10_hapus_satu')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-10.hapus.satu');
+
+    //Digital Campaign Section - Iklan Facebook
+    Route::get('/razen-studio/admin/digital-campaign/iklan-facebook', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@index')->name('razen-studio.admin.digital-campaign.iklan-facebook.index');
+
+    //Digital Campaign Section - Iklan Facebook - Section 1
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-1/store', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_1_store')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-1.store');
+
+    //Digital Campaign Section - Iklan Facebook - Section 2
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-2/store', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_2_store')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-2.store');
+
+    //Digital Campaign Section - Iklan Facebook - Section 3
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-3/store', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_3_store')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-3.store');
+
+    //Digital Campaign Section - Iklan Facebook - Section 4
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-4/store', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_4_store')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-4.store');
+
+    //Digital Campaign Section - Iklan Facebook - Section 5
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-5/store', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_5_store')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-5.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-5/edit', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_5_edit')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-5.edit');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-5/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_5_hapus_satu')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-5.hapus.satu');
+
+    //Digital Campaign Section - Iklan Facebook - Section 6
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-6/store', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_6_store')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-6.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-6/item-1/store', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_6_item_1_store')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-6.item-1.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-6/item-2/store', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_6_item_2_store')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-6.item-2.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-6/item-3/store', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_6_item_3_store')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-6.item-3.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-6/item-4/store', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_6_item_4_store')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-6.item-4.store');
+
+    //Digital Campaign Section - Iklan Facebook - Section 7
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-7/store', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_7_store')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-7.store');
+
+    //Digital Campaign Section - Iklan Facebook - Section 8
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-8/store', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_8_store')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-8.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-8/edit', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_8_edit')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-8.edit');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-8/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_8_hapus_satu')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-8.hapus.satu');
+
+    //Digital Campaign Section - Iklan Facebook - Section 9
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-9/store', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_9_store')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-9.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-9/edit', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_9_edit')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-9.edit');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-9/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_9_hapus_satu')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-9.hapus.satu');
+
+    //Digital Campaign Section - Iklan Facebook - Section 10
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-10/store', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_10_store')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-10.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-10/edit', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_10_edit')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-10.edit');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-10/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_10_hapus_satu')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-10.hapus.satu');
+
+    //Digital Campaign Section - Iklan Google
+    Route::get('/razen-studio/admin/digital-campaign/iklan-google', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@index')->name('razen-studio.admin.digital-campaign.iklan-google.index');
+
+    //Digital Campaign Section - Iklan Google - Section 1
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-1/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_1_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-1.store');
+
+    //Digital Campaign Section - Iklan Google - Section 2
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-2/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_2_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-2.store');
+
+    //Digital Campaign Section - Iklan Google - Section 3
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-3/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_3_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-3.store');
+
+    //Digital Campaign Section - Iklan Google - Section 4
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-4/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_4_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-4.store');
+
+    //Digital Campaign Section - Iklan Google - Section 5
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-5/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_5_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-5.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-5/edit', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_5_edit')->name('razen-studio.admin.digital-campaign.iklan-google.section-5.edit');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-5/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_5_hapus_satu')->name('razen-studio.admin.digital-campaign.iklan-google.section-5.hapus.satu');
+
+    //Digital Campaign Section - Iklan Google - Section 6
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-6/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_6_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-6.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-6/item-1/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_6_item_1_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-6.item-1.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-6/item-2/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_6_item_2_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-6.item-2.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-6/item-3/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_6_item_3_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-6.item-3.store');
+
+    //Digital Campaign Section - Iklan Google - Section 7
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-7/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_7_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-7.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-7/item-1/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_7_item_1_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-7.item-1.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-7/item-2/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_7_item_2_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-7.item-2.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-7/item-3/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_7_item_3_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-7.item-3.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-7/item-4/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_7_item_4_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-7.item-4.store');
+
+    //Digital Campaign Section - Iklan Google - Section 8
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-8/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_8_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-8.store');
+
+    //Digital Campaign Section - Iklan Google - Section 9
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-9/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_9_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-9.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-9/edit', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_9_edit')->name('razen-studio.admin.digital-campaign.iklan-google.section-9.edit');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-9/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_9_hapus_satu')->name('razen-studio.admin.digital-campaign.iklan-google.section-9.hapus.satu');
+
+    //Digital Campaign Section - Iklan Google - Section 10
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-10/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_10_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-10.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-10/edit', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_10_edit')->name('razen-studio.admin.digital-campaign.iklan-google.section-10.edit');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-10/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_10_hapus_satu')->name('razen-studio.admin.digital-campaign.iklan-google.section-10.hapus.satu');
+
+    //Digital Campaign Section - Iklan Google - Section 11
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-11/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_11_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-11.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-11/edit', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_11_edit')->name('razen-studio.admin.digital-campaign.iklan-google.section-11.edit');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-11/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_11_hapus_satu')->name('razen-studio.admin.digital-campaign.iklan-google.section-11.hapus.satu');
+
+    //Digital Campaign Section - Iklan Youtube
+    Route::get('/razen-studio/admin/digital-campaign/iklan-youtube', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@index')->name('razen-studio.admin.digital-campaign.iklan-youtube.index');
+
+    //Digital Campaign Section - Iklan Youtube - Section 1
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-1/store', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_1_store')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-1.store');
+
+    //Digital Campaign Section - Iklan Youtube - Section 2
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-2/store', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_2_store')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-2.store');
+
+    //Digital Campaign Section - Iklan Youtube - Section 3
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-3/store', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_3_store')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-3.store');
+
+    //Digital Campaign Section - Iklan Youtube - Section 4
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-4/store', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_4_store')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-4.store');
+
+    //Digital Campaign Section - Iklan Youtube - Section 5
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-5/store', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_5_store')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-5.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-5/edit', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_5_edit')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-5.edit');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-5/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_5_hapus_satu')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-5.hapus.satu');
+
+    //Digital Campaign Section - Iklan Youtube - Section 6
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-6/store', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_6_store')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-6.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-6/edit', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_6_edit')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-6.edit');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-6/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_6_hapus_satu')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-6.hapus.satu');
+
+    //Digital Campaign Section - Iklan Youtube - Section 7
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-7/store', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_7_store')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-7.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-7/item-1/store', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_7_item_1_store')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-7.item-1.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-7/item-2/store', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_7_item_2_store')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-7.item-2.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-7/item-3/store', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_7_item_3_store')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-7.item-3.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-7/item-4/store', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_7_item_4_store')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-7.item-4.store');
+
+    //Digital Campaign Section - Iklan Youtube - Section 8
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-8/store', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_8_store')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-8.store');
+
+    //Digital Campaign Section - Iklan Youtube - Section 9
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-9/store', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_9_store')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-9.store');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-9/edit', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_9_edit')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-9.edit');
+    Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-9/store/hapus/satu', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_9_hapus_satu')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-9.hapus.satu');
+
+    //Social Media Management
+    Route::get('/razen-studio/admin/social-media-management/atur', 'RazenStudio\Admin\SocialMediaManagement\AturController@index')->name('razen-studio.admin.social-media-management.atur.index');
+
+    //Social Media Management - Section - 1
+    Route::post('/razen-studio/admin/social-media-management/atur/section-1/store', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_1_store')->name('razen-studio.admin.social-media-management.atur.section-1.store');
+
+    //Social Media Management - Section - 2
+    Route::post('/razen-studio/admin/social-media-management/atur/section-2/store', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_2_store')->name('razen-studio.admin.social-media-management.atur.section-2.store');
+
+    //Social Media Management - Section 3
+    Route::post('/razen-studio/admin/social-media-management/atur/section-3/store', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_3_store')->name('razen-studio.admin.social-media-management.atur.section-3.store');
+    Route::post('/razen-studio/admin/social-media-management/atur/section-3/item-1/store', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_3_item_1_store')->name('razen-studio.admin.social-media-management.atur.section-3.item-1.store');
+    Route::post('/razen-studio/admin/social-media-management/atur/section-3/item-2/store', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_3_item_2_store')->name('razen-studio.admin.social-media-management.atur.section-3.item-2.store');
+    Route::post('/razen-studio/admin/social-media-management/atur/section-3/item-3/store', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_3_item_3_store')->name('razen-studio.admin.social-media-management.atur.section-3.item-3.store');
+    Route::post('/razen-studio/admin/social-media-management/atur/section-3/item-4/store', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_3_item_4_store')->name('razen-studio.admin.social-media-management.atur.section-3.item-4.store');
+
+    //Social Media Management - Section 4 Start
+    Route::post('/razen-studio/admin/social-media-management/atur/section-4/store', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_4_store')->name('razen-studio.admin.social-media-management.atur.section-4.store');
+    Route::post('/razen-studio/admin/social-media-management/atur/section-4/store/hapus/satu', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_4_hapus_satu')->name('razen-studio.admin.social-media-management.atur.section-4.hapus.satu');
+    //Social Media Management - Section 4 End
+
+    //Social Media Management - Section - 5
+    Route::post('/razen-studio/admin/social-media-management/atur/section-5/store', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_5_store')->name('razen-studio.admin.social-media-management.atur.section-5.store');
+
+    //Social Media Management - Section - 6
+    Route::post('/razen-studio/admin/social-media-management/atur/section-6/store', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_6_store')->name('razen-studio.admin.social-media-management.atur.section-6.store');
+
+    //Social Media Management - Section - 7
+    Route::post('/razen-studio/admin/social-media-management/atur/section-7/store', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_7_store')->name('razen-studio.admin.social-media-management.atur.section-7.store');
+
+    //Social Media Management - Section - 8
+    Route::post('/razen-studio/admin/social-media-management/atur/section-8/store', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_8_store')->name('razen-studio.admin.social-media-management.atur.section-8.store');
+    Route::post('/razen-studio/admin/social-media-management/atur/section-8/edit', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_8_edit')->name('razen-studio.admin.social-media-management.atur.section-8.edit');
+    Route::post('/razen-studio/admin/social-media-management/atur/section-8/store/hapus/satu', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_8_hapus_satu')->name('razen-studio.admin.social-media-management.atur.section-8.hapus.satu');
+
+    //Social Media Management - Section - 9
+    Route::post('/razen-studio/admin/social-media-management/atur/section-9/store', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_9_store')->name('razen-studio.admin.social-media-management.atur.section-9.store');
+    Route::post('/razen-studio/admin/social-media-management/atur/section-9/edit', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_9_edit')->name('razen-studio.admin.social-media-management.atur.section-9.edit');
+    Route::post('/razen-studio/admin/social-media-management/atur/section-9/store/hapus/satu', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_9_hapus_satu')->name('razen-studio.admin.social-media-management.atur.section-9.hapus.satu');
+
+    //Social Media Management - Section - 10
+    Route::post('/razen-studio/admin/social-media-management/atur/section-10/store', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_10_store')->name('razen-studio.admin.social-media-management.atur.section-10.store');
+    Route::post('/razen-studio/admin/social-media-management/atur/section-10/edit', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_10_edit')->name('razen-studio.admin.social-media-management.atur.section-10.edit');
+    Route::post('/razen-studio/admin/social-media-management/atur/section-10/store/hapus/satu', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_10_hapus_satu')->name('razen-studio.admin.social-media-management.atur.section-10.hapus.satu');
+
+    //Search Engine Optimization
+    Route::get('/razen-studio/admin/search-engine-optimization/atur', 'RazenStudio\Admin\SearchEngineOptimization\AturController@index')->name('razen-studio.admin.search-engine-optimization.atur.index');
+
+    //Search Engine Optimization - Section 1
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-1/store', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_1_store')->name('razen-studio.admin.search-engine-optimization.atur.section-1.store');
+
+    //Search Engine Optimization - Section 2
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-2/store', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_2_store')->name('razen-studio.admin.search-engine-optimization.atur.section-2.store');
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-2/edit', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_2_edit')->name('razen-studio.admin.search-engine-optimization.atur.section-2.edit');
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-2/store/hapus/satu', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_2_hapus_satu')->name('razen-studio.admin.search-engine-optimization.atur.section-2.hapus.satu');
+
+    //Search Engine Optimization - Item
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/item/store', 'RazenStudio\Admin\SearchEngineOptimization\AturController@item_store')->name('razen-studio.admin.search-engine-optimization.atur.item.store');
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/item/store/hapus/satu', 'RazenStudio\Admin\SearchEngineOptimization\AturController@item_hapus_satu')->name('razen-studio.admin.search-engine-optimization.atur.item.hapus.satu');
+    //Search Engine Optimization - Item
+
+    //Search Engine Optimization - Section 3
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-3/store', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_3_store')->name('razen-studio.admin.search-engine-optimization.atur.section-3.store');
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-3/item-1/store', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_3_item_1_store')->name('razen-studio.admin.search-engine-optimization.atur.section-3.item-1.store');
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-3/item-2/store', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_3_item_2_store')->name('razen-studio.admin.search-engine-optimization.atur.section-3.item-2.store');
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-3/item-3/store', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_3_item_3_store')->name('razen-studio.admin.search-engine-optimization.atur.section-3.item-3.store');
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-3/item-4/store', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_3_item_4_store')->name('razen-studio.admin.search-engine-optimization.atur.section-3.item-4.store');
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-3/item-5/store', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_3_item_5_store')->name('razen-studio.admin.search-engine-optimization.atur.section-3.item-5.store');
+
+    //Search Engine Optimization - Section 4
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-4/store', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_4_store')->name('razen-studio.admin.search-engine-optimization.atur.section-4.store');
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-4/edit', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_4_edit')->name('razen-studio.admin.search-engine-optimization.atur.section-4.edit');
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-4/store/hapus/satu', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_4_hapus_satu')->name('razen-studio.admin.search-engine-optimization.atur.section-4.hapus.satu');
+
+    //Search Engine Optimization - Section 5
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-5/store', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_5_store')->name('razen-studio.admin.search-engine-optimization.atur.section-5.store');
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-5/edit', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_5_edit')->name('razen-studio.admin.search-engine-optimization.atur.section-5.edit');
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-5/store/hapus/satu', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_5_hapus_satu')->name('razen-studio.admin.search-engine-optimization.atur.section-5.hapus.satu');
+
+    //Search Engine Optimization - Section 6
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-6/store', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_6_store')->name('razen-studio.admin.search-engine-optimization.atur.section-6.store');
+
+    //Search Engine Optimization - Section 7
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-7/store', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_7_store')->name('razen-studio.admin.search-engine-optimization.atur.section-7.store');
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-7/edit', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_7_edit')->name('razen-studio.admin.search-engine-optimization.atur.section-7.edit');
+    Route::post('/razen-studio/admin/search-engine-optimization/atur/section-7/store/hapus/satu', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_7_hapus_satu')->name('razen-studio.admin.search-engine-optimization.atur.section-7.hapus.satu');
+
+    //About
+    Route::get('/razen-studio/admin/about/atur', 'RazenStudio\Admin\About\AturController@index')->name('razen-studio.admin.about.atur.index');
+
+    //About - Section 1
+    Route::post('/razen-studio/admin/about/atur/section-1/store', 'RazenStudio\Admin\About\AturController@section_1_store')->name('razen-studio.admin.about.atur.section-1.store');
+
+    //About - Section 2 Start
+    Route::post('/razen-studio/admin/about/atur/section-2/store', 'RazenStudio\Admin\About\AturController@section_2_store')->name('razen-studio.admin.about.atur.section-2.store');
+    Route::post('/razen-studio/admin/about/atur/section-2/store/hapus/satu', 'RazenStudio\Admin\About\AturController@section_2_hapus_satu')->name('razen-studio.admin.about.atur.section-2.hapus.satu');
+    //About - Section 2 End
+
+    //About - Section 3
+    Route::post('/razen-studio/admin/about/atur/section-3/store', 'RazenStudio\Admin\About\AturController@section_3_store')->name('razen-studio.admin.about.atur.section-3.store');
+
+    //About - Section 4
+    Route::post('/razen-studio/admin/about/atur/section-4/store', 'RazenStudio\Admin\About\AturController@section_4_store')->name('razen-studio.admin.about.atur.section-4.store');
+
+    //About - Section - 5
+    Route::post('/razen-studio/admin/about/atur/section-5/store', 'RazenStudio\Admin\About\AturController@section_5_store')->name('razen-studio.admin.about.atur.section-5.store');
+    Route::post('/razen-studio/admin/about/atur/section-5/edit', 'RazenStudio\Admin\About\AturController@section_5_edit')->name('razen-studio.admin.about.atur.section-5.edit');
+    Route::post('/razen-studio/admin/about/atur/section-5/store/hapus/satu', 'RazenStudio\Admin\About\AturController@section_5_hapus_satu')->name('razen-studio.admin.about.atur.section-5.hapus.satu');
+
+    //About - Section 6
+    Route::post('/razen-studio/admin/about/atur/section-6/store', 'RazenStudio\Admin\About\AturController@section_6_store')->name('razen-studio.admin.about.atur.section-6.store');
+
+    //About - Section 7
+    Route::post('/razen-studio/admin/about/atur/section-7/store', 'RazenStudio\Admin\About\AturController@section_7_store')->name('razen-studio.admin.about.atur.section-7.store');
+
+    //About Gallery
+    Route::get('/razen-studio/admin/about/gallery', 'RazenStudio\Admin\About\GalleryController@index')->name('razen-studio.admin.about.gallery.index');
+    Route::post('/razen-studio/admin/about/gallery', 'RazenStudio\Admin\About\GalleryController@store')->name('razen-studio.admin.about.gallery.store');
+    Route::post('/razen-studio/admin/about/gallery/hapus-data', 'RazenStudio\Admin\About\GalleryController@hapus_data')->name('razen-studio.admin.about.gallery.hapus-data');
+
+    //How It Works
+    Route::get('/razen-studio/admin/how-it-works/atur', 'RazenStudio\Admin\HowItWork\AturController@index')->name('razen-studio.admin.how-it-works.atur.index');
+
+    //How It Works - Section 1
+    Route::post('/razen-studio/admin/how-it-works/atur/section-1/store', 'RazenStudio\Admin\HowItWork\AturController@section_1_store')->name('razen-studio.admin.how-it-works.atur.section-1.store');
+
+    //How It Works - Section 2
+    Route::post('/razen-studio/admin/how-it-works/atur/section-2/store', 'RazenStudio\Admin\HowItWork\AturController@section_2_store')->name('razen-studio.admin.how-it-works.atur.section-2.store');
+    Route::post('/razen-studio/admin/how-it-works/atur/section-2/edit', 'RazenStudio\Admin\HowItWork\AturController@section_2_edit')->name('razen-studio.admin.how-it-works.atur.section-2.edit');
+    Route::post('/razen-studio/admin/how-it-works/atur/section-2/store/hapus/satu', 'RazenStudio\Admin\HowItWork\AturController@section_2_hapus_satu')->name('razen-studio.admin.how-it-works.atur.section-2.hapus.satu');
+
+    //How It Works - Section 3
+    Route::post('/razen-studio/admin/how-it-works/atur/section-3/store', 'RazenStudio\Admin\HowItWork\AturController@section_3_store')->name('razen-studio.admin.how-it-works.atur.section-3.store');
+    Route::post('/razen-studio/admin/how-it-works/atur/section-3/item-1/store', 'RazenStudio\Admin\HowItWork\AturController@section_3_item_1_store')->name('razen-studio.admin.how-it-works.atur.section-3.item-1.store');
+    Route::post('/razen-studio/admin/how-it-works/atur/section-3/item-2/store', 'RazenStudio\Admin\HowItWork\AturController@section_3_item_2_store')->name('razen-studio.admin.how-it-works.atur.section-3.item-2.store');
+    Route::post('/razen-studio/admin/how-it-works/atur/section-3/item-3/store', 'RazenStudio\Admin\HowItWork\AturController@section_3_item_3_store')->name('razen-studio.admin.how-it-works.atur.section-3.item-3.store');
+    Route::post('/razen-studio/admin/how-it-works/atur/section-3/item-4/store', 'RazenStudio\Admin\HowItWork\AturController@section_3_item_4_store')->name('razen-studio.admin.how-it-works.atur.section-3.item-4.store');
+
+    //How It Works - Section 4
+    Route::post('/razen-studio/admin/how-it-works/atur/section-4/store', 'RazenStudio\Admin\HowItWork\AturController@section_4_store')->name('razen-studio.admin.how-it-works.atur.section-4.store');
+
+    //How It Works - Section 5
+    Route::post('/razen-studio/admin/how-it-works/atur/section-5/store', 'RazenStudio\Admin\HowItWork\AturController@section_5_store')->name('razen-studio.admin.how-it-works.atur.section-5.store');
+
+    //How It Works - Section 6
+    Route::post('/razen-studio/admin/how-it-works/atur/section-6/store', 'RazenStudio\Admin\HowItWork\AturController@section_6_store')->name('razen-studio.admin.how-it-works.atur.section-6.store');
+    Route::post('/razen-studio/admin/how-it-works/atur/section-6/item-1/store', 'RazenStudio\Admin\HowItWork\AturController@section_6_item_1_store')->name('razen-studio.admin.how-it-works.atur.section-6.item-1.store');
+    Route::post('/razen-studio/admin/how-it-works/atur/section-6/item-1/edit', 'RazenStudio\Admin\HowItWork\AturController@section_6_item_1_edit')->name('razen-studio.admin.how-it-works.atur.section-6.item-1.edit');
+    Route::post('/razen-studio/admin/how-it-works/atur/section-6/item-1/store/hapus/satu', 'RazenStudio\Admin\HowItWork\AturController@section_6_item_1_hapus_satu')->name('razen-studio.admin.how-it-works.atur.section-6.item-1.hapus.satu');
+    Route::post('/razen-studio/admin/how-it-works/atur/section-6/item-2/store', 'RazenStudio\Admin\HowItWork\AturController@section_6_item_2_store')->name('razen-studio.admin.how-it-works.atur.section-6.item-2.store');
 });

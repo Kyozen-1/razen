@@ -9,16 +9,6 @@
 @section('content')
 <div class="flat-slider container-fuild">
     <div class="row">
-        <div class="widget-social-header">
-            <div class="container-fluid">
-                <ul class="widget-social-footer-item text-center">
-                    <li><a href="#">Fb.</a></li>
-                    <li><a href="#">Be.</a></li>
-                    <li><a href="#">Tw.</a></li>
-                    <li><a href="#">In.</a></li>
-                </ul>
-            </div>
-        </div>
         <div class="mark-slide">
             <img src="{{ asset('olux/assets/images/mark-page/mark-icon-slide.png') }}" alt="images">
         </div>

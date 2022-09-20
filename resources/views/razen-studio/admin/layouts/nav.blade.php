@@ -118,7 +118,18 @@
                     request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-branding-event.index') ||
                     request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-amplop.index') ||
                     request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-kop-surat.index') ||
-                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-merchandise.index'))
+                    request()->routeIs('razen-studio.admin.visual-branding-design.jasa-desain-grafis.desain-merchandise.index') ||
+                    request()->routeIs('razen-studio.admin.digital-campaign.atur.index') ||
+                    request()->routeIs('razen-studio.admin.digital-campaign.iklan-instagram.index') ||
+                    request()->routeIs('razen-studio.admin.digital-campaign.iklan-facebook.index') ||
+                    request()->routeIs('razen-studio.admin.digital-campaign.iklan-google.index') ||
+                    request()->routeIs('razen-studio.admin.digital-campaign.iklan-youtube.index') ||
+                    request()->routeIs('razen-studio.admin.social-media-management.atur.index') ||
+                    request()->routeIs('razen-studio.admin.search-engine-optimization.atur.index') ||
+                    request()->routeIs('razen-studio.admin.about.atur.index') ||
+                    request()->routeIs('razen-studio.admin.about.gallery.index') ||
+                    request()->routeIs('razen-studio.admin.how-it-works.atur.index')
+                    )
                     <a href="#landing_page" class="active">
                     @else
                     <a href="#landing_page">
@@ -540,6 +551,157 @@
                                             </a>
                                         </li>
                                     </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-studio.admin.digital-campaign.atur.index') ||
+                            request()->routeIs('razen-studio.admin.digital-campaign.iklan-instagram.index') ||
+                            request()->routeIs('razen-studio.admin.digital-campaign.iklan-facebook.index') ||
+                            request()->routeIs('razen-studio.admin.digital-campaign.iklan-google.index') ||
+                            request()->routeIs('razen-studio.admin.digital-campaign.iklan-youtube.index')
+                            )
+                                <a href="#digital_campaign" class="active">
+                            @else
+                                <a href="#digital_campaign">
+                            @endif
+                                <span class="label">Digital Campaign</span>
+                            </a>
+                            <ul id="digital_campaign">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.digital-campaign.atur.index'))
+                                        <a href="{{ route('razen-studio.admin.digital-campaign.atur.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.digital-campaign.atur.index') }}">
+                                    @endif
+                                        <span class="label">Atur</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-instagram.index'))
+                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-instagram.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-instagram.index') }}">
+                                    @endif
+                                        <span class="label">Iklan Instagram</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-facebook.index'))
+                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-facebook.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-facebook.index') }}">
+                                    @endif
+                                        <span class="label">Iklan Facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-google.index'))
+                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-google.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-google.index') }}">
+                                    @endif
+                                        <span class="label">Iklan Google</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-youtube.index'))
+                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-youtube.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-youtube.index') }}">
+                                    @endif
+                                        <span class="label">Iklan Youtube</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-studio.admin.social-media-management.atur.index'))
+                                <a href="#social_media_management" class="active">
+                            @else
+                                <a href="#social_media_management">
+                            @endif
+                                <span class="label">Social Media Management</span>
+                            </a>
+                            <ul id="social_media_management">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.social-media-management.atur.index'))
+                                        <a href="{{ route('razen-studio.admin.social-media-management.atur.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.social-media-management.atur.index') }}">
+                                    @endif
+                                        <span class="label">Atur</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-studio.admin.search-engine-optimization.atur.index'))
+                                <a href="#search_engine_optimization" class="active">
+                            @else
+                                <a href="#search_engine_optimization">
+                            @endif
+                                <span class="label">Search Engine Optimization</span>
+                            </a>
+                            <ul id="search_engine_optimization">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.search-engine-optimization.atur.index'))
+                                        <a href="{{ route('razen-studio.admin.search-engine-optimization.atur.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.search-engine-optimization.atur.index') }}">
+                                    @endif
+                                        <span class="label">Atur</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-studio.admin.about.atur.index') ||
+                            request()->routeIs('razen-studio.admin.about.gallery.index'))
+                                <a href="#about" class="active">
+                            @else
+                                <a href="#about">
+                            @endif
+                                <span class="label">About</span>
+                            </a>
+                            <ul id="about">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.about.atur.index'))
+                                        <a href="{{ route('razen-studio.admin.about.atur.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.about.atur.index') }}">
+                                    @endif
+                                        <span class="label">Atur</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.about.gallery.index'))
+                                        <a href="{{ route('razen-studio.admin.about.gallery.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.about.gallery.index') }}">
+                                    @endif
+                                        <span class="label">Gallery</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-studio.admin.how-it-works.atur.index'))
+                                <a href="#how_it_work" class="active">
+                            @else
+                                <a href="#how_it_work">
+                            @endif
+                                <span class="label">How It Works</span>
+                            </a>
+                            <ul id="how_it_work">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.how-it-works.atur.index'))
+                                        <a href="{{ route('razen-studio.admin.how-it-works.atur.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.how-it-works.atur.index') }}">
+                                    @endif
+                                        <span class="label">Atur</span>
+                                    </a>
                                 </li>
                             </ul>
                         </li>

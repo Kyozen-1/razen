@@ -250,19 +250,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="widget-social-footer">
-                    <div class="container-fluid">
-                        <ul class="widget-social-footer-item text-center link-style-2">
-                            <li><a href="#">Fb.</a></li>
-                            <li><a href="#">Be.</a></li>
-                            <li><a href="#">Tw.</a></li>
-                            <li><a href="#">In.</a></li>
-                            <li>
-                                <h3>Follow Me:</h3>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </footer><!-- /#footer -->
             <!-- Bottom -->
             <div id="bottom" class="clearfix has-spacer">
