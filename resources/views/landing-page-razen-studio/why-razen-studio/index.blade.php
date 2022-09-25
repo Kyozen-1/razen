@@ -1,5 +1,36 @@
+@php
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioWhyRazenStudio;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioBrand;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioOfficialPartner;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioReview;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioHome;
+
+    $home = LandingpageRazenstudioHome::first();
+
+    $why_razen_studio = LandingpageRazenstudioWhyRazenStudio::first();
+    if ($why_razen_studio) {
+        $why_razen_studio_section_1 = json_decode($why_razen_studio->section_1, true);
+        $why_razen_studio_section_2 = json_decode($why_razen_studio->section_2, true);
+        $why_razen_studio_section_3 = json_decode($why_razen_studio->section_3, true);
+        $why_razen_studio_section_4 = json_decode($why_razen_studio->section_4, true);
+        $why_razen_studio_section_5 = json_decode($why_razen_studio->section_5, true);
+        $why_razen_studio_section_6 = json_decode($why_razen_studio->section_6, true);
+    } else {
+        $why_razen_studio_section_1 = [];
+        $why_razen_studio_section_2 = [];
+        $why_razen_studio_section_3 = [];
+        $why_razen_studio_section_4 = [];
+        $why_razen_studio_section_5 = [];
+        $why_razen_studio_section_6 = [];
+    }
+
+    $reviews = LandingpageRazenstudioReview::latest()->get();
+    $brands= LandingpageRazenstudioBrand::all();
+    $partners = LandingpageRazenstudioOfficialPartner::all();
+@endphp
+
 @extends('landing-page-razen-studio.layouts.app')
-@section('title', 'Razen Studio | Why Razen Studio')
+@section('title', $why_razen_studio_section_1['title'])
 
 @section('css')
 <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
@@ -15,11 +46,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="breadcrumbs text-center link-style-5 text-white">
-                <h2 class="section-title-page text-white">Keunggulan GoSocial</h2>
+                <h2 class="section-title-page text-white">{{$why_razen_studio_section_1['judul']}}</h2>
                 <ul class="breadcrumbs-inner list-center display-flex">
                     <li><a class="section-16px-regular font-weight-500" href="{{ route('home') }}">Home</a></li>
                     <li>
-                        <h4 class="section-16px-regular font-weight-500 text-white">Keunggulan GoSocial</h4>
+                        <h4 class="section-16px-regular font-weight-500 text-white">{{$why_razen_studio_section_1['judul']}}</h4>
                     </li>
                 </ul>
             </div>
@@ -31,40 +62,7 @@
         <div class="row align-items-lg-center">
             <div class="col-lg-5 order-lg-2 mb-7 mb-lg-0">
                 <div class="mb-5">
-                <h2 class="mb-3">Memberikan solusi dari berbagai proses kolaborasi</h2>
-                <p>GoSocial mengutamakan kolaborasi untuk menyelesaikan berbagai proyek dari klien, sehingga hasil yang dihasilkan dapat maksimal dan berkualitas.</p>
-                </div>
-
-                <!-- Info -->
-                <div class="media pb-3">
-                <span class="text-danger mr-3">
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                    </svg>
-                </span>
-                <div class="media-body">
-                    <p class="text-dark mb-0">Berkolaborasi dengan 100+ partner</p>
-                </div>
-                </div>
-                <div class="media py-3">
-                <span class="text-danger mr-3">
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                    </svg>
-                </span>
-                <div class="media-body">
-                    <p class="text-dark mb-0">Dukungan aplikasi untuk klien maupun partner</p>
-                </div>
-                </div>
-                <div class="media pt-3">
-                <span class="text-danger mr-3">
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                    </svg>
-                </span>
-                <div class="media-body">
-                    <p class="text-dark mb-0">Data-driven &amp; technology oriented strategy</p>
-                </div>
+                    {!!$why_razen_studio_section_2['deskripsi']!!}
                 </div>
                 <!-- End Info -->
             </div>
@@ -74,13 +72,13 @@
                 <div class="pr-lg-4 aos-init aos-animate" data-aos="fade-up">
                 <div class="card shadow-none bg-soft-primary text-indigo text-center w-lg-75 overflow-hidden pt-9 px-5 mx-lg-auto">
                     <div class="px-5 mb-5">
-                    <h3>Satu platform untuk berbagai kolaborasi didalamnya</h3>
+                    <h3>{{$why_razen_studio_section_2['judul']}}</h3>
                     </div>
 
                     <!-- Device Mockup -->
                     <div class="device device-half-iphone-x w-85 mx-auto">
                     <img class="device-half-iphone-x-frame" src="https://gosocial.co.id/assets/svg/components/half-iphone-x.svg" alt="Iphone X Mockup">
-                    <img class="device-half-iphone-x-screen" src="https://gosocial.co.id/assets/img/why-gosocial/apps-login.jpg" alt="Login Apps GoSocial">
+                    <img class="device-half-iphone-x-screen" src="{{ asset('images/landingpage_razenstudio/why-razen-studio/'.$why_razen_studio_section_2['gambar']) }}" alt="Login Apps GoSocial">
                     </div>
                     <!-- End Device Mockup -->
                 </div>
@@ -96,11 +94,11 @@
         <div class="card overflow-hidden p-5">
             <div class="row justify-content-md-start align-items-md-center text-center text-md-left">
             <div class="col-md-8 col-lg-5 offset-lg-3 mb-3 mb-md-0">
-                <h3 class="font-size-3 text-indigo mb-0">We Are Tech-Savvy & Data-Driven Business Partner!</h3>
+                <h3 class="font-size-3 text-indigo mb-0">{{$why_razen_studio_section_3['judul']}}</h3>
             </div>
 
             <div class="col-md-4 text-md-right">
-                <a class="btn btn-primary transition-3d-hover font-size-3" href="https://gosocial.co.id/how-it-works">How it Works</a>
+                <a class="btn btn-danger transition-3d-hover font-size-3" href="{{ route('how-it-works') }}">How it Works</a>
             </div>
             </div>
 
@@ -118,8 +116,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h2 class="section-45px-montserrat margin-top-15">Mengapa Harus GoSocial?</h2>
-                    <p class="text-muted">GoSocial merupakan satu-satunya Konsultan Digital Marketing sekaligus Agency pertama yang berbasis Hub dalam menyediakan layanan.</p>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$why_razen_studio_section_4['sub_judul']}}</h2>
+                    <p class="text-muted">{{$why_razen_studio_section_4['judul']}}</p>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
@@ -313,127 +311,95 @@
         <div class="container space-top-2 space-top-lg-3 position-relative z-index-2">
             <!-- Title -->
             <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
-                <h1 class="text-white">Work with GoSocial</h1>
-                <h3 class="text-white">Like having your own digital marketing branch, without the headaches (and costs) of hiring in-house.</h3>
-
+                <h1 class="text-white">{{$why_razen_studio_section_5['sub_judul']}}</h1>
+                <h3 class="text-white">{{$why_razen_studio_section_5['judul']}}</h3>
             </div>
             <!-- End Title -->
 
             <!-- Icon Blocks -->
             <div class="w-lg-80 mx-lg-auto mb-11">
                 <div class="row mb-9">
-                    <div class="col-6 col-md-4 mb-7">
-                        <!-- Icon Block -->
-                        <span class="d-block text-white font-size-2 mb-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </span>
-                        <h4 class="text-white font-size-2 mb-3">Flexible Contract</h4>
-                        <p class="text-white-70">Ingin memastikan layanan kami sesuai atau hanya sekedar mencoba, bisa dilakukan dengan kontrak yang fleksibel dan tidak mengikat.</p>
-                        <!-- End Icon Block -->
-                    </div>
+                    @foreach ($why_razen_studio_section_5['konten'] as $item)
+                        <div class="col-6 col-md-4 mb-7">
+                            <!-- Icon Block -->
+                            <span class="d-block text-white font-size-2 mb-3">
+                                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                </svg>
+                            </span>
+                            <h4 class="text-white font-size-2 mb-3">{{$item['judul_konten']}}</h4>
+                            <p class="text-white-70">{{$item['deskripsi_konten']}}</p>
+                            <!-- End Icon Block -->
+                        </div>
+                    @endforeach
+                </div>
 
-                    <div class="col-6 col-md-4 mb-7">
-                        <!-- Icon Block -->
-                        <span class="d-block text-white font-size-2 mb-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </span>
-                        <h4 class="text-white font-size-2 mb-3">Industry-leading Solution</h4>
-                        <p class="text-white-70">Kami akan melakukan penilaian di awal dan memberikan saran terkait strategi dan metode berdasarkan kebutuhan bisnis.</p>
-                        <!-- End Icon Block -->
-                    </div>
-
-                    <div class="col-6 col-md-4 mb-7">
-                        <!-- Icon Block -->
-                        <span class="d-block text-white font-size-2 mb-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </span>
-                        <h4 class="text-white font-size-2 mb-3">Data-driven Strategy</h4>
-                        <p class="text-white-70">Kami menggunakan tools dan teknologi terkini untuk menghasilkan strategi terbaik berdasarkan data agar lebih terukur.</p>
-                        <!-- End Icon Block -->
-                    </div>
-
-                    <div class="col-6 col-md-4 mb-7 mb-md-0">
-                        <!-- Icon Block -->
-                        <span class="d-block text-white font-size-2 mb-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </span>
-                        <h4 class="text-white font-size-2 mb-3">Transparent execution &amp; reporting</h4>
-                        <p class="text-white-70">Tidak perlu repot untuk mengelola sejauh mana eksekusi yang sudah dilakukan, karena kami akan mengirim report berkala.</p>
-                        <!-- End Icon Block -->
-                    </div>
-
-                    <div class="col-6 col-md-4 mb-7">
-                        <!-- Icon Block -->
-                        <span class="d-block text-white font-size-2 mb-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </span>
-                        <h4 class="text-white font-size-2 mb-3">Collaborative Workflow</h4>
-                        <p class="text-white-70">Kami dapat menyesuaikan dengan berbagai macam proses dan tahapan bisnis klien untuk menghasilkan workflow yang harmonis.</p>
-                        <!-- End Icon Block -->
-                    </div>
-
-                    <div class="col-6 col-md-4">
-                        <!-- Icon Block -->
-                        <span class="d-block text-white font-size-2 mb-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </span>
-                        <h4 class="text-white font-size-2 mb-3">Dedicated Team</h4>
-                        <p class="text-white-70">Di setiap project kami akan membentuk tim khusus dari berbagai elemen untuk memastikan semua hal berjalan dengan baik dan maksimal.</p>
-                        <!-- End Icon Block -->
-                    </div>
-                    </div>
-
-                    <!-- Buttons -->
-                    <div class="text-center">
+                <!-- Buttons -->
+                <div class="text-center">
                     <div class="mb-3">
-                        <a class="btn btn-sm btn-light btn-wide transition-3d-hover font-size-2" href="https://gosocial.co.id/#service-section">Lihat Layanan</a>
+                        <a class="btn btn-sm btn-light btn-wide transition-3d-hover font-size-2" href="{{ route('home') }}">Lihat Layanan</a>
                         <small class="d-block d-sm-inline-block text-white-70 my-3 my-sm-0 mx-sm-3 font-size-1">atau</small>
-                        <a class="btn btn-sm btn-indigo btn-wide transition-3d-hover font-size-2" href="https://gosocial.co.id/contact">Konsultasi Sekarang</a>
+                        <a class="btn btn-sm btn-indigo btn-wide transition-3d-hover font-size-2" href="{{ route('contact') }}">Konsultasi Sekarang</a>
                     </div>
                     <p class="small text-white-70">*Gratis konsultasi terkait permasalahan Digital Marketing.</p>
-                    </div>
-                    <!-- End Buttons -->
                 </div>
+                <!-- End Buttons -->
+            </div>
                 <!-- End Icon Blocks -->
 
-                <div class="w-85 w-md-75 w-lg-65 text-center mx-auto">
-                    <img class="img-fluid" src="https://gosocial.co.id/assets/svg/illustrations/ai-creation.svg" alt="AI Creation">
-                </div>
+            <div class="w-85 w-md-75 w-lg-65 text-center mx-auto">
+                <img class="img-fluid" src="https://gosocial.co.id/assets/svg/illustrations/ai-creation.svg" alt="AI Creation">
             </div>
-
-            <!-- SVG Background Shape -->
-            <figure class="w-35 position-absolute top-0 right-0">
-                <div class="mt-n11 mr-n11">
-                    <img class="img-fluid" src="https://gosocial.co.id/assets/svg/components/half-circle-3.svg" alt="Half Circle 3 Component">
-                </div>
-            </figure>
-            <figure class="w-25 position-absolute bottom-0 left-0">
-                <div class="mb-n11 ml-n11">
-                    <img class="img-fluid" src="https://gosocial.co.id/assets/svg/components/half-circle-2.svg" alt="Half Circle 2 Component">
-                </div>
-            </figure>
-            <!-- End SVG Background Shape -->
         </div>
-        <div class="container space-2 space-lg-3">
+
+        <!-- SVG Background Shape -->
+        <figure class="w-35 position-absolute top-0 right-0">
+            <div class="mt-n11 mr-n11">
+                <img class="img-fluid" src="https://gosocial.co.id/assets/svg/components/half-circle-3.svg" alt="Half Circle 3 Component">
+            </div>
+        </figure>
+        <figure class="w-25 position-absolute bottom-0 left-0">
+            <div class="mb-n11 ml-n11">
+                <img class="img-fluid" src="https://gosocial.co.id/assets/svg/components/half-circle-2.svg" alt="Half Circle 2 Component">
+            </div>
+        </figure>
+        <!-- End SVG Background Shape -->
+    </div>
+    <div class="container space-2 space-lg-3">
         <!-- Title -->
         <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
-            <h2>Client &amp; Partner Area <span class="badge badge-warning badge-pill ml-1">Coming Soon</span></h2>
-            <p>Sebuah sistem yang dikembangkan untuk berkolaborasi baik bagi klien maupun partner yang terlibat didalam project.</p>
+            <h2>{{$why_razen_studio_section_6['sub_judul']}}</h2>
+            <p>{{$why_razen_studio_section_6['judul']}}</p>
         </div>
         <!-- End Title -->
-
+        @php
+            $tracking_project = [];
+            $easy_collaboration = [];
+            $tools_integrations = [];
+            foreach ($why_razen_studio_section_6['item'] as $value) {
+                if($value['item'] == 'tracking_project')
+                {
+                    $tracking_project = [
+                        'item' => $value['item'],
+                        'gambar' => $value['gambar']
+                    ];
+                }
+                if($value['item'] == 'easy_collaboration')
+                {
+                    $easy_collaboration = [
+                        'item' => $value['item'],
+                        'gambar' => $value['gambar']
+                    ];
+                }
+                if($value['item'] == 'tools_integrations')
+                {
+                    $tools_integrations = [
+                        'item' => $value['item'],
+                        'gambar' => $value['gambar']
+                    ];
+                }
+            }
+        @endphp
         <div class="row">
             <div class="col-lg-5 order-lg-2 mb-7 mb-lg-0">
                 <!-- Nav -->
@@ -441,8 +407,8 @@
                     <li class="nav-item w-100 mx-0 mb-3">
                         <a class="nav-link p-4 transition-3d-hover" id="pills-one-code-features-example2-tab" data-toggle="pill" href="#pills-one-code-features-example2" role="tab" aria-controls="pills-one-code-features-example2" aria-selected="false">
                             <div class="media align-items-center align-items-lg-start">
-                                <figure class="w-100 max-w-6rem mt-2 mr-4">
-                                    <img class="img-fluid" src="https://gosocial.co.id/assets/svg/icons/icon-11.svg" alt="Tracking Project">
+                                <figure class="mt-2 mr-4">
+                                    <img style="width:100%; height: 7rem;" src="https://gosocial.co.id/assets/svg/icons/icon-11.svg" alt="Tracking Project">
                                 </figure>
                                 <div class="media-body">
                                     <h3 class="h4 mb-0">Tracking Project</h3>
@@ -457,8 +423,8 @@
                     <li class="nav-item w-100 mx-0 mb-3">
                         <a class="nav-link p-4 transition-3d-hover" id="pills-two-code-features-example2-tab" data-toggle="pill" href="#pills-two-code-features-example2" role="tab" aria-controls="pills-two-code-features-example2" aria-selected="false">
                             <div class="media align-items-center align-items-lg-start">
-                                <figure class="w-100 max-w-6rem mt-2 mr-4">
-                                    <img class="img-fluid" src="https://gosocial.co.id/assets/svg/icons/icon-29.svg" alt="SVG">
+                                <figure class="mt-2 mr-4">
+                                    <img style="width:100%; height: 7rem;" src="https://gosocial.co.id/assets/svg/icons/icon-29.svg" alt="SVG">
                                 </figure>
                                 <div class="media-body">
                                     <h3 class="h4 mb-0">Easy Collaboration</h3>
@@ -473,8 +439,8 @@
                     <li class="nav-item w-100 mx-0">
                         <a class="nav-link p-4 transition-3d-hover active" id="pills-three-code-features-example2-tab" data-toggle="pill" href="#pills-three-code-features-example2" role="tab" aria-controls="pills-three-code-features-example2" aria-selected="true">
                             <div class="media align-items-center align-items-lg-start">
-                                <figure class="w-100 max-w-6rem mt-2 mr-4">
-                                    <img class="img-fluid" src="https://gosocial.co.id/assets/svg/icons/icon-51.svg" alt="Tools Integration">
+                                <figure class="mt-2 mr-4">
+                                    <img style="width:100%; height: 7rem;" src="https://gosocial.co.id/assets/svg/icons/icon-51.svg" alt="Tools Integration">
                                 </figure>
                                 <div class="media-body">
                                     <h3 class="h4 mb-0">Tools Integration</h3>
@@ -495,14 +461,14 @@
                     <div class="tab-pane fade" id="pills-one-code-features-example2" role="tabpanel" aria-labelledby="pills-one-code-features-example2-tab">
                         <!-- Device Mockup -->
                         <div class="device">
-                            <img class="img-fluid" src="https://gosocial.co.id/assets/img/why-gosocial/platform-gosocial.webp" alt="Platform GoSocial">
+                            <img class="img-fluid" src="{{ asset('images/landingpage_razenstudio/why-razen-studio/'.$tracking_project['gambar']) }}" alt="Platform GoSocial">
                         </div>
                         <!-- End Device Mockup -->
                     </div>
 
                     <div class="tab-pane fade" id="pills-two-code-features-example2" role="tabpanel" aria-labelledby="pills-two-code-features-example2-tab">
                         <div class="device">
-                            <img class="img-fluid" src="https://gosocial.co.id/assets/img/why-gosocial/platform-gosocial1.webp" alt="Platforem GoSocial 2">
+                            <img class="img-fluid" src="{{ asset('images/landingpage_razenstudio/why-razen-studio/'.$easy_collaboration['gambar']) }}" alt="Platforem GoSocial 2">
                         </div>
                     </div>
 
@@ -510,7 +476,7 @@
                         <!-- Device Mockup -->
                         <div class="device-wrapper">
                             <div class="device">
-                                <img class="img-fluid" src="https://gosocial.co.id/assets/img/why-gosocial/platform-gosocial2.webp" alt="Platform GoSocial 3">
+                                <img class="img-fluid" src="{{ asset('images/landingpage_razenstudio/why-razen-studio/'.$tools_integrations['gambar']) }}" alt="Platform GoSocial 3">
                             </div>
                         </div>
                         <!-- End Device Mockup -->
@@ -531,7 +497,7 @@
                 </div>
 
                 <div class="col-lg-5 text-lg-right">
-                    <a class="btn btn-light btn-wide btn-pill transition-3d-hover mx-1 mb-2" href="https://gosocial.co.id/portfolio">Lihat Portofolio</a>
+                    <a class="btn btn-light btn-wide btn-pill transition-3d-hover mx-1 mb-2" href="{{ route('portofolio') }}">Lihat Portofolio</a>
                 </div>
             </div>
         </div>
@@ -542,32 +508,20 @@
     <div class="container space-1">
         <div class="w-lg-75 mt-3 mx-lg-auto">
             <div class="text-center mb-4">
-                <span class="divider divider-text">Official Partners:</span>
+                <span class="divider divider-text h3">Official Partners:</span>
             </div>
 
             <div class="row d-flex justify-content-center text-center">
                 <div class="col-lg-8 col-12">
                     <div class="row d-flex justify-content-center">
-                        <div class="col-lg-3 col-4">
-                            <div class="mx-3 client-image">
-                                <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC NISP">
-                                <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC">
+                        @foreach ($partners as $partner)
+                            <div class="col-lg-3 col-4">
+                                <div class="mx-3 client-image">
+                                    <img class="client-default" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC NISP">
+                                    <img class="client-hover" style="display: none;" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC">
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="col-lg-3 col-4">
-                            <a class="mx-3 client-image" href="https://www.bhinneka.com/toko-gosocial-indonesia" target="_blank">
-                                <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Parnter Bhinneka.com" style="">
-                                <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Partner Bhinneka">
-                            </a>
-                        </div>
-
-                        <div class="col-lg-3 col-4">
-                            <div class="mx-3 client-image">
-                                <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                                <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

@@ -1,5 +1,37 @@
+@php
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioFreelancerAgency;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioBrand;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioOfficialPartner;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioReview;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioHome;
+
+    $home = LandingpageRazenstudioHome::first();
+
+    $freelancer_agency = LandingpageRazenstudioFreelancerAgency::first();
+    if ($freelancer_agency) {
+        $freelancer_agency_section_1 = json_decode($freelancer_agency->section_1, true);
+        $freelancer_agency_section_2 = json_decode($freelancer_agency->section_2, true);
+        $freelancer_agency_section_3 = json_decode($freelancer_agency->section_3, true);
+        $freelancer_agency_section_4 = json_decode($freelancer_agency->section_4, true);
+        $freelancer_agency_section_5 = json_decode($freelancer_agency->section_5, true);
+        $freelancer_agency_section_6 = json_decode($freelancer_agency->section_6, true);
+        $freelancer_agency_section_7 = json_decode($freelancer_agency->section_7, true);
+    } else {
+        $freelancer_agency_section_1 = [];
+        $freelancer_agency_section_2 = [];
+        $freelancer_agency_section_3 = [];
+        $freelancer_agency_section_4 = [];
+        $freelancer_agency_section_5 = [];
+        $freelancer_agency_section_6 = [];
+        $freelancer_agency_section_7 = [];
+    }
+
+    $reviews = LandingpageRazenstudioReview::latest()->get();
+    $brands= LandingpageRazenstudioBrand::all();
+    $partners = LandingpageRazenstudioOfficialPartner::all();
+@endphp
 @extends('landing-page-razen-studio.layouts.app')
-@section('title', 'Razen Studio | Freelancer Agency')
+@section('title', $freelancer_agency_section_1['title'])
 
 @section('css')
 <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
@@ -15,12 +47,12 @@
     <div class="container-fluid">
         <div class="row">
             <div class="breadcrumbs text-center link-style-5 text-white">
-                <h2 class="section-title-page text-white">Razen Partner</h2>
-                <p class="mb-5">Kami membuka kesempatan kolaborasi agar dapat berkembang bersama untuk membantu semua jenis bisnis di semua industri melalui Digital Marketing.</p>
+                <h2 class="section-title-page text-white">{{$freelancer_agency_section_1['judul']}}</h2>
+                <p class="mb-5">{{$freelancer_agency_section_1['deskripsi']}}</p>
                 <ul class="breadcrumbs-inner list-center display-flex">
                     <li><a class="section-16px-regular font-weight-500" href="{{ route('home') }}">Home</a></li>
                     <li>
-                        <h4 class="section-16px-regular font-weight-500 text-white">Razen Partner</h4>
+                        <h4 class="section-16px-regular font-weight-500 text-white">{{$freelancer_agency_section_1['judul']}}</h4>
                     </li>
                 </ul>
             </div>
@@ -35,17 +67,15 @@
                 <div class="about-content-right wow fadeInUp" data-wow-delay="0ms"
                     data-wow-duration="1500ms">
                     <div class="section-title">
-                        <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">Are you Freelancer / Professional / Agency?</h4>
+                        <h4 class="section-45px-montserrat margin-top-15 margin-bottom-20">{{$freelancer_agency_section_2['judul']}}</h4>
                     </div>
-                    <p class="section-17px-regular margin-bottom-25">GoSocial merupakan Creative & Digital Agency Hub sekaligus konsultan Digital Marketing pertama dan terbesar di Indonesia yang berbasis komunitas.
-                        <br>
-                        Kami mengajak Profesional maupun Agency terbaik di bidangnya untuk berkolaborasi bersama menghasilkan karya yang berkualitas untuk semua tahapan bisnis agar dapat melakukan strategi Digital Marketing yang tepat sasaran.</p>
+                    <p class="section-17px-regular margin-bottom-25">{!! $freelancer_agency_section_2['deskripsi'] !!}</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="about-content-left wow fadeInLeft">
                     <div class="about-post">
-                        <img src="{{ asset('olux/assets/images/image-box/about-post-mystory.jpg') }}" alt="images">
+                        <img src="{{ asset('images/landingpage_razenstudio/freelancer-agency/'.$freelancer_agency_section_2['gambar']) }}" alt="images">
                         <div class="mark-about-post"></div>
                     </div>
                 </div>
@@ -61,7 +91,7 @@
                 <div class="col-lg-3 d-none d-lg-block">
                     <div class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll bg-light animation-engine-js under-760 under-500 loaded dzsprx-readyall" data-options="{direction: &quot;reverse&quot;}" style="overflow: visible;">
                         <div data-parallaxanimation="[{property: &quot;transform&quot;, value:&quot; translate3d(0,-0.212552rem,0)&quot;, initial:&quot;4&quot;, mid:&quot;0&quot;, final:&quot;-4&quot;}]" style="transform: translate3d(0px, -0.212552rem, 0px);">
-                            <img class="img-fluid rounded-lg shadow-lg ml-lg-5" src="https://gosocial.co.id/assets/img/partner/via-logo-design.jpg" alt="Image Description" height="200" width="200">
+                            <img class="img-fluid rounded-lg shadow-lg ml-lg-5" src="{{ asset('images/landingpage_razenstudio/freelancer-agency/'.$freelancer_agency_section_3['gambar']) }}" alt="Image Description" height="200" width="200">
 
                             <!-- SVG Shapes -->
                             <figure class="max-w-15rem w-100 position-absolute bottom-0 left-0 z-index-n1">
@@ -89,28 +119,18 @@
                         <!-- End SVG Quote -->
 
                         <div class="row">
-                            <div class="col-lg-8 mb-3 mb-lg-0">
+                            <div class="col-lg-12 mb-3 mb-lg-0">
                                 <div class="pr-lg-5">
-                                    <blockquote class="font-size-2 font-weight-normal mb-4">Gosocial keren banget! Salut sama tim nya yang asik dan enak diajak kerjasama offline maupun online. Selalu semangat untuk nunggu tiap project nya, sukses terus yaa GoSocial!</blockquote>
+                                    <blockquote class="font-size-2 font-weight-normal mb-4">{{$freelancer_agency_section_3['review']}}</blockquote>
                                     <div class="media">
                                         <div class="avatar-xs avatar-circle d-lg-none mr-2">
-                                            <img style="height: 7rem; width:auto;" src="https://gosocial.co.id/assets/img/partner/via-logo-design-avatar.jpg" alt="Image Description">
+                                            <img style="height: 7rem; width:auto;" src="{{ asset('images/landingpage_razenstudio/freelancer-agency/'.$freelancer_agency_section_3['gambar']) }}" alt="Image Description">
                                         </div>
                                         <div class="media-body">
-                                            <span class="text-dark font-weight-bold font-size-2">Via</span>
-                                            <span class="font-size-2">— Freelance Logo Designer</span>
+                                            <span class="text-dark font-weight-bold font-size-2">{{$freelancer_agency_section_3['nama']}}</span>
+                                            <span class="font-size-2">— {{$freelancer_agency_section_3['jabatan']}}</span>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 column-divider-lg">
-                                <hr class="d-lg-none">
-
-                                <div class="pl-lg-5">
-                                    <span class="h1 text-primary">80%</span>
-                                    <p class="font-size-2">Proyek kami merupakan hasil kolaborasi dengan berbagai mitra GoSocial yang ahli dan berpengalaman di bidangnya.</p>
-                                    <a class="font-size-2 text-nowrap" href="https://gosocial.co.id/portfolio">Lihat semua portofolio</a>
                                 </div>
                             </div>
                         </div>
@@ -127,8 +147,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h2 class="section-45px-montserrat margin-top-15">Jenis Kolaborasi</h2>
-                    <p class="text-muted">Value kami adalah memberikan kontribusi melalui kolaborasi. Kami siap membantu dan bekerjasama di berbagai hal yang sejalan dengan visi dan misi kami.</p>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$freelancer_agency_section_4['sub_judul']}}</h2>
+                    <p class="text-muted">{{$freelancer_agency_section_4['judul']}}</p>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
@@ -136,167 +156,31 @@
         </div>
 
         <div class="container d-flex justify-content-center">
-            <div class="row  d-flex justify-content-center">
-                <div class="col-lg-3 col-md-6  col-12">
-                    <article class="card shadow-sm transition-3d-hover mx-auto mb-5">
-                        <div class="card-header bg-primary text-center rounded-lg-top" style="background-color: #387CFF;">
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="d-block bg-white rounded mx-auto mb-3">
-                                <img src="https://gosocial.co.id/assets/svg/partner/agency-partner.svg" alt="Image Description" style="height: 7rem; width:auto;">
+            <div class="row d-flex justify-content-center">
+                @foreach ($freelancer_agency_section_4['konten'] as $item)
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <article class="card shadow-sm transition-3d-hover mx-auto mb-5">
+                            <div class="card-header text-center rounded-lg-top" style="background-color: #c4343c;">
                             </div>
-                            <div class="mb-3">
-                                <h2 class="mb-1">Agency Partner</h2>
-                                <small class="d-block text-body font-size-2">Daftarkan Creative / Digital Agency-mu untuk mendapatkan
-                                    lebih banyak kesempatan dan pengalaman mengerjakan proyek bersama
-                                    kami.<br><br></small>
-                            </div>
+                            <div class="card-body text-center">
+                                <div class="d-block bg-white rounded mx-auto mb-3">
+                                    <img src="{{ asset('images/landingpage_razenstudio/freelancer-agency/'.$item['gambar_konten']) }}" alt="Image Description" style="height: 7rem; width:auto;">
+                                </div>
+                                <div class="mb-3">
+                                    <h2 class="mb-1">{{$item['judul_konten']}}</h2>
+                                    <small class="d-block text-body font-size-2">{{$item['deskripsi_konten']}}<br><br></small>
+                                </div>
 
-                            <div class="text-center d-flex justify-content-center">
-                                <div class="col-6 col-lg-12">
-                                    <a class="btn btn-sm btn-block btn-primary font-size-2" href="#form">Mulai</a>
+                                <div class="text-center d-flex justify-content-center">
+                                    <div class="col-6 col-lg-12">
+                                        <a class="btn btn-sm btn-block font-size-2 text-white" style="background-color: #c4343c;" href="#form">Mulai</a>
+                                    </div>
                                 </div>
-                            </div>
 
-                        </div>
-                    </article>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <article class="card shadow-sm transition-3d-hover mx-auto mb-5">
-                        <div class="card-header text-center rounded-lg-top" style="background-color: #8757F3;">
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="d-block bg-white rounded mx-auto mb-3">
-                                <img style="height: 7rem; width:auto;" src="https://gosocial.co.id/assets/svg/partner/production-house-partner.svg" alt="Image Description">
                             </div>
-                            <div class="mb-3">
-                                <h2 class="mb-1">Production House Partner</h2>
-                                <small class="d-block text-body font-size-2">Punya tim produksi kreatif? kolaborasi bersama kami untuk
-                                    menghasilkan konten terbaik dan berkualitas.<br><br></small>
-                            </div>
-
-                            <div class="text-center d-flex justify-content-center">
-                                <div class="col-6 col-lg-12">
-                                    <a class="btn btn-sm btn-block btn-primary font-size-2" href="#form">Mulai</a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </article>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <article class="card shadow-sm transition-3d-hover mx-auto mb-5">
-                        <div class="card-header text-center rounded-lg-top" style="background-color: #FFC14F;">
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="d-block bg-white rounded mx-auto mb-3">
-                                <img style="height: 7rem; width:auto;" src="https://gosocial.co.id/assets/svg/partner/freelance-partner.svg" alt="Image Description">
-                            </div>
-                            <div class="mb-3">
-                                <h2 class="mb-1">Freelance Partner</h2>
-                                <small class="d-block text-body font-size-2">Punya skill <b>copywriting, desain, pembuatan web</b> atau
-                                    <b>digital marketing?</b>
-                                    jadilah bagian dari social rangers kami untuk meningkatkan pengalaman serta
-                                    relasimu.</small>
-                            </div>
-                            <div class="text-center d-flex justify-content-center">
-                                <div class="col-6 col-lg-12">
-                                    <a class="btn btn-sm btn-block btn-primary font-size-2" href="#form">Mulai</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <article class="card shadow-sm transition-3d-hover mx-auto mb-5">
-                        <div class="card-header text-center rounded-lg-top" style="background-color: #FED500;">
-                        </div>
-                        <div class="card-body text-center ">
-                            <div class="d-block bg-white rounded mx-auto mb-3">
-                                <img style="height: 7rem; width:auto;" src="https://gosocial.co.id/assets/svg/partner/influencer.svg" alt="Image Description">
-                            </div>
-                            <div class="mb-3 ">
-                                <h2 class="mb-1">Artist / Talent Partner</h2>
-                                <small class="d-block text-body font-size-2">Kamu seorang <b>Artist</b> atau <b>Influencer?</b> kami akan
-                                    menghubungkanmu dengan berbagai tawaran kerjasama dari brand ternama.<br><br></small>
-                            </div>
-                            <div class="text-center d-flex justify-content-center">
-                                <div class="col-6 col-lg-12">
-                                    <a class="btn btn-sm btn-block btn-primary font-size-2" href="#form">Mulai</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-
-        <div class="container d-flex justify-content-center">
-            <div class="row  d-flex justify-content-center">
-                <div class="col-lg-3 col-md-6 col-12">
-                    <article class="card shadow-sm transition-3d-hover mx-auto mb-5">
-                        <div class="card-header text-center rounded-lg-top" style="background-color: #FED3A4;">
-                        </div>
-                        <div class="card-body text-center ">
-                            <div class="d-block bg-white rounded mx-auto mb-3">
-                                <img style="height: 7rem; width:auto;" src="https://gosocial.co.id/assets/svg/partner/event-program.svg" alt="Image Description">
-                            </div>
-                            <div class="mb-3 ">
-                                <h2 class="mb-1">Event / Program</h2>
-                                <small class="d-block text-body font-size-2">GoSocial siap membantu mewujudkan kesuksesan event &amp;
-                                    program terkait Digital Marketing seperti <b>Event Kampus, Webinar</b> atau <b>Program
-                                        Lainnya.</b><br></small>
-                            </div>
-                            <div class="text-center d-flex justify-content-center">
-                                <div class="col-6 col-lg-12">
-                                    <a class="btn btn-sm btn-block btn-primary font-size-2" href="#form">Mulai</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <article class="card shadow-sm transition-3d-hover mx-auto mb-5">
-                        <div class="card-header text-center rounded-lg-top" style="background-color: #4070EA;">
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="d-block bg-white rounded mx-auto mb-3">
-                                <img style="height: 7rem; width:auto;" src="https://gosocial.co.id/assets/svg/partner/trainer-consultant.svg" alt="Image Description">
-                            </div>
-                            <div class="mb-3">
-                                <h2 class="mb-1">Digital Marketing Trainer / Consultant</h2>
-                                <small class="d-block text-body font-size-2">Punya pengalaman dan rekam jejak dalam Digital Marketing?
-                                    kami mencari profesional sebagai konsultan ahli.</small>
-                            </div>
-                            <div class="text-center d-flex justify-content-center font-size-2">
-                                <div class="col-6 col-lg-12">
-                                    <a class="btn btn-sm btn-block btn-primary font-size-2" href="#form">Mulai</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <article class="card shadow-sm transition-3d-hover mx-auto mb-5">
-                        <div class="card-header text-center rounded-lg-top" style="background-color: #D8ECFE;">
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="d-block bg-white rounded mx-auto mb-3">
-                                <img style="height: 7rem; width:auto;" src="https://gosocial.co.id/assets/svg/partner/white-label.svg" alt="Image Description">
-                            </div>
-                            <div class="mb-3">
-                                <h2 class="mb-1">White-label Service</h2>
-                                <small class="d-block text-body font-size-2">Ingin menawarkan solusi kami dengan merek Anda? daftar
-                                    menjadi partner dan dapatkan starter kit untuk reseller.<br><br></small>
-                            </div>
-                            <div class="text-center d-flex justify-content-center">
-                                <div class="col-6 col-lg-12">
-                                    <a class="btn btn-sm btn-block btn-primary font-size-2" href="#form">Mulai</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+                        </article>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -307,8 +191,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h4 class="section-subtitle">KEUNTUNGAN BEKERJA SAMA DENGAN GOSOCIAL</h4>
-                    <h2 class="section-45px-montserrat margin-top-15">Benefit For Partner</h2>
+                    <h4 class="section-subtitle">{{$freelancer_agency_section_5['sub_judul']}}</h4>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$freelancer_agency_section_5['judul']}}</h2>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
@@ -316,93 +200,21 @@
         </div>
 
         <div class="row justify-content-lg-center">
-            <div class="col-md-6 col-lg-5 mb-3 mb-md-5 mb-lg-7">
-                <!-- Icon Blocks -->
-                <div class="media pr-lg-5">
-                    <figure class="mr-4">
-                        <img style="height: 7rem; width: auto;" src="https://gosocial.co.id/assets/svg/icons/icon-18.svg" alt="SVG">
-                    </figure>
-                    <div class="media-body">
-                        <h2>Partner Development</h2>
-                        <p>we'll give you more than just improve your knowledge but also experience with Training program, collaboration and cross-promote with other agency, to tell your story from all new perspectives.</p>
+            @foreach ($freelancer_agency_section_5['konten'] as $item)
+                <div class="col-md-6 col-lg-5 mb-3 mb-md-5 mb-lg-7">
+                    <!-- Icon Blocks -->
+                    <div class="media pr-lg-5">
+                        <figure class="mr-4">
+                            <img style="height: 7rem; width: auto;" src="{{ asset('images/landingpage_razenstudio/freelancer-agency/'.$item['gambar_konten']) }}" alt="SVG">
+                        </figure>
+                        <div class="media-body">
+                            <h2>{{$item['judul_konten']}}</h2>
+                            <p>{{$item['deskripsi_konten']}}</p>
+                        </div>
                     </div>
+                    <!-- End Icon Blocks -->
                 </div>
-                <!-- End Icon Blocks -->
-            </div>
-
-            <div class="col-md-6 col-lg-5 mb-3 mb-md-5 mb-lg-7">
-                <!-- Icon Blocks -->
-                <div class="media pl-lg-5">
-                    <figure class="mr-4">
-                        <img style="height: 7rem; width: auto;" src="https://gosocial.co.id/assets/svg/icons/icon-27.svg" alt="SVG">
-                    </figure>
-                    <div class="media-body">
-                        <h2>Revenue Sharing</h2>
-                        <p>Kami akan berkembang bersama.</p>
-                    </div>
-                </div>
-                <!-- End Icon Blocks -->
-            </div>
-
-            <div class="w-100"></div>
-
-            <div class="col-md-6 col-lg-5 mb-3 mb-md-5 mb-lg-7">
-                <!-- Icon Blocks -->
-                <div class="media pr-lg-5">
-                    <figure class="mr-4">
-                        <img style="height: 7rem; width: auto;" src="https://gosocial.co.id/assets/svg/icons/icon-28.svg" alt="SVG">
-                    </figure>
-                    <div class="media-body">
-                        <h2>Effortless updates</h2>
-                        <p>Benefit from automatic updates to all boards any time you need to make a change to your website.</p>
-                    </div>
-                </div>
-                <!-- End Icon Blocks -->
-            </div>
-
-            <div class="col-md-6 col-lg-5 mb-3 mb-md-5 mb-lg-7">
-                <!-- Icon Blocks -->
-                <div class="media pl-lg-5">
-                    <figure class="mr-4">
-                        <img style="height: 7rem; width: auto;" src="https://gosocial.co.id/assets/svg/icons/icon-45.svg" alt="SVG">
-                    </figure>
-                    <div class="media-body">
-                        <h2>Designing for people</h2>
-                        <p>We actively pursue the right balance between functionality and aesthetics, creating delightful experiences.</p>
-                    </div>
-                </div>
-                <!-- End Icon Blocks -->
-            </div>
-
-            <div class="w-100"></div>
-
-            <div class="col-md-6 col-lg-5 mb-3 mb-md-5 mb-lg-0">
-                <!-- Icon Blocks -->
-                <div class="media pr-lg-5">
-                    <figure class="mr-4">
-                        <img style="height: 7rem; width: auto;" src="https://gosocial.co.id/assets/svg/icons/icon-19.svg" alt="SVG">
-                    </figure>
-                    <div class="media-body">
-                        <h2>Strong empathy</h2>
-                        <p>We've user tested our own process by shipping over 1k products for clients.</p>
-                    </div>
-                </div>
-                <!-- End Icon Blocks -->
-            </div>
-
-            <div class="col-md-6 col-lg-5">
-                <!-- Icon Blocks -->
-                <div class="media pl-lg-5">
-                    <figure class="mr-4">
-                        <img style="height: 7rem; width: auto;" src="https://gosocial.co.id/assets/svg/icons/icon-7.svg" alt="SVG">
-                    </figure>
-                    <div class="media-body">
-                        <h2>Stay curious</h2>
-                        <p>We dedicate time for researching and experimentation to increase creativity and imagine new challenges.</p>
-                    </div>
-                </div>
-                <!-- End Icon Blocks -->
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -413,39 +225,9 @@
             <div class="col-lg-5 mb-7 mb-lg-0">
                 <!-- Info -->
                 <div class="mb-5">
-                    <h1>Saatnya kita berkolaborasi bukan berkompetisi!</h1>
-                    <p>Kami percaya bahwa dengan kolaborasi akan membuka kesempatan untuk mendapatkan banyak inspirasi dan pembelajaran.
-                        Karena setiap interaksi yang dilakukan dengan seseorang di luar lingkaran dapat mengajari sesuatu yang berharga.
-                        Kolaborasi dapat menginspirasi dan membantu berpikir dengan cara baru.</p>
+                    <h1>{{$freelancer_agency_section_6['judul']}}</h1>
+                    <p>{!!$freelancer_agency_section_6['deskripsi']!!}</p>
                 </div>
-
-                <span class="h3">GoSocial telah dipercaya oleh:</span>
-
-                <div class="media text-body mt-3 mb-3">
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger mt-1 mr-2">
-                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                    </svg>
-                    <div class="media-body font-size-2">
-                        Lebih dari 20 Agency Partner.
-                    </div>
-                </div>
-                <div class="media text-body mb-3">
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger mt-1 mr-2">
-                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                    </svg>
-                    <div class="media-body font-size-2">
-                        Lebih dari 100 Freelancer &amp; Talent pilihan.
-                    </div>
-                </div>
-                <div class="media text-body mb-3">
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger mt-1 mr-2">
-                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                    </svg>
-                    <div class="media-body font-size-2">
-                        Berbagai event maupun program dari Brand hingga Institusi ternama.
-                    </div>
-                </div>
-                <!-- End Info -->
             </div>
 
             <div class="col-lg-6">
@@ -534,106 +316,47 @@
 </section>
 
 <section class="flat-services">
-    <div class="container space-top-2 space-bottom-4">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInDown">
-                    <h1 class="text-center mb-9">GoSocial Partner FAQs</h1>
+                    <h4 class="section-subtitle">{{$freelancer_agency_section_7['sub_judul']}}</h4>
+                    <h2 class="section-45px-montserrat margin-top-15">{{$freelancer_agency_section_7['judul']}}</h2>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
                     style="height:60px"></div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <div id="basicsAccordion-left">
+                    @foreach ($freelancer_agency_section_7['konten'] as $item)
+                        <!-- Card -->
+                        <div class="card shadow-none mb-3">
+                            <div class="card-header card-collapse" id="basicsHeading{{$item['id']}}">
+                                <a class="btn btn-link btn-block d-flex justify-content-between card-btn px-0 collapsed text-decoration-none" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapse{{$item['id']}}" aria-expanded="false" aria-controls="basicsCollapse{{$item['id']}}">
+                                    <span class="font-size-2">{{$item['pertanyaan']}}</span>
 
-        <!-- Basics Accordion -->
-        <div id="basicsAccordion">
-            <!-- Card -->
-            <div class="card shadow-none mb-3">
-                <div class="card-header card-collapse" id="basicsHeadingOne">
-                    <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed bg-white px-0 font-size-3" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="false" aria-controls="basicsCollapseOne">
-                        Apakah ada biaya pendaftaran?
-
-                        <span class="card-btn-toggle">
-                            <span class="card-btn-toggle-default">+</span>
-                            <span class="card-btn-toggle-active">−</span>
-                        </span>
-                    </a>
-                </div>
-                <div id="basicsCollapseOne" class="collapse" aria-labelledby="basicsHeadingOne" data-parent="#basicsAccordion">
-                    <div class="card-body px-0">
-                        <p>Tidak, kami tidak menarik biaya pendaftaran untuk menjadi partner GoSocial.</p>
-                        <p>Namun kami sangat selektif dalam memilih mitra yang memiliki visi misi serta memenuhi standard kami yang akan diterima menjadi partner.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- End Card -->
-
-            <!-- Card -->
-            <div class="card shadow-none mb-3">
-                <div class="card-header card-collapse" id="basicsHeadingTwo">
-                    <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed bg-white px-0 font-size-3" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
-                        Bagaimana cara daftarnya?
-
-                        <span class="card-btn-toggle">
-                            <span class="card-btn-toggle-default">+</span>
-                            <span class="card-btn-toggle-active">−</span>
-                        </span>
-                    </a>
-                </div>
-                <div id="basicsCollapseTwo" class="collapse" aria-labelledby="basicsHeadingTwo" data-parent="#basicsAccordion">
-                    <div class="card-body px-0">
-                        <p>Kamu bisa langsung register di website kami dan memilih role sebagai Partner.</p>
-                        <p>Caranya cukup isi data yang diperlukan, dan tunggu review dari tim kami.</p>
-                    </div>
+                                    <span class="card-btn-toggle">
+                                        <span class="font-size-2 card-btn-toggle-default">+</span>
+                                        <span class="font-size-2 card-btn-toggle-active">−</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div id="basicsCollapse{{$item['id']}}" class="collapse" aria-labelledby="basicsHeading{{$item['id']}}" data-parent="#basicsAccordion-left" style="">
+                                <div class="card-body px-0 m-3 font-size-3">
+                                    {!!$item['jawaban'] !!}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card -->
+                    @endforeach
                 </div>
             </div>
-            <!-- End Card -->
-
-            <!-- Card -->
-            <div class="card shadow-none mb-3">
-                <div class="card-header card-collapse" id="basicsHeadingThree">
-                    <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed bg-white px-0 font-size-3" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
-                        Jika saya sudah bekerja di tempat lain, apakah masih bisa bergabung?
-
-                        <span class="card-btn-toggle">
-                            <span class="card-btn-toggle-default">+</span>
-                            <span class="card-btn-toggle-active">−</span>
-                        </span>
-                    </a>
-                </div>
-                <div id="basicsCollapseThree" class="collapse" aria-labelledby="basicsHeadingThree" data-parent="#basicsAccordion">
-                    <div class="card-body px-0">
-                        <p>Bisa. Kamu tetap bisa bergabung dengan kami meskipun sudah bekerja di tempat lainnya.</p>
-                        <p>Tujuan kami adalah membentuk ekosistem digital marketing yang siap memberikan solusi ke semua kategori bisnis.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- End Card -->
-
-            <!-- Card -->
-            <div class="card shadow-none mb-3">
-                <div class="card-header card-collapse" id="basicsHeadingFour">
-                    <a class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed bg-white px-0 font-size-3" href="javascript:;" role="button" data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
-                        Bagaimana untuk sistem pembayarannya?
-
-                        <span class="card-btn-toggle">
-                            <span class="card-btn-toggle-default">+</span>
-                            <span class="card-btn-toggle-active">−</span>
-                        </span>
-                    </a>
-                </div>
-                <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour" data-parent="#basicsAccordion">
-                    <div class="card-body px-0">
-                        <p>Kami menyediakan 2 opsi sistem pembayaran untuk partner. Yang pertama adalah kamu bisa mendapatkan benefit setiap bulan di tanggal tertentu (sesuai ketentuan kami).</p>
-                        <p>Atau opsi yang kedua adalah kamu bisa mendapatkan benefit setiap selesai mengerjakan project.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- End Card -->
         </div>
-        <!-- End Basics Accordion -->
     </div>
 </section>
+
 <div class="bg-primary">
     <div class="container space-2">
         <div class="row justify-content-lg-between align-items-lg-center text-center text-lg-left">
@@ -647,40 +370,31 @@
         </div>
     </div>
 </div>
-<div class="container space-1 mb-10">
-    <div class="w-lg-75 mt-3 mx-lg-auto">
-        <div class="text-center mb-4">
-            <span class="divider divider-text">Official Partners:</span>
-        </div>
 
-        <div class="row d-flex justify-content-center text-center">
-            <div class="col-lg-8 col-12">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-3 col-4">
-                        <div class="mx-3 client-image">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC NISP">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC">
-                        </div>
-                    </div>
+<section class="flat-services">
+    <div class="container space-1">
+        <div class="w-lg-75 mt-3 mx-lg-auto">
+            <div class="text-center mb-4">
+                <span class="divider divider-text h3">Official Partners:</span>
+            </div>
 
-                    <div class="col-lg-3 col-4">
-                        <a class="mx-3 client-image" href="https://www.bhinneka.com/toko-gosocial-indonesia" target="_blank">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Parnter Bhinneka.com" style="">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Partner Bhinneka">
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-4">
-                        <div class="mx-3 client-image">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                        </div>
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-lg-8 col-12">
+                    <div class="row d-flex justify-content-center">
+                        @foreach ($partners as $partner)
+                            <div class="col-lg-3 col-4">
+                                <div class="mx-3 client-image">
+                                    <img class="client-default" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC NISP">
+                                    <img class="client-hover" style="display: none;" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC">
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 @endsection
 
 @section('js')

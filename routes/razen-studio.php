@@ -1569,4 +1569,96 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
     Route::post('/razen-studio/admin/how-it-works/atur/section-6/item-1/edit', 'RazenStudio\Admin\HowItWork\AturController@section_6_item_1_edit')->name('razen-studio.admin.how-it-works.atur.section-6.item-1.edit');
     Route::post('/razen-studio/admin/how-it-works/atur/section-6/item-1/store/hapus/satu', 'RazenStudio\Admin\HowItWork\AturController@section_6_item_1_hapus_satu')->name('razen-studio.admin.how-it-works.atur.section-6.item-1.hapus.satu');
     Route::post('/razen-studio/admin/how-it-works/atur/section-6/item-2/store', 'RazenStudio\Admin\HowItWork\AturController@section_6_item_2_store')->name('razen-studio.admin.how-it-works.atur.section-6.item-2.store');
+
+    //Portofolio
+    Route::get('/razen-studio/admin/portofolio/atur', 'RazenStudio\Admin\Portofolio\AturController@index')->name('razen-studio.admin.portofolio.atur.index');
+
+    //Portofolio - Section 1
+    Route::post('/razen-studio/admin/portofolio/atur/section-1/store', 'RazenStudio\Admin\Portofolio\AturController@section_1_store')->name('razen-studio.admin.portofolio.atur.section-1.store');
+
+    //Portofolio - Section 2
+    Route::post('/razen-studio/admin/portofolio/atur/section-2/store', 'RazenStudio\Admin\Portofolio\AturController@section_2_store')->name('razen-studio.admin.portofolio.atur.section-2.store');
+
+    //Why Razen Studio
+    Route::get('/razen-studio/admin/why-razen-studio/atur', 'RazenStudio\Admin\WhyRazenStudio\AturController@index')->name('razen-studio.admin.why-razen-studio.atur.index');
+
+    //Why Razen Studio - Section 1
+    Route::post('/razen-studio/admin/why-razen-studio/atur/section-1/store', 'RazenStudio\Admin\WhyRazenStudio\AturController@section_1_store')->name('razen-studio.admin.why-razen-studio.atur.section-1.store');
+
+    //Why Razen Studio - Section 2
+    Route::post('/razen-studio/admin/why-razen-studio/atur/section-2/store', 'RazenStudio\Admin\WhyRazenStudio\AturController@section_2_store')->name('razen-studio.admin.why-razen-studio.atur.section-2.store');
+
+    //Why Razen Studio - Section 3
+    Route::post('/razen-studio/admin/why-razen-studio/atur/section-3/store', 'RazenStudio\Admin\WhyRazenStudio\AturController@section_3_store')->name('razen-studio.admin.why-razen-studio.atur.section-3.store');
+
+    //Why Razen Studio - Section 4
+    Route::post('/razen-studio/admin/why-razen-studio/atur/section-4/store', 'RazenStudio\Admin\WhyRazenStudio\AturController@section_4_store')->name('razen-studio.admin.why-razen-studio.atur.section-4.store');
+
+    //Why Razen Studio - Section 5
+    Route::post('/razen-studio/admin/why-razen-studio/atur/section-5/store', 'RazenStudio\Admin\WhyRazenStudio\AturController@section_5_store')->name('razen-studio.admin.why-razen-studio.atur.section-5.store');
+    Route::post('/razen-studio/admin/why-razen-studio/atur/section-5/edit', 'RazenStudio\Admin\WhyRazenStudio\AturController@section_5_edit')->name('razen-studio.admin.why-razen-studio.atur.section-5.edit');
+    Route::post('/razen-studio/admin/why-razen-studio/atur/section-5/store/hapus/satu', 'RazenStudio\Admin\WhyRazenStudio\AturController@section_5_hapus_satu')->name('razen-studio.admin.why-razen-studio.atur.section-5.hapus.satu');
+
+    //Why Razen Studio - Section 6
+    Route::post('/razen-studio/admin/why-razen-studio/atur/section-6/store', 'RazenStudio\Admin\WhyRazenStudio\AturController@section_6_store')->name('razen-studio.admin.why-razen-studio.atur.section-6.store');
+    Route::post('/razen-studio/admin/why-razen-studio/atur/section-6/item-1/store', 'RazenStudio\Admin\WhyRazenStudio\AturController@section_6_item_1_store')->name('razen-studio.admin.why-razen-studio.atur.section-6.item-1.store');
+    Route::post('/razen-studio/admin/why-razen-studio/atur/section-6/item-2/store', 'RazenStudio\Admin\WhyRazenStudio\AturController@section_6_item_2_store')->name('razen-studio.admin.why-razen-studio.atur.section-6.item-2.store');
+    Route::post('/razen-studio/admin/why-razen-studio/atur/section-6/item-3/store', 'RazenStudio\Admin\WhyRazenStudio\AturController@section_6_item_3_store')->name('razen-studio.admin.why-razen-studio.atur.section-6.item-3.store');
+
+    //Freelancer Agency
+    Route::get('/razen-studio/admin/freelancer-agency/atur', 'RazenStudio\Admin\FreelancerAgency\AturController@index')->name('razen-studio.admin.freelancer-agency.atur.index');
+
+    //Freelancer Agency - Section 1
+    Route::post('/razen-studio/admin/freelancer-agency/atur/section-1/store', 'RazenStudio\Admin\FreelancerAgency\AturController@section_1_store')->name('razen-studio.admin.freelancer-agency.atur.section-1.store');
+
+    //Freelancer Agency - Section 2
+    Route::post('/razen-studio/admin/freelancer-agency/atur/section-2/store', 'RazenStudio\Admin\FreelancerAgency\AturController@section_2_store')->name('razen-studio.admin.freelancer-agency.atur.section-2.store');
+
+    //Freelancer Agency - Section 3
+    Route::post('/razen-studio/admin/freelancer-agency/atur/section-3/store', 'RazenStudio\Admin\FreelancerAgency\AturController@section_3_store')->name('razen-studio.admin.freelancer-agency.atur.section-3.store');
+
+    //Freelancer Agency - Section 4
+    Route::post('/razen-studio/admin/freelancer-agency/atur/section-4/store', 'RazenStudio\Admin\FreelancerAgency\AturController@section_4_store')->name('razen-studio.admin.freelancer-agency.atur.section-4.store');
+    Route::post('/razen-studio/admin/freelancer-agency/atur/section-4/edit', 'RazenStudio\Admin\FreelancerAgency\AturController@section_4_edit')->name('razen-studio.admin.freelancer-agency.atur.section-4.edit');
+    Route::post('/razen-studio/admin/freelancer-agency/atur/section-4/store/hapus/satu', 'RazenStudio\Admin\FreelancerAgency\AturController@section_4_hapus_satu')->name('razen-studio.admin.freelancer-agency.atur.section-4.hapus.satu');
+
+    //Freelancer Agency - Section 5
+    Route::post('/razen-studio/admin/freelancer-agency/atur/section-5/store', 'RazenStudio\Admin\FreelancerAgency\AturController@section_5_store')->name('razen-studio.admin.freelancer-agency.atur.section-5.store');
+    Route::post('/razen-studio/admin/freelancer-agency/atur/section-5/edit', 'RazenStudio\Admin\FreelancerAgency\AturController@section_5_edit')->name('razen-studio.admin.freelancer-agency.atur.section-5.edit');
+    Route::post('/razen-studio/admin/freelancer-agency/atur/section-5/store/hapus/satu', 'RazenStudio\Admin\FreelancerAgency\AturController@section_5_hapus_satu')->name('razen-studio.admin.freelancer-agency.atur.section-5.hapus.satu');
+
+    //Freelancer Agency - Section 6
+    Route::post('/razen-studio/admin/freelancer-agency/atur/section-6/store', 'RazenStudio\Admin\FreelancerAgency\AturController@section_6_store')->name('razen-studio.admin.freelancer-agency.atur.section-6.store');
+
+    //Freelancer Agency - Section 7
+    Route::post('/razen-studio/admin/freelancer-agency/atur/section-7/store', 'RazenStudio\Admin\FreelancerAgency\AturController@section_7_store')->name('razen-studio.admin.freelancer-agency.atur.section-7.store');
+    Route::post('/razen-studio/admin/freelancer-agency/atur/section-7/edit', 'RazenStudio\Admin\FreelancerAgency\AturController@section_7_edit')->name('razen-studio.admin.freelancer-agency.atur.section-7.edit');
+    Route::post('/razen-studio/admin/freelancer-agency/atur/section-7/store/hapus/satu', 'RazenStudio\Admin\FreelancerAgency\AturController@section_7_hapus_satu')->name('razen-studio.admin.freelancer-agency.atur.section-7.hapus.satu');
+
+    //Contact
+    Route::get('/razen-studio/admin/contact/atur', 'RazenStudio\Admin\Contact\AturController@index')->name('razen-studio.admin.contact.atur.index');
+
+    //Contact - Section 1
+    Route::post('/razen-studio/admin/contact/atur/section-1/store', 'RazenStudio\Admin\Contact\AturController@section_1_store')->name('razen-studio.admin.contact.atur.section-1.store');
+
+    //Contact - Section 2 Start
+    Route::post('/razen-studio/admin/contact/atur/section-2/store', 'RazenStudio\Admin\Contact\AturController@section_2_store')->name('razen-studio.admin.contact.atur.section-2.store');
+    Route::post('/razen-studio/admin/contact/atur/section-2/store/hapus/satu', 'RazenStudio\Admin\Contact\AturController@section_2_hapus_satu')->name('razen-studio.admin.contact.atur.section-2.hapus.satu');
+    //Contact - Section 2 End
+
+    //Contact - Section 3
+    Route::post('/razen-studio/admin/contact/atur/section-3/store', 'RazenStudio\Admin\Contact\AturController@section_3_store')->name('razen-studio.admin.contact.atur.section-3.store');
+
+    Route::post('/razen-studio/admin/contact/atur/section-3/konsultasi/store', 'RazenStudio\Admin\Contact\AturController@section_3_konsultasi_store')->name('razen-studio.admin.contact.atur.section-3.konsultasi.store');
+
+    Route::post('/razen-studio/admin/contact/atur/section-3/office/store', 'RazenStudio\Admin\Contact\AturController@section_3_office_store')->name('razen-studio.admin.contact.atur.section-3.office.store');
+    Route::post('/razen-studio/admin/contact/atur/section-3/office/edit', 'RazenStudio\Admin\Contact\AturController@section_3_office_edit')->name('razen-studio.admin.contact.atur.section-3.office.edit');
+    Route::post('/razen-studio/admin/contact/atur/section-3/office/store/hapus/satu', 'RazenStudio\Admin\Contact\AturController@section_3_office_hapus_satu')->name('razen-studio.admin.contact.atur.section-3.office.hapus.satu');
+
+    Route::post('/razen-studio/admin/contact/atur/section-3/studio-learning-center/store', 'RazenStudio\Admin\Contact\AturController@section_3_studio_learning_center_store')->name('razen-studio.admin.contact.atur.section-3.studio-learning-center.store');
+    Route::post('/razen-studio/admin/contact/atur/section-3/studio-learning-center/edit', 'RazenStudio\Admin\Contact\AturController@section_3_studio_learning_center_edit')->name('razen-studio.admin.contact.atur.section-3.studio-learning-center.edit');
+    Route::post('/razen-studio/admin/contact/atur/section-3/studio-learning-center/store/hapus/satu', 'RazenStudio\Admin\Contact\AturController@section_3_studio_learning_center_hapus_satu')->name('razen-studio.admin.contact.atur.section-3.studio-learning-center.hapus.satu');
+
+    //Contact - Section 4
+    Route::post('/razen-studio/admin/contact/atur/section-4/store', 'RazenStudio\Admin\Contact\AturController@section_4_store')->name('razen-studio.admin.contact.atur.section-4.store');
 });

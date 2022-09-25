@@ -128,7 +128,11 @@
                     request()->routeIs('razen-studio.admin.search-engine-optimization.atur.index') ||
                     request()->routeIs('razen-studio.admin.about.atur.index') ||
                     request()->routeIs('razen-studio.admin.about.gallery.index') ||
-                    request()->routeIs('razen-studio.admin.how-it-works.atur.index')
+                    request()->routeIs('razen-studio.admin.how-it-works.atur.index') ||
+                    request()->routeIs('razen-studio.admin.portofolio.atur.index') ||
+                    request()->routeIs('razen-studio.admin.why-razen-studio.atur.index') ||
+                    request()->routeIs('razen-studio.admin.freelancer-agency.atur.index') ||
+                    request()->routeIs('razen-studio.admin.contact.atur.index')
                     )
                     <a href="#landing_page" class="active">
                     @else
@@ -699,6 +703,86 @@
                                         <a href="{{ route('razen-studio.admin.how-it-works.atur.index') }}" class="active">
                                     @else
                                         <a href="{{ route('razen-studio.admin.how-it-works.atur.index') }}">
+                                    @endif
+                                        <span class="label">Atur</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-studio.admin.portofolio.atur.index'))
+                                <a href="#portofolio" class="active">
+                            @else
+                                <a href="#portofolio">
+                            @endif
+                                <span class="label">Portofolio</span>
+                            </a>
+                            <ul id="portofolio">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.portofolio.atur.index'))
+                                        <a href="{{ route('razen-studio.admin.portofolio.atur.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.portofolio.atur.index') }}">
+                                    @endif
+                                        <span class="label">Atur</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-studio.admin.why-razen-studio.atur.index'))
+                                <a href="#why-razen-studio" class="active">
+                            @else
+                                <a href="#why-razen-studio">
+                            @endif
+                                <span class="label">Why Razen Studio</span>
+                            </a>
+                            <ul id="why-razen-studio">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.why-razen-studio.atur.index'))
+                                        <a href="{{ route('razen-studio.admin.why-razen-studio.atur.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.why-razen-studio.atur.index') }}">
+                                    @endif
+                                        <span class="label">Atur</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-studio.admin.freelancer-agency.atur.index'))
+                                <a href="#freelancer-agency" class="active">
+                            @else
+                                <a href="#freelancer-agency">
+                            @endif
+                                <span class="label">Freelancer Agency</span>
+                            </a>
+                            <ul id="freelancer-agency">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.freelancer-agency.atur.index'))
+                                        <a href="{{ route('razen-studio.admin.freelancer-agency.atur.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.freelancer-agency.atur.index') }}">
+                                    @endif
+                                        <span class="label">Atur</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-studio.admin.contact.atur.index'))
+                                <a href="#contact" class="active">
+                            @else
+                                <a href="#contact">
+                            @endif
+                                <span class="label">Contact</span>
+                            </a>
+                            <ul id="contact">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.contact.atur.index'))
+                                        <a href="{{ route('razen-studio.admin.contact.atur.index') }}" class="active">
+                                    @else
+                                        <a href="{{ route('razen-studio.admin.contact.atur.index') }}">
                                     @endif
                                         <span class="label">Atur</span>
                                     </a>

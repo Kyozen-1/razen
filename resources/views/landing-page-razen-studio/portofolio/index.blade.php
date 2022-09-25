@@ -1,5 +1,27 @@
+@php
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioPortofolio;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioBrand;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioOfficialPartner;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioReview;
+    use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioHome;
+
+    $home = LandingpageRazenstudioHome::first();
+
+    $portofolio = LandingpageRazenstudioPortofolio::first();
+    if ($portofolio) {
+        $portofolio_section_1 = json_decode($portofolio->section_1, true);
+        $portofolio_section_2 = json_decode($portofolio->section_2, true);
+    } else {
+        $portofolio_section_1 = [];
+        $portofolio_section_2 = [];
+    }
+
+    $reviews = LandingpageRazenstudioReview::latest()->get();
+    $brands= LandingpageRazenstudioBrand::all();
+    $partners = LandingpageRazenstudioOfficialPartner::all();
+@endphp
 @extends('landing-page-razen-studio.layouts.app')
-@section('title', 'Razen Studio | Portofolio')
+@section('title', $portofolio_section_1['title'])
 
 @section('css')
 <link rel="stylesheet" href="https://gosocial.co.id/assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
@@ -15,12 +37,12 @@
     <div class="container-fluid">
         <div class="row">
             <div class="breadcrumbs text-center link-style-5 text-white">
-                <h2 class="section-title-page text-white">Portofolio GoSocial</h2>
-                <p class="mb-5">Kualitas terbaik pada setiap hasil project dan kolaborasi yang telah kami kerjakan.</p>
+                <h2 class="section-title-page text-white">{{$portofolio_section_1['judul']}}</h2>
+                <p class="mb-5">{{$portofolio_section_1['deskripsi']}}</p>
                 <ul class="breadcrumbs-inner list-center display-flex">
                     <li><a class="section-16px-regular font-weight-500" href="{{ route('home') }}">Home</a></li>
                     <li>
-                        <h4 class="section-16px-regular font-weight-500 text-white">Portofolio</h4>
+                        <h4 class="section-16px-regular font-weight-500 text-white">{{$portofolio_section_1['judul']}}</h4>
                     </li>
                 </ul>
             </div>
@@ -46,9 +68,8 @@
 <section class="flat-about-2nd">
     <div class="container space-2">
         <div class="text-center py-6" style="background: url(https://gosocial.co.id/assets/svg/components/abstract-shapes-19.svg) center no-repeat;">
-            <h2>Start your project with GoSocial</h2>
-            <p>If you’ve got a brief, we’d love to see it and talk it through with you.<br>
-                If you haven’t, get in touch to see if we are a good fit for you.</p>
+            <h2>{{$portofolio_section_2['judul']}}</h2>
+            <p>{!! $portofolio_section_2['deskripsi'] !!}</p>
             <span class="d-block mt-5">
                 <a class="btn btn-primary transition-3d-hover font-size-2" href="https://gosocial.co.id/contact">Contact Us</a>
             </span>
@@ -57,36 +78,23 @@
 </section>
 
 <section class="flat-services">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title wow fadeInDown">
-                    <p class="text-muted">Official Partners:</p>
-                </div>
-                <div class="themesflat-spacer clearfix" data-desktop="47" data-mobile="60" data-smobile="60"
-                    style="height:60px"></div>
+    <div class="container space-1">
+        <div class="w-lg-75 mt-3 mx-lg-auto">
+            <div class="text-center mb-4">
+                <span class="divider divider-text h3">Official Partners:</span>
             </div>
-            <div class="col-md-12 justify-content-center">
-                <div class="row d-flex justify-content-center text-center">
-                    <div class="col-lg-3 col-4">
-                        <div class="mx-3 client-image">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC NISP">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/ocbc_partner.png" alt="Partner OCBC">
-                        </div>
-                    </div>
 
-                    <div class="col-lg-3 col-4">
-                        <a class="mx-3 client-image" href="https://www.bhinneka.com/toko-gosocial-indonesia" target="_blank">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Parnter Bhinneka.com" style="">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/bhinekka_partner.png" alt="Partner Bhinneka">
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-4">
-                        <div class="mx-3 client-image">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-default" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                            <img class="max-w-11rem max-w-md-13rem mx-auto client-hover" style="display: none;" src="https://gosocial.co.id/assets/img/home/crewdible_partner.png" alt="Partner Crewdible">
-                        </div>
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-lg-8 col-12">
+                    <div class="row d-flex justify-content-center">
+                        @foreach ($partners as $partner)
+                            <div class="col-lg-3 col-4">
+                                <div class="mx-3 client-image">
+                                    <img class="client-default" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC NISP">
+                                    <img class="client-hover" style="display: none;" src="{{ asset('images/landingpage_razenstudio/official-partner/'.$partner->gambar) }}" alt="Partner OCBC">
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

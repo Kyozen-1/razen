@@ -80,7 +80,7 @@ Route::get('why-razen-studio', 'LandingPageRazenStudio\HomeController@why_razen_
 Route::get('help-center', 'LandingPageRazenStudio\HomeController@help_center')->name('help-center');
 Route::get('blog', 'LandingPageRazenStudio\HomeController@blog')->name('blog');
 Route::get('ebook', 'LandingPageRazenStudio\HomeController@ebook')->name('ebook');
-Route::get('razen-studio-academy', 'LandingPageRazenStudio\HomeController@razen-studio-academy')->name('razen-studio-academy');
+Route::get('razen-studio-academy', 'LandingPageRazenStudio\HomeController@razen_studio_academy')->name('razen-studio-academy');
 Route::get('freelancer-agency', 'LandingPageRazenStudio\HomeController@freelancer_agency')->name('freelancer-agency');
 Route::get('contact', 'LandingPageRazenStudio\HomeController@contact')->name('contact');
 
