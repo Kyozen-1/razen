@@ -36,14 +36,25 @@
 <!-- Page Specific Scripts End -->
 <script>
     const settings = new Settings({
-        attributes: {
-            color: "{{Auth::guard('razen')->user()->color_layout?Auth::guard('razen')->user()->color_layout:'light-blue'}}",
-            navcolor: "{{Auth::guard('razen')->user()->nav_color?Auth::guard('razen')->user()->nav_color:'light'}}",
-            behaviour: "{{Auth::guard('razen')->user()->behaviour?Auth::guard('razen')->user()->behaviour:'pinned'}}",
-            layout: "{{Auth::guard('razen')->user()->layout?Auth::guard('razen')->user()->layout:'fluid'}}",
-            radius: "{{Auth::guard('razen')->user()->radius?Auth::guard('razen')->user()->radius:'flat'}}",
-            placement: "{{Auth::guard('razen')->user()->placement?Auth::guard('razen')->user()->placement:'vertical'}}",
-        }
+        @if (Auth::guard('razen')->check())
+            attributes: {
+                color: "{{Auth::guard('razen')->user()->color_layout?Auth::guard('razen')->user()->color_layout:'light-blue'}}",
+                navcolor: "{{Auth::guard('razen')->user()->nav_color?Auth::guard('razen')->user()->nav_color:'light'}}",
+                behaviour: "{{Auth::guard('razen')->user()->behaviour?Auth::guard('razen')->user()->behaviour:'pinned'}}",
+                layout: "{{Auth::guard('razen')->user()->layout?Auth::guard('razen')->user()->layout:'fluid'}}",
+                radius: "{{Auth::guard('razen')->user()->radius?Auth::guard('razen')->user()->radius:'flat'}}",
+                placement: "{{Auth::guard('razen')->user()->placement?Auth::guard('razen')->user()->placement:'vertical'}}",
+            }
+        @elseif (Auth::guard('razen_studio')->check())
+            attributes: {
+                color: "{{Auth::guard('razen_studio')->user()->color_layout?Auth::guard('razen_studio')->user()->color_layout:'light-blue'}}",
+                navcolor: "{{Auth::guard('razen_studio')->user()->nav_color?Auth::guard('razen_studio')->user()->nav_color:'light'}}",
+                behaviour: "{{Auth::guard('razen_studio')->user()->behaviour?Auth::guard('razen_studio')->user()->behaviour:'pinned'}}",
+                layout: "{{Auth::guard('razen_studio')->user()->layout?Auth::guard('razen_studio')->user()->layout:'fluid'}}",
+                radius: "{{Auth::guard('razen_studio')->user()->radius?Auth::guard('razen_studio')->user()->radius:'flat'}}",
+                placement: "{{Auth::guard('razen_studio')->user()->placement?Auth::guard('razen_studio')->user()->placement:'vertical'}}",
+            }
+        @endif
     });
     $('.option').click(function(){
         // var color_layout =  $('a[data-parent="color"]').attr('data-value');

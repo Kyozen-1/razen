@@ -53,6 +53,14 @@
         <!-- Menu Start -->
         <div class="menu-container flex-grow-1">
             <ul id="menu" class="menu">
+                @if (Auth::guard('razen')->check())
+                    <li>
+                        <a href="{{ route('razen.dashboard.index') }}">
+                            <i data-acorn-icon="arrow-left" class="icon" data-acorn-size="18"></i>
+                            <span class="label">Kembali</span>
+                        </a>
+                    </li>
+                @endif
                 <li>
                     @if (request()->routeIs('razen-studio.admin.dashboard.index'))
                         <a href="{{ route('razen-studio.admin.dashboard.index') }}" class="active">

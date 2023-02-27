@@ -194,6 +194,16 @@
                 </a>
             </li>
             <li>
+                @if (request()->routeIs('razen-studio.admin.dashboard.index'))
+                    <a href="{{ route('razen-studio.admin.dashboard.index') }}" class="active">
+                @else
+                    <a href="{{ route('razen-studio.admin.dashboard.index') }}">
+                @endif
+                    <i data-acorn-icon="menu-right" class="icon" data-acorn-size="18"></i>
+                    <span class="label">Razen Studio</span>
+                </a>
+            </li>
+            <li>
                 <a href="#manajemenakun">
                     <i data-acorn-icon="user" class="icon" data-acorn-size="18"></i>
                     <span class="label">Manajemen Akun</span>

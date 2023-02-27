@@ -34,6 +34,11 @@ class RedirectIfAuthenticated
                 {
                     return redirect()->route('razen-studio.admin.dashboard.index');
                 }
+            case 'razen_project':
+                if(Auth::guard($guard)->check())
+                {
+                    return redirect()->route('razen-project.admin.dashboard.index');
+                }
         }
 
         return $next($request);
