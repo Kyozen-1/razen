@@ -81,6 +81,47 @@
                         <span class="label">Item Virtual Tour</span>
                     </a>
                 </li>
+                <li>
+                    @if (request()->routeIs('razen-project.admin.profil.index'))
+                        <a href="{{ route('razen-project.admin.profil.index') }}" class="active">
+                    @else
+                        <a href="{{ route('razen-project.admin.profil.index') }}">
+                    @endif
+                        <i data-acorn-icon="user" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Profil</span>
+                    </a>
+                </li>
+                <li>
+                    @if (request()->routeIs('razen-project.admin.master-media-sosial.index') ||
+                    request()->routeIs('razen-project.admin.master-kategori-project.index'))
+                    <a href="#master" class="active">
+                    @else
+                    <a href="#master">
+                    @endif
+                        <i data-acorn-icon="notebook-1" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Master</span>
+                    </a>
+                    <ul id="master">
+                        <li>
+                            @if (request()->routeIs('razen-project.admin.master-media-sosial.index'))
+                                <a href="{{ route('razen-project.admin.master-media-sosial.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-project.admin.master-media-sosial.index') }}">
+                            @endif
+                                <span class="label">Media Sosial</span>
+                            </a>
+                        </li>
+                        <li>
+                            @if (request()->routeIs('razen-project.admin.master-kategori-project.index'))
+                                <a href="{{ route('razen-project.admin.master-kategori-project.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-project.admin.master-kategori-project.index') }}">
+                            @endif
+                                <span class="label">Kategori Project</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- Menu End -->

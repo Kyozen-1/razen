@@ -92,7 +92,7 @@ Route::prefix('razen-studio')->group(function(){
 });
 
 Route::prefix('razen-project')->group(function(){
-    Route::get('/home', 'LandingPageRazenProject\HomeController@home');
+    Route::get('/home', 'LandingPageRazenProject\HomeController@home')->name('razen-project.home');
 });
 
 include('razen-studio.php');

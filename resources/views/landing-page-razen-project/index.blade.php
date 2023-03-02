@@ -33,7 +33,7 @@
 
         <!-- Document Title
             ============================================= -->
-        <title>Razen Project | Desain Arsitektur, Konstruksi & Renovasi</title>
+        <title>{{$profil->nama}}</title>
     </head>
     <body class="dark">
         <div class="preloader">
@@ -53,13 +53,13 @@
                         <div class="col-xs-12 col-sm-6 col-md-6 hidden-xs">
                             <ul class="list-inline top-contact">
                                 <li>
-                                    <p>Phone:
-                                        <span>0822 9944 9494</span>
+                                    <p>No. Hp:
+                                        <span>{{$profil->no_hp}}</span>
                                     </p>
                                 </li>
                                 <li>
                                     <p>Email:
-                                        <span>project@razen.co.id</span>
+                                        <span>{{$profil->email}}</span>
                                     </p>
                                 </li>
                             </ul>
@@ -68,10 +68,29 @@
                         <div class="col-xs-12 col-sm-6 col-md-6 text-right">
                             <ul class="list-inline top-widget">
                                 <li class="top-social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-youtube"></i></a>
+                                    @if ($facebook['status'] == 'ada')
+                                        <a href="{{$facebook['tautan']}}" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    @else
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    @endif
+
+                                    @if ($twitter['status'] == 'ada')
+                                        <a href="{{$twitter['tautan']}}" target="_blank"><i class="fa fa-twitter"></i></a>
+                                    @else
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                    @endif
+
+                                    @if ($instagram['status'] == 'ada')
+                                        <a href="{{$instagram['tautan']}}" target="_blank"><i class="fa fa-instagram"></i></a>
+                                    @else
+                                        <a href="#"><i class="fa fa-instagram"></i></a>
+                                    @endif
+
+                                    @if ($youtube['status'] == 'ada')
+                                        <a href="{{$youtube['tautan']}}" target="_blank"><i class="fa fa-youtube"></i></a>
+                                    @else
+                                        <a href="#"><i class="fa fa-youtube"></i></a>
+                                    @endif
                                 </li>
                                 <li>
                                     <!-- Modal -->
@@ -94,8 +113,8 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             </button>
-                            <a class="logo" href="index.html">
-                                <img src="{{ asset('razen-project/assets/razen-project.png') }}" alt="Razen Project" height="40px">
+                            <a class="logo" href="{{ route('razen-project.home') }}">
+                                <img src="{{ asset('images/razen-project/logo/'.$profil->logo) }}" alt="Razen Project" height="40px">
                             </a>
                         </div>
 
