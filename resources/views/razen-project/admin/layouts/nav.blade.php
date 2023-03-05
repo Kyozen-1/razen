@@ -1,13 +1,18 @@
+@php
+    use App\Models\RazenProject\Admin\ProfilRazenProject as Profil;
+
+    $profil = Profil::first();
+@endphp
 <div id="nav" class="nav-container d-flex">
     <div class="nav-content d-flex">
         <!-- Logo Start -->
         <div class="logo position-relative">
             <a href="index.html">
             <!-- Logo can be added directly -->
-            <!-- <img src="acorn/acorn-elearning-portal/img/logo/logo-white.svg" alt="logo" /> -->
+            <img src="{{ asset('images/razen-project/logo/'.$profil->logo) }}" alt="logo" />
 
             <!-- Or added via css to provide different ones for different color themes -->
-            <div class="img"></div>
+            {{-- <div class="img"></div> --}}
             </a>
         </div>
         <!-- Logo End -->
@@ -15,18 +20,18 @@
         <!-- User Menu Start -->
         <div class="user-container d-flex">
             <a href="#" class="d-flex user position-relative" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img class="profile" alt="profile" src="{{ asset('acorn/acorn-elearning-portal/img/profile/profile-3.webp') }}" />
-            <div class="name">Lisa Jackson</div>
+            <img class="profile" alt="profile" src="{{ asset('acorn/acorn-elearning-portal/img/profile/profile-3.webp') }}" height="1rem"/>
+            <div class="name">{{$profil->nama}}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-end user-menu wide">
             <div class="row mb-3 ms-0 me-0">
                 <div class="col-12 ps-1 mb-2">
-                    <div class="text-extra-small text-primary">ACCOUNT</div>
+                    <div class="text-extra-small text-primary">Akun</div>
                 </div>
                 <div class="col-6 ps-1 pe-1">
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#">User Info</a>
+                            <a href="#">Info Pengguna</a>
                         </li>
                     </ul>
                 </div>
