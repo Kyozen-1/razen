@@ -44,5 +44,23 @@ Route::group(['middleware' => 'auth:razen_project,razen'], function(){
             Route::post('/update','RazenProject\Admin\Master\MasterKategoriProjectController@update')->name('razen-project.admin.master-kategori-project.update');
             Route::get('/destroy/{id}','RazenProject\Admin\Master\MasterKategoriProjectController@destroy');
         });
+
+        Route::prefix('testimonial')->group(function(){
+            Route::get('/', 'RazenProject\Admin\TestimonialController@index')->name('razen-project.admin.testimonial.index');
+            Route::get('/detail/{id}', 'RazenProject\Admin\TestimonialController@show');
+            Route::post('/','RazenProject\Admin\TestimonialController@store')->name('razen-project.admin.testimonial.store');
+            Route::get('/edit/{id}','RazenProject\Admin\TestimonialController@edit');
+            Route::post('/update','RazenProject\Admin\TestimonialController@update')->name('razen-project.admin.testimonial.update');
+            Route::get('/destroy/{id}','RazenProject\Admin\TestimonialController@destroy');
+        });
+
+        Route::prefix('client')->group(function(){
+            Route::get('/', 'RazenProject\Admin\ClientController@index')->name('razen-project.admin.client.index');
+            Route::get('/detail/{id}', 'RazenProject\Admin\ClientController@show');
+            Route::post('/','RazenProject\Admin\ClientController@store')->name('razen-project.admin.client.store');
+            Route::get('/edit/{id}','RazenProject\Admin\ClientController@edit');
+            Route::post('/update','RazenProject\Admin\ClientController@update')->name('razen-project.admin.client.update');
+            Route::get('/destroy/{id}','RazenProject\Admin\ClientController@destroy');
+        });
     });
 });

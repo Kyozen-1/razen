@@ -16,6 +16,10 @@ use Auth;
 use App\Models\RazenProject\Admin\MasterMediaSosial;
 use App\Models\RazenProject\Admin\PivotProfilRazenProjectMediaSosial;
 use App\Models\RazenProject\Admin\ProfilRazenProject;
+use App\Models\RazenProject\Admin\ItemVirtualTour;
+use App\Models\RazenProject\Admin\RazenProjectMasterKategoriProject as MasterKategoriProject;
+use App\Models\RazenProject\Admin\RazenProjectTestimonial as Testimonial;
+use App\Models\RazenProject\Admin\RazenProjectClient as Client;
 
 class HomeController extends Controller
 {
@@ -79,12 +83,24 @@ class HomeController extends Controller
             ];
         }
 
+        $item_virtual_tours = ItemVirtualTour::all();
+
+        $kategori_project = MasterKategoriProject::pluck('nama', 'id');
+
+        $testimonials = Testimonial::latest()->get();
+
+        $clients = Client::all();
+
         return view('landing-page-razen-project.index', [
             'profil' => $profil,
             'facebook' => $facebook,
             'twitter' => $twitter,
             'instagram' => $instagram,
-            'youtube' => $youtube
+            'youtube' => $youtube,
+            'item_virtual_tours' => $item_virtual_tours,
+            'kategori_project' => $kategori_project,
+            'testimonials' => $testimonials,
+            'clients' => $clients
         ]);
     }
 }

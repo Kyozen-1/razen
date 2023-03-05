@@ -72,12 +72,16 @@
                             <input type="text" class="form-control" name="pt" id="pt" value="{{$profil->pt}}" required>
                         </div>
                         <div class="mb-3 position-relative form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control" name="email" id="email" value="{{$profil->email}}" required>
+                        </div>
+                        <div class="mb-3 position-relative form-group">
                             <label for="no_hp" class="form-label">Nomor HP</label>
                             <input type="text" class="form-control" name="no_hp" id="no_hp" value="{{$profil->no_hp}}" required>
                         </div>
                         <div class="mb-3 position-relative form-group">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="text" class="form-control" name="email" id="email" value="{{$profil->email}}" required>
+                            <label for="alamat" class="form-label">Alamat</label>
+                            <textarea name="alamat" id="alamat" rows="5" class="form-control" required>{{$profil->alamat}}</textarea>
                         </div>
                     </div>
                     <div class="col-12 col-md-4">

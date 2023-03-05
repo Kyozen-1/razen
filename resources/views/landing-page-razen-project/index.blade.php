@@ -386,6 +386,77 @@
                         <div class="heading heading-3 text-center mb-0">
                             <div class="heading-bg">
                                 <p class="mb-0">great &amp; awesome works</p>
+                                <h2>Proyek Kami</h2>
+                            </div>
+                        </div>
+                        <!-- .heading end -->
+                    </div>
+                    <!-- .col-md-8 end -->
+                </div>
+            </div>
+            <!-- .container end -->
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Projects Filter
+                    ============================================= -->
+                    <div class="col-xs-12 col-sm-12 col-md-12 projects-filter">
+                        <ul class="list-inline">
+                            <li>
+                                <a class="active-filter" href="#" data-filter="*">Semua Proyek</a>
+                            </li>
+                            @foreach ($kategori_project as $id => $nama)
+                                <li>
+                                    <a href="#" data-filter=".{{$nama}}">{{$nama}}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <!-- .projects-filter end -->
+                </div>
+                <!-- .row end -->
+
+                <!-- Projects Item
+                ============================================= -->
+                <div id="projects-all" class="row">
+                    @foreach ($item_virtual_tours as $item_virtual_tour)
+                        <!-- Project Item #1 -->
+                        <div class="col-xs-12 col-sm-6 col-md-3 project-item {{$item_virtual_tour->master_kategori_project->nama}}">
+                            <div class="project-img">
+                                <img class="" src="{{ asset('images/razen-project/item-virtual-tour/'.$item_virtual_tour->thumb) }}" alt="{{$item_virtual_tour->master_kategori_project->nama}}"/>
+                                <div class="project-hover">
+                                    <div class="project-meta">
+                                        <h6>{{$item_virtual_tour->master_kategori_project->nama}}</h6>
+                                        <h4>
+                                            <a href="{{$item_virtual_tour->link}}" target="blank">{{$item_virtual_tour->nama}}</a>
+                                        </h4>
+                                    </div>
+                                    <div class="project-zoom">
+                                        <a class="img-popup" href="{{ asset('images/razen-project/item-virtual-tour/'.$item_virtual_tour->thumb) }}" title="{{$item_virtual_tour->nama}}"><i class="fa fa-plus"></i></a>
+                                    </div>
+                                </div>
+                                <!-- .project-hover end -->
+                            </div>
+                            <!-- .project-img end -->
+
+                        </div>
+                        <!-- .project-item end -->
+                    @endforeach
+
+                </div>
+                <!-- .row end -->
+            </div>
+            <!-- .container end -->
+        </section>
+
+        <!-- Projects Section
+        ============================================= -->
+        {{-- <section id="projects" class="projects-fullwidth projects-4col bg-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                        <div class="heading heading-3 text-center mb-0">
+                            <div class="heading-bg">
+                                <p class="mb-0">great &amp; awesome works</p>
                                 <h2>our projects</h2>
                             </div>
                         </div>
@@ -608,7 +679,7 @@
                 <!-- .row end -->
             </div>
             <!-- .container end -->
-        </section>
+        </section> --}}
 
         <!-- Shortcode #5
         ============================================= -->
@@ -803,8 +874,8 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="heading heading-3 text-center">
                             <div class="heading-bg">
-                                <p class="mb-0">what people say ?</p>
-                                <h2>testimonials</h2>
+                                <p class="mb-0">apa yang dikatakan orang ?</p>
+                                <h2>testimonial</h2>
                             </div>
                         </div>
                         <!-- .heading end -->
@@ -812,109 +883,24 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div id="testimonial-oc" class="testimonial-carousel">
 
-                            <!-- testimonial item #1 -->
-                            <div class="testimonial-item">
-                                <div class="testimonial-content">
-                                    <div class="testimonial-img">
-                                        <i class="fa fa-quote-left"></i>
-                                        <img src="{{ asset('razen-project/assets/images/testimonial/3.png') }}" alt="author"/>
+                            @foreach ($testimonials as $testimonial)
+                                <!-- testimonial item #1 -->
+                                <div class="testimonial-item">
+                                    <div class="testimonial-content">
+                                        <div class="testimonial-img">
+                                            <i class="fa fa-quote-left"></i>
+                                            <img src="{{ asset('images/razen-project/foto-testimoni/'.$testimonial->foto) }}" alt="author"/>
+                                        </div>
+                                        <p>{{$testimonial->testimonial}}</p>
                                     </div>
-                                    <p>The company’s experts have accumulated valuable experience in green development, being savvy to all aspects of the certification process and requirements.</p>
-                                </div>
-                                <div class="testimonial-divider">
-                                </div>
-                                <div class="testimonial-meta">
-                                    <strong>Begha</strong>, Art Director
-                                </div>
-                            </div>
-                            <!-- .testimonial-item end -->
-
-                            <!-- testimonial item #2 -->
-                            <div class="testimonial-item">
-                                <div class="testimonial-content">
-                                    <div class="testimonial-img">
-                                        <i class="fa fa-quote-left"></i>
-                                        <img src="{{ asset('razen-project/assets/images/testimonial/2.png') }}" alt="author"/>
+                                    <div class="testimonial-divider">
                                     </div>
-                                    <p>The skills of our project managers are attested by international certificates from leading overseas professional associations in the realm of construction, land use and real estate. </p>
-                                </div>
-                                <div class="testimonial-divider">
-                                </div>
-                                <div class="testimonial-meta">
-                                    <strong>Habaza</strong>, Civil Engineer
-                                </div>
-                            </div>
-                            <!-- .testimonial-item end -->
-
-                            <!-- testimonial item #3 -->
-                            <div class="testimonial-item">
-                                <div class="testimonial-content">
-                                    <div class="testimonial-img">
-                                        <i class="fa fa-quote-left"></i>
-                                        <img src="{{ asset('razen-project/assets/images/testimonial/1.png') }}" alt="author"/>
-                                    </div>
-                                    <p>Razen Project Group carries out full-cycle development, including the attraction of investments, construction and managing premium residential and non-residential properties.</p>
-                                </div>
-                                <div class="testimonial-divider">
-                                </div>
-                                <div class="testimonial-meta">
-                                    <strong>Fouad Badawy</strong>, Investor
-                                </div>
-                            </div>
-                            <!-- .testimonial-item end -->
-
-                            <!-- testimonial item #4 -->
-                            <div class="testimonial-item">
-                                <div class="testimonial-content">
-                                    <div class="testimonial-img">
-                                        <i class="fa fa-quote-left"></i>
-                                        <img src="{{ asset('razen-project/assets/images/testimonial/3.png') }}" alt="author"/>
-                                    </div>
-                                    <p>The skills of our project managers are attested by international certificates from leading overseas professional associations in the realm of construction, land use and real estate.</p>
-                                </div>
-                                <div class="testimonial-divider">
-                                </div>
-                                <div class="testimonial-meta">
-                                    <div class="testimonial-name">
-                                        <strong>AYMAN FIKRY</strong>, Civil Engineer
+                                    <div class="testimonial-meta">
+                                        <strong>{{$testimonial->nama}}</strong>, {{$testimonial->jabatan}}
                                     </div>
                                 </div>
-                            </div>
-                            <!-- .testimonial-item end -->
-
-                            <!-- testimonial item #5 -->
-                            <div class="testimonial-item">
-                                <div class="testimonial-content">
-                                    <div class="testimonial-img">
-                                        <i class="fa fa-quote-left"></i>
-                                        <img src="{{ asset('razen-project/assets/images/testimonial/1.png') }}" alt="author"/>
-                                    </div>
-                                    <p>Razen Project Group carries out full-cycle development, including the attraction of investments, construction and managing premium residential and non-residential properties.</p>
-                                </div>
-                                <div class="testimonial-divider">
-                                </div>
-                                <div class="testimonial-meta">
-                                    <strong>Fouad Badawy</strong>, Investor
-                                </div>
-                            </div>
-                            <!-- .testimonial-item end -->
-
-                            <!-- testimonial item #6 -->
-                            <div class="testimonial-item">
-                                <div class="testimonial-content">
-                                    <div class="testimonial-img">
-                                        <i class="fa fa-quote-left"></i>
-                                        <img src="{{ asset('razen-project/assets/images/testimonial/2.png') }}" alt="author"/>
-                                    </div>
-                                    <p>The skills of our project managers are attested by international certificates from leading overseas professional associations in the realm of construction, land use and real estate. </p>
-                                </div>
-                                <div class="testimonial-divider">
-                                </div>
-                                <div class="testimonial-meta">
-                                    <strong>Habaza</strong>, Civil Engineer
-                                </div>
-                            </div>
-                            <!-- .testimonial-item end -->
+                                <!-- .testimonial-item end -->
+                            @endforeach
 
                         </div>
                     </div>
@@ -937,8 +923,8 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="heading heading-2 text-center">
                             <div class="heading-bg">
-                                <p class="mb-0">They Always Trust Us</p>
-                                <h2>Our Clients</h2>
+                                <p class="mb-0">Mereka Selalu Percaya Kami</p>
+                                <h2>Klien Kami</h2>
                             </div>
                         </div>
                         <!-- .heading end -->
@@ -947,53 +933,15 @@
                 </div>
                 <!-- .row end -->
                 <div class="row">
-                    <!-- Client Item -->
-                    <div class="col-xs-12 col-sm-4 col-md-2">
-                        <div class="brand">
-                            <img class="img-responsive center-block" src="{{ asset('razen-project/assets/images/clients/1.png') }}" alt="brand">
+                    @foreach ($clients as $client)
+                        <!-- Client Item -->
+                        <div class="col-xs-12 col-sm-4 col-md-2">
+                            <div class="brand">
+                                <img class="img-responsive center-block" src="{{ asset('images/razen-project/foto-client/'.$client->foto) }}" alt="brand">
+                            </div>
                         </div>
-                    </div>
-                    <!-- .col-md-2 end -->
-
-                    <!-- Client Item -->
-                    <div class="col-xs-12 col-sm-4 col-md-2">
-                        <div class="brand">
-                            <img class="img-responsive center-block" src="{{ asset('razen-project/assets/images/clients/2.png') }}" alt="brand">
-                        </div>
-                    </div>
-                    <!-- .col-md-2 end -->
-
-                    <!-- Client Item -->
-                    <div class="col-xs-12 col-sm-4 col-md-2">
-                        <div class="brand">
-                            <img class="img-responsive center-block" src="{{ asset('razen-project/assets/images/clients/3.png') }}" alt="brand">
-                        </div>
-                    </div>
-                    <!-- .col-md-2 end -->
-
-                    <!-- Client Item -->
-                    <div class="col-xs-12 col-sm-4 col-md-2">
-                        <div class="brand">
-                            <img class="img-responsive center-block" src="{{ asset('razen-project/assets/images/clients/4.png') }}" alt="brand">
-                        </div>
-                    </div>
-                    <!-- .col-md-2 end -->
-
-                    <!-- Client Item -->
-                    <div class="col-xs-12 col-sm-4 col-md-2">
-                        <div class="brand">
-                            <img class="img-responsive center-block" src="{{ asset('razen-project/assets/images/clients/5.png') }}" alt="brand">
-                        </div>
-                    </div>
-                    <!-- .col-md-2 end -->
-
-                    <!-- Client Item -->
-                    <div class="col-xs-12 col-sm-4 col-md-2">
-                        <div class="brand last">
-                            <img class="img-responsive center-block" src="{{ asset('razen-project/assets/images/clients/6.png') }}" alt="brand">
-                        </div>
-                    </div>
-                    <!-- .col-md-2 end -->
+                        <!-- .col-md-2 end -->
+                    @endforeach
                 </div>
                 <!-- .row End -->
             </div>
@@ -1014,8 +962,8 @@
                                         <i class="lnr lnr-map"></i>
                                     </div>
                                     <div class="widget-contact-info">
-                                        <p class="text-capitalize text-white">visit us</p>
-                                        <p class="text-capitalize font-heading">Yogyakarta</p>
+                                        <p class="text-capitalize text-white">kunjungi kami</p>
+                                        <p class="text-capitalize font-heading">{{$profil->alamat}}</p>
                                     </div>
                                 </div>
                                 <!-- .widget end -->
@@ -1024,8 +972,8 @@
                                         <i class="lnr lnr-envelope"></i>
                                     </div>
                                     <div class="widget-contact-info">
-                                        <p class="text-capitalize text-white">email us</p>
-                                        <p class="text-capitalize font-heading">project@razen.co.id</p>
+                                        <p class="text-capitalize text-white">email kami</p>
+                                        <p class="text-capitalize font-heading">{{$profil->email}}</p>
                                     </div>
                                 </div>
                                 <!-- .widget end -->
@@ -1034,8 +982,8 @@
                                         <i class="lnr lnr-phone"></i>
                                     </div>
                                     <div class="widget-contact-info">
-                                        <p class="text-capitalize text-white">call us</p>
-                                        <p class="text-capitalize font-heading">0822 9944 9494</p>
+                                        <p class="text-capitalize text-white">telpon kami</p>
+                                        <p class="text-capitalize font-heading">{{$profil->no_hp}}</p>
                                     </div>
                                 </div>
                                 <!-- .widget end -->

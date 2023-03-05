@@ -73,7 +73,8 @@ class ProfilController extends Controller
             'nama' => 'required | max:255',
             'pt' => 'required | max:255',
             'no_hp' => 'required',
-            'email' => 'required'
+            'email' => 'required',
+            'alamat' => 'required',
         ]);
         if($errors -> fails())
         {
@@ -102,6 +103,7 @@ class ProfilController extends Controller
         $profil->pt = $request->pt;
         $profil->no_hp = $request->no_hp;
         $profil->email = $request->email;
+        $profil->alamat = $request->alamat;
 
         if($request->logo)
         {

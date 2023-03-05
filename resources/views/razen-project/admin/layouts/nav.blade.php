@@ -92,6 +92,26 @@
                     </a>
                 </li>
                 <li>
+                    @if (request()->routeIs('razen-project.admin.testimonial.index'))
+                        <a href="{{ route('razen-project.admin.testimonial.index') }}" class="active">
+                    @else
+                        <a href="{{ route('razen-project.admin.testimonial.index') }}">
+                    @endif
+                        <i data-acorn-icon="online-class" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Testimonial</span>
+                    </a>
+                </li>
+                <li>
+                    @if (request()->routeIs('razen-project.admin.client.index'))
+                        <a href="{{ route('razen-project.admin.client.index') }}" class="active">
+                    @else
+                        <a href="{{ route('razen-project.admin.client.index') }}">
+                    @endif
+                        <i data-acorn-icon="online-class" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Client</span>
+                    </a>
+                </li>
+                <li>
                     @if (request()->routeIs('razen-project.admin.master-media-sosial.index') ||
                     request()->routeIs('razen-project.admin.master-kategori-project.index'))
                     <a href="#master" class="active">
