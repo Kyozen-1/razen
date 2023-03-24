@@ -11,4 +11,5 @@
 <script src="{{ asset('olux/assets/js/swiper.js') }}"></script>
 <script src="{{ asset('olux/assets/js/main.js') }}"></script>
 <script src="{{ asset('olux/assets/js/jquery.fancybox.js') }}"></script>
+<script id="sbinit" src="{{env('RAZEN_URL')}}supportboard/js/main.js?lang=id"></script>
 @yield('js')
