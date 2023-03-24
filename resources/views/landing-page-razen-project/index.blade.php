@@ -160,98 +160,38 @@
         <section id="hero-2" class="hero-2">
             <div id="hero-slider" class="hero-slider">
 
-                <!-- Slide Item #1 -->
-                <div class="item">
-                    <div class="item-bg bg-overlay">
-                        <div class="bg-section">
-                            <img src="{{ asset('razen-project/assets/images/sliders/9.jpg') }}" alt="Background"/>
+                @foreach ($hero_sliders as $hero_slider)
+                    <!-- Slide Item #1 -->
+                    <div class="item">
+                        <div class="item-bg bg-overlay">
+                            <div class="bg-section">
+                                <img src="{{ asset('images/razen-project/gambar-slider/'.$hero_slider->gambar) }}" alt="Background"/>
+                            </div>
                         </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="hero-slide">
-                                    <div class="slide-heading">
-                                        <p>The Best Construction Company</p>
-                                    </div>
-                                    <div class="slide-title">
-                                        <h2>We do only what we are great on !</h2>
-                                    </div>
-                                    <div class="slide-action">
-                                        <a class="btn btn-primary" href="#">read more</a>
-                                        <a class="btn btn-secondary pull-right" href="#">get started</a>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="hero-slide">
+                                        <div class="slide-heading">
+                                            <p>{{$hero_slider->heading}}</p>
+                                        </div>
+                                        <div class="slide-title">
+                                            <h2>{{$hero_slider->title}}</h2>
+                                        </div>
+                                        <div class="slide-action">
+                                            <a class="btn btn-primary" href="#">read more</a>
+                                            <a class="btn btn-secondary pull-right" href="#">get started</a>
+                                        </div>
                                     </div>
                                 </div>
+                                <!-- .col-md-12 end -->
                             </div>
-                            <!-- .col-md-12 end -->
+                            <!-- .row end -->
                         </div>
-                        <!-- .row end -->
+                        <!-- .container end -->
                     </div>
-                    <!-- .container end -->
-                </div>
-                <!-- .item end -->
-
-                <!-- Slide Item #2 -->
-                <div class="item">
-                    <div class="item-bg bg-overlay">
-                        <div class="bg-section">
-                            <img src="{{ asset('razen-project/assets/images/sliders/1.jpg') }}" alt="Background"/>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="hero-slide">
-                                    <div class="slide-heading">
-                                        <p>delivering professional expertise</p>
-                                    </div>
-                                    <div class="slide-title">
-                                        <h2>Our promise is to build value into every project</h2>
-                                    </div>
-                                    <div class="slide-action">
-                                        <a class="btn btn-primary" href="#">read more</a>
-                                        <a class="btn btn-secondary pull-right" href="#">get started</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- .col-md-12 end -->
-                        </div>
-                        <!-- .row end -->
-                    </div>
-                    <!-- .container end -->
-                </div>
-                <!-- .item end -->
-
-                <!-- Slide Item #3 -->
-                <div class="item">
-                    <div class="item-bg bg-overlay">
-                        <div class="bg-section">
-                            <img src="{{ asset('razen-project/assets/images/sliders/5.jpg') }}" alt="Background"/>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="hero-slide">
-                                    <div class="slide-heading">
-                                        <p>we innovate & design</p>
-                                    </div>
-                                    <div class="slide-title">
-                                        <h2>We have a team capable of maximizing the result</h2>
-                                    </div>
-                                    <div class="slide-action">
-                                        <a class="btn btn-primary" href="#">read more</a>
-                                        <a class="btn btn-secondary pull-right" href="#">get started</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- .col-md-12 end -->
-                        </div>
-                        <!-- .row end -->
-                    </div>
-                    <!-- .container end -->
-                </div>
-                <!-- .item end -->
+                    <!-- .item end -->
+                @endforeach
             </div>
             <!-- #hero-slider end -->
         </section>
@@ -690,7 +630,7 @@
                         <div class="heading heading-2 text-center">
                             <div class="heading-bg">
                                 <p class="mb-0">all about me</p>
-                                <h2>my stroy</h2>
+                                <h2>my story</h2>
                             </div>
                             <p class="mb-0">Razen Project is a leading developer of A-grade commercial, industrial and residential projects in USA. Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly.</p>
                         </div>

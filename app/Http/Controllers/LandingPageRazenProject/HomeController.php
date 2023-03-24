@@ -20,6 +20,7 @@ use App\Models\RazenProject\Admin\ItemVirtualTour;
 use App\Models\RazenProject\Admin\RazenProjectMasterKategoriProject as MasterKategoriProject;
 use App\Models\RazenProject\Admin\RazenProjectTestimonial as Testimonial;
 use App\Models\RazenProject\Admin\RazenProjectClient as Client;
+use App\Models\RazenProject\Admin\RazenProjectHeroSlider as HeroSlider;
 
 class HomeController extends Controller
 {
@@ -91,6 +92,8 @@ class HomeController extends Controller
 
         $clients = Client::all();
 
+        $hero_sliders = HeroSlider::all();
+
         return view('landing-page-razen-project.index', [
             'profil' => $profil,
             'facebook' => $facebook,
@@ -100,7 +103,8 @@ class HomeController extends Controller
             'item_virtual_tours' => $item_virtual_tours,
             'kategori_project' => $kategori_project,
             'testimonials' => $testimonials,
-            'clients' => $clients
+            'clients' => $clients,
+            'hero_sliders' => $hero_sliders
         ]);
     }
 }

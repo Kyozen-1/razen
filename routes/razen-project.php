@@ -62,5 +62,14 @@ Route::group(['middleware' => 'auth:razen_project,razen'], function(){
             Route::post('/update','RazenProject\Admin\ClientController@update')->name('razen-project.admin.client.update');
             Route::get('/destroy/{id}','RazenProject\Admin\ClientController@destroy');
         });
+
+        Route::prefix('hero-slider')->group(function(){
+            Route::get('/', 'RazenProject\Admin\HeroSliderController@index')->name('razen-project.admin.hero-slider.index');
+            Route::get('/detail/{id}', 'RazenProject\Admin\HeroSliderController@show');
+            Route::post('/','RazenProject\Admin\HeroSliderController@store')->name('razen-project.admin.hero-slider.store');
+            Route::get('/edit/{id}','RazenProject\Admin\HeroSliderController@edit');
+            Route::post('/update','RazenProject\Admin\HeroSliderController@update')->name('razen-project.admin.hero-slider.update');
+            Route::get('/destroy/{id}','RazenProject\Admin\HeroSliderController@destroy');
+        });
     });
 });

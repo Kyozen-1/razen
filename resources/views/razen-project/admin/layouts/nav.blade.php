@@ -117,6 +117,27 @@
                     </a>
                 </li>
                 <li>
+                    @if (request()->routeIs('razen-project.admin.hero-slider.index'))
+                    <a href="#section" class="active">
+                    @else
+                    <a href="#section">
+                    @endif
+                        <i data-acorn-icon="notebook-1" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Section</span>
+                    </a>
+                    <ul id="section">
+                        <li>
+                            @if (request()->routeIs('razen-project.admin.hero-slider.index'))
+                                <a href="{{ route('razen-project.admin.hero-slider.index') }}" class="active">
+                            @else
+                                <a href="{{ route('razen-project.admin.hero-slider.index') }}">
+                            @endif
+                                <span class="label">Hero Slider</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
                     @if (request()->routeIs('razen-project.admin.master-media-sosial.index') ||
                     request()->routeIs('razen-project.admin.master-kategori-project.index'))
                     <a href="#master" class="active">
