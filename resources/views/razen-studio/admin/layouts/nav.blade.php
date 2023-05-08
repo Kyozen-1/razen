@@ -71,6 +71,16 @@
                         <span class="label">Dashboard</span>
                     </a>
                 </li>
+                <li>
+                    @if (request()->routeIs('razen-studio.admin.profil.index'))
+                        <a href="{{ route('razen-studio.admin.profil.index') }}" class="active">
+                    @else
+                        <a href="{{ route('razen-studio.admin.profil.index') }}">
+                    @endif
+                        <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Profil</span>
+                    </a>
+                </li>
                 {{-- <li>
                     <a href="#dashboards">
                     <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>

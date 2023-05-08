@@ -47,143 +47,83 @@
 
                 <!-- Header -->
                 <header id="site-header">
-                    <div id="site-header-inner">
-                        <div class="wrap-inner clearfix">
-                            <div id="site-logo" class="clearfix">
-                                <div id="site-log-inner">
-                                    <a href="index.html" rel="home" class="main-logo">
-                                        <img src="{{ asset('olux/assets/images/logo/logo-header.png') }}" alt="images">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- /#site-logo -->
-
-                            <div class="mobile-button">
-                                <span></span>
-                            </div>
-                            <!-- /.mobile-button -->
-                            <nav id="main-nav" class="main-nav">
-                                <ul id="menu-primary-menu" class="menu">
-                                    <li class="menu-item current-menu-item">
-                                        <a href="{{ url('/') }}">Home</a>
-                                    </li>
-                                    <li class="menu-item current-menu-item">
-                                        <a href="#">Marketplace</a>
-                                    </li>
-                                    <li class="menu-item menu-item-has-children">
-                                        <a href="#">Services</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item"><a href="{{ route('social-media-engagement') }}">Social Media Engagement</a></li>
-                                            <li class="menu-item"><a href="{{ route('video-production') }}">Video Production</a></li>
-                                            <li class="menu-item"><a href="{{ route('commercial-photography') }}">Commercial Photography</a></li>
-                                            <li class="menu-item"><a href="{{ route('web-development') }}">Web Development</a></li>
-                                            <li class="menu-item"><a href="{{ route('visual-branding-design') }}">Visual Branding & Design</a></li>
-                                            <li class="menu-item"><a href="{{ route('digital-campaign') }}">Digital Campaign</a></li>
-                                            <li class="menu-item"><a href="{{ route('social-media-management') }}">Social Media Management</a></li>
-                                            <li class="menu-item"><a href="{{ route('jasa-seo') }}">SEO</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item menu-item-has-children">
-                                        <a href="#">How It Works</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item"><a href="{{ route('about') }}">About</a></li>
-                                            <li class="menu-item"><a href="{{ route('how-it-works') }}">Cara Kerja Razen Studio</a></li>
-                                            <li class="menu-item"><a href="{{ route('portofolio') }}">Portofolio</a></li>
-                                            <li class="menu-item"><a href="{{ route('why-razen-studio') }}">Razen Studio vs Solusi Lainnya</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item menu-item-has-children">
-                                        <a href="#">Community</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item"><a href="{{ route('help-center') }}">Help Center</a></li>
-                                            <li class="menu-item"><a href="{{ route('blog') }}">Blog</a></li>
-                                            <li class="menu-item"><a href="{{ route('ebook') }}">Ebook</a></li>
-                                            <li class="menu-item"><a href="{{ route('razen-studio-academy') }}">Razen Studio Community</a></li>
-                                            <li class="menu-item"><a href="{{ route('freelancer-agency') }}">Freelancer/Agency?</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item current-menu-item">
-                                        <a href="{{ route('contact') }}">Contact</a>
-                                    </li>
-                                    <li class="menu-item current-menu-item">
-                                        <a href="#">Login</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <!-- /#main-nav -->
-                            {{-- <div class="header-menu">
-                                <a href="#" class="header-menu-trigger icon-Group-1199"></a>
-                            </div> --}}
-                        </div>
-                        {{-- <div class="side-menu__block">
-                            <div class="side-menu__block-overlay custom-cursor__overlay"></div>
-                            <div class="side-menu__block-inner">
-                                <div class="side-menu__top justify-content-end">
-                                    <a href="#" class="side-menu__toggler side-menu__close-btn"><img
-                                            src="{{ asset('olux/assets/icon/close-1-1.png') }}" alt="images"></a>
-                                </div>
-                                <div class="side-menu__top-introduce">
-                                    <a href="index.html" rel="home" class="main-logo">
-                                        <img src="{{ asset('olux/assets/images/logo/logo-header.png') }}" alt="images">
-                                    </a>
-                                    <p>Etiam efficitur, metus in cursus imperdiet, neque nisl porta erat, nec volutpat
-                                        felis lacus a tellus. Nunc tristique nulla nisi, a viverra dui auctor vitae.
-                                        Vestibulum mollis commodo leo in hendrerit. Nam convallis ac lacus luctus
-                                        vestibulum. Donec cursus tellus id neque convallis blandit.</p>
-                                    <hr>
-                                </div>
-                                <div class="side-menu__top-lastest">
-                                    <div class="side-menu__title">
-                                        My Latest Work
-                                    </div>
-                                    <div class="side-menu__lastest">
-                                        <div class="side-menu__lastest-item">
-                                            <img src="{{ asset('olux/assets/images/image-box/side-menu-latest-1.jpg') }}" alt="images">
-                                            <div class="side-menu__lastest-layer">
-                                                <a href="blog-single.html" class="side-menu__lastest-icon"></a>
-                                            </div>
-                                        </div>
-                                        <div class="side-menu__lastest-item">
-                                            <img src="{{ asset('olux/assets/images/image-box/side-menu-latest-2.jpg') }}" alt="images">
-                                            <div class="side-menu__lastest-layer">
-                                                <a href="blog-single.html" class="side-menu__lastest-icon"></a>
-                                            </div>
-                                        </div>
-                                        <div class="side-menu__lastest-item">
-                                            <img src="{{ asset('olux/assets/images/image-box/side-menu-latest-3.jpg') }}" alt="images">
-                                            <div class="side-menu__lastest-layer">
-                                                <a href="blog-single.html" class="side-menu__lastest-icon"></a>
-                                            </div>
-                                        </div>
-                                        <div class="side-menu__lastest-item">
-                                            <img src="{{ asset('olux/assets/images/image-box/side-menu-latest-4.jpg') }}" alt="images">
-                                            <div class="side-menu__lastest-layer">
-                                                <a href="blog-single.html" class="side-menu__lastest-icon"></a>
-                                            </div>
-                                        </div>
-                                        <div class="side-menu__lastest-item">
-                                            <img src="{{ asset('olux/assets/images/image-box/side-menu-latest-5.jpg') }}" alt="images">
-                                            <div class="side-menu__lastest-layer">
-                                                <a href="blog-single.html" class="side-menu__lastest-icon"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                </div>
-                                <div class="side-menu__top-social">
-                                    <ul class="widget-social">
-                                        <li>Follow Me :</li>
-                                        <li><a href="#">Fb.</a></li>
-                                        <li><a href="#">Be.</a></li>
-                                        <li><a href="#">Tw.</a></li>
-                                        <li><a href="#">In.</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div> --}}
-                        <!-- /.wrap-inner -->
-                    </div>
                     <!-- /#site-header-inner -->
+                    <div class="wrap-inner clearfix">
+                        <div id="site-logo" class="clearfix ml-5">
+                            <div id="site-log-inner">
+                                <a href="{{ url('/') }}" rel="home" class="main-logo">
+                                    <img src="{{ asset('olux/assets/images/logo/logo-header.png') }}" alt="images">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- /#site-logo -->
+
+                        <div class="mobile-button">
+                            <span></span>
+                        </div>
+                        <!-- /.mobile-button -->
+                        <nav id="main-nav" class="main-nav mr-0">
+                            <ul id="menu-primary-menu" class="menu">
+                                <li class="menu-item current-menu-item">
+                                    <a href="{{ url('/') }}">Beranda</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Perusahaan</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Layanan</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="https://shop.razen.co.id/stores/razen-studio" target="blank">E-commerce</a>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Services</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="{{ route('social-media-engagement') }}">Social Media Engagement</a></li>
+                                        <li class="menu-item"><a href="{{ route('video-production') }}">Video Production</a></li>
+                                        <li class="menu-item"><a href="{{ route('commercial-photography') }}">Commercial Photography</a></li>
+                                        <li class="menu-item"><a href="{{ route('web-development') }}">Web Development</a></li>
+                                        <li class="menu-item"><a href="{{ route('visual-branding-design') }}">Visual Branding & Design</a></li>
+                                        <li class="menu-item"><a href="{{ route('digital-campaign') }}">Digital Campaign</a></li>
+                                        <li class="menu-item"><a href="{{ route('social-media-management') }}">Social Media Management</a></li>
+                                        <li class="menu-item"><a href="{{ route('jasa-seo') }}">SEO</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">How It Works</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="{{ route('about') }}">About</a></li>
+                                        <li class="menu-item"><a href="{{ route('how-it-works') }}">Cara Kerja Razen Studio</a></li>
+                                        <li class="menu-item"><a href="{{ route('portofolio') }}">Portofolio</a></li>
+                                        <li class="menu-item"><a href="{{ route('why-razen-studio') }}">Razen Studio vs Solusi Lainnya</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Community</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="{{ route('help-center') }}">Help Center</a></li>
+                                        <li class="menu-item"><a href="{{ route('blog') }}">Blog</a></li>
+                                        <li class="menu-item"><a href="{{ route('ebook') }}">Ebook</a></li>
+                                        <li class="menu-item"><a href="{{ route('razen-studio-academy') }}">Razen Studio Community</a></li>
+                                        <li class="menu-item"><a href="{{ route('freelancer-agency') }}">Freelancer/Agency?</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">E-learning</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Blog</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{{ route('contact') }}">Kontak</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- /#main-nav -->
+                        {{-- <div class="header-menu">
+                            <a href="#" class="header-menu-trigger icon-Group-1199"></a>
+                        </div> --}}
+                    </div>
                 </header>
                 <!-- /#site-header -->
             </div>

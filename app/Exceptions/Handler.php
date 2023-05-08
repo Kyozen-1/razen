@@ -80,9 +80,6 @@ class Handler extends ExceptionHandler
             case 'razen_studio':
                 $login = 'razen-studio.login';
                 break;
-            case 'razen_project':
-                $login = 'razen-project.login';
-                break;
         }
 
         return redirect()->guest(route($login));

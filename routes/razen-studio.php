@@ -1661,4 +1661,13 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
 
     //Contact - Section 4
     Route::post('/razen-studio/admin/contact/atur/section-4/store', 'RazenStudio\Admin\Contact\AturController@section_4_store')->name('razen-studio.admin.contact.atur.section-4.store');
+
+    Route::prefix('razen-studio')->group(function(){
+        Route::prefix('admin')->group(function(){
+            Route::prefix('profil')->group(function(){
+                Route::get('/', 'RazenStudio\Admin\ProfilController@index')->name('razen-studio.admin.profil.index');
+                Route::post('/', 'RazenStudio\Admin\ProfilController@store')->name('razen-studio.admin.profil.store');
+            });
+        });
+    });
 });

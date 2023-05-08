@@ -51,11 +51,6 @@ return [
             'provider' => 'razen_studio'
         ],
 
-        'razen_project' => [
-            'driver' => 'session',
-            'provider' => 'razen_project'
-        ],
-
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -94,11 +89,6 @@ return [
         'razen_studio' => [
             'driver' => 'eloquent',
             'model' => App\AkunRazenStudio::class,
-        ],
-
-        'razen_project' => [
-            'driver' => 'eloquent',
-            'model' => App\AkunRazenProject::class,
         ],
 
         // 'users' => [
