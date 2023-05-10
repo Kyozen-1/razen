@@ -1,3 +1,8 @@
+@php
+    use App\Models\Profil;
+
+    $profil = Profil::first();
+@endphp
 <!-- Basic Page Needs -->
 <meta charset="utf-8">
 <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
@@ -18,8 +23,8 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('olux/assets/css/responsive.css') }}">
 
 <!-- Favicon and Touch Icons  -->
-<link rel="shortcut icon" href="{{ asset('olux/assets/icon/Favicon.png') }}">
-<link rel="apple-touch-icon-precomposed" href="{{ asset('olux/assets/icon/Favicon.png') }}">
+<link rel="shortcut icon" href="{{ asset('images/razen-studio/logo/'.$profil->logo_kecil) }}">
+<link rel="apple-touch-icon-precomposed" href="{{ asset('images/razen-studio/logo/'.$profil->logo_kecil) }}">
 
 <link rel="stylesheet" href="{{ asset('olux/assets/css/swiper-bundle.min.css') }}" />
 <link href="{{ asset('olux/assets/css/jquery.fancybox.min.css') }}" rel="stylesheet">

@@ -1,5 +1,9 @@
 @php
     use App\Models\RazenStudio\LandingPage\LandingpageRazenstudioFooter;
+    use App\Models\Profil;
+
+
+    $profil = Profil::first();
 
     $data = LandingpageRazenstudioFooter::first();
     $solution = json_decode($data->solution, true);
@@ -33,10 +37,9 @@
                         <div class="top-bar-inner-wrap">
                             <div class="top-bar-content">
                                 <div class="inner text-white link-style-2">
-                                    <span class="phone content section-16px-regular"><a href="tel:012345678">(+706)
-                                            898-0752</a></span>
+                                    <span class="phone content section-16px-regular"><a href="tel:{{$profil->no_hp}}">{{$profil->no_hp}}</a></span>
                                     <span class="mail content section-16px-regular"><a
-                                            href="mailto:olux.design@gmail.com">olux.design@gmail.com</a></span>
+                                            href="mailto:{{$profil->email}}">{{$profil->email}}</a></span>
                                 </div>
                             </div>
                             <!-- /.top-bar-content -->
@@ -52,7 +55,7 @@
                         <div id="site-logo" class="clearfix ml-5">
                             <div id="site-log-inner">
                                 <a href="{{ url('/') }}" rel="home" class="main-logo">
-                                    <img src="{{ asset('olux/assets/images/logo/logo-header.png') }}" alt="images">
+                                    <img src="{{ asset('images/razen-studio/logo/'.$profil->logo) }}" alt="images">
                                 </a>
                             </div>
                         </div>
@@ -163,27 +166,19 @@
                                     </ul>
                                 </div>
                                 <div class="menu-3">
-                                    <h3 class="widget-title-link-wrap text-white">Get In Touch</h3>
+                                    <h3 class="widget-title-link-wrap text-white">Kontak</h3>
                                     <ul class="widget-list-contact text-white link-style-2">
-                                        @foreach ($get_in_touch as $item)
-                                            @if ($item['tipe_data'] == 'telepon')
-                                                <li>
-                                                    <a href="tel:{{$item['data']}}"
-                                                    class="meta-phone section-16px-regular-montserrat">{{$item['data']}}</a>
-                                                </li>
-                                            @endif
-                                            @if ($item['tipe_data'] == 'email')
-                                                <li>
-                                                    <a href="mailto:{{$item['data']}}"
-                                                    class="meta-mail section-16px-regular-montserrat">{{$item['data']}}</a>
-                                                </li>
-                                            @endif
-                                            @if ($item['tipe_data'] == 'alamat')
-                                                <li>
-                                                    <h3 class="meta-address section-16px-regular-montserrat text-white">{{$item['data']}}</h3>
-                                                </li>
-                                            @endif
-                                        @endforeach
+                                        <li>
+                                            <a href="tel:{{$profil->no_hp}}"
+                                            class="meta-phone section-16px-regular-montserrat">{{$profil->no_hp}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="mailto:{{$profil->email}}"
+                                            class="meta-mail section-16px-regular-montserrat">{{$profil->email}}</a>
+                                        </li>
+                                        <li>
+                                            <h3 class="meta-address section-16px-regular-montserrat text-white">{{$profil->alamat}}</h3>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

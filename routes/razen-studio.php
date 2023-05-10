@@ -13,6 +13,55 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
     Route::post('/razen-studio/admin/home/atur/section-1/hapur/gambar-section1', 'RazenStudio\Admin\HomeAturController@section_1_hapus_gambar_section1')->name('razen-studio.admin.home.atur.section-1.hapus.gambar-section1');
     //Home - Section 1 End
 
+    Route::prefix('razen-studio')->group(function(){
+        Route::prefix('admin')->group(function(){
+            Route::prefix('home')->group(function(){
+                Route::prefix('data')->group(function(){
+
+                    Route::prefix('biaya')->group(function(){
+                        Route::get('/', 'RazenStudio\Admin\Data\BiayaController@index')->name('razen-studio.admin.home.data.biaya.index');
+                        Route::get('/create', 'RazenStudio\Admin\Data\BiayaController@create')->name('razen-studio.admin.home.data.biaya.create');
+                        Route::get('/detail/{id}', 'RazenStudio\Admin\Data\BiayaController@show')->name('razen-studio.admin.home.data.biaya.detail');
+                        Route::post('/','RazenStudio\Admin\Data\BiayaController@store')->name('razen-studio.admin.home.data.biaya.store');
+                        Route::get('/edit/{id}','RazenStudio\Admin\Data\BiayaController@edit')->name('razen-studio.admin.home.data.biaya.edit');
+                        Route::post('/update/{id}','RazenStudio\Admin\Data\BiayaController@update')->name('razen-studio.admin.home.data.biaya.update');
+                        Route::get('/destroy/{id}','RazenStudio\Admin\Data\BiayaController@destroy')->name('razen-studio.admin.home.data.biaya.destory');
+                    });
+
+                    Route::prefix('keuntungan-bagi-bisnis')->group(function(){
+                        Route::get('/', 'RazenStudio\Admin\Data\KeuntunganBagiBisnisController@index')->name('razen-studio.admin.home.data.keuntungan-bagi-bisnis.index');
+                        Route::get('/create', 'RazenStudio\Admin\Data\KeuntunganBagiBisnisController@create')->name('razen-studio.admin.home.data.keuntungan-bagi-bisnis.create');
+                        Route::get('/detail/{id}', 'RazenStudio\Admin\Data\KeuntunganBagiBisnisController@show')->name('razen-studio.admin.home.data.keuntungan-bagi-bisnis.detail');
+                        Route::post('/','RazenStudio\Admin\Data\KeuntunganBagiBisnisController@store')->name('razen-studio.admin.home.data.keuntungan-bagi-bisnis.store');
+                        Route::get('/edit/{id}','RazenStudio\Admin\Data\KeuntunganBagiBisnisController@edit')->name('razen-studio.admin.home.data.keuntungan-bagi-bisnis.edit');
+                        Route::post('/update/{id}','RazenStudio\Admin\Data\KeuntunganBagiBisnisController@update')->name('razen-studio.admin.home.data.keuntungan-bagi-bisnis.update');
+                        Route::get('/destroy/{id}','RazenStudio\Admin\Data\KeuntunganBagiBisnisController@destroy')->name('razen-studio.admin.home.data.keuntungan-bagi-bisnis.destory');
+                    });
+
+                    Route::prefix('portofolio')->group(function(){
+                        Route::get('/', 'RazenStudio\Admin\Data\PortofolioController@index')->name('razen-studio.admin.home.data.portofolio.index');
+                        Route::get('/create', 'RazenStudio\Admin\Data\PortofolioController@create')->name('razen-studio.admin.home.data.portofolio.create');
+                        Route::get('/show/{id}', 'RazenStudio\Admin\Data\PortofolioController@show')->name('razen-studio.admin.home.data.portofolio.show');
+                        Route::post('/','RazenStudio\Admin\Data\PortofolioController@store')->name('razen-studio.admin.home.data.portofolio.store');
+                        Route::get('/edit/{id}','RazenStudio\Admin\Data\PortofolioController@edit')->name('razen-studio.admin.home.data.portofolio.edit');
+                        Route::post('/update','RazenStudio\Admin\Data\PortofolioController@update')->name('razen-studio.admin.home.data.portofolio.update');
+                        Route::get('/destroy/{id}','RazenStudio\Admin\Data\PortofolioController@destroy')->name('razen-studio.admin.home.data.portofolio.destroy');
+                    });
+
+                    Route::prefix('testimoni')->group(function(){
+                        Route::get('/', 'RazenStudio\Admin\Data\TestimoniController@index')->name('razen-studio.admin.home.data.testimoni.index');
+                        Route::get('/create', 'RazenStudio\Admin\Data\TestimoniController@create')->name('razen-studio.admin.home.data.testimoni.create');
+                        Route::get('/show/{id}', 'RazenStudio\Admin\Data\TestimoniController@show')->name('razen-studio.admin.home.data.testimoni.show');
+                        Route::post('/','RazenStudio\Admin\Data\TestimoniController@store')->name('razen-studio.admin.home.data.testimoni.store');
+                        Route::get('/edit/{id}','RazenStudio\Admin\Data\TestimoniController@edit')->name('razen-studio.admin.home.data.testimoni.edit');
+                        Route::post('/update','RazenStudio\Admin\Data\TestimoniController@update')->name('razen-studio.admin.home.data.testimoni.update');
+                        Route::get('/destroy/{id}','RazenStudio\Admin\Data\TestimoniController@destroy')->name('razen-studio.admin.home.data.testimoni.destroy');
+                    });
+                });
+            });
+        });
+    });
+
     //Home - Section 2 Start
     Route::post('/razen-studio/admin/home/atur/section-2/store', 'RazenStudio\Admin\HomeAturController@section_2_store')->name('razen-studio.admin.home.atur.section-2.store');
     Route::post('/razen-studio/admin/home/atur/section-2/store/hapus/satu', 'RazenStudio\Admin\HomeAturController@section_2_hapus_satu')->name('razen-studio.admin.home.atur.section-2.hapus.satu');

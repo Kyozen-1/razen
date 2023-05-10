@@ -222,13 +222,13 @@
                                 </th>
                                 <th scope="col" class="w-20 align-middle text-center">
                                     <span class="text-dark h2">Digital Agency Hub</span>
-                                    <small class="d-block text-body h5">Bekerjasama dengan<span class="badge badge-primary badge-pill ml-1">GoSocial</span></small>
+                                    <small class="d-block text-body h5">Bekerjasama dengan<span class="badge badge-danger badge-pill ml-1 mt-0">Razen Studio</span></small>
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="border-top border-bottom">
-                                <th scope="row" class="bg-white text-dark pt-5 pb-3 px-4 mb-0 font-size-2">Biaya</th>
+                                <th scope="row" class="bg-white text-dark pt-5 pb-3 px-4 mb-0 font-size-2 font-weight-bold">Biaya</th>
                                 <td class="bg-white"></td>
                                 <td class="bg-white border-left border-right"></td>
                                 <td class="bg-white"></td>
@@ -274,8 +274,8 @@
                                     <p class="small font-size-2">sudah disesuaikan dengan level bisnis</p>
                                 </td>
                             </tr>
-                            <tr>
-                                <th scope="row" class="bg-white text-dark pt-5 pb-3 px-4 mb-0 font-size-2">Keuntungan Bagi Bisnis</th>
+                            <tr class="border-top border-bottom">
+                                <th scope="row" class="bg-white text-dark pt-5 pb-3 px-4 mb-0 font-size-2 font-weight-bold">Keuntungan Bagi Bisnis</th>
                                 <td class="bg-white"></td>
                                 <td class="bg-white border-left border-right"></td>
                                 <td class="bg-white"></td>

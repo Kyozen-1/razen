@@ -150,7 +150,11 @@
                     request()->routeIs('razen-studio.admin.portofolio.atur.index') ||
                     request()->routeIs('razen-studio.admin.why-razen-studio.atur.index') ||
                     request()->routeIs('razen-studio.admin.freelancer-agency.atur.index') ||
-                    request()->routeIs('razen-studio.admin.contact.atur.index')
+                    request()->routeIs('razen-studio.admin.contact.atur.index') ||
+                    request()->routeIs('razen-studio.admin.home.data.biaya.index') ||
+                    request()->routeIs('razen-studio.admin.home.data.keuntungan-bagi-bisnis.index') ||
+                    request()->routeIs('razen-studio.admin.home.data.portofolio.index') ||
+                    request()->routeIs('razen-studio.admin.home.data.testimoni.index')
                     )
                     <a href="#landing_page" class="active">
                     @else
@@ -161,7 +165,11 @@
                     </a>
                     <ul id="landing_page">
                         <li>
-                            @if (request()->routeIs('razen-studio.admin.home.atur.index'))
+                            @if (request()->routeIs('razen-studio.admin.home.atur.index') ||
+                            request()->routeIs('razen-studio.admin.home.data.biaya.index') ||
+                            request()->routeIs('razen-studio.admin.home.data.keuntungan-bagi-bisnis.index') ||
+                            request()->routeIs('razen-studio.admin.home.data.portofolio.index') ||
+                            request()->routeIs('razen-studio.admin.home.data.testimoni.index'))
                                 <a href="#home" class="active">
                             @else
                                 <a href="#home">
@@ -169,6 +177,56 @@
                                 <span class="label">Home</span>
                             </a>
                             <ul id="home">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.home.data.biaya.index') ||
+                                    request()->routeIs('razen-studio.admin.home.data.keuntungan-bagi-bisnis.index') ||
+                                    request()->routeIs('razen-studio.admin.home.data.portofolio.index') ||
+                                    request()->routeIs('razen-studio.admin.home.data.testimoni.index'))
+                                        <a href="#data_home" class="active">
+                                    @else
+                                        <a href="#data_home">
+                                    @endif
+                                        <span class="label">Data</span>
+                                    </a>
+                                    <ul id="data_home">
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.home.data.biaya.index'))
+                                                <a href="{{ route('razen-studio.admin.home.data.biaya.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.home.data.biaya.index') }}">
+                                            @endif
+                                                <span class="label">Biaya</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.home.data.keuntungan-bagi-bisnis.index'))
+                                                <a href="{{ route('razen-studio.admin.home.data.keuntungan-bagi-bisnis.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.home.data.keuntungan-bagi-bisnis.index') }}">
+                                            @endif
+                                                <span class="label">Keuntungan Bagi Bisnis</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.home.data.portofolio.index'))
+                                                <a href="{{ route('razen-studio.admin.home.data.portofolio.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.home.data.portofolio.index') }}">
+                                            @endif
+                                                <span class="label">Portofolio</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.home.data.testimoni.index'))
+                                                <a href="{{ route('razen-studio.admin.home.data.testimoni.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.home.data.testimoni.index') }}">
+                                            @endif
+                                                <span class="label">Testimoni</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li>
                                     @if (request()->routeIs('razen-studio.admin.home.atur.index'))
                                         <a href="{{ route('razen-studio.admin.home.atur.index') }}" class="active">
