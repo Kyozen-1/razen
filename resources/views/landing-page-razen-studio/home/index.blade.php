@@ -208,7 +208,7 @@
                         style="height:60px"></div>
                 </div>
                 <div class="col-md-12">
-                    <table class="table table-borderless">
+                    <table class="table table-borderless table-responsive">
                         <thead>
                             <tr>
                                 <th scope="col" class="w-40"></th>
@@ -233,146 +233,151 @@
                                 <td class="bg-white border-left border-right"></td>
                                 <td class="bg-white"></td>
                             </tr>
-                            <tr>
-                                <td scope="row" class="font-size-1 py-3 px-4 font-size-2">Fixed Cost</td>
-                                <td class="text-center p-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
-                                        <path fill="currentColor" d="M14,2A8,8 0 0,0 6,10A8,8 0 0,0 14,18A8,8 0 0,0 22,10A8,8 0 0,0 14,2M4.93,5.82C3.08,7.34 2,9.61 2,12A8,8 0 0,0 10,20C10.64,20 11.27,19.92 11.88,19.77C10.12,19.38 8.5,18.5 7.17,17.29C5.22,16.25 4,14.21 4,12C4,11.7 4.03,11.41 4.07,11.11C4.03,10.74 4,10.37 4,10C4,8.56 4.32,7.13 4.93,5.82M18.09,6.08L19.5,7.5L13,14L9.21,10.21L10.63,8.79L13,11.17" />
-                                    </svg>
-                                </td>
-                                <td class="text-center border-left border-right p-3">
-                                    <span class="badge badge-soft-primary badge-pill font-weight-normal py-2 px-3 font-size-1">Tidak perlu</span>
-                                </td>
-                                <td class="text-center p-3">
-                                    <span class="badge badge-soft-primary badge-pill font-weight-normal py-2 px-3 font-size-1">Tidak perlu</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="row" class="font-size-1 py-3 px-4 font-size-2">Biaya Rekrutmen & Training</td>
-                                <td class="text-center text-body p-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
-                                        <path fill="currentColor" d="M14,2A8,8 0 0,0 6,10A8,8 0 0,0 14,18A8,8 0 0,0 22,10A8,8 0 0,0 14,2M4.93,5.82C3.08,7.34 2,9.61 2,12A8,8 0 0,0 10,20C10.64,20 11.27,19.92 11.88,19.77C10.12,19.38 8.5,18.5 7.17,17.29C5.22,16.25 4,14.21 4,12C4,11.7 4.03,11.41 4.07,11.11C4.03,10.74 4,10.37 4,10C4,8.56 4.32,7.13 4.93,5.82M18.09,6.08L19.5,7.5L13,14L9.21,10.21L10.63,8.79L13,11.17" />
-                                    </svg>
-                                </td>
-                                <td class="text-center border-left border-right p-3">
-                                    <span class="badge badge-soft-primary badge-pill font-weight-normal py-2 px-3 font-size-1">Tidak perlu</span>
-                                </td>
-                                <td class="text-center p-3">
-                                    <span class="badge badge-soft-primary badge-pill font-weight-normal py-2 px-3 font-size-1">Tidak perlu</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="row" class="font-size-1 py-3 px-4 align-middle font-size-2 align-middle">Harga</td>
-                                <td></td>
-                                <td class="text-center text-body border-left border-right py-3 px-4 align-middle align-middle">
-                                    <span class="badge badge-soft-danger badge-pill font-weight-normal py-2 px-3 font-size-1">Tidak ada standard</span>
-                                </td>
-                                <td class="justify-content-center align-self-center text-center">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mr-2">
-                                        <path fill="currentColor" d="M14,2A8,8 0 0,0 6,10A8,8 0 0,0 14,18A8,8 0 0,0 22,10A8,8 0 0,0 14,2M4.93,5.82C3.08,7.34 2,9.61 2,12A8,8 0 0,0 10,20C10.64,20 11.27,19.92 11.88,19.77C10.12,19.38 8.5,18.5 7.17,17.29C5.22,16.25 4,14.21 4,12C4,11.7 4.03,11.41 4.07,11.11C4.03,10.74 4,10.37 4,10C4,8.56 4.32,7.13 4.93,5.82M18.09,6.08L19.5,7.5L13,14L9.21,10.21L10.63,8.79L13,11.17" />
-                                    </svg>
-                                    <p class="small font-size-2">sudah disesuaikan dengan level bisnis</p>
-                                </td>
-                            </tr>
+                            @foreach ($biayas as $biaya)
+                                @php
+                                    $in_house = json_decode($biaya->in_house, true);
+                                    $freelance = json_decode($biaya->freelance, true);
+                                    $digital_agency_hub = json_decode($biaya->digital_agency_hub, true);
+                                @endphp
+
+                                <tr class="border">
+                                    <td scope="row" class="font-size-1 py-3 px-4 font-size-2">{{$biaya->nama}}</td>
+                                    <td class="text-center p-3">
+                                        @if ($in_house['status'] == '1')
+                                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                                <path fill="currentColor" d="M14,2A8,8 0 0,0 6,10A8,8 0 0,0 14,18A8,8 0 0,0 22,10A8,8 0 0,0 14,2M4.93,5.82C3.08,7.34 2,9.61 2,12A8,8 0 0,0 10,20C10.64,20 11.27,19.92 11.88,19.77C10.12,19.38 8.5,18.5 7.17,17.29C5.22,16.25 4,14.21 4,12C4,11.7 4.03,11.41 4.07,11.11C4.03,10.74 4,10.37 4,10C4,8.56 4.32,7.13 4.93,5.82M18.09,6.08L19.5,7.5L13,14L9.21,10.21L10.63,8.79L13,11.17" />
+                                            </svg>
+                                        @endif
+                                        @if ($in_house['status'] == '0')
+                                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                                <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                            </svg>
+                                        @endif
+                                        <br>
+                                        @if ($in_house['status_keterangan'] == '1')
+                                            @if (array_key_exists('keterangan',$in_house))
+                                                {{$in_house['keterangan']}}
+                                            @endif
+                                        @endif
+                                    </td>
+                                    <td class="text-center border-left border-right p-3">
+                                        @if ($freelance['status'] == 'Tidak perlu')
+                                            <span class="badge badge-soft-primary badge-pill font-weight-normal py-2 px-3 font-size-1">Tidak perlu</span>
+                                        @endif
+                                        @if ($freelance['status'] == 'Tidak ada standard')
+                                            <span class="badge badge-soft-danger badge-pill font-weight-normal py-2 px-3 font-size-1">Tidak ada standard</span>
+                                        @endif
+                                        <br>
+                                        @if ($freelance['status_keterangan'] == '1')
+                                            @if (array_key_exists('keterangan',$freelance))
+                                                {{$freelance['keterangan']}}
+                                            @endif
+                                        @endif
+                                    </td>
+                                    <td class="text-center p-3">
+                                        @if ($digital_agency_hub['status'] == 'Ya')
+                                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                                <path fill="currentColor" d="M14,2A8,8 0 0,0 6,10A8,8 0 0,0 14,18A8,8 0 0,0 22,10A8,8 0 0,0 14,2M4.93,5.82C3.08,7.34 2,9.61 2,12A8,8 0 0,0 10,20C10.64,20 11.27,19.92 11.88,19.77C10.12,19.38 8.5,18.5 7.17,17.29C5.22,16.25 4,14.21 4,12C4,11.7 4.03,11.41 4.07,11.11C4.03,10.74 4,10.37 4,10C4,8.56 4.32,7.13 4.93,5.82M18.09,6.08L19.5,7.5L13,14L9.21,10.21L10.63,8.79L13,11.17" />
+                                            </svg>
+                                        @endif
+                                        @if ($digital_agency_hub['status'] == 'Tidak perlu')
+                                            <span class="badge badge-soft-primary badge-pill font-weight-normal py-2 px-3 font-size-1">Tidak perlu</span>
+                                        @endif
+                                        @if ($digital_agency_hub['status'] == 'Tidak ada standard')
+                                            <span class="badge badge-soft-danger badge-pill font-weight-normal py-2 px-3 font-size-1">Tidak ada standard</span>
+                                        @endif
+                                        <br>
+                                        @if ($digital_agency_hub['status_keterangan'] == '1')
+                                            @if (array_key_exists('keterangan',$digital_agency_hub))
+                                                {{$digital_agency_hub['keterangan']}}
+                                            @endif
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endforeach
+
                             <tr class="border-top border-bottom">
                                 <th scope="row" class="bg-white text-dark pt-5 pb-3 px-4 mb-0 font-size-2 font-weight-bold">Keuntungan Bagi Bisnis</th>
                                 <td class="bg-white"></td>
                                 <td class="bg-white border-left border-right"></td>
                                 <td class="bg-white"></td>
                             </tr>
-                            <tr>
-                                <td scope="row" class="font-size-1 py-3 px-4 font-size-2">Efisiensi Biaya Tim</td>
-                                <td class="text-center p-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
-                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                                    </svg>
-                                </td>
-                                <td class="text-center border-left border-right p-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                        <path fill="currentColor" d="M14,2A8,8 0 0,0 6,10A8,8 0 0,0 14,18A8,8 0 0,0 22,10A8,8 0 0,0 14,2M4.93,5.82C3.08,7.34 2,9.61 2,12A8,8 0 0,0 10,20C10.64,20 11.27,19.92 11.88,19.77C10.12,19.38 8.5,18.5 7.17,17.29C5.22,16.25 4,14.21 4,12C4,11.7 4.03,11.41 4.07,11.11C4.03,10.74 4,10.37 4,10C4,8.56 4.32,7.13 4.93,5.82M18.09,6.08L19.5,7.5L13,14L9.21,10.21L10.63,8.79L13,11.17" />
-                                    </svg>
-                                </td>
-                                <td class="text-center p-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                        <path fill="currentColor" d="M14,2A8,8 0 0,0 6,10A8,8 0 0,0 14,18A8,8 0 0,0 22,10A8,8 0 0,0 14,2M4.93,5.82C3.08,7.34 2,9.61 2,12A8,8 0 0,0 10,20C10.64,20 11.27,19.92 11.88,19.77C10.12,19.38 8.5,18.5 7.17,17.29C5.22,16.25 4,14.21 4,12C4,11.7 4.03,11.41 4.07,11.11C4.03,10.74 4,10.37 4,10C4,8.56 4.32,7.13 4.93,5.82M18.09,6.08L19.5,7.5L13,14L9.21,10.21L10.63,8.79L13,11.17" />
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="row" class="font-size-1 py-3 px-4 align-middle font-size-2">Bisnis bisa fokus pada kompetensi utamanya</td>
-                                <td class="text-center text-body p-3 align-middle">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
-                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                                    </svg>
-                                </td>
-                                <td class="text-center border-left border-right p-3 align-middle">
-                                    <span class="badge badge-soft-danger badge-pill font-weight-normal py-2 px-3 font-size-1">Perlu ada yang mengatur</span>
-                                </td>
-                                <td class="text-center p-3 align-middle font-size-2">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mr-2">
-                                        <path fill="currentColor" d="M14,2A8,8 0 0,0 6,10A8,8 0 0,0 14,18A8,8 0 0,0 22,10A8,8 0 0,0 14,2M4.93,5.82C3.08,7.34 2,9.61 2,12A8,8 0 0,0 10,20C10.64,20 11.27,19.92 11.88,19.77C10.12,19.38 8.5,18.5 7.17,17.29C5.22,16.25 4,14.21 4,12C4,11.7 4.03,11.41 4.07,11.11C4.03,10.74 4,10.37 4,10C4,8.56 4.32,7.13 4.93,5.82M18.09,6.08L19.5,7.5L13,14L9.21,10.21L10.63,8.79L13,11.17" />
-                                    </svg>
-                                    <p class="small font-size-2">kami akan menjadi konsultan sekaligus partner eksekusi</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="row" class="font-size-1 py-3 px-4 align-middle font-size-2">Kualitas Hasil Pekerjaan</td>
-                                <td class="text-center text-body p-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger mr-2">
-                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                                    </svg>
-                                    <p class="small font-size-2">Semakin profesional maka fixed cost semakin besar</p>
-                                </td>
-                                <td class="text-center border-left border-right p-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger mr-2">
-                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                                    </svg>
-                                    <p class="small font-size-2">Sulit mengetahui apakah hasil dengan harga sebanding</p>
-                                </td>
-                                <td class="text-center p-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                    <p class="small font-size-2">Proses dan hasil sudah distandarisasi</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="row" class="font-size-1 py-3 px-4 align-middle font-size-2">Menguasai tools & teknologi terkini dalam Digital Marketing</td>
-                                <td class="text-center text-body p-3 align-middle">
-                                    <span class="badge badge-soft-danger badge-pill font-weight-normal py-2 px-3 font-size-1">Belum tentu
-                                    </span>
-                                </td>
-                                <td class="text-center border-left border-right p-3 align-middle">
-                                    <span class="badge badge-soft-danger badge-pill font-weight-normal py-2 px-3 font-size-1">Belum tentu
-                                    </span>
-                                </td>
-                                <td class="text-center p-3 align-middle">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="font-size-1 py-3 px-4 align-middle font-size-2">Dukungan aplikasi untuk melihat dan manajemen proyek</th>
-                                <td class="text-center text-body p-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger mr-2">
-                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                                    </svg>
-                                </td>
-                                <td class="text-center border-left border-right p-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger mr-2">
-                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                                    </svg>
-                                </td>
-                                <td class="text-center p-3">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mr-2">
-                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                    </svg>
-                                </td>
-                                <tr>
-                                    <td colspan="3"></td>
-                                    <td class="text-center"><a class="btn btn-primary waves-effect waves-light font-size-2" href="#">Contact Us</a></td>
+                            @foreach ($keuntungan_bagi_bisnis as $item)
+                                @php
+                                    $in_house = json_decode($item->in_house, true);
+                                    $freelance = json_decode($item->freelance, true);
+                                    $digital_agency_hub = json_decode($item->digital_agency_hub, true);
+                                @endphp
+
+                                <tr class="border">
+                                    <td scope="row" class="font-size-1 py-3 px-4 font-size-2">{{$item->nama}}</td>
+                                    <td class="text-center p-3">
+                                        @if ($in_house['status'] == '1')
+                                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                                <path fill="currentColor" d="M14,2A8,8 0 0,0 6,10A8,8 0 0,0 14,18A8,8 0 0,0 22,10A8,8 0 0,0 14,2M4.93,5.82C3.08,7.34 2,9.61 2,12A8,8 0 0,0 10,20C10.64,20 11.27,19.92 11.88,19.77C10.12,19.38 8.5,18.5 7.17,17.29C5.22,16.25 4,14.21 4,12C4,11.7 4.03,11.41 4.07,11.11C4.03,10.74 4,10.37 4,10C4,8.56 4.32,7.13 4.93,5.82M18.09,6.08L19.5,7.5L13,14L9.21,10.21L10.63,8.79L13,11.17" />
+                                            </svg>
+                                        @endif
+                                        @if ($in_house['status'] == '0')
+                                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                                <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                            </svg>
+                                        @endif
+                                        @if ($in_house['status'] == 'Belum Tentu')
+                                            <span class="badge badge-soft-danger badge-pill font-weight-normal py-2 px-3 font-size-1">Belum tentu</span>
+                                        @endif
+                                        <br>
+                                        @if ($in_house['status_keterangan'] == '1')
+                                            @if (array_key_exists('keterangan',$in_house))
+                                                {{$in_house['keterangan']}}
+                                            @endif
+                                        @endif
+                                    </td>
+                                    <td class="text-center border-left border-right p-3">
+                                        @if ($freelance['status'] == 'Ya')
+                                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                                <path fill="currentColor" d="M14,2A8,8 0 0,0 6,10A8,8 0 0,0 14,18A8,8 0 0,0 22,10A8,8 0 0,0 14,2M4.93,5.82C3.08,7.34 2,9.61 2,12A8,8 0 0,0 10,20C10.64,20 11.27,19.92 11.88,19.77C10.12,19.38 8.5,18.5 7.17,17.29C5.22,16.25 4,14.21 4,12C4,11.7 4.03,11.41 4.07,11.11C4.03,10.74 4,10.37 4,10C4,8.56 4.32,7.13 4.93,5.82M18.09,6.08L19.5,7.5L13,14L9.21,10.21L10.63,8.79L13,11.17" />
+                                            </svg>
+                                        @endif
+                                        @if ($freelance['status'] == 'Tidak')
+                                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                                <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                            </svg>
+                                        @endif
+                                        @if ($freelance['status'] == 'Belum Tentu')
+                                            <span class="badge badge-soft-danger badge-pill font-weight-normal py-2 px-3 font-size-1">Belum tentu</span>
+                                        @endif
+                                        @if ($freelance['status'] == 'Perlu ada yang mengatur')
+                                            <span class="badge badge-soft-danger badge-pill font-weight-normal py-2 px-3 font-size-1">Perlu ada yang mengatur</span>
+                                        @endif
+                                        <br>
+                                        @if ($freelance['status_keterangan'] == '1')
+                                            @if (array_key_exists('keterangan',$freelance))
+                                                {{$freelance['keterangan']}}
+                                            @endif
+                                        @endif
+                                    </td>
+                                    <td class="text-center p-3">
+                                        @if ($digital_agency_hub['status'] == 'Ya')
+                                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                                <path fill="currentColor" d="M14,2A8,8 0 0,0 6,10A8,8 0 0,0 14,18A8,8 0 0,0 22,10A8,8 0 0,0 14,2M4.93,5.82C3.08,7.34 2,9.61 2,12A8,8 0 0,0 10,20C10.64,20 11.27,19.92 11.88,19.77C10.12,19.38 8.5,18.5 7.17,17.29C5.22,16.25 4,14.21 4,12C4,11.7 4.03,11.41 4.07,11.11C4.03,10.74 4,10.37 4,10C4,8.56 4.32,7.13 4.93,5.82M18.09,6.08L19.5,7.5L13,14L9.21,10.21L10.63,8.79L13,11.17" />
+                                            </svg>
+                                        @endif
+                                        @if ($digital_agency_hub['status'] == 'Tidak perlu')
+                                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                                <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                            </svg>
+                                        @endif
+                                        <br>
+                                        @if ($digital_agency_hub['status_keterangan'] == '1')
+                                            @if (array_key_exists('keterangan',$digital_agency_hub))
+                                                {{$digital_agency_hub['keterangan']}}
+                                            @endif
+                                        @endif
+                                    </td>
                                 </tr>
+                            @endforeach
+                            <tr>
+                                <td colspan="4" class="text-center"><a class="btn btn-primary waves-effect waves-light font-size-2" href="{{ route('contact') }}">Hubungi Kami</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -387,6 +392,18 @@
             <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
                 <h2>{{$section6['judul']}}</h2>
                 <p>{{$section6['deskripsi']}}</p>
+            </div>
+            <div class="row">
+                @foreach ($portofolios as $portofolio)
+                    <div class="col-md-4 col-12">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="{{ asset('images/landingpage_razenstudio/home/portofolio/'.$portofolio->gambar) }}" alt="{{$portofolio->nama}}">
+                            <div class="card-body text-center">
+                                <h2>{{$portofolio->nama}}</h2>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -404,11 +421,11 @@
                 <div class="col-md-6">
                     <div class="swiper-container sliver-vertical">
                         <div class="swiper-wrapper">
-                            @foreach ($reviews as $review)
+                            @foreach ($testimonis as $testimoni)
                             <div class="swiper-slide">
                                 <div class="client-slider-box">
                                     <div class="client-user text-center">
-                                        <img src="{{ asset('images/landingpage_razenstudio/reviewer/'.$review->gambar) }}"
+                                        <img src="{{ asset('images/landingpage_razenstudio/home/testimoni/'.$testimoni->gambar) }}"
                                             alt="images">
                                         <ul class="list-inline small mt-3">
                                             <li class="list-inline-item mx-0">
@@ -430,8 +447,8 @@
                                     </div>
                                     <div class="client-content">
                                         <div class="client-user-author">
-                                            <h4 class="name-author section-20px-montserrat">{{$review->nama}}</h4>
-                                            <p class="margin-top-11">{{$review->ulasan}}</p>
+                                            <h4 class="name-author section-20px-montserrat">{{$testimoni->nama}}</h4>
+                                            <p class="margin-top-11">{{$testimoni->testimoni}}</p>
                                         </div>
                                     </div>
                                 </div>

@@ -4,12 +4,25 @@ namespace App\Http\Controllers\LandingPageRazenStudio;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\RazenStudio\Data\LandingPageBerandaBiaya;
+use App\Models\RazenStudio\Data\LandingPageBerandaKeuntunganBagiBisnis;
+use App\Models\RazenStudio\Data\LandingPageBerandaPortofolio;
+use App\Models\RazenStudio\Data\LandingPageBerandaTestimoni;
 
 class HomeController extends Controller
 {
     public function home()
     {
-        return view('landing-page-razen-studio.home.index');
+        $biayas = LandingPageBerandaBiaya::all();
+        $keuntungan_bagi_bisnis = LandingPageBerandaKeuntunganBagiBisnis::all();
+        $portofolios = LandingPageBerandaPortofolio::all();
+        $testimonis = LandingPageBerandaTestimoni::all();
+        return view('landing-page-razen-studio.home.index', [
+            'biayas' => $biayas,
+            'keuntungan_bagi_bisnis' => $keuntungan_bagi_bisnis,
+            'portofolios' => $portofolios,
+            'testimonis' => $testimonis
+        ]);
     }
     public function social_media_engagement()
     {
