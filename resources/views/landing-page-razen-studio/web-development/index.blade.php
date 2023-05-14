@@ -292,182 +292,77 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="border-top border-bottom">
-                        <th scope="row" class="bg-white h4">Paket Website
-                            <small class="text-muted">(One-time Payment)</small>
-                        </th>
-                        <td class="bg-white text-center">
-                            <img class="img-fluid" src="https://gosocial.co.id/assets/svg/service/web/paket-landing-page.svg" alt="Image Description" style="width: 40%;">
-                            <div class="d-block">
-                                <small class="text-muted">Start from</small><br>
-                                <span class="text-primary align-top pricing">Rp.</span>
-                                <span class="h2 text-primary">2.000.000</span>
-                            </div>
-                            <p class="text-muted">Cocok untuk bisnis yang baru mulai go-digital dan butuh web
-                                untuk marketing</p>
-                        </td>
-                        <td class="bg-white text-center border-left border-right">
-                            <img class="img-fluid" src="https://gosocial.co.id/assets/svg/service/web/paket-company-profile.svg" alt="Image Description" style="width: 40%;">
-                            <div class="d-block">
-                                <small class="text-muted">Start from</small><br>
-                                <span class="text-primary align-top pricing">Rp.</span>
-                                <span class="h2 text-primary">3.500.000</span>
-                            </div>
-                            <p class="text-muted">Cocok untuk kebutuhan branding perusahaan / brand</p>
-                        </td>
-                        <td class="bg-white text-center">
-                            <img class="img-fluid" src="https://gosocial.co.id/assets/svg/service/web/paket-ecommerce.svg" alt="Image Description" style="width: 40%;">
-                            <div class="d-block">
-                                <small class="text-muted">Start from</small><br>
-                                <span class="text-primary align-top pricing ">Rp.</span>
-                                <span class="h2 text-primary">7.500.000</span>
-                            </div>
-                            <p class="text-muted">Cocok untuk bisnis / brand yang ingin menerima transaksi
-                                online</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="bg-white h4">
-                            Pembuatan Halaman Web
-                        </th>
-                        <td class="text-center p-3">
-                            <p class="text-primary">1 Halaman</p>
-                        </td>
-                        <td class="text-center border-left border-right p-3">
-                            <p class="text-primary">3 Halaman</p>
-                        </td>
-                        <td class="text-center p-3">
-                            <p class="text-primary">7 Halaman</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="bg-white h4">
-                            Gratis Domain
-                        </th>
-                        <td class="text-center text-body p-3">
-                            <p class="text-primary">.com</p>
-                        </td>
-                        <td class="text-center border-left border-right p-3">
-                            <p class="text-primary">com/.co.id</p>
-                        </td>
-                        <td class="text-center p-3">
-                            <p class="text-primary">com/.id/.co.id</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="bg-white h4">
-                            Gratis Hosting (Server)
-                        </th>
-                        <td class="text-center p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </td>
-                        <td class="text-center border-left border-right p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </td>
-                        <td class="text-center p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="bg-white h4">
-                            SSL (https)
-                        </th>
-                        <td class="text-center p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </td>
-                        <td class="text-center border-left border-right p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </td>
-                        <td class="text-center p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="bg-white h4">
-                            Setup Fee
-                        </th>
-                        <td class="text-center p-3">
-                            <span class="p-2 bg-success rounded text-white">Free</span>
-                        </td>
-                        <td class="text-center border-left border-right p-3">
-                            <span class="p-2 bg-success rounded text-white">Free</span>
-                        </td>
-                        <td class="text-center p-3">
-                            <span class="p-2 bg-success rounded text-white">Free</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="bg-white h4">
-                            Fitur Web
-                        </th>
-                        <td class="text-center text-body p-3">
-                            <p class="text-primary">CMS Basic
-                            <p class="text-secondary">
-                                <small>- Integrasi Google Analytics
-                                    <br>- Integrasi Facebook Pixel
-                                </small></p>
-                        </td>
-                        <td class="text-center border-left border-right p-3">
-                            <p class="text-primary">CMS Basic
-                            <p class="text-secondary">
-                                <small>- SEO Plugin
-                                    <br>- Sistem Blog
-                                    <br>- Sistem Contact Us
-                                </small>
-                            </p>
-                        </td>
-                        <td class="text-center p-3">
-                            <p class="text-primary">CMS E-Commerce
-                            <p class="text-secondary">
-                                <small>- SEO Plugin
-                                    <br>- Manajemen Produk &amp; Transaksi
-                                    <br>- Integrasi Plugin Pengiriman
-                                    <br>- Sistem Contact Us
-                                </small>
-                            </p>
-                        </td>
+                    @foreach ($harga_websites as $harga_website)
+                        <tr class="border-top border-bottom">
+                            <th scope="row" class="bg-white h4">{{$harga_website->nama}}</th>
+                            <td class="bg-white text-center">
+                                @php
+                                    $landing_page = json_decode($harga_website->landing_page, true);
+                                @endphp
+                                @if ($landing_page['status_inputan'] == 'tulisan')
+                                    {!! $landing_page['inputan'] !!}
+                                @endif
 
-                    </tr>
-                    <tr>
-                        <th scope="row" class="bg-white h4">
-                            Search Engine Optimization
-                        </th>
-                        <td class="text-center p-3">
-                            <p class="text-primary">SEO Basic</p>
-                        </td>
-                        <td class="text-center border-left border-right p-3">
-                            <p class="text-primary">SEO Basic</p>
-                        </td>
-                        <td class="text-center p-3">
-                            <p class="text-primary">SEO Standard</p>
-                        </td>
-                    </tr>
-                    <tr class="border-bottom">
-                        <th scope="row" class="bg-white h4">
-                            Lama Pengerjaan
-                        </th>
-                        <td class="text-center text-body p-3">
-                            <p class="text-primary">5 Hari</p>
-                        </td>
-                        <td class="text-center border-left border-right p-3">
-                            <p class="text-primary">10 Hari</p>
-                        </td>
-                        <td class="text-center p-3">
-                            <p class="text-primary">15 Hari</p>
-                        </td>
-                    </tr>
+                                @if ($landing_page['status_inputan'] == 'ikon')
+                                    @if ($landing_page['inputan'] == 'Ya')
+                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
+                                            <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                        </svg>
+                                    @endif
+
+                                    @if ($landing_page['inputan'] == 'Tidak')
+                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                            <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                        </svg>
+                                    @endif
+                                @endif
+                            </td>
+                            <td class="bg-white text-center">
+                                @php
+                                    $company_profile = json_decode($harga_website->company_profile, true);
+                                @endphp
+                                @if ($company_profile['status_inputan'] == 'tulisan')
+                                    {!! $company_profile['inputan'] !!}
+                                @endif
+
+                                @if ($company_profile['status_inputan'] == 'ikon')
+                                    @if ($company_profile['inputan'] == 'Ya')
+                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
+                                            <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                        </svg>
+                                    @endif
+
+                                    @if ($company_profile['inputan'] == 'Tidak')
+                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                            <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                        </svg>
+                                    @endif
+                                @endif
+                            </td>
+                            <td class="bg-white text-center">
+                                @php
+                                    $e_commerce = json_decode($harga_website->e_commerce, true);
+                                @endphp
+                                @if ($e_commerce['status_inputan'] == 'tulisan')
+                                    {!! $e_commerce['inputan'] !!}
+                                @endif
+
+                                @if ($e_commerce['status_inputan'] == 'ikon')
+                                    @if ($e_commerce['inputan'] == 'Ya')
+                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
+                                            <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                        </svg>
+                                    @endif
+
+                                    @if ($e_commerce['inputan'] == 'Tidak')
+                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                            <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                        </svg>
+                                    @endif
+                                @endif
+                            </td>
+                        </tr>
+                    @endforeach
                     <tr>
                         <th scope="row" class="bg-white p-3"></th>
                         <td class="bg-white text-center p-3">
@@ -667,38 +562,38 @@
             <div class="col-md-6">
                 <div class="swiper-container sliver-vertical">
                     <div class="swiper-wrapper">
-                        @foreach ($reviews as $review)
-                        <div class="swiper-slide">
-                            <div class="client-slider-box">
-                                <div class="client-user text-center">
-                                    <img src="{{ asset('images/landingpage_razenstudio/reviewer/'.$review->gambar) }}"
-                                        alt="images">
-                                    <ul class="list-inline small mt-3">
-                                        <li class="list-inline-item mx-0">
-                                            <i class="fas fa-star h4 text-warning"></i>
-                                        </li>
-                                        <li class="list-inline-item mx-0">
-                                            <i class="fas fa-star h4 text-warning"></i>
-                                        </li>
-                                        <li class="list-inline-item mx-0">
-                                            <i class="fas fa-star h4 text-warning"></i>
-                                        </li>
-                                        <li class="list-inline-item mx-0">
-                                            <i class="fas fa-star h4 text-warning"></i>
-                                        </li>
-                                        <li class="list-inline-item mx-0">
-                                            <i class="fas fa-star h4 text-warning"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="client-content">
-                                    <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">{{$review->nama}}</h4>
-                                        <p class="margin-top-11">{{$review->ulasan}}</p>
+                        @foreach ($testimonis as $testimoni)
+                            <div class="swiper-slide">
+                                <div class="client-slider-box">
+                                    <div class="client-user text-center">
+                                        <img src="{{ asset('images/landingpage_razenstudio/web-development/testimoni/'.$testimoni->gambar) }}"
+                                            alt="images">
+                                        <ul class="list-inline small mt-3">
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="client-content">
+                                        <div class="client-user-author">
+                                            <h4 class="name-author section-20px-montserrat">{{$testimoni->nama}}</h4>
+                                            <p class="margin-top-11">{{$testimoni->testimoni}}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                 </div>

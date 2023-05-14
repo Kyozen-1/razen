@@ -81,6 +81,16 @@
                         <span class="label">Profil</span>
                     </a>
                 </li>
+                <li>
+                    @if (request()->routeIs('razen-studio.admin.portofolio-web.index'))
+                        <a href="{{ route('razen-studio.admin.portofolio-web.index') }}" class="active">
+                    @else
+                        <a href="{{ route('razen-studio.admin.portofolio-web.index') }}">
+                    @endif
+                        <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Portofolio Web</span>
+                    </a>
+                </li>
                 {{-- <li>
                     <a href="#dashboards">
                     <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
@@ -154,7 +164,12 @@
                     request()->routeIs('razen-studio.admin.home.data.biaya.index') ||
                     request()->routeIs('razen-studio.admin.home.data.keuntungan-bagi-bisnis.index') ||
                     request()->routeIs('razen-studio.admin.home.data.portofolio.index') ||
-                    request()->routeIs('razen-studio.admin.home.data.testimoni.index')
+                    request()->routeIs('razen-studio.admin.home.data.testimoni.index') ||
+                    request()->routeIs('razen-studio.admin.search-engine-optimization.data.testimoni.index') ||
+                    request()->routeIs('razen-studio.admin.web-development.data.harga-website.index') ||
+                    request()->routeIs('razen-studio.admin.web-development.data.testimoni.index') ||
+                    request()->routeIs('razen-studio.admin.social-media-management.data.harga.index') ||
+                    request()->routeIs('razen-studio.admin.social-media-management.data.testimoni.index')
                     )
                     <a href="#landing_page" class="active">
                     @else
@@ -409,7 +424,9 @@
                             </ul>
                         </li>
                         <li>
-                            @if (request()->routeIs('razen-studio.admin.web-development.atur.index'))
+                            @if (request()->routeIs('razen-studio.admin.web-development.atur.index') ||
+                            request()->routeIs('razen-studio.admin.web-development.data.harga-website.index') ||
+                            request()->routeIs('razen-studio.admin.web-development.data.testimoni.index'))
                                 <a href="#web_development" class="active">
                             @else
                                 <a href="#web_development">
@@ -417,6 +434,36 @@
                                 <span class="label">Web Development</span>
                             </a>
                             <ul id="web_development">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.web-development.data.harga-website.index') ||
+                                    request()->routeIs('razen-studio.admin.web-development.data.testimoni.index'))
+                                        <a href="#data_web_development" class="active">
+                                    @else
+                                        <a href="#data_web_development">
+                                    @endif
+                                        <span class="label">Data</span>
+                                    </a>
+                                    <ul id="data_web_development">
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.web-development.data.harga-website.index'))
+                                                <a href="{{ route('razen-studio.admin.web-development.data.harga-website.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.web-development.data.harga-website.index') }}">
+                                            @endif
+                                                <span class="label">Harga Website</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.web-development.data.testimoni.index'))
+                                                <a href="{{ route('razen-studio.admin.web-development.data.testimoni.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.web-development.data.testimoni.index') }}">
+                                            @endif
+                                                <span class="label">Testimoni</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li>
                                     @if (request()->routeIs('razen-studio.admin.web-development.atur.index'))
                                         <a href="{{ route('razen-studio.admin.web-development.atur.index') }}" class="active">
@@ -696,7 +743,9 @@
                             </ul>
                         </li>
                         <li>
-                            @if (request()->routeIs('razen-studio.admin.social-media-management.atur.index'))
+                            @if (request()->routeIs('razen-studio.admin.social-media-management.atur.index') ||
+                            request()->routeIs('razen-studio.admin.social-media-management.data.harga.index') ||
+                            request()->routeIs('razen-studio.admin.social-media-management.data.testimoni.index'))
                                 <a href="#social_media_management" class="active">
                             @else
                                 <a href="#social_media_management">
@@ -704,6 +753,36 @@
                                 <span class="label">Social Media Management</span>
                             </a>
                             <ul id="social_media_management">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.social-media-management.data.harga.index') ||
+                                    request()->routeIs('razen-studio.admin.social-media-management.data.testimoni.index'))
+                                        <a href="#data_social_media_management" class="active">
+                                    @else
+                                        <a href="#data_social_media_management">
+                                    @endif
+                                        <span class="label">Data</span>
+                                    </a>
+                                    <ul id="data_social_media_management">
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.social-media-management.data.harga.index'))
+                                                <a href="{{ route('razen-studio.admin.social-media-management.data.harga.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.social-media-management.data.harga.index') }}">
+                                            @endif
+                                                <span class="label">Harga</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.social-media-management.data.testimoni.index'))
+                                                <a href="{{ route('razen-studio.admin.social-media-management.data.testimoni.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.social-media-management.data.testimoni.index') }}">
+                                            @endif
+                                                <span class="label">Testimoni</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li>
                                     @if (request()->routeIs('razen-studio.admin.social-media-management.atur.index'))
                                         <a href="{{ route('razen-studio.admin.social-media-management.atur.index') }}" class="active">
@@ -716,7 +795,8 @@
                             </ul>
                         </li>
                         <li>
-                            @if (request()->routeIs('razen-studio.admin.search-engine-optimization.atur.index'))
+                            @if (request()->routeIs('razen-studio.admin.search-engine-optimization.atur.index') ||
+                            request()->routeIs('razen-studio.admin.search-engine-optimization.data.testimoni.index'))
                                 <a href="#search_engine_optimization" class="active">
                             @else
                                 <a href="#search_engine_optimization">
@@ -724,6 +804,26 @@
                                 <span class="label">Search Engine Optimization</span>
                             </a>
                             <ul id="search_engine_optimization">
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.search-engine-optimization.data.testimoni.index'))
+                                        <a href="#data_seo" class="active">
+                                    @else
+                                        <a href="#data_seo">
+                                    @endif
+                                        <span class="label">Data</span>
+                                    </a>
+                                    <ul id="data_seo">
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.search-engine-optimization.data.testimoni.index'))
+                                                <a href="{{ route('razen-studio.admin.search-engine-optimization.data.testimoni.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.search-engine-optimization.data.testimoni.index') }}">
+                                            @endif
+                                                <span class="label">Testimoni</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li>
                                     @if (request()->routeIs('razen-studio.admin.search-engine-optimization.atur.index'))
                                         <a href="{{ route('razen-studio.admin.search-engine-optimization.atur.index') }}" class="active">

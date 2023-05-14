@@ -600,6 +600,34 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
     //Web Development
     Route::get('/razen-studio/admin/web-development/atur', 'RazenStudio\Admin\WebDevelopment\AturController@index')->name('razen-studio.admin.web-development.atur.index');
 
+    Route::prefix('razen-studio')->group(function(){
+        Route::prefix('admin')->group(function(){
+            Route::prefix('web-development')->group(function(){
+                Route::prefix('data')->group(function(){
+                    Route::prefix('harga-website')->group(function(){
+                        Route::get('/', 'RazenStudio\Admin\WebDevelopment\Data\HargaWebsiteController@index')->name('razen-studio.admin.web-development.data.harga-website.index');
+                        Route::get('/create', 'RazenStudio\Admin\WebDevelopment\Data\HargaWebsiteController@create')->name('razen-studio.admin.web-development.data.harga-website.create');
+                        Route::get('/show/{id}', 'RazenStudio\Admin\WebDevelopment\Data\HargaWebsiteController@show')->name('razen-studio.admin.web-development.data.harga-website.show');
+                        Route::post('/','RazenStudio\Admin\WebDevelopment\Data\HargaWebsiteController@store')->name('razen-studio.admin.web-development.data.harga-website.store');
+                        Route::get('/edit/{id}','RazenStudio\Admin\WebDevelopment\Data\HargaWebsiteController@edit')->name('razen-studio.admin.web-development.data.harga-website.edit');
+                        Route::post('/update/{id}','RazenStudio\Admin\WebDevelopment\Data\HargaWebsiteController@update')->name('razen-studio.admin.web-development.data.harga-website.update');
+                        Route::get('/destroy/{id}','RazenStudio\Admin\WebDevelopment\Data\HargaWebsiteController@destroy')->name('razen-studio.admin.web-development.data.harga-website.destroy');
+                    });
+
+                    Route::prefix('testimoni')->group(function(){
+                        Route::get('/', 'RazenStudio\Admin\WebDevelopment\Data\TestimoniController@index')->name('razen-studio.admin.web-development.data.testimoni.index');
+                        Route::get('/create', 'RazenStudio\Admin\WebDevelopment\Data\TestimoniController@create')->name('razen-studio.admin.web-development.data.testimoni.create');
+                        Route::get('/show/{id}', 'RazenStudio\Admin\WebDevelopment\Data\TestimoniController@show')->name('razen-studio.admin.web-development.data.testimoni.show');
+                        Route::post('/','RazenStudio\Admin\WebDevelopment\Data\TestimoniController@store')->name('razen-studio.admin.web-development.data.testimoni.store');
+                        Route::get('/edit/{id}','RazenStudio\Admin\WebDevelopment\Data\TestimoniController@edit')->name('razen-studio.admin.web-development.data.testimoni.edit');
+                        Route::post('/update','RazenStudio\Admin\WebDevelopment\Data\TestimoniController@update')->name('razen-studio.admin.web-development.data.testimoni.update');
+                        Route::get('/destroy/{id}','RazenStudio\Admin\WebDevelopment\Data\TestimoniController@destroy')->name('razen-studio.admin.web-development.data.testimoni.destroy');
+                    });
+                });
+            });
+        });
+    });
+
     //Web Development - Section 1
     Route::post('/razen-studio/admin/web-development/atur/section-1/store', 'RazenStudio\Admin\WebDevelopment\AturController@section_1_store')->name('razen-studio.admin.web-development.atur.section-1.store');
 
@@ -1471,6 +1499,34 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
     //Social Media Management
     Route::get('/razen-studio/admin/social-media-management/atur', 'RazenStudio\Admin\SocialMediaManagement\AturController@index')->name('razen-studio.admin.social-media-management.atur.index');
 
+    Route::prefix('razen-studio')->group(function(){
+        Route::prefix('admin')->group(function(){
+            Route::prefix('social-media-management')->group(function(){
+                Route::prefix('data')->group(function(){
+                    Route::prefix('harga')->group(function(){
+                        Route::get('/', 'RazenStudio\Admin\SocialMediaManagement\Data\HargaController@index')->name('razen-studio.admin.social-media-management.data.harga.index');
+                        Route::get('/create', 'RazenStudio\Admin\SocialMediaManagement\Data\HargaController@create')->name('razen-studio.admin.social-media-management.data.harga.create');
+                        Route::get('/show/{id}', 'RazenStudio\Admin\SocialMediaManagement\Data\HargaController@show')->name('razen-studio.admin.social-media-management.data.harga.show');
+                        Route::post('/','RazenStudio\Admin\SocialMediaManagement\Data\HargaController@store')->name('razen-studio.admin.social-media-management.data.harga.store');
+                        Route::get('/edit/{id}','RazenStudio\Admin\SocialMediaManagement\Data\HargaController@edit')->name('razen-studio.admin.social-media-management.data.harga.edit');
+                        Route::post('/update/{id}','RazenStudio\Admin\SocialMediaManagement\Data\HargaController@update')->name('razen-studio.admin.social-media-management.data.harga.update');
+                        Route::get('/destroy/{id}','RazenStudio\Admin\SocialMediaManagement\Data\HargaController@destroy')->name('razen-studio.admin.social-media-management.data.harga.destroy');
+                    });
+
+                    Route::prefix('testimoni')->group(function(){
+                        Route::get('/', 'RazenStudio\Admin\SocialMediaManagement\Data\TestimoniController@index')->name('razen-studio.admin.social-media-management.data.testimoni.index');
+                        Route::get('/create', 'RazenStudio\Admin\SocialMediaManagement\Data\TestimoniController@create')->name('razen-studio.admin.social-media-management.data.testimoni.create');
+                        Route::get('/show/{id}', 'RazenStudio\Admin\SocialMediaManagement\Data\TestimoniController@show')->name('razen-studio.admin.social-media-management.data.testimoni.show');
+                        Route::post('/','RazenStudio\Admin\SocialMediaManagement\Data\TestimoniController@store')->name('razen-studio.admin.social-media-management.data.testimoni.store');
+                        Route::get('/edit/{id}','RazenStudio\Admin\SocialMediaManagement\Data\TestimoniController@edit')->name('razen-studio.admin.social-media-management.data.testimoni.edit');
+                        Route::post('/update','RazenStudio\Admin\SocialMediaManagement\Data\TestimoniController@update')->name('razen-studio.admin.social-media-management.data.testimoni.update');
+                        Route::get('/destroy/{id}','RazenStudio\Admin\SocialMediaManagement\Data\TestimoniController@destroy')->name('razen-studio.admin.social-media-management.data.testimoni.destroy');
+                    });
+                });
+            });
+        });
+    });
+
     //Social Media Management - Section - 1
     Route::post('/razen-studio/admin/social-media-management/atur/section-1/store', 'RazenStudio\Admin\SocialMediaManagement\AturController@section_1_store')->name('razen-studio.admin.social-media-management.atur.section-1.store');
 
@@ -1515,6 +1571,24 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
 
     //Search Engine Optimization
     Route::get('/razen-studio/admin/search-engine-optimization/atur', 'RazenStudio\Admin\SearchEngineOptimization\AturController@index')->name('razen-studio.admin.search-engine-optimization.atur.index');
+
+    Route::prefix('razen-studio')->group(function(){
+        Route::prefix('admin')->group(function(){
+            Route::prefix('search-engine-optimization')->group(function(){
+                Route::prefix('data')->group(function(){
+                    Route::prefix('testimoni')->group(function(){
+                        Route::get('/', 'RazenStudio\Admin\SearchEngineOptimization\Data\TestimoniController@index')->name('razen-studio.admin.search-engine-optimization.data.testimoni.index');
+                        Route::get('/create', 'RazenStudio\Admin\SearchEngineOptimization\Data\TestimoniController@create')->name('razen-studio.admin.search-engine-optimization.data.testimoni.create');
+                        Route::get('/show/{id}', 'RazenStudio\Admin\SearchEngineOptimization\Data\TestimoniController@show')->name('razen-studio.admin.search-engine-optimization.data.testimoni.show');
+                        Route::post('/','RazenStudio\Admin\SearchEngineOptimization\Data\TestimoniController@store')->name('razen-studio.admin.search-engine-optimization.data.testimoni.store');
+                        Route::get('/edit/{id}','RazenStudio\Admin\SearchEngineOptimization\Data\TestimoniController@edit')->name('razen-studio.admin.search-engine-optimization.data.testimoni.edit');
+                        Route::post('/update','RazenStudio\Admin\SearchEngineOptimization\Data\TestimoniController@update')->name('razen-studio.admin.search-engine-optimization.data.testimoni.update');
+                        Route::get('/destroy/{id}','RazenStudio\Admin\SearchEngineOptimization\Data\TestimoniController@destroy')->name('razen-studio.admin.search-engine-optimization.data.testimoni.destroy');
+                    });
+                });
+            });
+        });
+    });
 
     //Search Engine Optimization - Section 1
     Route::post('/razen-studio/admin/search-engine-optimization/atur/section-1/store', 'RazenStudio\Admin\SearchEngineOptimization\AturController@section_1_store')->name('razen-studio.admin.search-engine-optimization.atur.section-1.store');
@@ -1716,6 +1790,16 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
             Route::prefix('profil')->group(function(){
                 Route::get('/', 'RazenStudio\Admin\ProfilController@index')->name('razen-studio.admin.profil.index');
                 Route::post('/', 'RazenStudio\Admin\ProfilController@store')->name('razen-studio.admin.profil.store');
+            });
+
+            Route::prefix('portofolio-web')->group(function(){
+                Route::get('/', 'RazenStudio\Admin\PortofolioWebController@index')->name('razen-studio.admin.portofolio-web.index');
+                Route::get('/create', 'RazenStudio\Admin\PortofolioWebController@create')->name('razen-studio.admin.portofolio-web.create');
+                Route::get('/show/{id}', 'RazenStudio\Admin\PortofolioWebController@show')->name('razen-studio.admin.portofolio-web.show');
+                Route::post('/','RazenStudio\Admin\PortofolioWebController@store')->name('razen-studio.admin.portofolio-web.store');
+                Route::get('/edit/{id}','RazenStudio\Admin\PortofolioWebController@edit')->name('razen-studio.admin.portofolio-web.edit');
+                Route::post('/update','RazenStudio\Admin\PortofolioWebController@update')->name('razen-studio.admin.portofolio-web.update');
+                Route::get('/destroy/{id}','RazenStudio\Admin\PortofolioWebController@destroy')->name('razen-studio.admin.portofolio-web.destroy');
             });
         });
     });

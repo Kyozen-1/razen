@@ -433,11 +433,11 @@
             <div class="col-md-6">
                 <div class="swiper-container sliver-vertical">
                     <div class="swiper-wrapper">
-                        @foreach ($reviews as $review)
+                        @foreach ($testimonis as $testimoni)
                         <div class="swiper-slide">
                             <div class="client-slider-box">
                                 <div class="client-user text-center">
-                                    <img src="{{ asset('images/landingpage_razenstudio/reviewer/'.$review->gambar) }}"
+                                    <img src="{{ asset('images/landingpage_razenstudio/home/testimoni/'.$testimoni->gambar) }}"
                                         alt="images">
                                     <ul class="list-inline small mt-3">
                                         <li class="list-inline-item mx-0">
@@ -459,8 +459,8 @@
                                 </div>
                                 <div class="client-content">
                                     <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">{{$review->nama}}</h4>
-                                        <p class="margin-top-11">{{$review->ulasan}}</p>
+                                        <h4 class="name-author section-20px-montserrat">{{$testimoni->nama}}</h4>
+                                        <p class="margin-top-11">{{$testimoni->testimoni}}</p>
                                     </div>
                                 </div>
                             </div>

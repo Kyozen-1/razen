@@ -282,34 +282,15 @@
             <div class="col-12 mb-5">
                 <ul class="nav nav-box" role="tablist">
                     <li class="nav-item w-100 mx-0 mb-3 d-flex justify-content-center align-self-center">
-                        <a class="nav-link p-4 active" id="pills-one-code-features-example2-tab" data-toggle="pill" href="#pills-one-code-features-example2" role="tab" aria-controls="pills-one-code-features-example2" aria-selected="false">
-                            <div class="media justify-content-center align-items-center align-items-lg-start">
-                                <figure class="mt-2 mr-4">
-                                    <img src="https://gosocial.co.id/assets/svg/icons/icon-44.svg" alt="Jasa Pembuatan Landing Page" style="width:100%; height: 7rem;">
-                                </figure>
-                            </div>
-                        </a>
-                        <a class="nav-link p-4" id="pills-two-code-features-example2-tab" data-toggle="pill" href="#pills-two-code-features-example2" role="tab" aria-controls="pills-two-code-features-example2" aria-selected="false">
-                            <div class="media align-items-center align-items-lg-start">
-                                <figure class="mt-2 mr-4 h-100">
-                                    <img style="width:100%; height: 7rem;" src="https://gosocial.co.id/assets/svg/icons/icon-68.svg" alt="Jasa Pembuatan Website Toko Online">
-                                </figure>
-                            </div>
-                        </a>
-                        <a class="nav-link p-4" id="pills-three-code-features-example2-tab" data-toggle="pill" href="#pills-three-code-features-example2" role="tab" aria-controls="pills-three-code-features-example2" aria-selected="true">
-                            <div class="media align-items-center align-items-lg-start">
-                                <figure class="mt-2 mr-4">
-                                    <img style="width:100%; height: 7rem;" src="https://gosocial.co.id/assets/svg/icons/icon-13.svg" alt="Jasa Pembuatan Website Perusahaan">
-                                </figure>
-                            </div>
-                        </a>
-                        <a class="nav-link p-4" id="pills-four-code-features-example2-tab" data-toggle="pill" href="#pills-four-code-features-example2" role="tab" aria-controls="pills-four-code-features-example2" aria-selected="true">
-                            <div class="media align-items-center align-items-lg-start">
-                                <figure class="mt-2 mr-4">
-                                    <img style="width:100%; height: 7rem;" src="https://gosocial.co.id/assets/svg/icons/icon-13.svg" alt="Jasa Pembuatan Website Perusahaan">
-                                </figure>
-                            </div>
-                        </a>
+                        @foreach ($hargas as $harga)
+                            <a class="nav-link p-4 @if($loop->first) active @endif" id="pills-{{$harga->id}}-tab" data-toggle="pill" href="#pills-{{$harga->id}}" role="tab" aria-controls="pills-{{$harga->id}}" aria-selected="false">
+                                <div class="media justify-content-center align-items-center align-items-lg-start">
+                                    <figure class="mt-2 mr-4">
+                                        <img src="{{ asset('images/landingpage_razenstudio/social-media-management/harga/'.$harga->ikon) }}" style="width:100%; height: 7rem;">
+                                    </figure>
+                                </div>
+                            </a>
+                        @endforeach
                     </li>
                 </ul>
                 <!-- End Nav -->
@@ -318,1038 +299,158 @@
             <div class="col-12 order-lg-1 align-self-lg-end">
                 <!-- Tab Content -->
                 <div class="tab-content pr-lg-4">
-                    <div class="tab-pane fade active show" id="pills-one-code-features-example2" role="tabpanel" aria-labelledby="pills-one-code-features-example2-tab">
-                        <div class="container">
-                            <div class="row mx-n2">
-                                <div class="col-sm-12 col-md-12 px-2 mb-3 mb-md-0">
-                                    <table class="table table-striped table-borderless">
-                                        <thead class="text-center">
-                                            <tr>
-                                                <th scope="col" class="w-25"></th>
-                                                <th scope="col" class="w-25">
-                                                    <span class="d-block text-dark h3">Half Plan</span>
-                                                </th>
-                                                <th scope="col" class="w-25 border-left border-right">
-                                                    <span class="d-block text-dark h3">Full Plan</span>
-                                                </th>
-                                                <th scope="col" class="w-25">
-                                                    <span class="d-block text-dark h3">Advance Plan</span>
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="border-top border-bottom">
-                                                <th scope="row" class="bg-white h4">Paket SMM Instagram
-                                                    <small class="text-muted">(Minimal Kontrak 3 Bulan)</small>
-                                                </th>
-                                                <td class="bg-white text-center">
-                                                    <img class="img-fluid" src="https://gosocial.co.id/assets/svg/service/web/paket-landing-page.svg" alt="Image Description" style="width: 40%;">
-                                                    <div class="d-block">
-                                                        <small class="text-muted">Biaya per bulan</small><br>
-                                                        <span class="text-primary align-top pricing">Rp.</span>
-                                                        <span class="h2 text-primary">3.000.000</span>
-                                                    </div>
-                                                    <p class="text-muted">Cocok untuk bisnis yang baru mulai branding di media sosial</p>
-                                                </td>
-                                                <td class="bg-white text-center border-left border-right">
-                                                    <img class="img-fluid" src="https://gosocial.co.id/assets/svg/service/web/paket-company-profile.svg" alt="Image Description" style="width: 40%;">
-                                                    <div class="d-block">
-                                                        <small class="text-muted">Biaya per bulan</small><br>
-                                                        <span class="text-primary align-top pricing">Rp.</span>
-                                                        <span class="h2 text-primary">5.500.000</span>
-                                                    </div>
-                                                    <p class="text-muted">Cocok untuk kebutuhan branding perusahaan / brand</p>
-                                                </td>
-                                                <td class="bg-white text-center">
-                                                    <img class="img-fluid" src="https://gosocial.co.id/assets/svg/service/web/paket-ecommerce.svg" alt="Image Description" style="width: 40%;">
-                                                    <div class="d-block">
-                                                        <small class="text-muted">Biaya per bulan</small><br>
-                                                        <span class="text-primary align-top pricing ">Rp.</span>
-                                                        <span class="h2 text-primary">8.500.000</span>
-                                                    </div>
-                                                    <p class="text-muted">Cocok untuk bisnis / brand yang ingin lebih dekat dengan audiens</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Digital Activ. Analysis
-                                                </th>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center border-left border-right">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Social Media Plan and Strategies
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">Monthly</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">Weekly</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">Weekly</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Channel
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">Instagram & Facebook Fanpage (Mirroring Content)</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">Instagram & Facebook Fanpage (Mirroring Content)</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">Instagram & Facebook Fanpage (Mirroring Content)</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Grand Design
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">1 Opsi</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">2 Opsi</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">3 Opsi</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Posting Quota / Minggu
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">3 Post</p>
-                                                    <p class="text-muted">- 2 Single Feed <br> - 1 Carousel</p>
-                                                </td>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">5 Post</p>
-                                                    <p class="text-muted">- 3 Single Feed <br> - 2 Carousel</p>
-                                                </td>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">7 Post</p>
-                                                    <p class="text-muted">- 4 Single Feed <br> - 3 Carousel</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    D-Day Post
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">1 Quota Desain / week</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">2 Quota Desain / week</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">3 Quota Desain / week</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Photoshoot
-                                                </th>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
-                                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center border-left border-right">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
-                                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Minor Revision
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">2 Revision / Media Plan</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">3 Revision / Media Plan</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">5 Revision / Media Plan</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Minor Revision
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">Indo</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">Indo</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">Indo/English</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Hashtag Research
-                                                </th>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center border-left border-right">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Monitoring Time
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">Monday - Friday, 09.00 – 16.00</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">Monday - Friday, 09.00 – 16.00</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">Monday - Friday, 09.00 – 16.00</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Scheduling Post
-                                                </th>
-                                                <td class="text-center p-3">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Report
-                                                </th>
-                                                <td class="text-center p-3">
-                                                    <span class="p-2 bg-success rounded text-white">Monthly</span>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <span class="p-2 bg-success rounded text-white">Monthly</span>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <span class="p-2 bg-success rounded text-white">Monthly</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Ads Management
-                                                </th>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
-                                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center border-left border-right">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
-                                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Report
-                                                </th>
-                                                <td class="text-center p-3">
-                                                    <span class="p-2 bg-success rounded text-white">Up to 100 Followers / month</span>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <span class="p-2 bg-success rounded text-white">Up to 250 Followers / month</span>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <span class="p-2 bg-success rounded text-white">Up to 500 Followers / month</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white p-3"></th>
-                                                <td class="bg-white text-center p-3">
-                                                    <a type="button" class="btn btn-lg btn-outline-primary text-nowrap transition-3d-hover" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Website%20Landing%20Page" target="_blank">Pilih Paket</a>
-                                                </td>
-                                                <td class="bg-white text-center border-left border-right p-3">
-                                                    <a type="button" class="btn btn-lg btn-outline-primary text-nowrap transition-3d-hover" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Website%20Company%20Profile" target="_blank">Pilih Paket</a>
-                                                </td>
-                                                <td class="bg-white text-center p-3">
-                                                    <a type="button" class="btn btn-lg btn-outline-primary text-nowrap transition-3d-hover" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Website%20E%20Commerce" target="_blank">Pilih Paket</a>
-
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="position-relative z-index-2 text-center mt-10">
-                                <div class="d-inline-block font-size-2 border bg-white text-center rounded-pill py-3 px-4">
-                                    Ingin paket yang lebih atau custom? <a class="d-block d-sm-inline-block font-weight-bold ml-sm-3" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Social%20Media%20Management%20Custom" target="_blank">Dapatkan Penawaran Khusus</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tab-pane fade" id="pills-two-code-features-example2" role="tabpanel" aria-labelledby="pills-two-code-features-example2-tab">
-                        <div class="container">
-                            <div class="row mx-n2">
-                                <div class="col-sm-12 col-md-12 px-2 mb-3 mb-md-0">
-                                    <table class="table table-striped table-borderless">
-                                        <thead class="text-center">
-                                            <tr>
-                                                <th scope="col" class="w-25"></th>
-                                                <th scope="col" class="w-25">
-                                                    <span class="d-block text-dark h3">Half Plan</span>
-                                                </th>
-                                                <th scope="col" class="w-25 border-left border-right">
-                                                    <span class="d-block text-dark h3">Full Plan</span>
-                                                </th>
-                                                <th scope="col" class="w-25">
-                                                    <span class="d-block text-dark h3">Advance Plan</span>
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="border-top border-bottom">
-                                                <th scope="row" class="bg-white h4">Paket SMM Facebook
-                                                    <small class="text-muted">(Minimal Kontrak 3 Bulan)</small>
-                                                </th>
-                                                <td class="bg-white text-center">
-                                                    <img class="img-fluid" src="https://gosocial.co.id/assets/svg/service/web/paket-landing-page.svg" alt="Image Description" style="width: 40%;">
-                                                    <div class="d-block">
-                                                        <small class="text-muted">Biaya per bulan</small><br>
-                                                        <span class="text-primary align-top pricing">Rp.</span>
-                                                        <span class="h2 text-primary">3.000.000</span>
-                                                    </div>
-                                                    <p class="text-muted">Cocok untuk bisnis yang baru mulai branding di media sosial</p>
-                                                </td>
-                                                <td class="bg-white text-center border-left border-right">
-                                                    <img class="img-fluid" src="https://gosocial.co.id/assets/svg/service/web/paket-company-profile.svg" alt="Image Description" style="width: 40%;">
-                                                    <div class="d-block">
-                                                        <small class="text-muted">Biaya per bulan</small><br>
-                                                        <span class="text-primary align-top pricing">Rp.</span>
-                                                        <span class="h2 text-primary">5.500.000</span>
-                                                    </div>
-                                                    <p class="text-muted">Cocok untuk kebutuhan branding perusahaan / brand</p>
-                                                </td>
-                                                <td class="bg-white text-center">
-                                                    <img class="img-fluid" src="https://gosocial.co.id/assets/svg/service/web/paket-ecommerce.svg" alt="Image Description" style="width: 40%;">
-                                                    <div class="d-block">
-                                                        <small class="text-muted">Biaya per bulan</small><br>
-                                                        <span class="text-primary align-top pricing ">Rp.</span>
-                                                        <span class="h2 text-primary">8.500.000</span>
-                                                    </div>
-                                                    <p class="text-muted">Cocok untuk bisnis / brand yang ingin lebih dekat dengan audiens</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Digital Activ. Analysis
-                                                </th>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center border-left border-right">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Social Media Plan and Strategies
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">Monthly</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">Weekly</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">Weekly</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Channel
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">Instagram & Facebook Fanpage (Mirroring Content)</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">Instagram & Facebook Fanpage (Mirroring Content)</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">Instagram & Facebook Fanpage (Mirroring Content)</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Grand Design
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">1 Opsi</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">2 Opsi</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">3 Opsi</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Posting Quota / Minggu
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">3 Post</p>
-                                                    <p class="text-muted">- 2 Single Feed <br> - 1 Carousel</p>
-                                                </td>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">5 Post</p>
-                                                    <p class="text-muted">- 3 Single Feed <br> - 2 Carousel</p>
-                                                </td>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">7 Post</p>
-                                                    <p class="text-muted">- 4 Single Feed <br> - 3 Carousel</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    D-Day Post
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">1 Quota Desain / week</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">2 Quota Desain / week</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">3 Quota Desain / week</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Photoshoot
-                                                </th>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
-                                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center border-left border-right">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
-                                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Minor Revision
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">2 Revision / Media Plan</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">3 Revision / Media Plan</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">5 Revision / Media Plan</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Minor Revision
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">Indo</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">Indo</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">Indo/English</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Hashtag Research
-                                                </th>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center border-left border-right">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Monitoring Time
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">Monday - Friday, 09.00 – 16.00</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">Monday - Friday, 09.00 – 16.00</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">Monday - Friday, 09.00 – 16.00</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Scheduling Post
-                                                </th>
-                                                <td class="text-center p-3">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Report
-                                                </th>
-                                                <td class="text-center p-3">
-                                                    <span class="p-2 bg-success rounded text-white">Monthly</span>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <span class="p-2 bg-success rounded text-white">Monthly</span>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <span class="p-2 bg-success rounded text-white">Monthly</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Ads Management
-                                                </th>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
-                                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center border-left border-right">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
-                                                        <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Report
-                                                </th>
-                                                <td class="text-center p-3">
-                                                    <span class="p-2 bg-success rounded text-white">Up to 100 Followers / month</span>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <span class="p-2 bg-success rounded text-white">Up to 250 Followers / month</span>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <span class="p-2 bg-success rounded text-white">Up to 500 Followers / month</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white p-3"></th>
-                                                <td class="bg-white text-center p-3">
-                                                    <a type="button" class="btn btn-lg btn-outline-primary text-nowrap transition-3d-hover" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Website%20Landing%20Page" target="_blank">Pilih Paket</a>
-                                                </td>
-                                                <td class="bg-white text-center border-left border-right p-3">
-                                                    <a type="button" class="btn btn-lg btn-outline-primary text-nowrap transition-3d-hover" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Website%20Company%20Profile" target="_blank">Pilih Paket</a>
-                                                </td>
-                                                <td class="bg-white text-center p-3">
-                                                    <a type="button" class="btn btn-lg btn-outline-primary text-nowrap transition-3d-hover" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Website%20E%20Commerce" target="_blank">Pilih Paket</a>
-
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="position-relative z-index-2 text-center mt-10">
-                                <div class="d-inline-block font-size-2 border bg-white text-center rounded-pill py-3 px-4">
-                                    Ingin paket yang lebih atau custom? <a class="d-block d-sm-inline-block font-weight-bold ml-sm-3" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Social%20Media%20Management%20Custom" target="_blank">Dapatkan Penawaran Khusus</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tab-pane fade" id="pills-three-code-features-example2" role="tabpanel" aria-labelledby="pills-three-code-features-example2-tab">
-                        <div class="container">
-                            <div class="row mx-n2">
-                                <div class="col-sm-12 col-md-12 px-2 mb-3 mb-md-0">
-                                    <div class="row position-relative z-index-2 mx-n2 mb-5">
-                                        <div class="col-sm-6 col-md-4 px-2 mb-3">
-                                            <div class="card" style="height: 30rem !important;">
-                                                <!-- Header -->
-                                                <div class="card-header text-center">
-                                                    <span class="d-block h2">Podcast</span>
-                                                    <span class="d-block mb-2">
-                                                        <span class="text-dark align-top">Rp</span>
-                                                        <span class="font-size-5 text-dark font-weight-bold mr-n2">
-                                                            <span id="pricingCountYoutube1" data-hs-toggle-switch-item-options="{
-                                                            "min": 42,
-                                                            "max": 32
-                                                            }">3,5</span>
-                                                        </span>
-                                                        <span class="font-size-1">Jt</span>
-                                                    </span>
-                                                </div>
-                                                <!-- End Header -->
-
-                                                <!-- Body -->
-                                                <div class="card-body">
-                                                    <div class="media font-size-1 text-body">
-                                                        <div class="media-body h4 mb-2">
-                                                            1. Tema dan ide konten
-                                                        </div>
-                                                    </div>
-                                                    <div class="media font-size-1 text-body">
-                                                        <div class="media-body h4 mb-2">
-                                                            2. Sudah termasuk biaya studio GoSocial
-                                                        </div>
-                                                    </div>
-                                                    <div class="media font-size-1 text-body">
-                                                        <div class="media-body h4 mb-2">
-                                                            3. Format Output : 16:9 atau 3:4 Full High Definition
-                                                        </div>
-                                                    </div>
-                                                    <div class="media font-size-1 text-body">
-                                                        <div class="media-body h4 mb-2">
-                                                            4. 2x Minor Revision
-                                                        </div>
-                                                    </div>
-                                                    <div class="media font-size-1 text-body">
-                                                        <div class="media-body h4 mb-2">
-                                                            5. Durasi video 15-30 menit
-                                                        </div>
-                                                    </div>
-                                                    <div class="media font-size-1 text-body">
-                                                        <div class="media-body h4 mb-2">
-                                                            6. Optimasi konten di YouTube
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- End Body -->
-
-                                                <div class="card-footer border-0">
-                                                    <a type="button" class="btn btn-soft-primary btn-block transition-3d-hover" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Social%20Media%20Management%20Youtube%20Podcast%20Plan" target="_blank">Pilih Paket</a>
-                                                </div>
-                                            </div>
+                    @foreach ($hargas as $harga)
+                        @if ($harga->mode_inputan == 'table')
+                            <div class="tab-pane fade @if($loop->first) active show @endif" id="pills-{{$harga->id}}" role="tabpanel" aria-labelledby="pills-{{$harga->id}}-tab">
+                                <div class="container">
+                                    <div class="row mx-n2">
+                                        <div class="col-sm-12 col-md-12 px-2 mb-3 mb-md-0">
+                                            <table class="table table-striped table-borderless">
+                                                <thead class="text-center">
+                                                    <tr>
+                                                        <th scope="col" class="w-25"></th>
+                                                        <th scope="col" class="w-25">
+                                                            <span class="d-block text-dark h3">Half Plan</span>
+                                                        </th>
+                                                        <th scope="col" class="w-25 border-left border-right">
+                                                            <span class="d-block text-dark h3">Full Plan</span>
+                                                        </th>
+                                                        <th scope="col" class="w-25">
+                                                            <span class="d-block text-dark h3">Advance Plan</span>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @php
+                                                        $items = json_decode($harga->data, true);
+                                                    @endphp
+                                                    @foreach ($items as $item)
+                                                        <tr class="border-top border-bottom">
+                                                            <th scope="row" class="bg-white h4">{{$item['nama']}}
+                                                            </th>
+                                                            <td class="bg-white text-center">
+                                                                @if ($item['half_plan']['status_inputan'] == 'tulisan')
+                                                                    {!! $item['half_plan']['inputan'] !!}
+                                                                @elseif ($item['half_plan']['status_inputan'] == 'ikon')
+                                                                    @if ($item['half_plan']['inputan'] == 'Ya')
+                                                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
+                                                                            <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                                                        </svg>
+                                                                    @endif
+                                                                    @if ($item['half_plan']['inputan'] == 'Tidak')
+                                                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                                                            <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                                                        </svg>
+                                                                    @endif
+                                                                @endif
+                                                            </td>
+                                                            <td class="bg-white text-center border-left border-right">
+                                                                @if ($item['full_plan']['status_inputan'] == 'tulisan')
+                                                                    {!! $item['full_plan']['inputan'] !!}
+                                                                @elseif ($item['full_plan']['status_inputan'] == 'ikon')
+                                                                    @if ($item['full_plan']['inputan'] == 'Ya')
+                                                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
+                                                                            <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                                                        </svg>
+                                                                    @endif
+                                                                    @if ($item['full_plan']['inputan'] == 'Tidak')
+                                                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                                                            <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                                                        </svg>
+                                                                    @endif
+                                                                @endif
+                                                            </td>
+                                                            <td class="bg-white text-center">
+                                                                @if ($item['advance_plan']['status_inputan'] == 'tulisan')
+                                                                    {!! $item['advance_plan']['inputan'] !!}
+                                                                @elseif ($item['advance_plan']['status_inputan'] == 'ikon')
+                                                                    @if ($item['advance_plan']['inputan'] == 'Ya')
+                                                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
+                                                                            <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                                                        </svg>
+                                                                    @endif
+                                                                    @if ($item['advance_plan']['inputan'] == 'Tidak')
+                                                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                                                            <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                                                        </svg>
+                                                                    @endif
+                                                                @endif
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                    <tr>
+                                                        <th scope="row" class="bg-white p-3"></th>
+                                                        <td class="bg-white text-center p-3">
+                                                            <a type="button" class="btn btn-lg btn-outline-primary text-nowrap transition-3d-hover" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Website%20Landing%20Page" target="_blank">Pilih Paket</a>
+                                                        </td>
+                                                        <td class="bg-white text-center border-left border-right p-3">
+                                                            <a type="button" class="btn btn-lg btn-outline-primary text-nowrap transition-3d-hover" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Website%20Company%20Profile" target="_blank">Pilih Paket</a>
+                                                        </td>
+                                                        <td class="bg-white text-center p-3">
+                                                            <a type="button" class="btn btn-lg btn-outline-primary text-nowrap transition-3d-hover" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Website%20E%20Commerce" target="_blank">Pilih Paket</a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
-
-                                        <div class="col-sm-6 col-md-4 px-2 mb-3">
-                                            <div class="card bg-primary text-white h-100 shadow-primary-lg">
-                                                <!-- Header -->
-                                                <div class="card-header border-0 bg-primary text-white text-center">
-                                                    <span class="d-block h3 text-white">Custom</span>
-                                                    <span class="d-block mb-2">
-                                                        <span class="text-white align-top">Rp</span>
-                                                        <span class="font-size-4 text-white font-weight-bold mr-n2">
-                                                            <span id="pricingCountYoutube2" data-hs-toggle-switch-item-options="{
-                                                            "min": 64,
-                                                            "max": 54
-                                                            }">3,5</span>
-                                                        </span>
-                                                        <span class="font-size-1">Jt</span>
-                                                    </span>
-                                                </div>
-                                                <!-- End Header -->
-                                                <div class="border-top opacity-xs"></div>
-                                                <!-- Body -->
-                                                <div class="card-body">
-                                                    <div class="media font-size-1">
-                                                        <div class="media-body h3 text-white mb-2">
-                                                            1. Custom bentuk konten (bisa strategi dari GoSocial)
-                                                        </div>
-                                                    </div>
-                                                    <div class="media font-size-1">
-                                                        <div class="media-body h3 text-white mb-2">
-                                                            2. Sudah termasuk biaya studio GoSocial
-                                                        </div>
-                                                    </div>
-                                                    <div class="media font-size-1">
-                                                        <div class="media-body h3 text-white mb-2">
-                                                            3. Format Output : 16:9 atau 3:4 Full High Definition
-                                                        </div>
-                                                    </div>
-                                                    <div class="media font-size-1">
-                                                        <div class="media-body h3 text-white mb-2">
-                                                            4. 2x Minor Revision
-                                                        </div>
-                                                    </div>
-                                                    <div class="media font-size-1">
-                                                        <div class="media-body h3 text-white mb-2">
-                                                            5. Durasi video custom
-                                                        </div>
-                                                    </div>
-                                                    <div class="media font-size-1">
-                                                        <div class="media-body h3 text-white mb-2">
-                                                            6. Optimasi konten di YouTube
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- End Body -->
-
-                                                <div class="card-footer border-0 bg-primary text-white">
-                                                    <a type="button" class="btn btn-light text-primary btn-block transition-3d-hover" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Social%20Media%20Management%20Youtube%20Custom%20Plan" target="_blank">Pilih Paket</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-6 col-md-4 px-2 mb-3">
-                                            <div class="card h-100">
-                                                <!-- Header -->
-                                                <div class="card-header text-center">
-                                                    <span class="d-block h3">Monolog</span>
-                                                    <span class="d-block mb-2">
-                                                        <span class="text-dark align-top">Rp</span>
-                                                        <span class="font-size-4 text-dark font-weight-bold mr-n2">
-                                                            <span id="pricingCountYoutube3" data-hs-toggle-switch-item-options="{
-                                                            "min": 89,
-                                                            "max": 79
-                                                            }">2,75</span>
-                                                        </span>
-                                                        <span class="font-size-1">Jt</span>
-                                                    </span>
-                                                </div>
-                                                <!-- End Header -->
-
-                                                <!-- Body -->
-                                                <div class="card-body">
-                                                    <div class="media font-size-1 text-body">
-                                                        <div class="media-body h3 mb-2">
-                                                            1. Tema dan ide konten
-                                                        </div>
-                                                    </div>
-                                                    <div class="media font-size-1 text-body">
-                                                        <div class="media-body h3 mb-2">
-                                                            2. Sudah termasuk biaya studio GoSocial
-                                                        </div>
-                                                    </div>
-                                                    <div class="media font-size-1 text-body">
-                                                        <div class="media-body h3 mb-2">
-                                                            3. Format Output : 16:9 atau 3:4 Full High Definition
-                                                        </div>
-                                                    </div>
-                                                    <div class="media font-size-1 text-body">
-                                                        <div class="media-body h3 mb-2">
-                                                            4. 2x Minor Revision
-                                                        </div>
-                                                    </div>
-                                                    <div class="media font-size-1 text-body">
-                                                        <div class="media-body h3 mb-2">
-                                                            5. Durasi video 5-10 menit
-                                                        </div>
-                                                    </div>
-                                                    <div class="media font-size-1 text-body">
-                                                        <div class="media-body h3 mb-2">
-                                                            6. Optimasi konten di YouTube
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- End Body -->
-
-                                                <div class="card-footer border-0">
-                                                    <a type="button" class="btn btn-soft-primary btn-block transition-3d-hover" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Social%20Media%20Management%20Youtube%20Monolog%20Plan" target="_blank">Pilih Paket</a>
-                                                </div>
-                                            </div>
+                                    </div>
+                                    <div class="position-relative z-index-2 text-center mt-10">
+                                        <div class="d-inline-block font-size-2 border bg-white text-center rounded-pill py-3 px-4">
+                                            Ingin paket yang lebih atau custom? <a class="d-block d-sm-inline-block font-weight-bold ml-sm-3" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Social%20Media%20Management%20Custom" target="_blank">Dapatkan Penawaran Khusus</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="position-relative z-index-2 text-center mt-10">
-                                <div class="d-inline-block font-size-2 border bg-white text-center rounded-pill py-3 px-4">
-                                    Ingin paket yang lebih atau custom? <a class="d-block d-sm-inline-block font-weight-bold ml-sm-3" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Social%20Media%20Management%20Custom" target="_blank">Dapatkan Penawaran Khusus</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @endif
+                        @if ($harga->mode_inputan == 'card')
+                            <div class="tab-pane fade @if($loop->first) active show @endif" id="pills-{{$harga->id}}" role="tabpanel" aria-labelledby="pills-{{$harga->id}}-tab">
+                                <div class="container">
+                                    <div class="row mx-n2">
+                                        <div class="col-sm-12 col-md-12 px-2 mb-3 mb-md-0">
+                                            <div class="row position-relative z-index-2 mx-n2 mb-5">
+                                                @php
+                                                    $items = json_decode($harga->data,true);
+                                                @endphp
+                                                @foreach ($items as $item)
+                                                    <div class="col-sm-6 col-md-4 px-2 mb-3">
+                                                        <div class="card">
+                                                            <!-- Header -->
+                                                            <div class="card-header text-center">
+                                                                <span class="d-block h2">{{$item['judul']}}</span>
+                                                                <span class="d-block mb-2">
+                                                                    <span class="text-dark align-top">Rp</span>
+                                                                    <span class="font-size-5 text-dark font-weight-bold mr-n2">
+                                                                        <span>{{$item['harga']}}</span>
+                                                                    </span>
+                                                                    <span class="font-size-1">Jt</span>
+                                                                </span>
+                                                            </div>
+                                                            <!-- End Header -->
 
-                    <div class="tab-pane fade" id="pills-four-code-features-example2" role="tabpanel" aria-labelledby="pills-four-code-features-example2-tab">
-                        <div class="container">
-                            <div class="row mx-n2">
-                                <div class="col-sm-12 col-md-12 px-2 mb-3 mb-md-0">
-                                    <table class="table table-striped table-borderless">
-                                        <thead class="text-center">
-                                            <tr>
-                                                <th scope="col" class="w-25"></th>
-                                                <th scope="col" class="w-25">
-                                                    <span class="d-block text-dark h3">Half Plan</span>
-                                                </th>
-                                                <th scope="col" class="w-25 border-left border-right">
-                                                    <span class="d-block text-dark h3">Full Plan</span>
-                                                </th>
-                                                <th scope="col" class="w-25">
-                                                    <span class="d-block text-dark h3">Advance Plan</span>
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="border-top border-bottom">
-                                                <th scope="row" class="bg-white h4">Paket SMM TikTok
-                                                    <small class="text-muted">(Minimal Kontrak 3 Bulan)</small>
-                                                </th>
-                                                <td class="bg-white text-center">
-                                                    <img class="img-fluid" src="https://gosocial.co.id/assets/svg/service/web/paket-landing-page.svg" alt="Image Description" style="width: 40%;">
-                                                    <div class="d-block">
-                                                        <small class="text-muted">Biaya per bulan</small><br>
-                                                        <span class="text-primary align-top pricing">Rp.</span>
-                                                        <span class="h2 text-primary">2.950.000</span>
-                                                    </div>
-                                                    <p class="text-muted">Cocok untuk bisnis yang baru mulai branding di media sosial</p>
-                                                </td>
-                                                <td class="bg-white text-center border-left border-right">
-                                                    <img class="img-fluid" src="https://gosocial.co.id/assets/svg/service/web/paket-company-profile.svg" alt="Image Description" style="width: 40%;">
-                                                    <div class="d-block">
-                                                        <small class="text-muted">Biaya per bulan</small><br>
-                                                        <span class="text-primary align-top pricing">Rp.</span>
-                                                        <span class="h2 text-primary">4.450.000</span>
-                                                    </div>
-                                                    <p class="text-muted">Cocok untuk kebutuhan branding perusahaan / brand</p>
-                                                </td>
-                                                <td class="bg-white text-center">
-                                                    <img class="img-fluid" src="https://gosocial.co.id/assets/svg/service/web/paket-ecommerce.svg" alt="Image Description" style="width: 40%;">
-                                                    <div class="d-block">
-                                                        <small class="text-muted">Biaya per bulan</small><br>
-                                                        <span class="text-primary align-top pricing ">Rp.</span>
-                                                        <span class="h2 text-primary">5.750.000</span>
-                                                    </div>
-                                                    <p class="text-muted">Cocok untuk bisnis / brand yang ingin lebih dekat dengan audiens</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Digital Activ. Analysis
-                                                </th>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center border-left border-right">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Social Media Plan and Strategies
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">Weekly</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">Weekly</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">Weekly</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Posting Quota / Minggu
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">2 Video</p>
-                                                </td>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">3 Video</p>
-                                                </td>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">4 Video</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Free Talent
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">1 Talent / Month</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">2 Talent / Month</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">3 Talent / Month</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Minor Revision / Bulan
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">2 Revisi</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">3 Revisi</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">5 Revisi</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Caption Copywriting
-                                                </th>
-                                                <td class="text-center text-body p-3">
-                                                    <p class="text-primary">Indo</p>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <p class="text-primary">Indo</p>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <p class="text-primary">Indo/English</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Viral Content Research
-                                                </th>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center border-left border-right">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                                <td class="text-center">
-                                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
-                                                        <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                                    </svg>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white h4">
-                                                    Report
-                                                </th>
-                                                <td class="text-center p-3">
-                                                    <span class="p-2 bg-success rounded text-white">Monthly</span>
-                                                </td>
-                                                <td class="text-center border-left border-right p-3">
-                                                    <span class="p-2 bg-success rounded text-white">Monthly</span>
-                                                </td>
-                                                <td class="text-center p-3">
-                                                    <span class="p-2 bg-success rounded text-white">Monthly</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="bg-white p-3"></th>
-                                                <td class="bg-white text-center p-3">
-                                                    <a type="button" class="btn btn-lg btn-outline-primary text-nowrap transition-3d-hover" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Website%20Landing%20Page" target="_blank">Pilih Paket</a>
-                                                </td>
-                                                <td class="bg-white text-center border-left border-right p-3">
-                                                    <a type="button" class="btn btn-lg btn-outline-primary text-nowrap transition-3d-hover" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Website%20Company%20Profile" target="_blank">Pilih Paket</a>
-                                                </td>
-                                                <td class="bg-white text-center p-3">
-                                                    <a type="button" class="btn btn-lg btn-outline-primary text-nowrap transition-3d-hover" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Website%20E%20Commerce" target="_blank">Pilih Paket</a>
+                                                            <!-- Body -->
+                                                            <div class="card-body font-size-1 text-body">
+                                                                {!! $item['deskripsi'] !!}
+                                                            </div>
+                                                            <!-- End Body -->
 
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                                            <div class="card-footer border-0">
+                                                                <a type="button" class="btn btn-soft-primary btn-block transition-3d-hover" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Social%20Media%20Management%20Youtube%20Podcast%20Plan" target="_blank">Pilih Paket</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="position-relative z-index-2 text-center mt-10">
+                                        <div class="d-inline-block font-size-2 border bg-white text-center rounded-pill py-3 px-4">
+                                            Ingin paket yang lebih atau custom? <a class="d-block d-sm-inline-block font-weight-bold ml-sm-3" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Social%20Media%20Management%20Custom" target="_blank">Dapatkan Penawaran Khusus</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="position-relative z-index-2 text-center mt-10">
-                                <div class="d-inline-block font-size-2 border bg-white text-center rounded-pill py-3 px-4">
-                                    Ingin paket yang lebih atau custom? <a class="d-block d-sm-inline-block font-weight-bold ml-sm-3" href="https://api.whatsapp.com/send?phone=6285159974507&amp;text=Halo%20GoSocial%21%0D%0ASaya%20ingin%20konsultasi%20layanan%20Social%20Media%20Management%20Custom" target="_blank">Dapatkan Penawaran Khusus</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @endif
+                    @endforeach
                 </div>
                 <!-- End Tab Content -->
             </div>
@@ -1459,38 +560,38 @@
             <div class="col-md-6">
                 <div class="swiper-container sliver-vertical">
                     <div class="swiper-wrapper">
-                        @foreach ($reviews as $review)
-                        <div class="swiper-slide">
-                            <div class="client-slider-box">
-                                <div class="client-user text-center">
-                                    <img src="{{ asset('images/landingpage_razenstudio/reviewer/'.$review->gambar) }}"
-                                        alt="images">
-                                    <ul class="list-inline small mt-3">
-                                        <li class="list-inline-item mx-0">
-                                            <i class="fas fa-star h4 text-warning"></i>
-                                        </li>
-                                        <li class="list-inline-item mx-0">
-                                            <i class="fas fa-star h4 text-warning"></i>
-                                        </li>
-                                        <li class="list-inline-item mx-0">
-                                            <i class="fas fa-star h4 text-warning"></i>
-                                        </li>
-                                        <li class="list-inline-item mx-0">
-                                            <i class="fas fa-star h4 text-warning"></i>
-                                        </li>
-                                        <li class="list-inline-item mx-0">
-                                            <i class="fas fa-star h4 text-warning"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="client-content">
-                                    <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">{{$review->nama}}</h4>
-                                        <p class="margin-top-11">{{$review->ulasan}}</p>
+                        @foreach ($testimonis as $testimoni)
+                            <div class="swiper-slide">
+                                <div class="client-slider-box">
+                                    <div class="client-user text-center">
+                                        <img src="{{ asset('images/landingpage_razenstudio/web-development/testimoni/'.$testimoni->gambar) }}"
+                                            alt="images">
+                                        <ul class="list-inline small mt-3">
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="client-content">
+                                        <div class="client-user-author">
+                                            <h4 class="name-author section-20px-montserrat">{{$testimoni->nama}}</h4>
+                                            <p class="margin-top-11">{{$testimoni->testimoni}}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                 </div>

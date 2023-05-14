@@ -8,6 +8,12 @@ use App\Models\RazenStudio\Data\LandingPageBerandaBiaya;
 use App\Models\RazenStudio\Data\LandingPageBerandaKeuntunganBagiBisnis;
 use App\Models\RazenStudio\Data\LandingPageBerandaPortofolio;
 use App\Models\RazenStudio\Data\LandingPageBerandaTestimoni;
+use App\Models\RazenStudio\Data\LandingPageSeoTestimoni;
+use App\Models\RazenStudio\Data\LandingPageWebDevelopmentHargaWebsite;
+use App\Models\PortofolioWeb;
+use App\Models\RazenStudio\Data\LandingPageWebDevelopmentTestimoni;
+use App\Models\RazenStudio\Data\LandingPageSocialMediaManagementHarga;
+use App\Models\RazenStudio\Data\LandingPageSocialMediaManagementTestimoni;
 
 class HomeController extends Controller
 {
@@ -70,7 +76,12 @@ class HomeController extends Controller
     }
     public function social_media_management()
     {
-        return view('landing-page-razen-studio.social-media-management.index');
+        $hargas = LandingPageSocialMediaManagementHarga::all();
+        $testimonis = LandingPageWebDevelopmentTestimoni::all();
+        return view('landing-page-razen-studio.social-media-management.index', [
+            'hargas' => $hargas,
+            'testimonis' => $testimonis
+        ]);
     }
     public function video_production()
     {
@@ -82,7 +93,14 @@ class HomeController extends Controller
     }
     public function web_development()
     {
-        return view('landing-page-razen-studio.web-development.index');
+        $harga_websites = LandingPageWebDevelopmentHargaWebsite::all();
+        $portofolio_webs = PortofolioWeb::all();
+        $testimonis = LandingPageWebDevelopmentTestimoni::all();
+        return view('landing-page-razen-studio.web-development.index', [
+            'harga_websites' => $harga_websites,
+            'portofolio_webs' => $portofolio_webs,
+            'testimonis' => $testimonis
+        ]);
     }
     public function why_razen_studio()
     {
@@ -90,7 +108,11 @@ class HomeController extends Controller
     }
     public function jasa_seo()
     {
-        return view('landing-page-razen-studio.seo.index');
+        $testimonis = LandingPageBerandaTestimoni::all();
+
+        return view('landing-page-razen-studio.seo.index', [
+            'testimonis' => $testimonis
+        ]);
     }
     public function contact()
     {
