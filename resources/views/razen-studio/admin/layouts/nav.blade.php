@@ -169,7 +169,12 @@
                     request()->routeIs('razen-studio.admin.web-development.data.harga-website.index') ||
                     request()->routeIs('razen-studio.admin.web-development.data.testimoni.index') ||
                     request()->routeIs('razen-studio.admin.social-media-management.data.harga.index') ||
-                    request()->routeIs('razen-studio.admin.social-media-management.data.testimoni.index')
+                    request()->routeIs('razen-studio.admin.social-media-management.data.testimoni.index') ||
+                    request()->routeIs('razen-studio.admin.digital-campaign.iklan-instagram.data.testimoni.index') ||
+                    request()->routeIs('razen-studio.admin.digital-campaign.iklan-facebook.data.testimoni.index') ||
+                    request()->routeIs('razen-studio.admin.digital-campaign.iklan-google.data.testimoni.index') ||
+                    request()->routeIs('razen-studio.admin.digital-campaign.iklan-youtube.data.testimoni.index') ||
+                    request()->routeIs('razen-studio.admin.digital-campaign.data.testimoni.index')
                     )
                     <a href="#landing_page" class="active">
                     @else
@@ -686,7 +691,12 @@
                             request()->routeIs('razen-studio.admin.digital-campaign.iklan-instagram.index') ||
                             request()->routeIs('razen-studio.admin.digital-campaign.iklan-facebook.index') ||
                             request()->routeIs('razen-studio.admin.digital-campaign.iklan-google.index') ||
-                            request()->routeIs('razen-studio.admin.digital-campaign.iklan-youtube.index')
+                            request()->routeIs('razen-studio.admin.digital-campaign.iklan-youtube.index') ||
+                            request()->routeIs('razen-studio.admin.digital-campaign.iklan-instagram.data.testimoni.index') ||
+                            request()->routeIs('razen-studio.admin.digital-campaign.iklan-facebook.data.testimoni.index') ||
+                            request()->routeIs('razen-studio.admin.digital-campaign.iklan-google.data.testimoni.index') ||
+                            request()->routeIs('razen-studio.admin.digital-campaign.iklan-youtube.data.testimoni.index') ||
+                            request()->routeIs('razen-studio.admin.digital-campaign.data.testimoni.index')
                             )
                                 <a href="#digital_campaign" class="active">
                             @else
@@ -703,42 +713,190 @@
                                     @endif
                                         <span class="label">Atur</span>
                                     </a>
+                                    <li>
+                                        @if (request()->routeIs('razen-studio.admin.digital-campaign.data.testimoni.index'))
+                                            <a href="#data_digital_campaign" class="active">
+                                        @else
+                                            <a href="#data_digital_campaign">
+                                        @endif
+                                            <span class="label">Data</span>
+                                        </a>
+                                        <ul id="data_digital_campaign">
+                                            <li>
+                                                @if (request()->routeIs('razen-studio.admin.digital-campaign.data.testimoni.index'))
+                                                    <a href="{{ route('razen-studio.admin.digital-campaign.data.testimoni.index') }}" class="active">
+                                                @else
+                                                    <a href="{{ route('razen-studio.admin.digital-campaign.data.testimoni.index') }}">
+                                                @endif
+                                                    <span class="label">Testimoni</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
                                 </li>
                                 <li>
-                                    @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-instagram.index'))
-                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-instagram.index') }}" class="active">
+                                    @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-instagram.index') ||
+                                    request()->routeIs('razen-studio.admin.digital-campaign.iklan-instagram.data.testimoni.index'))
+                                        <a href="#iklan_instagram" class="active">
                                     @else
-                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-instagram.index') }}">
+                                        <a href="#iklan_instagram">
                                     @endif
                                         <span class="label">Iklan Instagram</span>
                                     </a>
+                                    <ul id="iklan_instagram">
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-instagram.index'))
+                                                <a href="{{ route('razen-studio.admin.digital-campaign.iklan-instagram.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.digital-campaign.iklan-instagram.index') }}">
+                                            @endif
+                                                <span class="label">Atur</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-instagram.data.testimoni.index'))
+                                                <a href="#data_iklan_instagram" class="active">
+                                            @else
+                                                <a href="#data_iklan_instagram">
+                                            @endif
+                                                <span class="label">Data</span>
+                                            </a>
+                                            <ul id="data_iklan_instagram">
+                                                <li>
+                                                    @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-instagram.data.testimoni.index'))
+                                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-instagram.data.testimoni.index') }}" class="active">
+                                                    @else
+                                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-instagram.data.testimoni.index') }}">
+                                                    @endif
+                                                        <span class="label">Testimoni</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
-                                    @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-facebook.index'))
-                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-facebook.index') }}" class="active">
+                                    @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-facebook.index') ||
+                                    request()->routeIs('razen-studio.admin.digital-campaign.iklan-facebook.data.testimoni.index'))
+                                        <a href="#iklan_facebook" class="active">
                                     @else
-                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-facebook.index') }}">
+                                        <a href="#iklan_facebook">
                                     @endif
                                         <span class="label">Iklan Facebook</span>
                                     </a>
+                                    <ul id="iklan_facebook">
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-facebook.index'))
+                                                <a href="{{ route('razen-studio.admin.digital-campaign.iklan-facebook.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.digital-campaign.iklan-facebook.index') }}">
+                                            @endif
+                                                <span class="label">Atur</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-facebook.data.testimoni.index'))
+                                                <a href="#data_iklan_facebook" class="active">
+                                            @else
+                                                <a href="#data_iklan_facebook">
+                                            @endif
+                                                <span class="label">Data</span>
+                                            </a>
+                                            <ul id="data_iklan_facebook">
+                                                <li>
+                                                    @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-facebook.data.testimoni.index'))
+                                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-facebook.data.testimoni.index') }}" class="active">
+                                                    @else
+                                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-facebook.data.testimoni.index') }}">
+                                                    @endif
+                                                        <span class="label">Testimoni</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
-                                    @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-google.index'))
-                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-google.index') }}" class="active">
+                                    @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-google.index') ||
+                                    request()->routeIs('razen-studio.admin.digital-campaign.iklan-google.data.testimoni.index'))
+                                        <a href="#iklan_google" class="active">
                                     @else
-                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-google.index') }}">
+                                        <a href="#iklan_google">
                                     @endif
                                         <span class="label">Iklan Google</span>
                                     </a>
+                                    <ul id="iklan_google">
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-google.index'))
+                                                <a href="{{ route('razen-studio.admin.digital-campaign.iklan-google.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.digital-campaign.iklan-google.index') }}">
+                                            @endif
+                                                <span class="label">Atur</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-google.data.testimoni.index'))
+                                                <a href="#data_iklan_google" class="active">
+                                            @else
+                                                <a href="#data_iklan_google">
+                                            @endif
+                                                <span class="label">Data</span>
+                                            </a>
+                                            <ul id="data_iklan_google">
+                                                <li>
+                                                    @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-google.data.testimoni.index'))
+                                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-google.data.testimoni.index') }}" class="active">
+                                                    @else
+                                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-google.data.testimoni.index') }}">
+                                                    @endif
+                                                        <span class="label">Testimoni</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
-                                    @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-youtube.index'))
-                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-youtube.index') }}" class="active">
+                                    @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-youtube.index') ||
+                                    request()->routeIs('razen-studio.admin.digital-campaign.iklan-youtube.data.testimoni.index'))
+                                        <a href="#iklan_youtube" class="active">
                                     @else
-                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-youtube.index') }}">
+                                        <a href="#iklan_youtube">
                                     @endif
                                         <span class="label">Iklan Youtube</span>
                                     </a>
+                                    <ul id="iklan_youtube">
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-youtube.index'))
+                                                <a href="{{ route('razen-studio.admin.digital-campaign.iklan-youtube.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.digital-campaign.iklan-youtube.index') }}">
+                                            @endif
+                                                <span class="label">Atur</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-youtube.data.testimoni.index'))
+                                                <a href="#data_iklan_youtube" class="active">
+                                            @else
+                                                <a href="#data_iklan_youtube">
+                                            @endif
+                                                <span class="label">Data</span>
+                                            </a>
+                                            <ul id="data_iklan_youtube">
+                                                <li>
+                                                    @if (request()->routeIs('razen-studio.admin.digital-campaign.iklan-youtube.data.testimoni.index'))
+                                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-youtube.data.testimoni.index') }}" class="active">
+                                                    @else
+                                                        <a href="{{ route('razen-studio.admin.digital-campaign.iklan-youtube.data.testimoni.index') }}">
+                                                    @endif
+                                                        <span class="label">Testimoni</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>

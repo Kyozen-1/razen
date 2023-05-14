@@ -4,27 +4,43 @@ namespace App\Http\Controllers\LandingPageRazenStudio;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\RazenStudio\Data\LandingPageDigitalCampaignIklanInstagramTestimoni;
+use App\Models\RazenStudio\Data\LandingPageDigitalCampaignIklanFacebookTestimoni;
+use App\Models\RazenStudio\Data\LandingPageDigitalCampaignIklanGoogleTestimoni;
+use App\Models\RazenStudio\Data\LandingPageDigitalCampaignIklanYoutubeTestimoni;
 
 class PlatformIklanController extends Controller
 {
     public function iklan_instagram()
     {
-        return view('landing-page-razen-studio.digital-campaign.iklan-instagram.index');
+        $testimonis = LandingPageDigitalCampaignIklanInstagramTestimoni::all();
+        return view('landing-page-razen-studio.digital-campaign.iklan-instagram.index', [
+            'testimonis' => $testimonis
+        ]);
     }
 
     public function iklan_facebook()
     {
-        return view('landing-page-razen-studio.digital-campaign.iklan-facebook.index');
+        $testimonis = LandingPageDigitalCampaignIklanFacebookTestimoni::all();
+        return view('landing-page-razen-studio.digital-campaign.iklan-facebook.index', [
+            'testimonis' => $testimonis
+        ]);
     }
 
     public function iklan_google()
     {
-        return view('landing-page-razen-studio.digital-campaign.iklan-google.index');
+        $testimonis = LandingPageDigitalCampaignIklanGoogleTestimoni::all();
+        return view('landing-page-razen-studio.digital-campaign.iklan-google.index', [
+            'testimonis' => $testimonis
+        ]);
     }
 
     public function iklan_youtube()
     {
-        return view('landing-page-razen-studio.digital-campaign.iklan-youtube.index');
+        $testimonis = LandingPageDigitalCampaignIklanYoutubeTestimoni::all();
+        return view('landing-page-razen-studio.digital-campaign.iklan-youtube.index', [
+            'testimonis' => $testimonis
+        ]);
     }
 
     public function iklan_tik_tok()

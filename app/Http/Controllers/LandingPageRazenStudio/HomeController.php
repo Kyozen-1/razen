@@ -14,6 +14,7 @@ use App\Models\PortofolioWeb;
 use App\Models\RazenStudio\Data\LandingPageWebDevelopmentTestimoni;
 use App\Models\RazenStudio\Data\LandingPageSocialMediaManagementHarga;
 use App\Models\RazenStudio\Data\LandingPageSocialMediaManagementTestimoni;
+use App\Models\RazenStudio\Data\LandingPageDigitalCampaignTestimoni;
 
 class HomeController extends Controller
 {
@@ -48,7 +49,10 @@ class HomeController extends Controller
     }
     public function digital_campaign()
     {
-        return view('landing-page-razen-studio.digital-campaign.index');
+        $testimonis = LandingPageDigitalCampaignTestimoni::all();
+        return view('landing-page-razen-studio.digital-campaign.index',[
+            'testimonis' => $testimonis
+        ]);
     }
     public function ebook()
     {

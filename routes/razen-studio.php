@@ -1293,6 +1293,23 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
 
     //Digital Campaign
     Route::get('/razen-studio/admin/digital-campaign/atur', 'RazenStudio\Admin\DigitalCampaign\AturController@index')->name('razen-studio.admin.digital-campaign.atur.index');
+    Route::prefix('razen-studio')->group(function(){
+        Route::prefix('admin')->group(function(){
+            Route::prefix('digital-campaign')->group(function(){
+                Route::prefix('data')->group(function(){
+                    Route::prefix('testimoni')->group(function(){
+                        Route::get('/', 'RazenStudio\Admin\DigitalCampaign\Data\TestimoniController@index')->name('razen-studio.admin.digital-campaign.data.testimoni.index');
+                        Route::get('/create', 'RazenStudio\Admin\DigitalCampaign\Data\TestimoniController@create')->name('razen-studio.admin.digital-campaign.data.testimoni.create');
+                        Route::get('/show/{id}', 'RazenStudio\Admin\DigitalCampaign\Data\TestimoniController@show')->name('razen-studio.admin.digital-campaign.data.testimoni.show');
+                        Route::post('/','RazenStudio\Admin\DigitalCampaign\Data\TestimoniController@store')->name('razen-studio.admin.digital-campaign.data.testimoni.store');
+                        Route::get('/edit/{id}','RazenStudio\Admin\DigitalCampaign\Data\TestimoniController@edit')->name('razen-studio.admin.digital-campaign.data.testimoni.edit');
+                        Route::post('/update','RazenStudio\Admin\DigitalCampaign\Data\TestimoniController@update')->name('razen-studio.admin.digital-campaign.data.testimoni.update');
+                        Route::get('/destroy/{id}','RazenStudio\Admin\DigitalCampaign\Data\TestimoniController@destroy')->name('razen-studio.admin.digital-campaign.data.testimoni.destroy');
+                    });
+                });
+            });
+        });
+    });
 
     //Digital Campaign Section - 1
     Route::post('/razen-studio/admin/digital-campaign/atur/section-1/store', 'RazenStudio\Admin\DigitalCampaign\AturController@section_1_store')->name('razen-studio.admin.digital-campaign.atur.section-1.store');
@@ -1317,6 +1334,26 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
 
     //Digital Campaign Section - Iklan Instagram
     Route::get('/razen-studio/admin/digital-campaign/iklan-instagram', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@index')->name('razen-studio.admin.digital-campaign.iklan-instagram.index');
+
+    Route::prefix('razen-studio')->group(function(){
+        Route::prefix('admin')->group(function(){
+            Route::prefix('digital-campaign')->group(function(){
+                Route::prefix('iklan-instagram')->group(function(){
+                    Route::prefix('data')->group(function(){
+                        Route::prefix('testimoni')->group(function(){
+                            Route::get('/', 'RazenStudio\Admin\DigitalCampaign\IklanInstagram\Data\TestimoniController@index')->name('razen-studio.admin.digital-campaign.iklan-instagram.data.testimoni.index');
+                            Route::get('/create', 'RazenStudio\Admin\DigitalCampaign\IklanInstagram\Data\TestimoniController@create')->name('razen-studio.admin.digital-campaign.iklan-instagram.data.testimoni.create');
+                            Route::get('/show/{id}', 'RazenStudio\Admin\DigitalCampaign\IklanInstagram\Data\TestimoniController@show')->name('razen-studio.admin.digital-campaign.iklan-instagram.data.testimoni.show');
+                            Route::post('/','RazenStudio\Admin\DigitalCampaign\IklanInstagram\Data\TestimoniController@store')->name('razen-studio.admin.digital-campaign.iklan-instagram.data.testimoni.store');
+                            Route::get('/edit/{id}','RazenStudio\Admin\DigitalCampaign\IklanInstagram\Data\TestimoniController@edit')->name('razen-studio.admin.digital-campaign.iklan-instagram.data.testimoni.edit');
+                            Route::post('/update','RazenStudio\Admin\DigitalCampaign\IklanInstagram\Data\TestimoniController@update')->name('razen-studio.admin.digital-campaign.iklan-instagram.data.testimoni.update');
+                            Route::get('/destroy/{id}','RazenStudio\Admin\DigitalCampaign\IklanInstagram\Data\TestimoniController@destroy')->name('razen-studio.admin.digital-campaign.iklan-instagram.data.testimoni.destroy');
+                        });
+                    });
+                });
+            });
+        });
+    });
 
     //Digital Campaign Section - Iklan Instagram - Section 1
     Route::post('/razen-studio/admin/digital-campaign/iklan-instagram/section-1/store', 'RazenStudio\Admin\DigitalCampaign\IklanInstagramController@section_1_store')->name('razen-studio.admin.digital-campaign.iklan-instagram.section-1.store');
@@ -1362,6 +1399,25 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
 
     //Digital Campaign Section - Iklan Facebook
     Route::get('/razen-studio/admin/digital-campaign/iklan-facebook', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@index')->name('razen-studio.admin.digital-campaign.iklan-facebook.index');
+    Route::prefix('razen-studio')->group(function(){
+        Route::prefix('admin')->group(function(){
+            Route::prefix('digital-campaign')->group(function(){
+                Route::prefix('iklan-facebook')->group(function(){
+                    Route::prefix('data')->group(function(){
+                        Route::prefix('testimoni')->group(function(){
+                            Route::get('/', 'RazenStudio\Admin\DigitalCampaign\IklanFacebook\Data\TestimoniController@index')->name('razen-studio.admin.digital-campaign.iklan-facebook.data.testimoni.index');
+                            Route::get('/create', 'RazenStudio\Admin\DigitalCampaign\IklanFacebook\Data\TestimoniController@create')->name('razen-studio.admin.digital-campaign.iklan-facebook.data.testimoni.create');
+                            Route::get('/show/{id}', 'RazenStudio\Admin\DigitalCampaign\IklanFacebook\Data\TestimoniController@show')->name('razen-studio.admin.digital-campaign.iklan-facebook.data.testimoni.show');
+                            Route::post('/','RazenStudio\Admin\DigitalCampaign\IklanFacebook\Data\TestimoniController@store')->name('razen-studio.admin.digital-campaign.iklan-facebook.data.testimoni.store');
+                            Route::get('/edit/{id}','RazenStudio\Admin\DigitalCampaign\IklanFacebook\Data\TestimoniController@edit')->name('razen-studio.admin.digital-campaign.iklan-facebook.data.testimoni.edit');
+                            Route::post('/update','RazenStudio\Admin\DigitalCampaign\IklanFacebook\Data\TestimoniController@update')->name('razen-studio.admin.digital-campaign.iklan-facebook.data.testimoni.update');
+                            Route::get('/destroy/{id}','RazenStudio\Admin\DigitalCampaign\IklanFacebook\Data\TestimoniController@destroy')->name('razen-studio.admin.digital-campaign.iklan-facebook.data.testimoni.destroy');
+                        });
+                    });
+                });
+            });
+        });
+    });
 
     //Digital Campaign Section - Iklan Facebook - Section 1
     Route::post('/razen-studio/admin/digital-campaign/iklan-facebook/section-1/store', 'RazenStudio\Admin\DigitalCampaign\IklanFacebookController@section_1_store')->name('razen-studio.admin.digital-campaign.iklan-facebook.section-1.store');
@@ -1407,6 +1463,25 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
 
     //Digital Campaign Section - Iklan Google
     Route::get('/razen-studio/admin/digital-campaign/iklan-google', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@index')->name('razen-studio.admin.digital-campaign.iklan-google.index');
+    Route::prefix('razen-studio')->group(function(){
+        Route::prefix('admin')->group(function(){
+            Route::prefix('digital-campaign')->group(function(){
+                Route::prefix('iklan-google')->group(function(){
+                    Route::prefix('data')->group(function(){
+                        Route::prefix('testimoni')->group(function(){
+                            Route::get('/', 'RazenStudio\Admin\DigitalCampaign\IklanGoogle\Data\TestimoniController@index')->name('razen-studio.admin.digital-campaign.iklan-google.data.testimoni.index');
+                            Route::get('/create', 'RazenStudio\Admin\DigitalCampaign\IklanGoogle\Data\TestimoniController@create')->name('razen-studio.admin.digital-campaign.iklan-google.data.testimoni.create');
+                            Route::get('/show/{id}', 'RazenStudio\Admin\DigitalCampaign\IklanGoogle\Data\TestimoniController@show')->name('razen-studio.admin.digital-campaign.iklan-google.data.testimoni.show');
+                            Route::post('/','RazenStudio\Admin\DigitalCampaign\IklanGoogle\Data\TestimoniController@store')->name('razen-studio.admin.digital-campaign.iklan-google.data.testimoni.store');
+                            Route::get('/edit/{id}','RazenStudio\Admin\DigitalCampaign\IklanGoogle\Data\TestimoniController@edit')->name('razen-studio.admin.digital-campaign.iklan-google.data.testimoni.edit');
+                            Route::post('/update','RazenStudio\Admin\DigitalCampaign\IklanGoogle\Data\TestimoniController@update')->name('razen-studio.admin.digital-campaign.iklan-google.data.testimoni.update');
+                            Route::get('/destroy/{id}','RazenStudio\Admin\DigitalCampaign\IklanGoogle\Data\TestimoniController@destroy')->name('razen-studio.admin.digital-campaign.iklan-google.data.testimoni.destroy');
+                        });
+                    });
+                });
+            });
+        });
+    });
 
     //Digital Campaign Section - Iklan Google - Section 1
     Route::post('/razen-studio/admin/digital-campaign/iklan-google/section-1/store', 'RazenStudio\Admin\DigitalCampaign\IklanGoogleController@section_1_store')->name('razen-studio.admin.digital-campaign.iklan-google.section-1.store');
@@ -1458,6 +1533,25 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
 
     //Digital Campaign Section - Iklan Youtube
     Route::get('/razen-studio/admin/digital-campaign/iklan-youtube', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@index')->name('razen-studio.admin.digital-campaign.iklan-youtube.index');
+    Route::prefix('razen-studio')->group(function(){
+        Route::prefix('admin')->group(function(){
+            Route::prefix('digital-campaign')->group(function(){
+                Route::prefix('iklan-youtube')->group(function(){
+                    Route::prefix('data')->group(function(){
+                        Route::prefix('testimoni')->group(function(){
+                            Route::get('/', 'RazenStudio\Admin\DigitalCampaign\IklanYoutube\Data\TestimoniController@index')->name('razen-studio.admin.digital-campaign.iklan-youtube.data.testimoni.index');
+                            Route::get('/create', 'RazenStudio\Admin\DigitalCampaign\IklanYoutube\Data\TestimoniController@create')->name('razen-studio.admin.digital-campaign.iklan-youtube.data.testimoni.create');
+                            Route::get('/show/{id}', 'RazenStudio\Admin\DigitalCampaign\IklanYoutube\Data\TestimoniController@show')->name('razen-studio.admin.digital-campaign.iklan-youtube.data.testimoni.show');
+                            Route::post('/','RazenStudio\Admin\DigitalCampaign\IklanYoutube\Data\TestimoniController@store')->name('razen-studio.admin.digital-campaign.iklan-youtube.data.testimoni.store');
+                            Route::get('/edit/{id}','RazenStudio\Admin\DigitalCampaign\IklanYoutube\Data\TestimoniController@edit')->name('razen-studio.admin.digital-campaign.iklan-youtube.data.testimoni.edit');
+                            Route::post('/update','RazenStudio\Admin\DigitalCampaign\IklanYoutube\Data\TestimoniController@update')->name('razen-studio.admin.digital-campaign.iklan-youtube.data.testimoni.update');
+                            Route::get('/destroy/{id}','RazenStudio\Admin\DigitalCampaign\IklanYoutube\Data\TestimoniController@destroy')->name('razen-studio.admin.digital-campaign.iklan-youtube.data.testimoni.destroy');
+                        });
+                    });
+                });
+            });
+        });
+    });
 
     //Digital Campaign Section - Iklan Youtube - Section 1
     Route::post('/razen-studio/admin/digital-campaign/iklan-youtube/section-1/store', 'RazenStudio\Admin\DigitalCampaign\IklanYoutubeController@section_1_store')->name('razen-studio.admin.digital-campaign.iklan-youtube.section-1.store');
