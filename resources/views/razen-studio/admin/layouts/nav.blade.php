@@ -91,6 +91,16 @@
                         <span class="label">Portofolio Web</span>
                     </a>
                 </li>
+                <li>
+                    @if (request()->routeIs('razen-studio.admin.portofolio-video-animasi.index'))
+                        <a href="{{ route('razen-studio.admin.portofolio-video-animasi.index') }}" class="active">
+                    @else
+                        <a href="{{ route('razen-studio.admin.portofolio-video-animasi.index') }}">
+                    @endif
+                        <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Portofolio Video Animasi</span>
+                    </a>
+                </li>
                 {{-- <li>
                     <a href="#dashboards">
                     <i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
@@ -174,7 +184,12 @@
                     request()->routeIs('razen-studio.admin.digital-campaign.iklan-facebook.data.testimoni.index') ||
                     request()->routeIs('razen-studio.admin.digital-campaign.iklan-google.data.testimoni.index') ||
                     request()->routeIs('razen-studio.admin.digital-campaign.iklan-youtube.data.testimoni.index') ||
-                    request()->routeIs('razen-studio.admin.digital-campaign.data.testimoni.index')
+                    request()->routeIs('razen-studio.admin.digital-campaign.data.testimoni.index') ||
+                    request()->routeIs('razen-studio.admin.commercial-photography.data.testimoni.index') ||
+                    request()->routeIs('razen-studio.admin.video-production.video-animasi.data.harga-jasa.index') ||
+                    request()->routeIs('razen-studio.admin.video-production.video-animasi.data.testimoni.index') ||
+                    request()->routeIs('razen-studio.admin.video-production.video-konten-sosmed.data.testimoni.index') ||
+                    request()->routeIs('razen-studio.admin.video-production.video-company-profile.data.testimoni.index')
                     )
                     <a href="#landing_page" class="active">
                     @else
@@ -362,7 +377,11 @@
                             @if (request()->routeIs('razen-studio.admin.video-production.atur.index') ||
                             request()->routeIs('razen-studio.admin.video-production.video-animasi.index') ||
                             request()->routeIs('razen-studio.admin.video-production.video-konten-sosmed.index') ||
-                            request()->routeIs('razen-studio.admin.video-production.video-company-profile.index'))
+                            request()->routeIs('razen-studio.admin.video-production.video-company-profile.index') ||
+                            request()->routeIs('razen-studio.admin.video-production.video-animasi.data.harga-jasa.index') ||
+                            request()->routeIs('razen-studio.admin.video-production.video-animasi.data.testimoni.index') ||
+                            request()->routeIs('razen-studio.admin.video-production.video-konten-sosmed.data.testimoni.index') ||
+                            request()->routeIs('razen-studio.admin.video-production.video-company-profile.data.testimoni.index'))
                                 <a href="#video_production" class="active">
                             @else
                                 <a href="#video_production">
@@ -380,36 +399,144 @@
                                     </a>
                                 </li>
                                 <li>
-                                    @if (request()->routeIs('razen-studio.admin.video-production.video-animasi.index'))
-                                        <a href="{{ route('razen-studio.admin.video-production.video-animasi.index') }}" class="active">
+                                    @if (request()->routeIs('razen-studio.admin.video-production.video-animasi.index')||
+                                    request()->routeIs('razen-studio.admin.video-production.video-animasi.data.harga-jasa.index') ||
+                                            request()->routeIs('razen-studio.admin.video-production.video-animasi.data.testimoni.index'))
+                                        <a href="#video_animasi" class="active">
                                     @else
-                                        <a href="{{ route('razen-studio.admin.video-production.video-animasi.index') }}">
+                                        <a href="#video_animasi">
                                     @endif
                                         <span class="label">Video Animasi</span>
                                     </a>
+                                    <ul id="video_animasi">
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.video-production.video-animasi.index'))
+                                                <a href="{{ route('razen-studio.admin.video-production.video-animasi.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.video-production.video-animasi.index') }}">
+                                            @endif
+                                                <span class="label">Atur</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.video-production.video-animasi.data.harga-jasa.index') ||
+                                            request()->routeIs('razen-studio.admin.video-production.video-animasi.data.testimoni.index'))
+                                                <a href="#data_video_animasi" class="active">
+                                            @else
+                                                <a href="#data_video_animasi">
+                                            @endif
+                                                <span class="label">Data</span>
+                                            </a>
+                                            <ul id="data_video_animasi">
+                                                <li>
+                                                    @if (request()->routeIs('razen-studio.admin.video-production.video-animasi.data.harga-jasa.index'))
+                                                        <a href="{{ route('razen-studio.admin.video-production.video-animasi.data.harga-jasa.index') }}" class="active">
+                                                    @else
+                                                        <a href="{{ route('razen-studio.admin.video-production.video-animasi.data.harga-jasa.index') }}">
+                                                    @endif
+                                                        <span class="label">Harga Jasa</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    @if (request()->routeIs('razen-studio.admin.video-production.video-animasi.data.testimoni.index'))
+                                                        <a href="{{ route('razen-studio.admin.video-production.video-animasi.data.testimoni.index') }}" class="active">
+                                                    @else
+                                                        <a href="{{ route('razen-studio.admin.video-production.video-animasi.data.testimoni.index') }}">
+                                                    @endif
+                                                        <span class="label">Testimoni</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
-                                    @if (request()->routeIs('razen-studio.admin.video-production.video-konten-sosmed.index'))
-                                        <a href="{{ route('razen-studio.admin.video-production.video-konten-sosmed.index') }}" class="active">
+                                    @if (request()->routeIs('razen-studio.admin.video-production.video-konten-sosmed.index')||
+                                            request()->routeIs('razen-studio.admin.video-production.video-konten-sosmed.data.testimoni.index'))
+                                        <a href="#video_konten_sosmed" class="active">
                                     @else
-                                        <a href="{{ route('razen-studio.admin.video-production.video-konten-sosmed.index') }}">
+                                        <a href="#video_konten_sosmed">
                                     @endif
                                         <span class="label">Video Konten Sosmed</span>
                                     </a>
+                                    <ul id="video_konten_sosmed">
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.video-production.video-konten-sosmed.index'))
+                                                <a href="{{ route('razen-studio.admin.video-production.video-konten-sosmed.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.video-production.video-konten-sosmed.index') }}">
+                                            @endif
+                                                <span class="label">Atur</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.video-production.video-konten-sosmed.data.testimoni.index'))
+                                                <a href="#data_video_konten_sosmed" class="active">
+                                            @else
+                                                <a href="#data_video_konten_sosmed">
+                                            @endif
+                                                <span class="label">Data</span>
+                                            </a>
+                                            <ul id="data_video_konten_sosmed">
+                                                <li>
+                                                    @if (request()->routeIs('razen-studio.admin.video-production.video-konten-sosmed.data.testimoni.index'))
+                                                        <a href="{{ route('razen-studio.admin.video-production.video-konten-sosmed.data.testimoni.index') }}" class="active">
+                                                    @else
+                                                        <a href="{{ route('razen-studio.admin.video-production.video-konten-sosmed.data.testimoni.index') }}">
+                                                    @endif
+                                                        <span class="label">Testimoni</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
-                                    @if (request()->routeIs('razen-studio.admin.video-production.video-company-profile.index'))
-                                        <a href="{{ route('razen-studio.admin.video-production.video-company-profile.index') }}" class="active">
+                                    @if (request()->routeIs('razen-studio.admin.video-production.video-company-profile.index')||
+                                            request()->routeIs('razen-studio.admin.video-production.video-company-profile.data.testimoni.index'))
+                                        <a href="#video_company_profile" class="active">
                                     @else
-                                        <a href="{{ route('razen-studio.admin.video-production.video-company-profile.index') }}">
+                                        <a href="#video_company_profile">
                                     @endif
                                         <span class="label">Video Company Profile</span>
                                     </a>
+                                    <ul id="video_company_profile">
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.video-production.video-company-profile.index'))
+                                                <a href="{{ route('razen-studio.admin.video-production.video-company-profile.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.video-production.video-company-profile.index') }}">
+                                            @endif
+                                                <span class="label">Atur</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.video-production.video-company-profile.data.testimoni.index'))
+                                                <a href="#data_video_company_profile" class="active">
+                                            @else
+                                                <a href="#data_video_company_profile">
+                                            @endif
+                                                <span class="label">Data</span>
+                                            </a>
+                                            <ul id="data_video_company_profile">
+                                                <li>
+                                                    @if (request()->routeIs('razen-studio.admin.video-production.video-company-profile.data.testimoni.index'))
+                                                        <a href="{{ route('razen-studio.admin.video-production.video-company-profile.data.testimoni.index') }}" class="active">
+                                                    @else
+                                                        <a href="{{ route('razen-studio.admin.video-production.video-company-profile.data.testimoni.index') }}">
+                                                    @endif
+                                                        <span class="label">Testimoni</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            @if (request()->routeIs('razen-studio.admin.commercial-photography.atur.index'))
+                            @if (request()->routeIs('razen-studio.admin.commercial-photography.atur.index') ||
+                            request()->routeIs('razen-studio.admin.commercial-photography.data.testimoni.index'))
                                 <a href="#commercial_photography" class="active">
                             @else
                                 <a href="#commercial_photography">
@@ -425,6 +552,26 @@
                                     @endif
                                         <span class="label">Atur</span>
                                     </a>
+                                </li>
+                                <li>
+                                    @if (request()->routeIs('razen-studio.admin.commercial-photography.data.testimoni.index'))
+                                        <a href="#data_digital_campaign" class="active">
+                                    @else
+                                        <a href="#data_digital_campaign">
+                                    @endif
+                                        <span class="label">Data</span>
+                                    </a>
+                                    <ul id="data_digital_campaign">
+                                        <li>
+                                            @if (request()->routeIs('razen-studio.admin.commercial-photography.data.testimoni.index'))
+                                                <a href="{{ route('razen-studio.admin.commercial-photography.data.testimoni.index') }}" class="active">
+                                            @else
+                                                <a href="{{ route('razen-studio.admin.commercial-photography.data.testimoni.index') }}">
+                                            @endif
+                                                <span class="label">Testimoni</span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>

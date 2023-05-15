@@ -458,6 +458,36 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
     //Video Production - Video Animasi
     Route::get('/razen-studio/admin/video-production/video-animasi', 'RazenStudio\Admin\VideoProduction\VideoAnimasiController@index')->name('razen-studio.admin.video-production.video-animasi.index');
 
+    Route::prefix('razen-studio')->group(function(){
+        Route::prefix('admin')->group(function(){
+            Route::prefix('video-production')->group(function(){
+                Route::prefix('video-animasi')->group(function(){
+                    Route::prefix('data')->group(function(){
+                        Route::prefix('harga-jasa')->group(function(){
+                            Route::get('/', 'RazenStudio\Admin\VideoProduction\VideoAnimasi\Data\HargaJasaController@index')->name('razen-studio.admin.video-production.video-animasi.data.harga-jasa.index');
+                            Route::get('/create', 'RazenStudio\Admin\VideoProduction\VideoAnimasi\Data\HargaJasaController@create')->name('razen-studio.admin.video-production.video-animasi.data.harga-jasa.create');
+                            Route::get('/show/{id}', 'RazenStudio\Admin\VideoProduction\VideoAnimasi\Data\HargaJasaController@show')->name('razen-studio.admin.video-production.video-animasi.data.harga-jasa.show');
+                            Route::post('/','RazenStudio\Admin\VideoProduction\VideoAnimasi\Data\HargaJasaController@store')->name('razen-studio.admin.video-production.video-animasi.data.harga-jasa.store');
+                            Route::get('/edit/{id}','RazenStudio\Admin\VideoProduction\VideoAnimasi\Data\HargaJasaController@edit')->name('razen-studio.admin.video-production.video-animasi.data.harga-jasa.edit');
+                            Route::post('/update/{id}','RazenStudio\Admin\VideoProduction\VideoAnimasi\Data\HargaJasaController@update')->name('razen-studio.admin.video-production.video-animasi.data.harga-jasa.update');
+                            Route::get('/destroy/{id}','RazenStudio\Admin\VideoProduction\VideoAnimasi\Data\HargaJasaController@destroy')->name('razen-studio.admin.video-production.video-animasi.data.harga-jasa.destroy');
+                        });
+
+                        Route::prefix('testimoni')->group(function(){
+                            Route::get('/', 'RazenStudio\Admin\VideoProduction\VideoAnimasi\Data\TestimoniController@index')->name('razen-studio.admin.video-production.video-animasi.data.testimoni.index');
+                            Route::get('/create', 'RazenStudio\Admin\VideoProduction\VideoAnimasi\Data\TestimoniController@create')->name('razen-studio.admin.video-production.video-animasi.data.testimoni.create');
+                            Route::get('/show/{id}', 'RazenStudio\Admin\VideoProduction\VideoAnimasi\Data\TestimoniController@show')->name('razen-studio.admin.video-production.video-animasi.data.testimoni.show');
+                            Route::post('/','RazenStudio\Admin\VideoProduction\VideoAnimasi\Data\TestimoniController@store')->name('razen-studio.admin.video-production.video-animasi.data.testimoni.store');
+                            Route::get('/edit/{id}','RazenStudio\Admin\VideoProduction\VideoAnimasi\Data\TestimoniController@edit')->name('razen-studio.admin.video-production.video-animasi.data.testimoni.edit');
+                            Route::post('/update','RazenStudio\Admin\VideoProduction\VideoAnimasi\Data\TestimoniController@update')->name('razen-studio.admin.video-production.video-animasi.data.testimoni.update');
+                            Route::get('/destroy/{id}','RazenStudio\Admin\VideoProduction\VideoAnimasi\Data\TestimoniController@destroy')->name('razen-studio.admin.video-production.video-animasi.data.testimoni.destroy');
+                        });
+                    });
+                });
+            });
+        });
+    });
+
     //Video Production - Video Animasi - Section 1
     Route::post('/razen-studio/admin/video-production/video-animasi/section-1', 'RazenStudio\Admin\VideoProduction\VideoAnimasiController@section_1_store')->name('razen-studio.admin.video-production.video-animasi.section_1_store');
 
@@ -487,6 +517,25 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
 
     //Video Production - Video Konten Sosmed
     Route::get('/razen-studio/admin/video-production/video-konten-sosmed', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@index')->name('razen-studio.admin.video-production.video-konten-sosmed.index');
+    Route::prefix('razen-studio')->group(function(){
+        Route::prefix('admin')->group(function(){
+            Route::prefix('video-production')->group(function(){
+                Route::prefix('video-konten-sosmed')->group(function(){
+                    Route::prefix('data')->group(function(){
+                        Route::prefix('testimoni')->group(function(){
+                            Route::get('/', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmed\Data\TestimoniController@index')->name('razen-studio.admin.video-production.video-konten-sosmed.data.testimoni.index');
+                            Route::get('/create', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmed\Data\TestimoniController@create')->name('razen-studio.admin.video-production.video-konten-sosmed.data.testimoni.create');
+                            Route::get('/show/{id}', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmed\Data\TestimoniController@show')->name('razen-studio.admin.video-production.video-konten-sosmed.data.testimoni.show');
+                            Route::post('/','RazenStudio\Admin\VideoProduction\VideoKontenSosmed\Data\TestimoniController@store')->name('razen-studio.admin.video-production.video-konten-sosmed.data.testimoni.store');
+                            Route::get('/edit/{id}','RazenStudio\Admin\VideoProduction\VideoKontenSosmed\Data\TestimoniController@edit')->name('razen-studio.admin.video-production.video-konten-sosmed.data.testimoni.edit');
+                            Route::post('/update','RazenStudio\Admin\VideoProduction\VideoKontenSosmed\Data\TestimoniController@update')->name('razen-studio.admin.video-production.video-konten-sosmed.data.testimoni.update');
+                            Route::get('/destroy/{id}','RazenStudio\Admin\VideoProduction\VideoKontenSosmed\Data\TestimoniController@destroy')->name('razen-studio.admin.video-production.video-konten-sosmed.data.testimoni.destroy');
+                        });
+                    });
+                });
+            });
+        });
+    });
 
     //Video Production - Video Konten Sosmed - Section 1
     Route::post('/razen-studio/admin/video-production/video-konten-sosmed/section-1', 'RazenStudio\Admin\VideoProduction\VideoKontenSosmedController@section_1_store')->name('razen-studio.admin.video-production.video-konten-sosmed.section_1_store');
@@ -522,6 +571,25 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
 
     //Video Production - Video Company Profile
     Route::get('/razen-studio/admin/video-production/video-company-profile', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@index')->name('razen-studio.admin.video-production.video-company-profile.index');
+    Route::prefix('razen-studio')->group(function(){
+        Route::prefix('admin')->group(function(){
+            Route::prefix('video-production')->group(function(){
+                Route::prefix('video-company-profile')->group(function(){
+                    Route::prefix('data')->group(function(){
+                        Route::prefix('testimoni')->group(function(){
+                            Route::get('/', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfile\Data\TestimoniController@index')->name('razen-studio.admin.video-production.video-company-profile.data.testimoni.index');
+                            Route::get('/create', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfile\Data\TestimoniController@create')->name('razen-studio.admin.video-production.video-company-profile.data.testimoni.create');
+                            Route::get('/show/{id}', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfile\Data\TestimoniController@show')->name('razen-studio.admin.video-production.video-company-profile.data.testimoni.show');
+                            Route::post('/','RazenStudio\Admin\VideoProduction\VideoCompanyProfile\Data\TestimoniController@store')->name('razen-studio.admin.video-production.video-company-profile.data.testimoni.store');
+                            Route::get('/edit/{id}','RazenStudio\Admin\VideoProduction\VideoCompanyProfile\Data\TestimoniController@edit')->name('razen-studio.admin.video-production.video-company-profile.data.testimoni.edit');
+                            Route::post('/update','RazenStudio\Admin\VideoProduction\VideoCompanyProfile\Data\TestimoniController@update')->name('razen-studio.admin.video-production.video-company-profile.data.testimoni.update');
+                            Route::get('/destroy/{id}','RazenStudio\Admin\VideoProduction\VideoCompanyProfile\Data\TestimoniController@destroy')->name('razen-studio.admin.video-production.video-company-profile.data.testimoni.destroy');
+                        });
+                    });
+                });
+            });
+        });
+    });
 
     //Video Production - Video Company Profile - Section 1
     Route::post('/razen-studio/admin/video-production/video-company-profile/section-1', 'RazenStudio\Admin\VideoProduction\VideoCompanyProfileController@section_1_store')->name('razen-studio.admin.video-production.video-company-profile.section_1_store');
@@ -552,6 +620,23 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
 
     //Commercial Photography
     Route::get('/razen-studio/admin/commercial-photography/atur', 'RazenStudio\Admin\CommercialPhotography\AturController@index')->name('razen-studio.admin.commercial-photography.atur.index');
+    Route::prefix('razen-studio')->group(function(){
+        Route::prefix('admin')->group(function(){
+            Route::prefix('commercial-photography')->group(function(){
+                Route::prefix('data')->group(function(){
+                    Route::prefix('testimoni')->group(function(){
+                        Route::get('/', 'RazenStudio\Admin\CommercialPhotography\Data\TestimoniController@index')->name('razen-studio.admin.commercial-photography.data.testimoni.index');
+                        Route::get('/create', 'RazenStudio\Admin\CommercialPhotography\Data\TestimoniController@create')->name('razen-studio.admin.commercial-photography.data.testimoni.create');
+                        Route::get('/show/{id}', 'RazenStudio\Admin\CommercialPhotography\Data\TestimoniController@show')->name('razen-studio.admin.commercial-photography.data.testimoni.show');
+                        Route::post('/','RazenStudio\Admin\CommercialPhotography\Data\TestimoniController@store')->name('razen-studio.admin.commercial-photography.data.testimoni.store');
+                        Route::get('/edit/{id}','RazenStudio\Admin\CommercialPhotography\Data\TestimoniController@edit')->name('razen-studio.admin.commercial-photography.data.testimoni.edit');
+                        Route::post('/update','RazenStudio\Admin\CommercialPhotography\Data\TestimoniController@update')->name('razen-studio.admin.commercial-photography.data.testimoni.update');
+                        Route::get('/destroy/{id}','RazenStudio\Admin\CommercialPhotography\Data\TestimoniController@destroy')->name('razen-studio.admin.commercial-photography.data.testimoni.destroy');
+                    });
+                });
+            });
+        });
+    });
 
     Route::post('/razen-studio/admin/commercial-photography/section-1/store', 'RazenStudio\Admin\CommercialPhotography\AturController@section_1_store')->name('razen-studio.admin.commercial-photography.atur.section-1.store');
 
@@ -1894,6 +1979,16 @@ Route::group(['middleware' => 'auth:razen_studio,razen'], function(){
                 Route::get('/edit/{id}','RazenStudio\Admin\PortofolioWebController@edit')->name('razen-studio.admin.portofolio-web.edit');
                 Route::post('/update','RazenStudio\Admin\PortofolioWebController@update')->name('razen-studio.admin.portofolio-web.update');
                 Route::get('/destroy/{id}','RazenStudio\Admin\PortofolioWebController@destroy')->name('razen-studio.admin.portofolio-web.destroy');
+            });
+
+            Route::prefix('portofolio-video-animasi')->group(function(){
+                Route::get('/', 'RazenStudio\Admin\PortofolioVideoAnimasiController@index')->name('razen-studio.admin.portofolio-video-animasi.index');
+                Route::get('/create', 'RazenStudio\Admin\PortofolioVideoAnimasiController@create')->name('razen-studio.admin.portofolio-video-animasi.create');
+                Route::get('/show/{id}', 'RazenStudio\Admin\PortofolioVideoAnimasiController@show')->name('razen-studio.admin.portofolio-video-animasi.show');
+                Route::post('/','RazenStudio\Admin\PortofolioVideoAnimasiController@store')->name('razen-studio.admin.portofolio-video-animasi.store');
+                Route::get('/edit/{id}','RazenStudio\Admin\PortofolioVideoAnimasiController@edit')->name('razen-studio.admin.portofolio-video-animasi.edit');
+                Route::post('/update','RazenStudio\Admin\PortofolioVideoAnimasiController@update')->name('razen-studio.admin.portofolio-video-animasi.update');
+                Route::get('/destroy/{id}','RazenStudio\Admin\PortofolioVideoAnimasiController@destroy')->name('razen-studio.admin.portofolio-video-animasi.destroy');
             });
         });
     });

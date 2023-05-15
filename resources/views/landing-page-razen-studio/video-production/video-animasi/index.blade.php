@@ -153,240 +153,77 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="border-top border-bottom">
-                        <th scope="row" class="bg-white text-dark pt-5 pb-3 px-4 mb-0 font-size-2">
-                            <b>
-                                Paket Video Animasi
-                                <br>
-                                Explainer 2D
-                            </b>
-                        </th>
-                        <td class="bg-white text-center">
-                            <div class="position-relative">
-                                <div id="youTubeVideoPricing1" class="video-player bg-dark rounded-lg">
-                                    <img class="img-fluid video-player-preview rounded" src="https://gosocial.co.id/assets/img/service/video/animasi/pricing1.webp" alt="Penjelasan engagement dan cara terbaru meningkatkannya">
-                                    <a class="js-fancybox video-player-btn video-player-centered shadow-soft rounded-circle" href="javascript:;" data-hs-fancybox-options="{
-             &quot;src&quot;: &quot;//youtube.com/-CM687tA_us&quot;,
-             &quot;caption&quot;: &quot;Video Animasi Standart - Oleca&quot;,
-             &quot;speed&quot;: 700,
-             &quot;buttons&quot;: [&quot;fullScreen&quot;, &quot;close&quot;],
-             &quot;vimeo&quot;: {
-               &quot;autoplay&quot;: 1
-             }
-           }">
-                                    </a>
-                                    <div class="embed-responsive embed-responsive-16by9 rounded-lg">
-                                        <div id="youTubeIframePricing1"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-block mt-2">
-                                <small class="text-muted font-size-2">Start from</small><br>
-                                <span class="text-primary align-top pricing font-size-2">Rp.</span>
-                                <span class="h2 text-primary">4.500.000</span>
-                            </div>
-                        </td>
-                        <td class="bg-white text-center border-left border-right">
-                            <div class="position-relative">
-                                <div id="youTubeVideoPricing2" class="video-player bg-dark rounded-lg">
-                                    <img class="img-fluid video-player-preview rounded" src="https://gosocial.co.id/assets/img/service/video/animasi/pricing2.webp" alt="Penjelasan engagement dan cara terbaru meningkatkannya">
-                                    <a class="js-fancybox video-player-btn video-player-centered shadow-soft rounded-circle" href="javascript:;" data-hs-fancybox-options="{
-             &quot;src&quot;: &quot;//youtube.com/ze2sY9HaKKM&quot;,
-             &quot;caption&quot;: &quot;Video Animasi Premium - Perawatku.id&quot;,
-             &quot;speed&quot;: 700,
-             &quot;buttons&quot;: [&quot;fullScreen&quot;, &quot;close&quot;],
-             &quot;vimeo&quot;: {
-               &quot;autoplay&quot;: 1
-             }
-           }">
-                                    </a>
-                                    <div class="embed-responsive embed-responsive-16by9 rounded-lg">
-                                        <div id="youTubeIframePricing2"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-block mt-2">
-                                <small class="text-muted font-size-2">Start from</small><br>
-                                <span class="text-primary align-top pricing font-size-2">Rp.</span>
-                                <span class="h2 text-primary">7.500.000</span>
-                            </div>
-                        </td>
-                        <td class="bg-white text-center">
-                            <div class="position-relative">
-                                <div id="youTubeVideoPricing3" class="video-player bg-dark rounded-lg">
-                                    <img class="img-fluid video-player-preview rounded" src="https://gosocial.co.id/assets/img/service/video/animasi/pricing3.webp" alt="Penjelasan engagement dan cara terbaru meningkatkannya">
-                                    <a class="js-fancybox video-player-btn video-player-centered shadow-soft rounded-circle" href="javascript:;" data-hs-fancybox-options="{
-             &quot;src&quot;: &quot;//youtube.com/PeMjlLYPyMg&quot;,
-             &quot;caption&quot;: &quot;Video Animasi Premium - Flimty&quot;,
-             &quot;speed&quot;: 700,
-             &quot;buttons&quot;: [&quot;fullScreen&quot;, &quot;close&quot;],
-             &quot;vimeo&quot;: {
-               &quot;autoplay&quot;: 1
-             }
-           }">
-                                    </a>
-                                    <div class="embed-responsive embed-responsive-16by9 rounded-lg">
-                                        <div id="youTubeIframePricing3"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-block mt-2">
-                                <small class="text-muted font-size-2">Start from</small><br>
-                                <span class="text-primary align-top pricing font-size-2">Rp.</span>
-                                <span class="h2 text-primary">Custom</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="font-size-2 py-3 px-4">
-                            Durasi Video
-                        </th>
-                        <td class="text-center p-3">
-                            <span class="text-primary font-size-2">30 Detik</span>
-                        </td>
-                        <td class="text-center border-left border-right p-3">
-                            <span class="text-primary font-size-2">60 Detik</span>
-                        </td>
-                        <td class="text-center p-3">
-                            <span class="text-primary font-size-2">60 Detik++</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="font-size-2 py-3 px-4">
-                            Full HD 1080p
-                        </th>
-                        <td class="text-center p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mr-2">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </td>
-                        <td class="text-center border-left border-right p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mr-2">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </td>
-                        <td class="text-center p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mr-2">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="font-size-2 py-3 px-4">
-                            Voice Over (Male / Female)
-                        </th>
-                        <td class="text-center p-3">
-                            <span class="text-primary font-size-2">Maks. 60 Kata (Indo)</span>
-                        </td>
-                        <td class="text-center border-left border-right p-3">
-                            <span class="text-primary font-size-2">Maks. 120 Kata (Indo)</span>
-                        </td>
-                        <td class="text-center p-3">
-                            <span class="text-primary font-size-2">Custom (English/Indo)</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="font-size-2 py-3 px-4">
-                            Premium Script
-                        </th>
-                        <td class="text-center p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
-                                <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
-                            </svg>
-                        </td>
-                        <td class="text-center border-left border-right p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mr-2">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </td>
-                        <td class="text-center p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mr-2">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="font-size-2 py-3 px-4">
-                            Full Color Storyboard
-                        </th>
-                        <td class="text-center p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mr-2">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </td>
-                        <td class="text-center border-left border-right p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mr-2">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </td>
-                        <td class="text-center p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mr-2">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="font-size-2 py-3 px-4">
-                            Desain Karakter
-                        </th>
-                        <td class="text-center p-3">
-                            <span class="text-primary font-size-2">Maks. 2</span>
-                        </td>
-                        <td class="text-center border-left border-right p-3">
-                            <span class="text-primary font-size-2">3 - 5 Karakter</span>
-                        </td>
-                        <td class="text-center p-3">
-                            <span class="text-primary font-size-2">Custom</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="font-size-2 py-3 px-4">
-                            Revisi
-                        </th>
-                        <td class="text-center p-3">
-                            <span class="text-primary font-size-2">3x</span>
-                        </td>
-                        <td class="text-center border-left border-right p-3">
-                            <span class="text-primary font-size-2">3x</span>
-                        </td>
-                        <td class="text-center p-3">
-                            <span class="text-primary font-size-2">Custom</span>
-                        </td>
-                    </tr>
-                    <tr class="border-bottom">
-                    <th scope="row" class="font-size-2 py-3 px-4">
-                            Backsound &amp; Sound Effect
-                        </th>
-                        <td class="text-center p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mr-2">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </td>
-                        <td class="text-center border-left border-right p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mr-2">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </td>
-                        <td class="text-center p-3">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success mr-2">
-                                <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </td>
-                    </tr>
-                    <tr class="border-bottom">
-                        <th scope="row" class="font-size-2 py-3 px-4">
-                            Lama Pengerjaan
-                        </th>
-                        <td class="text-center text-body p-3">
-                            <span class="text-primary font-size-2">3 Minggu</span>
-                        </td>
-                        <td class="text-center border-left border-right p-3">
-                            <span class="text-primary font-size-2">1 Bulan</span>
-                        </td>
-                        <td class="text-center p-3">
-                            <span class="text-primary font-size-2">Custom</span>
-                        </td>
-                    </tr>
+                    @foreach ($harga_jasas as $harga_jasa)
+                        <tr class="border-top border-bottom">
+                            <th scope="row" class="bg-white h4">{{$harga_jasa->nama}}</th>
+                            <td class="bg-white text-center">
+                                @php
+                                    $standard = json_decode($harga_jasa->standard, true);
+                                @endphp
+                                @if ($standard['status_inputan'] == 'tulisan')
+                                    {!! $standard['inputan'] !!}
+                                @endif
+
+                                @if ($standard['status_inputan'] == 'ikon')
+                                    @if ($standard['inputan'] == 'Ya')
+                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
+                                            <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                        </svg>
+                                    @endif
+
+                                    @if ($standard['inputan'] == 'Tidak')
+                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                            <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                        </svg>
+                                    @endif
+                                @endif
+                            </td>
+                            <td class="bg-white text-center">
+                                @php
+                                    $premium = json_decode($harga_jasa->premium, true);
+                                @endphp
+                                @if ($premium['status_inputan'] == 'tulisan')
+                                    {!! $premium['inputan'] !!}
+                                @endif
+
+                                @if ($premium['status_inputan'] == 'ikon')
+                                    @if ($premium['inputan'] == 'Ya')
+                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
+                                            <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                        </svg>
+                                    @endif
+
+                                    @if ($premium['inputan'] == 'Tidak')
+                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                            <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                        </svg>
+                                    @endif
+                                @endif
+                            </td>
+                            <td class="bg-white text-center">
+                                @php
+                                    $ultimate = json_decode($harga_jasa->ultimate, true);
+                                @endphp
+                                @if ($ultimate['status_inputan'] == 'tulisan')
+                                    {!! $ultimate['inputan'] !!}
+                                @endif
+
+                                @if ($ultimate['status_inputan'] == 'ikon')
+                                    @if ($ultimate['inputan'] == 'Ya')
+                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-success">
+                                            <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                        </svg>
+                                    @endif
+
+                                    @if ($ultimate['inputan'] == 'Tidak')
+                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="text-danger">
+                                            <path fill="currentColor" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                        </svg>
+                                    @endif
+                                @endif
+                            </td>
+                        </tr>
+                    @endforeach
                     <tr>
                         <th scope="row" class="bg-white p-3"></th>
                         <td class="bg-white text-center p-3">
@@ -417,6 +254,20 @@
                     <p class="text-muted">{{$video_animasi_section_5['deskripsi']}}</p>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            @foreach ($portofolios as $portofolio)
+                <div class="col-md-4 col-12">
+                    <div class="card">
+                        <a href="{{$portofolio->link}}" target="blank">
+                            <img class="card-img-top img-fluid" src="{{ asset('images/razen-studio/portofolio-video-animasi/'.$portofolio->gambar) }}" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h4 class="card-title">{{$portofolio->nama}}</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -482,38 +333,38 @@
             <div class="col-md-6">
                 <div class="swiper-container sliver-vertical">
                     <div class="swiper-wrapper">
-                        @foreach ($reviews as $review)
-                        <div class="swiper-slide">
-                            <div class="client-slider-box">
-                                <div class="client-user text-center">
-                                    <img src="{{ asset('images/landingpage_razenstudio/reviewer/'.$review->gambar) }}"
-                                        alt="images">
-                                    <ul class="list-inline small mt-3">
-                                        <li class="list-inline-item mx-0">
-                                            <i class="fas fa-star h4 text-warning"></i>
-                                        </li>
-                                        <li class="list-inline-item mx-0">
-                                            <i class="fas fa-star h4 text-warning"></i>
-                                        </li>
-                                        <li class="list-inline-item mx-0">
-                                            <i class="fas fa-star h4 text-warning"></i>
-                                        </li>
-                                        <li class="list-inline-item mx-0">
-                                            <i class="fas fa-star h4 text-warning"></i>
-                                        </li>
-                                        <li class="list-inline-item mx-0">
-                                            <i class="fas fa-star h4 text-warning"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="client-content">
-                                    <div class="client-user-author">
-                                        <h4 class="name-author section-20px-montserrat">{{$review->nama}}</h4>
-                                        <p class="margin-top-11">{{$review->ulasan}}</p>
+                        @foreach ($testimonis as $testimoni)
+                            <div class="swiper-slide">
+                                <div class="client-slider-box">
+                                    <div class="client-user text-center">
+                                        <img src="{{ asset('images/landingpage_razenstudio/video-production/video-animasi/testimoni/'.$testimoni->gambar) }}"
+                                            alt="images">
+                                        <ul class="list-inline small mt-3">
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="client-content">
+                                        <div class="client-user-author">
+                                            <h4 class="name-author section-20px-montserrat">{{$testimoni->nama}}</h4>
+                                            <p class="margin-top-11">{{$testimoni->testimoni}}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                 </div>

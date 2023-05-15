@@ -15,6 +15,7 @@ use App\Models\RazenStudio\Data\LandingPageWebDevelopmentTestimoni;
 use App\Models\RazenStudio\Data\LandingPageSocialMediaManagementHarga;
 use App\Models\RazenStudio\Data\LandingPageSocialMediaManagementTestimoni;
 use App\Models\RazenStudio\Data\LandingPageDigitalCampaignTestimoni;
+use App\Models\RazenStudio\Data\LandingPageCommercialPhotographyTestimoni;
 
 class HomeController extends Controller
 {
@@ -45,7 +46,10 @@ class HomeController extends Controller
     }
     public function commercial_photography()
     {
-        return view('landing-page-razen-studio.commercial-photography.index');
+        $testimonis = LandingPageCommercialPhotographyTestimoni::all();
+        return view('landing-page-razen-studio.commercial-photography.index', [
+            'testimonis' => $testimonis
+        ]);
     }
     public function digital_campaign()
     {

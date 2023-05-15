@@ -169,38 +169,38 @@
                 <div class="swiper-container sliver-vertical">
                     <div class="swiper-wrapper">
                         @foreach ($testimonis as $testimoni)
-                                <div class="swiper-slide">
-                                    <div class="client-slider-box">
-                                        <div class="client-user text-center">
-                                            <img src="{{ asset('images/landingpage_razenstudio/digital-campaign/testimoni/'.$testimoni->gambar) }}"
-                                                alt="images">
-                                            <ul class="list-inline small mt-3">
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                                <li class="list-inline-item mx-0">
-                                                    <i class="fas fa-star h4 text-warning"></i>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="client-content">
-                                            <div class="client-user-author">
-                                                <h4 class="name-author section-20px-montserrat">{{$testimoni->nama}}</h4>
-                                                <p class="margin-top-11">{{$testimoni->testimoni}}</p>
-                                            </div>
+                            <div class="swiper-slide">
+                                <div class="client-slider-box">
+                                    <div class="client-user text-center">
+                                        <img src="{{ asset('images/landingpage_razenstudio/digital-campaign/testimoni/'.$testimoni->gambar) }}"
+                                            alt="images">
+                                        <ul class="list-inline small mt-3">
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item mx-0">
+                                                <i class="fas fa-star h4 text-warning"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="client-content">
+                                        <div class="client-user-author">
+                                            <h4 class="name-author section-20px-montserrat">{{$testimoni->nama}}</h4>
+                                            <p class="margin-top-11">{{$testimoni->testimoni}}</p>
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
