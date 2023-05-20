@@ -504,31 +504,35 @@ class HomeAturController extends Controller
             return redirect()->route('razen-studio.admin.home.atur.index');
         }
 
-        $judul_konten = $request->judul_konten;
-        $deskripsi_konten = $request->deskripsi_konten;
-        $link_konten = $request->link_konten;
-        $logo_konten = $request->logo_konten;
         $array_baru = [];
         $array_logo = [];
 
-        foreach ($request->file('logo_konten') as $file) {
-            $gambarExtension = $file->extension();
-            $gambarName = uniqid().'-'.date("ymd").'.'.$gambarExtension;
-            $gambar = Image::make($file);
-            $gambarSize = public_path('images/landingpage_razenstudio/home/'.$gambarName);
-            $gambar->save($gambarSize, 60);
+        if($request->judul_konten && $request->deskripsi_konten && $request->link_konten && $request->logo_konten)
+        {
+            $judul_konten = $request->judul_konten;
+            $deskripsi_konten = $request->deskripsi_konten;
+            $link_konten = $request->link_konten;
+            $logo_konten = $request->logo_konten;
 
-            $array_logo[] = $gambarName;
-        }
+            foreach ($request->file('logo_konten') as $file) {
+                $gambarExtension = $file->extension();
+                $gambarName = uniqid().'-'.date("ymd").'.'.$gambarExtension;
+                $gambar = Image::make($file);
+                $gambarSize = public_path('images/landingpage_razenstudio/home/'.$gambarName);
+                $gambar->save($gambarSize, 60);
 
-        for ($i=0; $i < count($array_logo); $i++) {
-            $array_baru[] = [
-                'id' => uniqid(),
-                'judul_konten' => $judul_konten[$i],
-                'deskripsi_konten' => $deskripsi_konten[$i],
-                'link_konten' => $link_konten[$i],
-                'logo_konten' => $array_logo[$i]
-            ];
+                $array_logo[] = $gambarName;
+            }
+
+            for ($i=0; $i < count($array_logo); $i++) {
+                $array_baru[] = [
+                    'id' => uniqid(),
+                    'judul_konten' => $judul_konten[$i],
+                    'deskripsi_konten' => $deskripsi_konten[$i],
+                    'link_konten' => $link_konten[$i],
+                    'logo_konten' => $array_logo[$i]
+                ];
+            }
         }
 
         $get = LandingpageRazenstudioHome::first();
@@ -546,11 +550,19 @@ class HomeAturController extends Controller
             ];
         }
 
+        $konten = [];
+        if(empty($array_baru))
+        {
+            $konten = $array_lama;
+        } else {
+            $konten = array_merge($array_lama, $array_baru);
+        }
+
         $array_data = [
             'sub_judul' => $request->sub_judul,
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
-            'konten' => array_merge($array_lama, $array_baru)
+            'konten' => $konten
         ];
 
         $landingpage_razenstudio_home = LandingpageRazenstudioHome::find($get->id);
