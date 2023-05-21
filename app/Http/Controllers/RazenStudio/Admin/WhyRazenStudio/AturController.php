@@ -340,7 +340,6 @@ class AturController extends Controller
                     {
                         $array [] = [
                             'item' => $value['item'],
-                            'deskripsi' => $value['deskripsi'],
                             'gambar' => $value['gambar'],
                         ];
                     }
@@ -349,7 +348,6 @@ class AturController extends Controller
                     {
                         $array [] = [
                             'item' => $value['item'],
-                            'deskripsi' => $value['deskripsi'],
                             'gambar' => $value['gambar'],
                         ];
                     }
@@ -358,11 +356,15 @@ class AturController extends Controller
                     {
                         $array [] = [
                             'item' => $value['item'],
-                            'deskripsi' => $value['deskripsi'],
                             'gambar' => $value['gambar'],
                         ];
                     }
                 }
+                $array = [
+                    'sub_judul' => $request->sub_judul,
+                    'judul' => $request->judul,
+                    'item' => $array
+                ];
             } else {
                 $array = [
                     'sub_judul' => $request->sub_judul,
